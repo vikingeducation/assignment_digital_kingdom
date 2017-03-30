@@ -1,0 +1,25 @@
+{
+    "species": {
+        "Dogs": [
+            "Charlotte",
+            "Popo"
+        ],
+        "Cats": [
+            "Joanne",
+            "Bobby"
+        ],
+        "Monkeys": [
+            "Carl",
+            "Audrey",
+            "Snickles"
+        ],
+        "Bears": [
+            "Gentle Jim"
+        ],
+        "Humans": [
+            "Erik"
+        ],
+        "Rats": [],
+        "Aliens": []
+    }
+}
