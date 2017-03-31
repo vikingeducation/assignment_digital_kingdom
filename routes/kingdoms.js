@@ -29,7 +29,13 @@ router.get("/:kingdomName", (req, res) => {
   let displayArray = [object.king, object.queen];
   let path = `/kingdom/${req.params.kingdomName}`;
   let keys = getKeys("castles");
-  res.render("kingdoms/show", { object, childObjects, displayArray, path, keys });
+  res.render("kingdoms/show", {
+    object,
+    childObjects,
+    displayArray,
+    path,
+    keys
+  });
 });
 
 router.get("/:kingdomName/castles", (req, res) => {
@@ -37,6 +43,21 @@ router.get("/:kingdomName/castles", (req, res) => {
   const keys = getKeys("castles");
   const path = `/kingdoms/${req.params.kingdomName}/castles`;
   res.render("kingdoms/castles/", { objects, path, keys });
+});
+
+router.get("/:kingdomName/castles/:castleName", (req, res) => {
+  const object = getCastles(req.params.kingdomName);
+  const childObjects = getLieges(req.params.kingdomName, req.params.castleName);
+  const keys = getKeys("lieges");
+  const displayArray = [];
+  const path = `/kingdoms/${req.params.kingdomName}/castles`;
+  res.render("kingdoms/show", {
+    object,
+    childObjects,
+    displayArray,
+    path,
+    keys
+  });
 });
 
 router.post("/", (req, res) => {
@@ -55,7 +76,7 @@ router.post("/:kingdomName/castles", (req, res) => {
   if (makeCastle(name)) {
     res.redirect(`/kingdoms/${req.params.kingdomName}/castles/${name}`);
   } else {
-    res.redirect('/kingdoms/${req.params.kingdomName}/castles');
+    res.redirect("/kingdoms/${req.params.kingdomName}/castles");
   }
 });
 
