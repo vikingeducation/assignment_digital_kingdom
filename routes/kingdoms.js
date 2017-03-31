@@ -7,14 +7,10 @@ router.get('/', (req, res) => {
   res.render('kingdoms', { kingdoms });
 });
 
-
-// add animal to a species
-router.post("/", (req, res) => {
-  console.log('req from POST ', req)
-  // const species = req.params.species;
-  // const name = req.body.name;
-  // addAnimal(species, name);
-  // res.redirect("back");
+router.post('/', (req, res) => {
+  addKingdom(req.body.kingdomName, req.body.kingName, req.body.queenName);
+  const kingdoms = getKingdoms();
+  res.render('kingdoms', { kingdoms });
 });
 
 // // remove animal from a species

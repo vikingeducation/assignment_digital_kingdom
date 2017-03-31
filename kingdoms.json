@@ -1,76 +1,84 @@
 {
-  "kingdoms" : [{
-    "name": "Kingdom1",
-    "king": "King1",
-    "queen": "Queen1",
-    "castles": [{
-      "name" : "Castle1",
-      "lieges" : [{
-        "name": "Liege1",
-        "vassals": ["Vassal1", "Vassal2"]}, {
-        "name": "Liege2",
-        "vassals": ["Vassal1"]}, {
-        "name": "Liege3",
-        "vassals": ["Something"]}]
-        },
-      {
-      "name" : "castle2",
-      "lieges" : [{
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Hank"]}
-      ]},
-      {
-      "name" : "castle3",
-      "lieges" : [{
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Hank"]}, {
-        "name": "Frank",
-        "vassals": ["One"]}]
-    }
+    "kingdoms": [
+        {
+            "name": "Kingdom1",
+            "king": "King1",
+            "queen": "Queen1",
+            "castles": [
+                {
+                    "name": "Castle1",
+                    "lieges": [
+                        {
+                            "name": "Liege1",
+                            "vassals": [
+                                "Vassal1",
+                                "Vassal2"
+                            ]
+                        },
+                        {
+                            "name": "Liege2",
+                            "vassals": [
+                                "Vassal1"
+                            ]
+                        },
+                        {
+                            "name": "Liege3",
+                            "vassals": [
+                                "Something"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "castle2",
+                    "lieges": [
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Tom",
+                                "Sara"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Hank"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "castle3",
+                    "lieges": [
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Tom",
+                                "Sara"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Tom",
+                                "Sara"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Hank"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "One"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
-  },
-
-  {
-    "name": "Kingdom1",
-    "king": "King1",
-    "queen": "Queen1",
-    "castles": [{
-      "name" : "Castle1",
-      "lieges" : [{
-        "name": "Liege1",
-        "vassals": ["Vassal1", "Vassal2"]}, {
-        "name": "Liege2",
-        "vassals": ["Vassal1"]}, {
-        "name": "Liege3",
-        "vassals": ["Blah"]}]
-        },
-      {
-      "name" : "castle2",
-      "lieges" : [{
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Hank"]}
-      ]},
-      {
-      "name" : "castle3",
-      "lieges" : [{
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
-        "vassals": ["Hank"]}, {
-        "name": "Frank",
-        "vassals": ["Whoop"]}]
-    }
-    ]
-  }]
-
 }
