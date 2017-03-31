@@ -7,7 +7,7 @@ const _getData = () => {
 };
 
 const _filterByName = (array, nameArg) => {
-  let result = array.filter( obj => {
+  let result = array.filter(obj => {
     return obj.name === nameArg;
   });
   return result[0];
@@ -18,9 +18,14 @@ const getKingdoms = () => {
   return obj.kingdoms;
 };
 
-const getCastles = (kingdomName) => {
+const getKingdom = kingdomName => {
   const kingdoms = getKingdoms();
   const kingdom = _filterByName(kingdoms, kingdomName);
+  return kingdom;
+};
+
+const getCastles = kingdomName => {
+  const kingdom = getKingdom(kingdomName);
   return kingdom.castles;
 };
 
@@ -40,5 +45,6 @@ module.exports = {
   getKingdoms,
   getCastles,
   getLieges,
-  getVassals
+  getVassals,
+  getKingdom
 };

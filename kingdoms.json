@@ -1,12 +1,12 @@
 {
   "kingdoms":[
     {
-      "name":"awesome kingdom",
+      "name":"awesomeKingdom",
       "king":"William",
       "queen":"Jerry",
       "castles":[
         {
-          "name":"Strong Castle",
+          "name":"StrongCastle",
           "lieges":[
             {
               "name":"Mr. Liege",
