@@ -5,7 +5,7 @@ const { getCastles } = require('../services/rf');
 router.get('/:kingdomName', (req, res) => {
   const kingdomName = req.params.kingdomName;
   let castles = getCastles(kingdomName);
-  res.render('individualKingdom', { kingdomName, castles });
+  res.render('castles', { kingdomName, castles });
 });
 
 module.exports = router;
