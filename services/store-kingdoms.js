@@ -31,7 +31,7 @@ const saveJson = (json, filename) => {
   fs.writeFileSync(filename, JSON.stringify(json, null, 4));
 };
 
-
+///////Page Display 
 
 const displayBasicInfo = () => {
   var kingdoms = {};
@@ -46,10 +46,21 @@ const displayBasicInfo = () => {
   return kingdoms
 }
 
+const displayCastles = (kingdomName) => {
+  var castles = {};
+  lands.kingdoms.forEach((kingdom) => {
+      if (kingdomName === kingdom.name) {
+        castles = kingdom.castles;
+      }
+    })
+    return castles
+  }
+
 
 module.exports = {
   displayBasicInfo,
   addKingdom,
+  displayCastles,
   saveJson
 }
 

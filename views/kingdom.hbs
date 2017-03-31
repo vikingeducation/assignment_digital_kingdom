@@ -1,0 +1,13 @@
+<div class="kingdom">
+  <p>Kingdom: {{this.kingdomName}}</a></p>
+</div>
+{{#each castles as |castle| }}
+  <div class="content-box">
+    <div class="castles">
+      <p>{{castle.name}}</p>
+    </div>
+    <div class="castles">
+      <p>{{castle.location}}</p>
+    </div>
+  </div>
+{{/each}}
