@@ -1,0 +1,94 @@
+{
+    "kingdoms": [
+        {
+            "name": "kingdom 1",
+            "king": "Nicolas",
+            "queen": "Elisa",
+            "castles": [
+                {
+                    "name": "Basel castle",
+                    "lieges": [
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1a",
+                                "vassal1b"
+                            ]
+                        },
+                        {
+                            "name": "liege2",
+                            "vassals": [
+                                "vassal2a",
+                                "vassal2b"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Madrid castle",
+                    "lieges": [
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        },
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "kingdom 2",
+            "king": "Robert",
+            "queen": "Mary",
+            "castles": [
+                {
+                    "name": "Buckingham palace",
+                    "lieges": [
+                        {
+                            "name": "sir Deven",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        },
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Madrid castle",
+                    "lieges": [
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        },
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

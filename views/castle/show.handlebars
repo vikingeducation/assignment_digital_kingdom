@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="box--title">{{castleInfo.name}}</div>
+  <div class="box--content">
+
+      <div>
+        <h3>Lieges</h3>
+      </div>
+      {{#each castleInfo.lieges as |liege|}}
+        <div class="animal">
+          <a href="/kingdoms/{{../kingdomName}}/castles/{{../castleInfo.name}}/{{liege}}">
+            {{liege}}
+          </a>
+        </div>
+      {{/each}}
+
+  </div>
+</div>
