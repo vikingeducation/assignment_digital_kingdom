@@ -1,0 +1,18 @@
+{ 
+  "kingdoms": [
+    {
+      "name": "Tomlandia",
+      "king": {
+        "name": "Tom IV",
+        "age": "12"
+      }
+    },
+    {
+      "name": "The Unicorn Frontier",
+      "king": {
+        "name": "Mark",
+        "age": "99"
+      }
+    }
+  ]  
+}
