@@ -13,23 +13,42 @@
             "castles": [
                 {
                     "name": "Castlevania",
-                    "location": "California"
+                    "location": "California",
+                    "lieges": [
+                      {
+                        "name": "Giggles",
+                        "vassals": [
+                          {
+                            "name": "Bob",
+                            "job": "poop scooper"
+                          },
+                          {
+                            "name": "Jim",
+                            "job": "poop bagger"
+                          }
+                        ]
+                      }
+                    ]
                 },
                 {
                     "name": "Castle city",
-                    "location": "The Earth"
+                    "location": "The Earth",
+                    "lieges": []
                 },
                 {
                     "name": "Castle Black",
-                    "location": "The Wall"
+                    "location": "The Wall",
+                    "lieges": []
                 },
                 {
                     "name": "Castle53",
-                    "location": "Transylvania"
+                    "location": "Transylvania",
+                    "lieges": []
                 },
                 {
                     "name": "Castle 54",
-                    "location": "Translyvania"
+                    "location": "Translyvania",
+                    "lieges": []
                 }
             ]
         },
@@ -46,11 +65,13 @@
             "castles": [
                 {
                     "name": "Fortress Pink",
-                    "location": "To the east"
+                    "location": "To the east",
+                    "lieges": []
                 },
                 {
                     "name": "Fortress Green",
-                    "location": "To the west"
+                    "location": "To the west",
+                    "lieges": []
                 }
             ]
         },
@@ -67,11 +88,13 @@
             "castles": [
                 {
                     "name": "Murika's Castle",
-                    "location": "California"
+                    "location": "California",
+                    "lieges": []
                 },
                 {
                     "name": "Castle in the sun",
-                    "location": "Murika"
+                    "location": "Murika",
+                    "lieges": []
                 }
             ]
         },

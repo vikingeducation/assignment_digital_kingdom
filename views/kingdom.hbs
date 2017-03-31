@@ -4,10 +4,14 @@
 {{#each castles as |castle| }}
   <div class="content-box">
     <div class="castles">
-      <p>Name: {{castle.name}}</p>
+    {{!-- MAKE A LINK --}}
+      <a href="{{this.kingdomName}}{{castle.name}}">Name: {{castle.name}}</a>
     </div>
     <div class="castles">
       <p>Location: {{castle.location}}</p>
+    </div>
+    <div class="castles">
+      <p>Number of Lieges: {{castle.liegeCount}}
     </div>
   </div>
 {{/each}}

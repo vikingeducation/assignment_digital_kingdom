@@ -40,7 +40,8 @@ const addCastle = (postData, filename) => {
     if(kingdom.name === postData.kingdom){
       kingdom.castles.push({
         name: postData.name,
-        location: postData.location
+        location: postData.location,
+        lieges: []
       })
     }
   })
@@ -66,11 +67,17 @@ const displayBasicInfo = () => {
   return kingdoms
 }
 
-const displayCastles = (kingdomName) => {
+const displayCastleInfo = (kingdomName) => {
   var castles = {};
   lands.kingdoms.forEach((kingdom) => {
       if (kingdomName === kingdom.name) {
-        castles = kingdom.castles;
+        kingdom.castles.forEach((castle) => {
+          castles[castle.name] = {
+            name: castle.name,
+            location: castle.location,
+            liegeCount: castle.lieges.length
+          }
+        })
       }
     })
     return castles
@@ -80,7 +87,7 @@ const displayCastles = (kingdomName) => {
 module.exports = {
   displayBasicInfo,
   addKingdom,
-  displayCastles,
+  displayCastleInfo,
   saveJson,
   addCastle,
 }

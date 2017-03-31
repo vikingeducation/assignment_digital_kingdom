@@ -24,6 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', kingdoms);
+app.use('/kingdoms', kingdoms);
+
 
 
 
