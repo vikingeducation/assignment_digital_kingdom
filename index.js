@@ -1,11 +1,12 @@
 const fs = require('fs');
 const express = require("express");
-//const kingdoms = require("./routes/kingdoms");
+const kingdoms = require("./routes/kingdoms");
 const expressHandlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use('/', kingdoms);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
