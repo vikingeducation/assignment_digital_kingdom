@@ -1,50 +1,62 @@
 {
-  "kingdoms": [
-    {
-      "name": "Tomlandia",
-      "king": {
-        "name": "Tom IV",
-        "age": "12"
-      },
-      "queen": {
-        "name": "Mary",
-        "age": "38"
-      },
-      "castles": [
+    "kingdoms": [
         {
-          "name": "Castlevania",
-          "location": "California"
+            "name": "Tomlandia",
+            "king": {
+                "name": "Tom IV",
+                "age": "12"
+            },
+            "queen": {
+                "name": "Mary",
+                "age": "38"
+            },
+            "castles": [
+                {
+                    "name": "Castlevania",
+                    "location": "California"
+                },
+                {
+                    "name": "Castle city",
+                    "location": "The Earth"
+                },
+                {
+                    "name": "Castle Black",
+                    "location": "The Wall"
+                }
+            ]
         },
         {
-          "name": "Castle city",
-          "location": "The Earth"
+            "name": "The Unicorn Frontier",
+            "king": {
+                "name": "Mark",
+                "age": "986"
+            },
+            "queen": {
+                "name": "Yona",
+                "age": "780"
+            },
+            "castles": [
+                {
+                    "name": "Fortress Pink",
+                    "location": "To the east"
+                },
+                {
+                    "name": "Fortress Green",
+                    "location": "To the west"
+                }
+            ]
         },
         {
-          "name": "Castle Black",
-          "location": "The Wall"
+            "name": "Murika",
+            "king": {
+                "name": "Donald",
+                "age": "83"
+            },
+            "queen": {
+                "name": "Sherry",
+                "age": "112"
+            },
+            "castles": {}
         }
-      ]
-    },
-    {
-      "name": "The Unicorn Frontier",
-      "king": {
-        "name": "Mark",
-        "age": "986"
-      },
-      "queen": {
-        "name": "Yona",
-        "age": "780"
-      },
-      "castles": [
-        {
-          "name": "Fortress Pink",
-          "location": "To the east"
-        },
-        {
-          "name": "Fortress Green",
-          "location": "To the west"
-        }
-      ]
-    }
-  ]
+    ]
 }

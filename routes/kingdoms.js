@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/',(req, res) => {
-  console.log(req.body)
-  const json = addKingdom(req.body.kingdom)
-
+  const json = addKingdom(req.body, "./lib/kingdoms.json")
+  saveJson(json, "./lib/kingdoms.json");
+  res.redirect('back');
 })
 module.exports = router;

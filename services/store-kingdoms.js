@@ -1,26 +1,39 @@
 const lands = require('../lib/kingdoms.json');
 const fs = require('fs');
 
-const getJson = () => {
-  const data = fs.readFileSync("kingdoms.json");
+const getJson = (filename) => {
+  const data = fs.readFileSync(filename);
   const json = JSON.parse(data);
   return json;
 };
 
-const addKingdom = (name) => {
-  const json = getJson();
-
-
-
+const addKingdom = (newKingdom, filename) => {
+  const json = getJson(filename);
+  if(!json.kingdoms[newKingdom.name]){
+    var deepKingdom = {
+      name: newKingdom.name,
+      king: {
+        name: newKingdom.kingName,
+        age: newKingdom.kingAge,
+      },
+      queen: {
+        name: newKingdom.queenName,
+        age: newKingdom.queenAge,
+      },
+      castles: {}
+    };
+    json.kingdoms.push(deepKingdom)
+  }
+  return json
 }
 
-const saveJson = json => {
-  fs.writeFileSync("kingdoms.json", JSON.stringify(json, null, 4));
+const saveJson = (json, filename) => {
+  fs.writeFileSync(filename, JSON.stringify(json, null, 4));
 };
 
 
 
-const displayBasicInfo = () => {  
+const displayBasicInfo = () => {
   var kingdoms = {};
   lands.kingdoms.forEach((kingdom) => {
     kingdoms[kingdom.name] = {
