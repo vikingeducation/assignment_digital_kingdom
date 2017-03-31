@@ -11,11 +11,15 @@ const fs = require('fs');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const allKingdoms = getKingdoms();
+  const kingdoms = getKingdoms();
   //console.log(allKingdoms);
-
-  res.render('kingdoms', { allKingdoms });
+  res.render('kingdoms', { kingdoms });
 });
+
+router.get('/:kingdomName', (req, res) => {
+  const kingdomName = req.params.kingdomName;
+
+})
 
 const getJson = () => {
   const data = fs.readFileSync('kingdoms.json');
@@ -25,10 +29,22 @@ const getJson = () => {
 const getKingdoms = () => {
   const json = getJson();
   //console.log(json.kingdoms[0].name);
-  const kingdoms = kingdoms[0];
-  //console.log(kingdoms);
+  const kingdoms = json.kingdoms;
+  console.log(kingdoms);
   return kingdoms;
 };
+const getIndividualKingdom = (kingdomName) => {
+  const json = getJson();
+  //console.log(json.kingdoms[0].name);
+  const kingdomObj
+  json.kingdoms.forEach((kingdom) => {
+    if (kingdom.name == kingdomName) {
+
+    }
+  })
+  return kingdoms;
+};
+
 
 // router.post("/", (req, res) => {
 //   const name = req.body.name;

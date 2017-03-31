@@ -3,24 +3,25 @@
 <div class="box">
   <!-- <div class="box--title">{{kingdoms}}</div> -->
   <div class="box--content">
-    <!-- {{#each kingdoms as |kingdom|}} -->
+    {{#each kingdoms as |kingdom|}}
     <div class="kingdom">
-      <!-- {{kingdom}} -->
+      <a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a>
       <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
         <button>Release</button>
       </form> -->
     </div>
-    <!-- {{/each}} -->
+    {{/each}}
   </div>
 </div>
 
 
-<div class="box">
+<!-- <div class="box">
   <div class="box--title">Add Animal</div>
   <div class="box--content">
-    <!-- <form action="/species/{{species}}" method="POST">
+    <form action="/species/{{species}}" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
       <input type="submit" value="Add New Animal" method="post">
-    </form> -->
+    </form>
   </div>
 </div>
+ -->
