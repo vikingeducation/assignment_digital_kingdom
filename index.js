@@ -1,5 +1,5 @@
 const express = require('express');
-//const animals = require('./routes/animals');
+const kingdoms = require('./routes/kingdoms');
 const expressHandlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 
@@ -14,7 +14,7 @@ const hbs = expressHandlebars.create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-//app.use("/species", animals);
+app.use("/kingdoms", kingdoms);
 
 app.use(express.static(__dirname + '/public'));
 

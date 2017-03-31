@@ -1,79 +1,91 @@
 {
-  "Kingdoms" : {
-    "Kingdom1": {
+  "Kingdoms" : [
+  {
+    "name": "Kingdom1",
       "King": "Joe",
       "Queen": "Sally",
-      "Castles" : {
-        "Castle1" : {
-          "Lieges" : {
-            "Liege1": {
-                "Vassals": [
+      "Castles" : [
+        { "name": "Castle1",
+          "Lieges" : [
+          {
+            "name": "Liege1",
+             "Vassals": [
                     "Vassal1",
                     "Vassal2"
-                ]},
-            "Liege2": {
-              "Vassals": [
-                  "Vassal1",
-                  "Vassal2"
-              ],
+                ]
+            },
 
-            }
-          }
-        },
-        "Castle2" : {
-          "Lieges" : {
-            "Liege1": {
-                "Vassals": [
-                    "Vassal1",
-                    "Vassal2"
-                ]},
-            "Liege2": {
+            { "name": "Liege2",
               "Vassals": [
                   "Vassal1",
                   "Vassal2"
               ],
             }
+            ]
+          },
+          { "name": "Castle1",
+          "Lieges" : [
+          {
+            "name": "Liege1",
+             "Vassals": [
+                    "Vassal1",
+                    "Vassal2"
+                ]
+            },
+
+            { "name": "Liege2",
+              "Vassals": [
+                  "Vassal1",
+                  "Vassal2"
+              ],
+            }
+            ]
           }
-        }
-      }
-    },
-    "Kingdom2": {
+          ]
+          },
+          {
+    "name": "Kingdom2",
       "King": "Joe",
       "Queen": "Sally",
-      "Castles" : {
-        "Castle1" : {
-          "Lieges" : {
-            "Liege1": {
-                "Vassals": [
+      "Castles" : [
+        { "name": "Castle1",
+          "Lieges" : [
+          {
+            "name": "Liege1",
+             "Vassals": [
                     "Vassal1",
                     "Vassal2"
-                ]},
-            "Liege2": {
+                ]
+            },
+
+            { "name": "Liege2",
               "Vassals": [
                   "Vassal1",
                   "Vassal2"
               ],
-
             }
-          }
-        },
-        "Castle2" : {
-          "Lieges" : {
-            "Liege1": {
-                "Vassals": [
+            ]
+          },
+          { "name": "Castle2",
+          "Lieges" : [
+          {
+            "name": "Liege1",
+             "Vassals": [
                     "Vassal1",
                     "Vassal2"
-                ]},
-            "Liege2": {
+                ]
+            },
+
+            { "name": "Liege2",
               "Vassals": [
                   "Vassal1",
                   "Vassal2"
               ],
-
             }
+            ]
           }
-        }
-      }
-    }
-  }
+          ]
+          }
+]
 }
+        

@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 // const {
 //   getSpecies,
 //   addSpecies,
@@ -10,15 +11,20 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  //const allSpecies = getSpecies();
+  const allKingdoms = getKingdoms();
 
-  res.render('animals', { allSpecies });
+  res.render('kingdoms', { allKingdoms });
 });
 
 const getJson = () => {
   const data = fs.readFileSync('kingdoms.json');
   const json = JSON.parse(data);
   return json;
+};
+const getKingdoms = () => {
+  const json = getJson();
+  const kingdoms = Object.keys(json.kingdoms);
+  return kingdoms;
 };
 
 // router.post("/", (req, res) => {
