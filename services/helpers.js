@@ -5,6 +5,10 @@ const _getJSON = () => {
   return JSON.parse(data);
 };
 
+const _saveJSON = (json) => {
+  fs.writeFileSync("./kingdoms.json", JSON.stringify(json, null, 4));
+};
+
 const _getObjectByName = (array, name) => {
   return array.find((element) => {
     return element.name === name;
@@ -17,8 +21,13 @@ const _getArrayOfNames = (array) => {
   });
 }
 
+
+
+
+
 module.exports = {
 	_getJSON,
+  _saveJSON,
 	_getArrayOfNames,
 	_getObjectByName
 }

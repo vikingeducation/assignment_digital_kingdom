@@ -9,10 +9,19 @@ const {
   getLiegeInfo
 } = require('../services/getter_services');
 
+const {
+  deleteKingdom
+} = require('../services/setter_services');
 
 router.get('/', (req, res) => {
   const allKingdoms = getKingdoms();
   res.render('kingdoms', {allKingdoms});
+});
+
+router.post('/:kingdom/delete', (req, res) => {
+  const kingdomName = req.params.kingdom;
+  deleteKingdom(kingdomName);
+  res.redirect("back");
 });
 
 router.get('/:kingdom', (req, res) => {

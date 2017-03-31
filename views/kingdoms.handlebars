@@ -6,6 +6,9 @@
         <a href="/kingdoms/{{kingdom}}">
           {{kingdom}}
         </a>
+        <form class="remove" action="/kingdoms/{{kingdom}}/delete" method="post">
+        <button>Destroy</button>
+      </form>
       </div>
     {{/each}}
   </div>

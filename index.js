@@ -1,6 +1,6 @@
 const fs = require('fs');
 const express = require("express");
-const kingdoms = require("./routes/kingdoms");
+const kingdoms = require("./routes/kingdoms_router");
 const expressHandlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 
