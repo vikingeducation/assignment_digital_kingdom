@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const {getKingdoms} = require('../services/kingdom-services');
+const {
+      getKingdoms,
+      getKingdomInfo
+      } = require('../services/kingdom-services');
 
 
 router.get('/', (req, res) => {
@@ -9,7 +12,7 @@ router.get('/', (req, res) => {
   res.render('kingdoms', {allKingdoms});
 });
 
-router.get('/kingdoms/:kingdom', (req, res) => {
+router.get('/:kingdom', (req, res) => {
   var kingdomName = req.params.kingdom;
   const kingdomInfo = getKingdomInfo(kingdomName);
 
