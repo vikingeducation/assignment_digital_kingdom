@@ -17,7 +17,7 @@ const hbs = expressHandlebars.create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use('/kingdoms', kingdoms);
+app.use('/', kingdoms);
 app.use('/kingdoms/', castles);
 app.use('/kingdoms/', lieges);
 app.use('/kingdoms/', vassals);
