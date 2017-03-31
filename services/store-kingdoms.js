@@ -20,10 +20,30 @@ const addKingdom = (newKingdom, filename) => {
         name: newKingdom.queenName,
         age: newKingdom.queenAge,
       },
-      castles: {}
+      castles: []
     };
     json.kingdoms.push(deepKingdom)
   }
+  return json
+}
+
+// kingdom.name == Tomlandia
+// postData.kingdom
+// postData = { name: 'castle black',
+//   kingdom: 'Tomlandia',
+//   location: 'the wall' }
+
+
+const addCastle = (postData, filename) => {
+  const json = getJson(filename);
+  json.kingdoms.forEach((kingdom) => {
+    if(kingdom.name === postData.kingdom){
+      kingdom.castles.push({
+        name: postData.name,
+        location: postData.location
+      })
+    }
+  })
   return json
 }
 
@@ -31,7 +51,7 @@ const saveJson = (json, filename) => {
   fs.writeFileSync(filename, JSON.stringify(json, null, 4));
 };
 
-///////Page Display 
+///////Page Display
 
 const displayBasicInfo = () => {
   var kingdoms = {};
@@ -61,7 +81,8 @@ module.exports = {
   displayBasicInfo,
   addKingdom,
   displayCastles,
-  saveJson
+  saveJson,
+  addCastle,
 }
 
 

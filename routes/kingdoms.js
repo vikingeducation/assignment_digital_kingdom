@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var {
   displayBasicInfo,
+  addCastle,
   addKingdom,
   displayCastles,
   saveJson
@@ -12,10 +13,19 @@ router.get('/', function(req, res, next) {
   const kingdoms = displayBasicInfo()
   res.render('kingdoms', { kingdoms });
 });
-
+router.get('/kingdoms', function(req, res, next) {
+  const kingdoms = displayBasicInfo()
+  res.render('kingdoms', { kingdoms });
+});
 
 router.post('/',(req, res) => {
   const json = addKingdom(req.body, "./lib/kingdoms.json")
+  saveJson(json, "./lib/kingdoms.json");
+  res.redirect('back');
+})
+
+router.post('/castles',(req, res) => {
+  const json = addCastle(req.body, "./lib/kingdoms.json")
   saveJson(json, "./lib/kingdoms.json");
   res.redirect('back');
 })

@@ -22,6 +22,14 @@
                 {
                     "name": "Castle Black",
                     "location": "The Wall"
+                },
+                {
+                    "name": "Castle53",
+                    "location": "Transylvania"
+                },
+                {
+                    "name": "Castle 54",
+                    "location": "Translyvania"
                 }
             ]
         },
@@ -56,7 +64,28 @@
                 "name": "Sherry",
                 "age": "112"
             },
-            "castles": {}
+            "castles": [
+                {
+                    "name": "Murika's Castle",
+                    "location": "California"
+                },
+                {
+                    "name": "Castle in the sun",
+                    "location": "Murika"
+                }
+            ]
+        },
+        {
+            "name": "Porque",
+            "king": {
+                "name": "Magic Johnson",
+                "age": "49"
+            },
+            "queen": {
+                "name": "Indiana Jones",
+                "age": "52"
+            },
+            "castles": []
         }
     ]
 }

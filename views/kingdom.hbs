@@ -4,10 +4,23 @@
 {{#each castles as |castle| }}
   <div class="content-box">
     <div class="castles">
-      <p>{{castle.name}}</p>
+      <p>Name: {{castle.name}}</p>
     </div>
     <div class="castles">
-      <p>{{castle.location}}</p>
+      <p>Location: {{castle.location}}</p>
     </div>
   </div>
 {{/each}}
+
+<br>
+<form method="post" action="/castles">
+  <h2>Add a Castle</h2>
+  <label for="name">Castle:</label>
+  <input type="text" name="name">
+  <input type="hidden" name="kingdom" value="{{kingdomName}}" />
+  <br>
+  <label for="location">Location:</label>
+  <input type="text" name="location">
+  <br>
+  <input type="submit">
+</form>
