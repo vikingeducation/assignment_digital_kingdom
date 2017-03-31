@@ -4,4 +4,16 @@
   <div class="details">
     We are ruled by his majesty, King {{ kingdom.king }}, and Queen {{ kingdom.queen }} at his side.
   </div>
+
+  <h2>Our Castles:</h2>
+
+  <ul>
+    {{#each castles as |castle|}}
+      <li class="item">
+        <a href="/kingdoms/{{ ../kingdom.name }}/castles/{{ castle.name }}">
+          {{ castle.name }}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
 </section>

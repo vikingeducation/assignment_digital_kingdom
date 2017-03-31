@@ -21,12 +21,13 @@ router.get("/", (req, res) => {
 
 router.get("/:kingdomName", (req, res) => {
   const kingdom = getKingdom(req.params.kingdomName);
-  res.render("kingdoms/show", { kingdom });
+  const castles = getCastles(req.params.kingdomName);
+  res.render("kingdoms/show", { kingdom, castles });
 });
 
 router.get("/:kingdomName/castles", (req, res) => {
   const castles = getCastles(req.params.kingdomName);
-  res.render("/kingdoms/castles", { castles });
+  res.render('kingdoms/castles/', { castles });
 });
 
 router.post("/", (req, res) => {

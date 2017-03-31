@@ -17,6 +17,19 @@
               ]
             }
           ]
+        },
+        {
+          "name": "StrongCastle",
+          "lieges": [
+            {
+              "name": "Senor Liege",
+              "vassals": [
+                {
+                  "name": "Madame Vassal"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

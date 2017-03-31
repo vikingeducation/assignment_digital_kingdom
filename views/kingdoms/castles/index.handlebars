@@ -1,0 +1,26 @@
+<section>
+  <h2>Create Thine Castle:</h2>
+  <form action="/kingdoms" method="POST">
+    <label for="name">Thy Castle's Name:</label>
+    <input id="name" type="text" name="name">
+    <label for="liege">Thy Liege:</label>
+    <input id="liege" type="text" name="liege">
+    <input type="submit">
+  </form>
+</section>
+
+<section>
+  <h2>Our Castles:</h2>
+  <ul>
+    {{#each castles as |castle|}}
+      <li class="item">
+        <a href="/kingdoms/castles/{{ castle.name }}">
+          {{ castle.name }}
+        </a>
+        <form class="" action="/kingdoms/castles/{{castle.name}}" method="post">
+          <button type="submit" name="button">delete</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+</section>

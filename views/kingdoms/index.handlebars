@@ -19,6 +19,8 @@
         <a href="/kingdoms/{{ kingdom.name }}">
           {{ kingdom.name }}
         </a>
+        <br>
+        {{ kingdom.castles.length }} castles
         <form class="" action="/kingdoms/{{kingdom.name}}" method="post">
           <button type="submit" name="button">delete</button>
         </form>
