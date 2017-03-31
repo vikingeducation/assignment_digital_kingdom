@@ -4,7 +4,8 @@ const router = express.Router();
 const {
   getKingdoms,
   getKingdomInfo,
-  getKingdomCastles
+  getKingdomCastles,
+  getCastleInfo
 } = require('../services/kingdom-services');
 
 
@@ -25,5 +26,11 @@ router.get('/:kingdom/castles', (req, res) => {
   res.render('kingdom/show_castles', {kingdomName, kingdomCastles});
 });
 
+router.get('/:kingdom/castles/:castle', (req, res) => {
+  var kingdomName = req.params.kingdom;
+  var castleName = req.params.castle;
+  const castleInfo = getCastleInfo(kingdomName, castleName);
+  res.render('castle/show', {kingdomName, castleInfo});
+});
 
 module.exports = router;
