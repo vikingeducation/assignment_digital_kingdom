@@ -82,15 +82,52 @@ const addKingdom = (kingdomName, kingName, queenName) => {
 
 const addCastle = (kingdomName, castleName) => {
   const json = getJson();
-  let castles = [];
   let newCastle = {};
   newCastle.name = castleName;
   newCastle.lieges = [];
 
   json.kingdoms.forEach(kingdom => {
     if (kingdom.name == kingdomName) {
-      castles = kingdom.castles;
       kingdom.castles.push(newCastle);
+    }
+  });
+
+  saveJson(json);
+};
+
+const addLiege = (kingdomName, castleName, liegeName) => {
+  const json = getJson();
+  let newLiege = {};
+  newLiege.name = liegeName;
+  newLiege.vassals = [];
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name == castleName) {
+          castle.lieges.push(newLiege);
+        }
+      });
+    }
+  });
+
+  saveJson(json);
+};
+
+const addVassal = (kingdomName, castleName, liegeName, vassalName) => {
+  const json = getJson();
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name == castleName) {
+          castle.lieges.forEach(liege => {
+            if (liege.name == liegeName) {
+              liege.vassals.push(vassalName);
+            }
+          });
+        }
+      });
     }
   });
 
@@ -103,5 +140,7 @@ module.exports = {
   getLieges,
   getVassals,
   addKingdom,
-  addCastle
+  addCastle,
+  addLiege,
+  addVassal
 };

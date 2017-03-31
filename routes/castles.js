@@ -9,9 +9,10 @@ router.get('/:kingdomName', (req, res) => {
 });
 
 router.post('/:kingdomName', (req, res) => {
+  const kingdomName = req.params.kingdomName;
   addCastle(req.params.kingdomName, req.body.castleName);
   const castles = getCastles(req.params.kingdomName);
-  res.render('castles', { castles });
+  res.render('castles', { kingdomName, castles });
 });
 
 module.exports = router;

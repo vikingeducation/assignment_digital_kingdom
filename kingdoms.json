@@ -12,7 +12,8 @@
                             "name": "Liege1",
                             "vassals": [
                                 "Vassal1",
-                                "Vassal2"
+                                "Vassal2",
+                                "Vassal3"
                             ]
                         },
                         {
@@ -26,6 +27,22 @@
                             "vassals": [
                                 "Something"
                             ]
+                        },
+                        {
+                            "name": "Liege4",
+                            "vassals": []
+                        },
+                        {
+                            "name": "Liege5",
+                            "vassals": []
+                        },
+                        {
+                            "name": "Liege6",
+                            "vassals": []
+                        },
+                        {
+                            "name": "Liege7",
+                            "vassals": []
                         }
                     ]
                 },
@@ -77,8 +94,34 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "Castle4",
+                    "lieges": []
+                },
+                {
+                    "name": "castle5",
+                    "lieges": []
+                },
+                {
+                    "name": "castle6",
+                    "lieges": []
+                },
+                {
+                    "name": "castle7",
+                    "lieges": []
+                },
+                {
+                    "name": "castle8",
+                    "lieges": []
                 }
             ]
+        },
+        {
+            "name": "Kingdom2",
+            "king": "Kingdom2",
+            "queen": "queen2",
+            "castles": []
         }
     ]
 }
