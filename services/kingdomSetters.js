@@ -6,18 +6,21 @@ const {
   _filterByName
 } = require("./kingdomHelpers");
 
+const filePath = "kingdoms.json";
+
 const makeKingdom = (name, king, queen) => {
   if (getKingdom(name)) return false;
 
-  const obj = _getData();
+  const obj = _getData(filePath);
   const kingdom = {
     name: name,
     king: king,
     queen: queen,
     castles: []
   };
+
   obj.kingdoms.push(kingdom);
-  _writeData(obj);
+  _writeData(filePath, obj);
   return true;
 };
 

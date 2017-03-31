@@ -6,7 +6,7 @@ const _getData = (filePath) => {
   return obj;
 };
 
-const _writeData = data => {
+const _writeData = (filePath, data) => {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 };
 
