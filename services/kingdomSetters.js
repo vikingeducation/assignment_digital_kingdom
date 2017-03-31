@@ -7,8 +7,8 @@ const {
 } = require('./kingdomHelpers');
 
 const makeKingdom = (name, king, queen) => {
-  const existingKingdom = getKingdom(name);
-  if (existingKingdom) return;
+  if (getKingdom(name)) return;
+  
   const kingdoms = getKingdoms();
   const kingdom = {
     name: name,

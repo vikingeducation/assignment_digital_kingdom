@@ -9,7 +9,7 @@ const _getData = () => {
 };
 
 const _writeData = (data) => {
-  fs.writeFileSync(filePath, data);
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
 const _filterByName = (array, nameArg) => {
