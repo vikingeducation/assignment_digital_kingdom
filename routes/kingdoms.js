@@ -16,7 +16,10 @@ const {
 
 router.get("/", (req, res) => {
   const kingdoms = getKingdoms();
-  res.render("kingdoms", { kingdoms });
+
+  const keys = getInputKeys(kingdoms);
+  let path = "/kingdoms";
+  res.render("kingdoms", { kingdoms, path });
 });
 
 router.get("/:kingdomName", (req, res) => {
@@ -27,7 +30,7 @@ router.get("/:kingdomName", (req, res) => {
 
 router.get("/:kingdomName/castles", (req, res) => {
   const castles = getCastles(req.params.kingdomName);
-  res.render('kingdoms/castles/', { castles });
+  res.render("kingdoms/castles/", { castles });
 });
 
 router.post("/", (req, res) => {

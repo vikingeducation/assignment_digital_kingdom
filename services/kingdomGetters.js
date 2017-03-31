@@ -1,7 +1,14 @@
 const {
   _getData,
   _filterByName
-} = require('./kingdomHelpers');
+} = require("./kingdomHelpers");
+
+const getInputKeys = obj => {
+  const allKeys = Object.keys(obj);
+  return allKeys.filter(key => {
+    return typeof obj[key] === "string";
+  });
+};
 
 const getKingdoms = () => {
   const obj = _getData();

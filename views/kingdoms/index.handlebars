@@ -1,6 +1,6 @@
 <section>
   <h2>Create Thine Kingdom:</h2>
-  <form action="/kingdoms" method="POST">
+  <form action="{{path}}" method="POST">
     <label for="name">Thy Kingdom's Name:</label>
     <input id="name" type="text" name="name">
     <label for="king">Thy King:</label>
@@ -16,12 +16,12 @@
   <ul>
     {{#each kingdoms as |kingdom|}}
       <li class="item">
-        <a href="/kingdoms/{{ kingdom.name }}">
+        <a href="{{../path}}/{{ kingdom.name }}">
           {{ kingdom.name }}
         </a>
         <br>
         {{ kingdom.castles.length }} castles
-        <form class="" action="/kingdoms/{{kingdom.name}}" method="post">
+        <form class="" action="{{../path}}/{{kingdom.name}}" method="post">
           <button type="submit" name="button">delete</button>
         </form>
       </li>
