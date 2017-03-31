@@ -15,7 +15,11 @@
   <h2>Our Kingdoms:</h2>
   <ul>
     {{#each kingdoms as |kingdom|}}
-      <li class="item">{{kingdom.name}}</li>
+      <li class="item">
+        <a href="{{ kingdom.name }}">
+          {{ kingdom.name }}
+        </a>
+      </li>
     {{/each}}
   </ul>
 </section>

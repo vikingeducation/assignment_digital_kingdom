@@ -24,8 +24,8 @@ router.get("/:kingdomName", (req, res) => {
 });
 
 router.get("/:kingdomName/castles", (req, res) => {
-  const kingdoms = getCastles(req.params.kingdomName);
-  res.render("/kingdoms/castles", { kingdoms });
+  const castles = getCastles(req.params.kingdomName);
+  res.render("/kingdoms/castles", { castles });
 });
 
 router.post("/", (req, res) => {

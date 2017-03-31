@@ -1,7 +1,7 @@
 {
   "kingdoms":[
     {
-      "name":"awesome Kingdom",
+      "name":"AwesomeKingdom",
       "king":"William",
       "queen":"Jerry",
       "castles":[
@@ -13,6 +13,26 @@
               "vassals":[
                 {
                   "name":"Miss Vassal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"SweetKingdom",
+      "king":"Jerry",
+      "queen":"William",
+      "castles":[
+        {
+          "name":"PowerfulCastle",
+          "lieges":[
+            {
+              "name":"Senor Liege",
+              "vassals":[
+                {
+                  "name":"Madame Vassal"
                 }
               ]
             }
