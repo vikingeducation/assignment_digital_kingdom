@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 router.get('/kingdoms/:kingdom', (req, res) => {
   var kingdomName = req.params.kingdom;
   const kingdomInfo = getKingdomInfo(kingdomName);
-  res.render('kingdoms', {allKingdoms});
+
+  res.render('kingdom/show', {kingdomInfo});
 });
 
 
