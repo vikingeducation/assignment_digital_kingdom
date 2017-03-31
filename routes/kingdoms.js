@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const {
-      getKingdoms,
-      getKingdomInfo
-      } = require('../services/kingdom-services');
+  getKingdoms,
+  getKingdomInfo,
+  getKingdomCastles
+} = require('../services/kingdom-services');
 
 
 router.get('/', (req, res) => {
@@ -15,8 +16,13 @@ router.get('/', (req, res) => {
 router.get('/:kingdom', (req, res) => {
   var kingdomName = req.params.kingdom;
   const kingdomInfo = getKingdomInfo(kingdomName);
-
   res.render('kingdom/show', {kingdomInfo});
+});
+
+router.get('/:kingdom/castles', (req, res) => {
+  var kingdomName = req.params.kingdom;
+  const kingdomCastles = getKingdomCastles(kingdomName);
+  res.render('kingdom/show_castles', {kingdomName, kingdomCastles});
 });
 
 

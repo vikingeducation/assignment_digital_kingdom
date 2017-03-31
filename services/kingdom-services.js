@@ -1,42 +1,35 @@
 const fs = require('fs');
+const {
+  _getJSON,
+  _getArrayOfNames,
+  _getObjectByName
+} = require('./helpers');
+
 
 const getKingdoms = () => {
   const json = _getJSON();
-  const kingdomsArr = json.kingdoms.map((element) => {
-    return element.name;
-  });
+  const kingdomsArr = _getArrayOfNames(json.kingdoms);
   return kingdomsArr;
 };
 
 const getKingdomInfo = (kingdomName) => {
   const json = _getJSON();
-  let kingdomInfo = _selectKingdom(json, kingdomName);
+  let kingdomInfo = _getObjectByName(json.kingdoms, kingdomName);
   kingdomInfo.numCastles = kingdomInfo.castles.length;
-  console.log(kingdomInfo);
   return kingdomInfo;
 };
 
 const getKingdomCastles = (kingdomName) => {
   const json = _getJSON();
-  let kingdomInfo = _selectKingdom(json, kingdomName);
-  // get Array of Castles
-  //console.log(kingdomInfo);
-  // return kingdomInfo;
+  let kingdomInfo = _getObjectByName(json.kingdoms, kingdomName);
+  const castlesArr = _getArrayOfNames(kingdomInfo.castles);
+  return castlesArr;
 };
 
-const _getJSON = () => {
-  const data = fs.readFileSync("./kingdoms.json");
-  return JSON.parse(data);
-};
-
-const _selectKingdom = (json, kingdomName) => {
-  return json.kingdoms.find((kingdom) => {
-    return kingdom.name === kingdomName;
-  });
-};
 
 
 module.exports = {
 	getKingdoms,
-  getKingdomInfo
+  getKingdomInfo,
+  getKingdomCastles
 };
