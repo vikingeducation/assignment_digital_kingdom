@@ -1,17 +1,7 @@
-const fs = require("fs");
-
-const _getData = () => {
-  const data = fs.readFileSync("kingdoms.json");
-  const obj = JSON.parse(data);
-  return obj;
-};
-
-const _filterByName = (array, nameArg) => {
-  let result = array.filter(obj => {
-    return obj.name === nameArg;
-  });
-  return result[0];
-};
+const {
+  _getData,
+  _filterByName
+} = require('./kingdomHelpers');
 
 const getKingdoms = () => {
   const obj = _getData();

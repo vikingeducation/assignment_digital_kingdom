@@ -7,11 +7,20 @@ const {
   getLieges,
   getVassals,
   getKingdom
-} = require("../services/kingdom-store");
+} = require("../services/kingdomGetters");
+
+const {
+  
+} = require("../services/kingdomSetters");
 
 router.get("/", (req, res) => {
   const kingdoms = getKingdoms();
   res.render("kingdoms", { kingdoms });
+});
+
+router.get("/:kingdomName", (req, res) => {
+  const kingdom = getKingdom(req.params.kingdomName);
+  res.render("kingdoms/show", { kingdom });
 });
 
 router.get("/:kingdomName/castles", (req, res) => {
@@ -19,9 +28,14 @@ router.get("/:kingdomName/castles", (req, res) => {
   res.render("/kingdoms/castles", { kingdoms });
 });
 
-router.get("/:kingdomName", (req, res) => {
-  const kingdom = getKingdom(req.params.kingdomName);
-  res.render("kingdoms/show", { kingdom });
+router.post("/", (req, res) => {
+  const name = req.body.name;
+  const king = req.body.king;
+  const queen = req.body.queen;
+  console.log(name);
+  console.log(king);
+  console.log(queen);
+  res.redirect("/");
 });
 
 module.exports = router;
