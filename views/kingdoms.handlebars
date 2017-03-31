@@ -1,32 +1,34 @@
-<h2><a href="/kingdoms">All Kingdoms</a></h2>
+<h2 class="text-center">All Kingdoms</h2>
 
-<div class="box">
-  <!-- <div class="box--title">{{kingdoms}}</div> -->
-  <div class="box--content">
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
     {{#each kingdoms as |kingdom|}}
     <div class="kingdom">
-      <a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a>
-      <p>King: {{kingdom.king}}</p>
-      <p>Queen: {{kingdom.queen}}</p>
-      <p># of castles: {{kingdom.castles.length}}</p>
-      <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
-        <button>Release</button>
-      </form> -->
+      <h4><a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></h4>
+      <p><strong>King:</strong> {{kingdom.king}}</p>
+      <p><strong>Queen:</strong> {{kingdom.queen}}</p>
+      <p><strong># of castles:</strong> {{kingdom.castles.length}}</p>
+
     </div>
     {{/each}}
   </div>
 </div>
 
-
-<div class="box">
-  <div class="box--title">Add Kingdom</div>
-  <div class="box--content">
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
     <form action="/kingdoms" method="POST">
-      <input type="text" name="kingdomName" id="kingdomName" placeholder="Kingdom Name">
-      <input type="text" name="kingName" id="kingName" placeholder="King Name">
-      <input type="text" name="queenName" id="queenName" placeholder="Queen Name">
-      <input type="submit" value="Add New Kingdom" method="post">
-    </form>
-  </div>
-</div>
+      <h3>Add Kingdom</h3>
+      <div class="form-group">
+        <label for="kingdomName">Kingdom Name</label>
+        <input class="form-control" type="text" name="kingdomName" id="kingdomName" placeholder="Kingdom Name">
+        <label for="kingName">King Name</label>
+        <input class="form-control" type="text" name="kingName" id="kingName" placeholder="King Name">
+        <label for="queenName">Queen Name</label>
+        <input class="form-control"type="text" name="queenName" id="queenName" placeholder="Queen Name">
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
+      </div>
+    </form>
+</div>
+</div>

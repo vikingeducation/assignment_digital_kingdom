@@ -43,6 +43,10 @@
                         {
                             "name": "Liege7",
                             "vassals": []
+                        },
+                        {
+                            "name": "NewestLiege",
+                            "vassals": []
                         }
                     ]
                 },
