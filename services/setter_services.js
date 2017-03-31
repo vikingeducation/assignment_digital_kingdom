@@ -10,13 +10,18 @@ const {
 const deleteKingdom = (kingdomName) => {
   const json = _getJSON();
   const kingdomArr = json.kingdoms;
-  const newKingdoms = kingdomArr.filter((element) => {
-    element.name !== kingdomName;
+
+  const newKingdoms = kingdomArr.filter((kingdom) => {
+    console.log("inside filter" + kingdom.name);
+    return kingdom.name != kingdomName;
   });
+
   json.kingdoms = newKingdoms;
+
   _saveJSON(json);
 };
 
 module.exports = {
   deleteKingdom
 };
+
