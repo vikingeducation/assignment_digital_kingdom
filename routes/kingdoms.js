@@ -12,20 +12,33 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   const kingdoms = getKingdoms();
+
   //console.log(allKingdoms);
   res.render('kingdoms', { kingdoms });
 });
 
 router.get('/:kingdomName', (req, res) => {
   const kingdomName = req.params.kingdomName;
+  let castles = getCastles(kingdomName);
 
-})
+  res.render('individualKingdom', { kingdomName, castles });
+});
+
+router.get('/:kingdomName/:castle', (req, res) => {
+  const kingdomName = req.params.kingdomName;
+  const castle = req.params.castle;
+
+  let lieges = getLieges(kingdomName, castle);
+
+  //res.render('individualKingdom', { kingdomName, castles });
+});
 
 const getJson = () => {
   const data = fs.readFileSync('kingdoms.json');
   const json = JSON.parse(data);
   return json;
 };
+
 const getKingdoms = () => {
   const json = getJson();
   //console.log(json.kingdoms[0].name);
@@ -33,18 +46,37 @@ const getKingdoms = () => {
   console.log(kingdoms);
   return kingdoms;
 };
-const getIndividualKingdom = (kingdomName) => {
-  const json = getJson();
-  //console.log(json.kingdoms[0].name);
-  const kingdomObj
-  json.kingdoms.forEach((kingdom) => {
-    if (kingdom.name == kingdomName) {
 
+const getCastles = kingdomName => {
+  const json = getJson();
+  let castles = [];
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      castles = kingdom.castles;
     }
-  })
-  return kingdoms;
+  });
+
+  return castles;
 };
 
+const getLieges = (kingdomName, castleName) => {
+  const json = getJson();
+
+  let lieges = [];
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name == castleName) {
+          lieges = castle.lieges;
+        }
+      });
+    }
+  });
+
+  return lieges;
+};
 
 // router.post("/", (req, res) => {
 //   const name = req.body.name;

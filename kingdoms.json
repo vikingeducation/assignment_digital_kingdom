@@ -3,13 +3,31 @@
     "name": "Kingdom1",
     "king": "Joe",
     "queen": "Sally",
-    "castles": []
+    "castles": [{
+      "name" : "castle1",
+      "lieges" : ["Frank", "Sam", "Cory"]},
+      {
+      "name" : "castle2",
+      "lieges" : ["Alice"]
+      },
+      {
+      "name" : "castle3",
+      "lieges" : ["Margaret", "Kelly"]
+    }
+    ]
   },
   {
     "name": "Kingdom2",
     "king": "Joe",
     "queen": "Sally",
-    "castles": []
+    "castles": [{
+      "name" : "castle4",
+      "lieges" : []},
+      {
+      "name" : "castle5",
+      "lieges" : []
+      }
+    ]
   }]
 
 }

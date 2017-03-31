@@ -1,14 +1,12 @@
-<h2><a href="/kingdoms">All Kingdoms</a></h2>
+<h2>Kingdom of {{kingdomName}}</h2>
 
 <div class="box">
   <!-- <div class="box--title">{{kingdoms}}</div> -->
   <div class="box--content">
-    {{#each kingdoms as |kingdom|}}
-    <div class="kingdom">
-      <a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a>
-      <p>King: {{kingdom.king}}</p>
-      <p>Queen: {{kingdom.queen}}</p>
-      <p># of castles: {{kingdom.castles.length}}</p>
+    {{#each castles as |castle|}}
+    <div class="castle">
+      <a href="/castles/{{castle.name}}">{{castle.name}}</a>
+      <p># of lieges: {{castle.lieges.length}}</p>
       <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
         <button>Release</button>
       </form> -->
