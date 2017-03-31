@@ -6,21 +6,6 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const getKingdoms = () => {
-  const data = fs.readFileSync("kingdoms.json");
-  const json = JSON.parse(data);
-  const kingdomsArr = json.kingdoms.map((element) => {
-    return element.name;
-  });
-  console.log(kingdomsArr);
-  //return data;
-};
-
-app.get('/kingdoms', (req, res) => {
-  getKingdoms();
-  res.send('Kingdoms!!');
-
-});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
