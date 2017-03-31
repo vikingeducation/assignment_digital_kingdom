@@ -5,14 +5,9 @@ const {
 
 const filePath = "structure.json";
 
-const getInputKeys = obj => {
-  const allKeys = Object.keys(obj);
-  return allKeys.filter(key => {
-    return typeof obj[key] === "string";
-  });
+const getKeys = key => {
+  const obj = _getData(filePath);
+  return obj[key];
 };
 
-const getKingdomKeys = kingdomName => {
-  const obj = _getData(filePath);
-  obj.keys
-};
+module.exports = { getKeys };

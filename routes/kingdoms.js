@@ -14,18 +14,21 @@ const {
   deleteKingdom
 } = require("../services/kingdomSetters");
 
-router.get("/", (req, res) => {
-  const kingdoms = getKingdoms();
+const { getKeys } = require("../services/kingdomStruct");
 
-  const keys = getInputKeys(kingdoms);
+router.get("/", (req, res) => {
+  const objects = getKingdoms();
+  const keys = getKeys("kingdoms");
+  console.log(keys);
   let path = "/kingdoms";
-  res.render("kingdoms", { kingdoms, path });
+  res.render("kingdoms", { objects, path, keys });
 });
 
 router.get("/:kingdomName", (req, res) => {
   const kingdom = getKingdom(req.params.kingdomName);
   const castles = getCastles(req.params.kingdomName);
-  res.render("kingdoms/show", { kingdom, castles });
+  let path = `/kingdom/${req.params.kingdomName}`;
+  res.render("kingdoms/show", { kingdom, castles, path });
 });
 
 router.get("/:kingdomName/castles", (req, res) => {

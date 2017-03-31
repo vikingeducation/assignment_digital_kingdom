@@ -1,27 +1,24 @@
 <section>
   <h2>Create Thine Kingdom:</h2>
   <form action="{{path}}" method="POST">
-    <label for="name">Thy Kingdom's Name:</label>
-    <input id="name" type="text" name="name">
-    <label for="king">Thy King:</label>
-    <input id="king" type="text" name="king">
-    <label for="queen">Thy Queen:</label>
-    <input id="queen" type="text" name="queen">
-    <input type="submit">
+    {{#each keys as |key|}}
+      <label for="{{key}}">Thy Kingdom's {{key}}:</label>
+      <input id="{{key}}" type="text" name="{{key}}">
+    {{/each}}
   </form>
 </section>
 
 <section>
   <h2>Our Kingdoms:</h2>
   <ul>
-    {{#each kingdoms as |kingdom|}}
+    {{#each objects as |object|}}
       <li class="item">
-        <a href="{{../path}}/{{ kingdom.name }}">
+        <a href="{{../path}}/{{ object.name }}">
           {{ kingdom.name }}
         </a>
         <br>
-        {{ kingdom.castles.length }} castles
-        <form class="" action="{{../path}}/{{kingdom.name}}" method="post">
+        {{ object.castles.length }} castles
+        <form class="" action="{{../path}}/{{object.name}}" method="post">
           <button type="submit" name="button">delete</button>
         </form>
       </li>
