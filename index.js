@@ -8,9 +8,9 @@ const app = express();
 
 //app.use('/', kingdoms);
 
-app.use('/kingdoms', kingdoms);
-
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/kingdoms', kingdoms);
 
 const hbs = expressHandlebars.create({
   defaultLayout: "main",

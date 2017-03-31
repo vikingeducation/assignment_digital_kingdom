@@ -21,7 +21,21 @@ const deleteKingdom = (kingdomName) => {
   _saveJSON(json);
 };
 
-module.exports = {
-  deleteKingdom
-};
 
+const addKingdom = (name, king, queen) => {
+  const json = _getJSON();
+  const kingdomArr = json.kingdoms;
+  const newKingdom = {
+    "name": name,
+    "king": king,
+    "queen": queen
+  }
+  kingdomArr.push(newKingdom);
+  json.kingdoms = kingdomArr;
+  _saveJSON(json);
+}
+
+module.exports = {
+  deleteKingdom,
+  addKingdom
+};

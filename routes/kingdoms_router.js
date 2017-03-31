@@ -10,7 +10,8 @@ const {
 } = require('../services/getter_services');
 
 const {
-  deleteKingdom
+  deleteKingdom,
+  addKingdom
 } = require('../services/setter_services');
 
 router.get('/', (req, res) => {
@@ -23,6 +24,14 @@ router.post('/:kingdom/delete', (req, res) => {
   deleteKingdom(kingdomName);
   res.redirect("back");
 });
+
+router.post('/', (req, res) => {
+  const king = req.body.king;
+  const queen = req.body.queen;
+  const name = req.body.name;
+  addKingdom(name, king, queen);
+  res.redirect("back");
+})
 
 router.get('/:kingdom', (req, res) => {
   var kingdomName = req.params.kingdom;
