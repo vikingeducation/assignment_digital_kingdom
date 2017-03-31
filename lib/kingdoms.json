@@ -1,18 +1,50 @@
-{ 
+{
   "kingdoms": [
     {
       "name": "Tomlandia",
       "king": {
         "name": "Tom IV",
         "age": "12"
-      }
+      },
+      "queen": {
+        "name": "Mary",
+        "age": "38"
+      },
+      "castles": [
+        {
+          "name": "Castlevania",
+          "location": "California"
+        },
+        {
+          "name": "Castle city",
+          "location": "The Earth"
+        },
+        {
+          "name": "Castle Black",
+          "location": "The Wall"
+        }
+      ]
     },
     {
       "name": "The Unicorn Frontier",
       "king": {
         "name": "Mark",
         "age": "99"
-      }
+      },
+      "queen": {
+        "name": "Bob",
+        "age": "65"
+      },
+      "castles": [
+        {
+          "name": "Fortress Pink",
+          "location": "To the east"
+        },
+        {
+          "name": "Fortress Green",
+          "location": "To the west"
+        }
+      ]
     }
-  ]  
+  ]
 }

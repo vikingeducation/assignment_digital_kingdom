@@ -1,5 +1,22 @@
 <h1>Kingdoms</h1>
 
-{{#each kingdoms}}
-<a href="#">{{this.name}}</a>
+{{#each kingdoms as |kingdom| }}
+  <div class="content-box">
+    <div class="kingdom">
+      <p>Kingdom <a href="#">{{kingdom.name}}</a></p>
+    </div>
+    <div class="king">
+      <p>King <a href="#">{{kingdom.king.name}}</a></p>
+    </div>
+    <div class="queen">
+      <p>Queen <a href="#">{{kingdom.queen.name}}</a></p>
+    </div>
+    <div class="castles">
+      <p>Number of castles <a href="#">{{kingdom.castleCount}}</a></p>
+    </div>
+  </div>
 {{/each}}
+
+
+
+
