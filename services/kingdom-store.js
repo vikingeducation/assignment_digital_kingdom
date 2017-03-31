@@ -1,29 +1,44 @@
 const fs = require("fs");
 
-const getData = () => {
+const _getData = () => {
   const data = fs.readFileSync("kingdoms.json");
   const obj = JSON.parse(data);
   return obj;
 };
 
+const _filterByName = (array, nameArg) => {
+  let result = array.filter( obj => {
+    return obj.name === nameArg;
+  });
+  return result[0];
+};
+
 const getKingdoms = () => {
-  const obj = getData();
+  const obj = _getData();
   return obj.kingdoms;
 };
 
-const getCastles = () => {
+const getCastles = (kingdomName) => {
   const kingdoms = getKingdoms();
-  return kingdoms.castles;
+  const kingdom = _filterByName(kingdoms, kingdomName);
+  return kingdom.castles;
 };
 
-const getLieges = () => {
-  const castles = getCastles();
-  return castles.lieges;
+const getLieges = (kingdomName, castleName) => {
+  const castles = getCastles(kingdomName);
+  const castle = _filterByName(castles, castleName);
+  return castle.lieges;
 };
 
-const getVassals = () => {
-  const lieges = getLieges();
-  return lieges.vassals;
+const getVassals = (kingdomName, castleName, liegeName) => {
+  const lieges = getLieges(kingdomName, castleName);
+  const liege = _filterByName(lieges, liegeName);
+  return liege.vassals;
 };
 
-module.exports = { getKingdoms, getCastles, getLieges, getVassals };
+module.exports = {
+  getKingdoms,
+  getCastles,
+  getLieges,
+  getVassals
+};

@@ -1,9 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const { getKingdoms } = require("../services/kingdom-store");
+
+const {
+  getKingdoms,
+  getCastles,
+  getLieges,
+  getVassals
+} = require("../services/kingdom-store");
 
 router.get("/", (req, res) => {
-  console.log(getKingdoms());
+  console.log(getLieges('awesome kingdom', 'Strong Castle'));
+  console.log(getVassals('awesome kingdom', 'Strong Castle', 'Mr. Liege'));
   res.render("kingdoms", {});
 });
 
