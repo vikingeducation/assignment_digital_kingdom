@@ -5,14 +5,33 @@
     "queen": "Sally",
     "castles": [{
       "name" : "castle1",
-      "lieges" : ["Frank", "Sam", "Cory"]},
+      "lieges" : [{
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Hank"]}, {
+        "name": "Frank",
+        "vassals": []}]
+        },
       {
       "name" : "castle2",
-      "lieges" : ["Alice"]
+      "lieges" : [{
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Hank"]}, {
+        "name": "Frank",
+        "vassals": []}]
       },
       {
       "name" : "castle3",
-      "lieges" : ["Margaret", "Kelly"]
+      "lieges" : [{
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Hank"]}, {
+        "name": "Frank",
+        "vassals": []}]
     }
     ]
   },

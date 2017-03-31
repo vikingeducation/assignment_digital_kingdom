@@ -19,6 +19,7 @@ router.get('/', (req, res) => {
 
 router.get('/:kingdomName', (req, res) => {
   const kingdomName = req.params.kingdomName;
+  console.log('kingdomName ' + kingdomName)
   let castles = getCastles(kingdomName);
 
   res.render('individualKingdom', { kingdomName, castles });
@@ -27,10 +28,9 @@ router.get('/:kingdomName', (req, res) => {
 router.get('/:kingdomName/:castle', (req, res) => {
   const kingdomName = req.params.kingdomName;
   const castle = req.params.castle;
-
   let lieges = getLieges(kingdomName, castle);
 
-  //res.render('individualKingdom', { kingdomName, castles });
+  res.render('castles', { castle, lieges });
 });
 
 const getJson = () => {
