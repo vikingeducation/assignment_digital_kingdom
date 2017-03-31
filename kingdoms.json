@@ -44,6 +44,51 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "kingdom 2",
+            "king": "Robert",
+            "queen": "Mary",
+            "castles": [
+                {
+                    "name": "Buckingham palace",
+                    "lieges": [
+                        {
+                            "name": "sir Deven",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        },
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Madrid castle",
+                    "lieges": [
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        },
+                        {
+                            "name": "liege1",
+                            "vassals": [
+                                "vassal1",
+                                "vassal2"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
