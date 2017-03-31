@@ -8,9 +8,9 @@
       "lieges" : [{
         "name": "Frank",
         "vassals": ["Tom", "Sara"]}, {
-        "name": "Frank",
+        "name": "Hank",
         "vassals": ["Hank"]}, {
-        "name": "Frank",
+        "name": "John",
         "vassals": []}]
         },
       {

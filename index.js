@@ -17,8 +17,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use('/kingdoms', kingdoms);
-app.use('/castles', castles);
-app.use('/lieges', lieges);
+// app.use('/castles', castles);
+// app.use('/lieges', lieges);
 
 app.use(express.static(__dirname + '/public'));
 

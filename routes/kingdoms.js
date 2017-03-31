@@ -25,12 +25,12 @@ router.get('/:kingdomName', (req, res) => {
   res.render('individualKingdom', { kingdomName, castles });
 });
 
-router.get('/:kingdomName/:castle', (req, res) => {
+router.get('/:kingdomName/:castleName', (req, res) => {
   const kingdomName = req.params.kingdomName;
-  const castle = req.params.castle;
-  let lieges = getLieges(kingdomName, castle);
-
-  res.render('castles', { castle, lieges });
+  const castleName = req.params.castleName;
+  console.log('castle name' + castleName)
+  let lieges = getLieges(kingdomName, castleName);
+  res.render('castles', { kingdomName, castleName, lieges });
 });
 
 const getJson = () => {

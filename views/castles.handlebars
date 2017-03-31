@@ -1,12 +1,12 @@
-<h2>{{castle.name}}</h2>
+<h2>{{castleName}}</h2>
 
 <div class="box">
   <!-- <div class="box--title">{{kingdoms}}</div> -->
   <div class="box--content">
     {{#each lieges as |liege|}}
     <div class="liege">
-      <a href="/lieges/{{liege.name}}">{{liege.name}}</a>
-      <p># of vassals: {{lieges.vassals.length}}</p>
+      Liege's name: <a href="/kingdoms/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
+      <p># of vassals: {{liege.vassals.length}}</p>
       <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
         <button>Release</button>
       </form> -->
