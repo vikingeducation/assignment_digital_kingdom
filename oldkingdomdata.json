@@ -1,0 +1,24 @@
+"name": "Kingdom1",
+  "King": "Joe",
+  "Queen": "Sally",
+  "Castles" : [{
+    "name": "Castle1",
+      "Lieges" : [{
+        "name": "Liege1",
+         "Vassals": ["Vassal1","Vassal2"]
+      },
+      { "name": "Liege2",
+          "Vassals": ["Vassal1","Vassal2"],
+      }]
+      },
+      { "name": "Castle1",
+        "Lieges" : [{
+          "name": "Liege1",
+          "Vassals": ["Vassal1","Vassal2"]
+        },
+        { "name": "Liege2",
+          "Vassals": ["Vassal1","Vassal2"]
+        }]
+      }]
+      }]
+    }

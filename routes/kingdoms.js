@@ -12,6 +12,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   const allKingdoms = getKingdoms();
+  //console.log(allKingdoms);
 
   res.render('kingdoms', { allKingdoms });
 });
@@ -23,7 +24,9 @@ const getJson = () => {
 };
 const getKingdoms = () => {
   const json = getJson();
-  const kingdoms = Object.keys(json.kingdoms);
+  //console.log(json.kingdoms[0].name);
+  const kingdoms = kingdoms[0];
+  //console.log(kingdoms);
   return kingdoms;
 };
 
