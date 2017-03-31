@@ -5,17 +5,13 @@
       <div>
         <h3>Lieges</h3>
       </div>
-      <div class="animal">
-          King: {{kingdomInfo.king}}
-      </div>
-      <div class="animal">
-          Queen: {{kingdomInfo.queen}}
-      </div>
-      <div class="animal">
-        <a href="/kingdoms/{{kingdomInfo.name}}/castles">
-          Number of castles: {{kingdomInfo.numCastles}}
-        </a>
-      </div>
+      {{#each castleInfo.lieges as |liege|}}
+        <div class="animal">
+          <a href="/kingdoms/{{../kingdomName}}/castles/{{../castleInfo.name}}/{{liege}}">
+            {{liege}}
+          </a>
+        </div>
+      {{/each}}
 
   </div>
 </div>

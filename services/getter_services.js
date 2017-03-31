@@ -34,9 +34,18 @@ const getCastleInfo = (kingdomName, castleName) => {
   return castleInfo;
 };
 
+const getLiegeInfo = (kingdomName, castleName, liegeName) => {
+  const json = _getJSON();
+  let kingdomInfo = _getObjectByName(json.kingdoms, kingdomName);
+  let castleInfo = _getObjectByName(kingdomInfo.castles, castleName);
+  let liegeInfo = _getObjectByName(castleInfo.lieges, liegeName);
+  return liegeInfo;
+};
+
 module.exports = {
 	getKingdoms,
   getKingdomInfo,
   getKingdomCastles,
-  getCastleInfo
+  getCastleInfo,
+  getLiegeInfo
 };

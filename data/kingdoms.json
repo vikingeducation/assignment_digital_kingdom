@@ -11,15 +11,15 @@
             {
               "name": "liege1",
               "vassals": [
-                "vassal1",
-                "vassal2"
+                "vassal1a",
+                "vassal1b"
               ]
             },
             {
-              "name": "liege1",
+              "name": "liege2",
               "vassals": [
-                "vassal1",
-                "vassal2"
+                "vassal2a",
+                "vassal2b"
               ]
             }
           ]
