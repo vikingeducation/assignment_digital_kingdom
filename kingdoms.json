@@ -1,18 +1,18 @@
 {
-  "kingdoms":[
+  "kingdoms": [
     {
-      "name":"AwesomeKingdom",
-      "king":"William",
-      "queen":"Jerry",
-      "castles":[
+      "name": "SweetKingdom",
+      "king": "Jerry",
+      "queen": "William",
+      "castles": [
         {
-          "name":"StrongCastle",
-          "lieges":[
+          "name": "PowerfulCastle",
+          "lieges": [
             {
-              "name":"Mr. Liege",
-              "vassals":[
+              "name": "Senor Liege",
+              "vassals": [
                 {
-                  "name":"Miss Vassal"
+                  "name": "Madame Vassal"
                 }
               ]
             }
@@ -21,24 +21,10 @@
       ]
     },
     {
-      "name":"SweetKingdom",
-      "king":"Jerry",
-      "queen":"William",
-      "castles":[
-        {
-          "name":"PowerfulCastle",
-          "lieges":[
-            {
-              "name":"Senor Liege",
-              "vassals":[
-                {
-                  "name":"Madame Vassal"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "name": "Please",
+      "king": "Oh God please",
+      "queen": "Help",
+      "castles": []
     }
   ]
 }

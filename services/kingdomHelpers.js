@@ -1,6 +1,6 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const filePath = 'kingdoms.json';
+const filePath = "kingdoms.json";
 
 const _getData = () => {
   const data = fs.readFileSync(filePath);
@@ -8,9 +8,9 @@ const _getData = () => {
   return obj;
 };
 
-const _writeData = (data) => {
+const _writeData = data => {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-}
+};
 
 const _filterByName = (array, nameArg) => {
   let result = array.filter(obj => {
@@ -21,5 +21,6 @@ const _filterByName = (array, nameArg) => {
 
 module.exports = {
   _getData,
-  _filterByName
+  _filterByName,
+  _writeData
 };

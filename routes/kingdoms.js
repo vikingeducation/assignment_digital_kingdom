@@ -10,7 +10,8 @@ const {
 } = require("../services/kingdomGetters");
 
 const {
-  
+  makeKingdom,
+  deleteKingdom
 } = require("../services/kingdomSetters");
 
 router.get("/", (req, res) => {
@@ -32,10 +33,16 @@ router.post("/", (req, res) => {
   const name = req.body.name;
   const king = req.body.king;
   const queen = req.body.queen;
-  console.log(name);
-  console.log(king);
-  console.log(queen);
-  res.redirect("/");
+  if (makeKingdom(name, king, queen)) {
+    res.redirect(`/kingdoms/${name}`);
+  } else {
+    res.redirect(`/kingdoms`);
+  }
+});
+
+router.post("/:kingdomName", (req, res) => {
+  deleteKingdom(req.params.kingdomName);
+  res.redirect("/kingdoms");
 });
 
 module.exports = router;
