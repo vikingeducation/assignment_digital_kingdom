@@ -12,8 +12,7 @@
                             "name": "Liege1",
                             "vassals": [
                                 "Vassal1",
-                                "Vassal2",
-                                "Vassal3"
+                                "Vassal2"
                             ]
                         },
                         {
@@ -27,26 +26,6 @@
                             "vassals": [
                                 "Something"
                             ]
-                        },
-                        {
-                            "name": "Liege4",
-                            "vassals": []
-                        },
-                        {
-                            "name": "Liege5",
-                            "vassals": []
-                        },
-                        {
-                            "name": "Liege6",
-                            "vassals": []
-                        },
-                        {
-                            "name": "Liege7",
-                            "vassals": []
-                        },
-                        {
-                            "name": "NewestLiege",
-                            "vassals": []
                         }
                     ]
                 },
@@ -61,7 +40,7 @@
                             ]
                         },
                         {
-                            "name": "Frank",
+                            "name": "Hank",
                             "vassals": [
                                 "Hank"
                             ]
@@ -79,20 +58,20 @@
                             ]
                         },
                         {
-                            "name": "Frank",
+                            "name": "Hank",
                             "vassals": [
                                 "Tom",
                                 "Sara"
                             ]
                         },
                         {
-                            "name": "Frank",
+                            "name": "Tom",
                             "vassals": [
                                 "Hank"
                             ]
                         },
                         {
-                            "name": "Frank",
+                            "name": "Jerry",
                             "vassals": [
                                 "One"
                             ]
@@ -102,28 +81,12 @@
                 {
                     "name": "Castle4",
                     "lieges": []
-                },
-                {
-                    "name": "castle5",
-                    "lieges": []
-                },
-                {
-                    "name": "castle6",
-                    "lieges": []
-                },
-                {
-                    "name": "castle7",
-                    "lieges": []
-                },
-                {
-                    "name": "castle8",
-                    "lieges": []
                 }
             ]
         },
         {
             "name": "Kingdom2",
-            "king": "Kingdom2",
+            "king": "king2",
             "queen": "queen2",
             "castles": []
         }

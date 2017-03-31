@@ -21,8 +21,6 @@ app.use('/kingdoms', kingdoms);
 app.use('/kingdoms/', castles);
 app.use('/kingdoms/', lieges);
 app.use('/kingdoms/', vassals);
-// app.use('/castles', castles);
-// app.use('/lieges', lieges);
 
 app.use(express.static(__dirname + '/public'));
 

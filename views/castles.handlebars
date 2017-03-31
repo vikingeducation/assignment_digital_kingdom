@@ -1,27 +1,19 @@
-<h2>Castles of {{kingdomName}}</h2>
+<h2 class="text-center">Castles of {{kingdomName}}</h2>
 
-<div class="box">
-  <!-- <div class="box--title">{{kingdoms}}</div> -->
-  <div class="box--content">
-    {{#each castles as |castle|}}
-    <div class="castle">
-      <a href="/kingdoms/{{../kingdomName}}/{{castle.name}}">{{castle.name}}</a>
-      <p># of lieges: {{castle.lieges.length}}</p>
-      <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
-        <button>Release</button>
-      </form> -->
-    </div>
-    {{/each}}
+{{#each castles as |castle|}}
+  <div class="borderBox">
+    <a href="/kingdoms/{{../kingdomName}}/{{castle.name}}">{{castle.name}}</a>
+    <p><strong># of lieges:</strong> {{castle.lieges.length}}</p>
   </div>
-</div>
+{{/each}}
 
-
-<div class="box">
-  <div class="box--title">Add Castle</div>
-  <div class="box--content">
-    <form action="/kingdoms/{{kingdomName}}" method="POST">
-      <input type="text" name="castleName" id="castleName" placeholder="Castle Name">
-      <input type="submit" value="Add New Castle" method="post">
-    </form>
+<form action="/kingdoms/{{kingdomName}}" method="POST">
+  <h3>Add Castle</h3>
+  <div class="form-group">
+    <label for="castleName">Castle Name</label>
+    <input class="form-control" type="text" name="castleName" id="castleName" placeholder="Castle Name">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-</div>
+</form>
+

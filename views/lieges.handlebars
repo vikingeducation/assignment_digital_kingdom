@@ -1,27 +1,19 @@
-<h2>Lieges' of {{castleName}}</h2>
+<h2 class="text-center">Lieges' of {{castleName}}</h2>
 
-<div class="box">
-  <!-- <div class="box--title">{{kingdoms}}</div> -->
-  <div class="box--content">
-    {{#each lieges as |liege|}}
-    <div class="liege">
-      Liege's name: <a href="/kingdoms/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
-      <p># of vassals: {{liege.vassals.length}}</p>
-      <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
-        <button>Release</button>
-      </form> -->
-    </div>
-    {{/each}}
+{{#each lieges as |liege|}}
+  <div class="borderBox">
+    <strong>Liege's name:</strong> <a href="/kingdoms/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
+    <p><strong># of vassals:</strong> {{liege.vassals.length}}</p>
   </div>
-</div>
+{{/each}}
 
 
-<div class="box">
-  <div class="box--title">Add Liege</div>
-  <div class="box--content">
-    <form action="/kingdoms/{{kingdomName}}/{{castleName}}" method="POST">
-      <input type="text" name="liegeName" id="liegeName" placeholder="Liege Name">
-      <input type="submit" value="Add New Liege" method="post">
-    </form>
+<form action="/kingdoms/{{kingdomName}}/{{castleName}}" method="POST">
+  <h3>Add Liege</h3>
+  <div class="form-group">
+    <label for="liegeName">Liege Name</label>
+    <input class="form-control" type="text" name="liegeName" id="liegeName" placeholder="Liege Name">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-</div>
+</form>

@@ -13,12 +13,4 @@ router.post('/', (req, res) => {
   res.render('kingdoms', { kingdoms });
 });
 
-// // remove animal from a species
-// router.post("/:species/animals/:animal/release", (req, res) => {
-//   const species = req.params.species;
-//   const animal = req.params.animal;
-//   releaseAnimal(species, animal);
-//   res.redirect("back");
-// });
-
 module.exports = router;
