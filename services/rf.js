@@ -8,7 +8,6 @@ const getJson = () => {
 
 const getKingdoms = () => {
   const json = getJson();
-  //console.log(json.kingdoms[0].name);
   const kingdoms = json.kingdoms;
   return kingdoms;
 };

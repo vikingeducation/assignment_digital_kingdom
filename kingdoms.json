@@ -1,46 +1,51 @@
 {
     "kingdoms": [
         {
-            "name": "Kingdom1",
-            "king": "King1",
-            "queen": "Queen1",
+            "name": "Washington",
+            "king": "Nicholas",
+            "queen": "Beyonce",
             "castles": [
                 {
-                    "name": "Castle1",
+                    "name": "Seattle",
                     "lieges": [
                         {
-                            "name": "Liege1",
+                            "name": "Dexter",
                             "vassals": [
-                                "Vassal1",
-                                "Vassal2"
+                                "Carl",
+                                "Artemis",
+                                "Hey guy"
                             ]
                         },
                         {
-                            "name": "Liege2",
+                            "name": "Edith",
                             "vassals": [
-                                "Vassal1"
+                                "Jeanie"
                             ]
                         },
                         {
-                            "name": "Liege3",
+                            "name": "Samantha",
                             "vassals": [
-                                "Something"
+                                "Scout"
                             ]
+                        },
+                        {
+                            "name": "Liegedude",
+                            "vassals": []
                         }
                     ]
                 },
                 {
-                    "name": "castle2",
+                    "name": "Tacoma",
                     "lieges": [
                         {
-                            "name": "Frank",
+                            "name": "Michael",
                             "vassals": [
                                 "Tom",
                                 "Sara"
                             ]
                         },
                         {
-                            "name": "Hank",
+                            "name": "Frank",
                             "vassals": [
                                 "Hank"
                             ]
@@ -58,20 +63,20 @@
                             ]
                         },
                         {
-                            "name": "Hank",
+                            "name": "Frank",
                             "vassals": [
                                 "Tom",
                                 "Sara"
                             ]
                         },
                         {
-                            "name": "Tom",
+                            "name": "Frank",
                             "vassals": [
                                 "Hank"
                             ]
                         },
                         {
-                            "name": "Jerry",
+                            "name": "Frank",
                             "vassals": [
                                 "One"
                             ]
@@ -85,9 +90,40 @@
             ]
         },
         {
-            "name": "Kingdom2",
-            "king": "king2",
-            "queen": "queen2",
+            "name": "Oregon",
+            "king": "Lumberjack Jim",
+            "queen": "Stevia",
+            "castles": [
+                {
+                    "name": "Seattle",
+                    "lieges": [
+                        {
+                            "name": "Dexter",
+                            "vassals": [
+                                "Carl",
+                                "Artemis"
+                            ]
+                        },
+                        {
+                            "name": "Edith",
+                            "vassals": [
+                                "Jeanie"
+                            ]
+                        },
+                        {
+                            "name": "Samantha",
+                            "vassals": [
+                                "Scout"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Vikingland",
+            "king": "Vikingland",
+            "queen": "Viking gal",
             "castles": []
         }
     ]
