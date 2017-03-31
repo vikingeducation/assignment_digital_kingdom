@@ -1,0 +1,1 @@
+why did my public go away when I changed index to kingdoms.js?
