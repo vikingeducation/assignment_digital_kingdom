@@ -1,0 +1,27 @@
+<h2>{{liegeName}}</h2>
+
+<div class="box">
+  <!-- <div class="box--title">{{kingdoms}}</div> -->
+  <div class="box--content">
+    {{#each vassals as |vassal|}}
+    <div class="vassal">
+      Vassal's name: {{vassal}}</a>
+      <!-- <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
+        <button>Release</button>
+      </form> -->
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+<!-- <div class="box">
+  <div class="box--title">Add Animal</div>
+  <div class="box--content">
+    <form action="/species/{{species}}" method="POST">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="submit" value="Add New Animal" method="post">
+    </form>
+  </div>
+</div>
+ -->

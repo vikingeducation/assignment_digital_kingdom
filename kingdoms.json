@@ -1,17 +1,17 @@
 {
   "kingdoms" : [{
     "name": "Kingdom1",
-    "king": "Joe",
-    "queen": "Sally",
+    "king": "King1",
+    "queen": "Queen1",
     "castles": [{
-      "name" : "castle1",
+      "name" : "Castle1",
       "lieges" : [{
-        "name": "Frank",
-        "vassals": ["Tom", "Sara"]}, {
-        "name": "Hank",
-        "vassals": ["Hank"]}, {
-        "name": "John",
-        "vassals": []}]
+        "name": "Liege1",
+        "vassals": ["Vassal1", "Vassal2"]}, {
+        "name": "Liege2",
+        "vassals": ["Vassal1"]}, {
+        "name": "Liege3",
+        "vassals": ["Something"]}]
         },
       {
       "name" : "castle2",
@@ -19,33 +19,57 @@
         "name": "Frank",
         "vassals": ["Tom", "Sara"]}, {
         "name": "Frank",
-        "vassals": ["Hank"]}, {
-        "name": "Frank",
-        "vassals": []}]
-      },
+        "vassals": ["Hank"]}
+      ]},
       {
       "name" : "castle3",
       "lieges" : [{
         "name": "Frank",
         "vassals": ["Tom", "Sara"]}, {
         "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
         "vassals": ["Hank"]}, {
         "name": "Frank",
-        "vassals": []}]
+        "vassals": ["One"]}]
     }
     ]
   },
+
   {
-    "name": "Kingdom2",
-    "king": "Joe",
-    "queen": "Sally",
+    "name": "Kingdom1",
+    "king": "King1",
+    "queen": "Queen1",
     "castles": [{
-      "name" : "castle4",
-      "lieges" : []},
+      "name" : "Castle1",
+      "lieges" : [{
+        "name": "Liege1",
+        "vassals": ["Vassal1", "Vassal2"]}, {
+        "name": "Liege2",
+        "vassals": ["Vassal1"]}, {
+        "name": "Liege3",
+        "vassals": ["Blah"]}]
+        },
       {
-      "name" : "castle5",
-      "lieges" : []
-      }
+      "name" : "castle2",
+      "lieges" : [{
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Hank"]}
+      ]},
+      {
+      "name" : "castle3",
+      "lieges" : [{
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Tom", "Sara"]}, {
+        "name": "Frank",
+        "vassals": ["Hank"]}, {
+        "name": "Frank",
+        "vassals": ["Whoop"]}]
+    }
     ]
   }]
 

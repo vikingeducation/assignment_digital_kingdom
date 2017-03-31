@@ -17,11 +17,13 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use('/kingdoms', kingdoms);
+app.use('/kingdoms/', castles);
+app.use('/kingdoms/', lieges);
 // app.use('/castles', castles);
 // app.use('/lieges', lieges);
 
 app.use(express.static(__dirname + '/public'));
 
 app.listen(3000, () => {
-  console.log('Hey.');
+  console.log('Site available on localhost:3000/kingdoms');
 });
