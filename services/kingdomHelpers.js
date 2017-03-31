@@ -1,8 +1,6 @@
 const fs = require("fs");
 
-const filePath = "kingdoms.json";
-
-const _getData = () => {
+const _getData = (filePath) => {
   const data = fs.readFileSync(filePath);
   const obj = JSON.parse(data);
   return obj;

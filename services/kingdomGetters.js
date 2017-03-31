@@ -3,15 +3,10 @@ const {
   _filterByName
 } = require("./kingdomHelpers");
 
-const getInputKeys = obj => {
-  const allKeys = Object.keys(obj);
-  return allKeys.filter(key => {
-    return typeof obj[key] === "string";
-  });
-};
+const filePath = "kingdoms.json";
 
 const getKingdoms = () => {
-  const obj = _getData();
+  const obj = _getData(filePath);
   return obj.kingdoms;
 };
 
