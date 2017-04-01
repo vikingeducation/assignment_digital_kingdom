@@ -1,0 +1,27 @@
+<section>
+  <h2>Create:</h2>
+  <form action="{{path}}" method="POST">
+    {{#each keys as |key|}}
+      <label for="{{key}}">{{ key }}:</label>
+      <input id="{{key}}" type="text" name="{{key}}">
+    {{/each}}
+      <input type="submit">
+  </form>
+</section>
+
+<section>
+  <h2>Our {{key}}:</h2>
+  <ul>
+    {{#each objects as |object|}}
+      <li class="item">
+        <a href="{{../path}}/{{ object.name }}">
+          {{ object.name }}
+        </a>
+        <br>
+        <form class="" action="{{../path}}/{{object.name}}" method="post">
+          <button type="submit" name="button">delete</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+</section>

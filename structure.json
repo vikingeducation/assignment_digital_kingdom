@@ -1,0 +1,6 @@
+{
+  "kingdoms": [ "name", "king", "queen" ],
+  "castles": [ "name" ],
+  "lieges": [ "name" ],
+  "vassals": [ "name" ]
+}

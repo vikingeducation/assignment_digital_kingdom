@@ -1,0 +1,33 @@
+<section>
+  </h2>{{ object.name }}</h2>
+
+  <div class="details">
+    <ul>
+      {{#each displayArray as |item|}}
+        <li class="item">{{item}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Create:</h2>
+  <form action="{{path}}" method="POST">
+    {{#each keys as |key|}}
+      <label for="{{key}}">{{ key }}:</label>
+      <input id="{{key}}" type="text" name="{{key}}">
+    {{/each}}
+      <input type="submit">
+  </form>
+</section>
+
+  <ul>
+    {{#each childObjects as |childObject|}}
+      <li class="item">
+        <a href="/kingdoms/{{ ../object.name }}/castles/{{ childObject.name }}">
+          {{ childObject.name }}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</section>
