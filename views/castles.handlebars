@@ -2,7 +2,7 @@
 
 {{#each castles as |castle|}}
   <div class="borderBox">
-    <a href="/kingdoms/{{../kingdomName}}/{{castle.name}}">{{castle.name}}</a>
+    <a href="/{{../kingdomName}}/{{castle.name}}">{{castle.name}}</a>
     <p><strong># of lieges:</strong> {{castle.lieges.length}}</p>
   </div>
 {{/each}}

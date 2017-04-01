@@ -2,7 +2,7 @@
 
 {{#each lieges as |liege|}}
   <div class="borderBox">
-    <strong>Liege's name:</strong> <a href="/kingdoms/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
+    <strong>Liege's name:</strong> <a href="/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
     <p><strong># of vassals:</strong> {{liege.vassals.length}}</p>
   </div>
 {{/each}}
