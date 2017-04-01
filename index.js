@@ -18,7 +18,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use('/', kingdoms);
-app.use('/:kingdomName/', castles);
+app.use('/:kingdomName', castles);
 app.use('/:kingdomName/:castleName', lieges);
 app.use('/:kingdomName/:castleName/:liegeName', vassals);
 
