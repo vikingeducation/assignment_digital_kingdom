@@ -19,7 +19,7 @@ app.set('view engine', 'handlebars');
 
 app.use('/', kingdoms);
 app.use('/:kingdomName/', castles);
-app.use(':/kingdomName/:castleName', lieges);
+app.use('/:kingdomName/:castleName', lieges);
 app.use('/:kingdomName/:castleName/:liegeName', vassals);
 
 app.use(express.static(__dirname + '/public'));
