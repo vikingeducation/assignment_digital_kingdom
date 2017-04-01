@@ -71,7 +71,7 @@ const addKingdom = (kingdomName, kingName, queenName) => {
   if (json.kingdoms[kingdomName]) return;
   let newKingdom = {};
   newKingdom.name = kingdomName;
-  newKingdom.king = kingdomName;
+  newKingdom.king = kingName;
   newKingdom.queen = queenName;
   newKingdom.castles = [];
   json.kingdoms.push(newKingdom);

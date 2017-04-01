@@ -2,34 +2,27 @@
     "kingdoms": [
         {
             "name": "Washington",
-            "king": "Nicholas",
-            "queen": "Beyonce",
+            "king": "Bill Gates",
+            "queen": "Melinda Gates",
             "castles": [
                 {
                     "name": "Seattle",
                     "lieges": [
                         {
-                            "name": "Dexter",
+                            "name": "Microsoft",
                             "vassals": [
-                                "Carl",
-                                "Artemis",
-                                "Hey guy"
+                                "Satya",
+                                "Kudo"
                             ]
                         },
                         {
-                            "name": "Edith",
+                            "name": "Amazon",
                             "vassals": [
-                                "Jeanie"
+                                "Jeff"
                             ]
                         },
                         {
-                            "name": "Samantha",
-                            "vassals": [
-                                "Scout"
-                            ]
-                        },
-                        {
-                            "name": "Liegedude",
+                            "name": "Facebook",
                             "vassals": []
                         }
                     ]
@@ -53,78 +46,43 @@
                     ]
                 },
                 {
-                    "name": "castle3",
+                    "name": "Centralia",
                     "lieges": [
                         {
-                            "name": "Frank",
+                            "name": "Joe",
                             "vassals": [
-                                "Tom",
-                                "Sara"
-                            ]
-                        },
-                        {
-                            "name": "Frank",
-                            "vassals": [
-                                "Tom",
-                                "Sara"
-                            ]
-                        },
-                        {
-                            "name": "Frank",
-                            "vassals": [
-                                "Hank"
-                            ]
-                        },
-                        {
-                            "name": "Frank",
-                            "vassals": [
-                                "One"
+                                "Carl",
+                                "Steve"
                             ]
                         }
                     ]
-                },
-                {
-                    "name": "Castle4",
-                    "lieges": []
                 }
             ]
         },
         {
             "name": "Oregon",
-            "king": "Lumberjack Jim",
-            "queen": "Stevia",
+            "king": "Lumber Jack",
+            "queen": "Hipster Jill",
             "castles": [
                 {
-                    "name": "Seattle",
+                    "name": "Portland",
                     "lieges": [
                         {
-                            "name": "Dexter",
+                            "name": "Toro Bravo",
                             "vassals": [
-                                "Carl",
-                                "Artemis"
+                                "Gluten-Free Glenda",
+                                "Vegan Vinnie"
                             ]
                         },
                         {
-                            "name": "Edith",
+                            "name": "Tasty and Sons",
                             "vassals": [
-                                "Jeanie"
-                            ]
-                        },
-                        {
-                            "name": "Samantha",
-                            "vassals": [
-                                "Scout"
+                                "Stoner Stan"
                             ]
                         }
                     ]
                 }
             ]
-        },
-        {
-            "name": "Vikingland",
-            "king": "Vikingland",
-            "queen": "Viking gal",
-            "castles": []
         }
     ]
 }

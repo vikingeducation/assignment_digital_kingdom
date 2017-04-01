@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   addKingdom(req.body.kingdomName, req.body.kingName, req.body.queenName);
+  console.log(req.body.kingdomName, req.body.kingName, req.body.queenName);
   const kingdoms = getKingdoms();
   res.render('kingdoms', { kingdoms });
 });

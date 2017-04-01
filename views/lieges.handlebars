@@ -2,13 +2,13 @@
 
 {{#each lieges as |liege|}}
   <div class="borderBox">
-    <strong>Liege's name:</strong> <a href="/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
+    <strong>Liege's name:</strong> <a href="/kingdoms/{{../kingdomName}}/{{../castleName}}/{{liege.name}}"> {{liege.name}}</a>
     <p><strong># of vassals:</strong> {{liege.vassals.length}}</p>
   </div>
 {{/each}}
 
 
-<form action="/{{kingdomName}}/{{castleName}}" method="POST">
+<form action="/kingdoms/{{kingdomName}}/{{castleName}}" method="POST">
   <h3>Add Liege</h3>
   <div class="form-group">
     <label for="liegeName">Liege Name</label>
