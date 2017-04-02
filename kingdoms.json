@@ -54,6 +54,10 @@
                                 "Carl",
                                 "Steve"
                             ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": []
                         }
                     ]
                 }

@@ -17,9 +17,9 @@ router.post('/:kingdomName/:castleName/:liegeName', (req, res) => {
   const liegeName = req.params.liegeName;
   //reuse the structure from 1-3 to make this cleaner
   addVassal(
-    req.params.kingdomName,
-    req.params.castleName,
-    req.params.liegeName,
+    kingdomName,
+    castleName,
+    liegeName,
     req.body.vassalName
   );
   const vassals = getVassals(kingdomName, castleName, liegeName);
