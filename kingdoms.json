@@ -1,0 +1,92 @@
+{
+    "kingdoms": [
+        {
+            "name": "Washington",
+            "king": "Bill Gates",
+            "queen": "Melinda Gates",
+            "castles": [
+                {
+                    "name": "Seattle",
+                    "lieges": [
+                        {
+                            "name": "Microsoft",
+                            "vassals": [
+                                "Satya",
+                                "Kudo"
+                            ]
+                        },
+                        {
+                            "name": "Amazon",
+                            "vassals": [
+                                "Jeff"
+                            ]
+                        },
+                        {
+                            "name": "Facebook",
+                            "vassals": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Tacoma",
+                    "lieges": [
+                        {
+                            "name": "Michael",
+                            "vassals": [
+                                "Tom",
+                                "Sara"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": [
+                                "Hank"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Centralia",
+                    "lieges": [
+                        {
+                            "name": "Joe",
+                            "vassals": [
+                                "Carl",
+                                "Steve"
+                            ]
+                        },
+                        {
+                            "name": "Frank",
+                            "vassals": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Oregon",
+            "king": "Lumber Jack",
+            "queen": "Hipster Jill",
+            "castles": [
+                {
+                    "name": "Portland",
+                    "lieges": [
+                        {
+                            "name": "Toro Bravo",
+                            "vassals": [
+                                "Gluten-Free Glenda",
+                                "Vegan Vinnie"
+                            ]
+                        },
+                        {
+                            "name": "Tasty and Sons",
+                            "vassals": [
+                                "Stoner Stan"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

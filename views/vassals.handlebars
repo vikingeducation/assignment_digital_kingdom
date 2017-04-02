@@ -1,0 +1,17 @@
+<h2 class="text-center"> Vassals of {{liegeName}}</h2>
+
+{{#each vassals as |vassal|}}
+  <div class="borderBox">
+    <h4>{{vassal}}</a></h4>
+  </div>
+{{/each}}
+
+<form action="/kingdoms/{{kingdomName}}/{{castleName}}/{{liegeName}}" method="POST">
+  <h3>Add Vassal</h3>
+  <div class="form-group">
+    <label for="vassalName">Vassal Name</label>
+    <input class="form-control" type="text" name="vassalName" id="vassalName" placeholder="Vassal Name">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

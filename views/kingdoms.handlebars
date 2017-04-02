@@ -1,0 +1,27 @@
+<h2 class="text-center">All Kingdoms</h2>
+
+    {{#each kingdoms as |kingdom|}}
+    <div class="borderBox">
+      <h4><a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></h4>
+      <p><strong>King:</strong> {{kingdom.king}}</p>
+      <p><strong>Queen:</strong> {{kingdom.queen}}</p>
+      <p><strong># of castles:</strong> {{kingdom.castles.length}}</p>
+
+    </div>
+    {{/each}}
+
+
+<form action="/" method="POST">
+  <h3>Add Kingdom</h3>
+  <div class="form-group">
+    <label for="kingdomName">Kingdom Name</label>
+    <input class="form-control" type="text" name="kingdomName" id="kingdomName" placeholder="Kingdom Name">
+    <label for="kingName">King Name</label>
+    <input class="form-control" type="text" name="kingName" id="kingName" placeholder="King Name">
+    <label for="queenName">Queen Name</label>
+    <input class="form-control"type="text" name="queenName" id="queenName" placeholder="Queen Name">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </div>
+</form>

@@ -1,0 +1,18 @@
+<h2 class="text-center">Castles of {{kingdomName}}</h2>
+
+{{#each castles as |castle|}}
+  <div class="borderBox">
+    <h4><a href="/kingdoms/{{../kingdomName}}/{{castle.name}}">{{castle.name}}</a></h4>
+    <p><strong># of lieges:</strong> {{castle.lieges.length}}</p>
+  </div>
+{{/each}}
+
+<form action="/kingdoms/{{kingdomName}}" method="POST">
+  <h3>Add Castle</h3>
+  <div class="form-group">
+    <label for="castleName">Castle Name</label>
+    <input class="form-control" type="text" name="castleName" id="castleName" placeholder="Castle Name">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
