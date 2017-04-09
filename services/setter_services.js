@@ -1,4 +1,3 @@
-const fs = require('fs');
 const {
   _getJSON,
   _saveJSON,
@@ -12,12 +11,10 @@ const deleteKingdom = (kingdomName) => {
   const kingdomArr = json.kingdoms;
 
   const newKingdoms = kingdomArr.filter((kingdom) => {
-    console.log("inside filter" + kingdom.name);
     return kingdom.name != kingdomName;
   });
 
   json.kingdoms = newKingdoms;
-
   _saveJSON(json);
 };
 
@@ -28,14 +25,35 @@ const addKingdom = (name, king, queen) => {
   const newKingdom = {
     "name": name,
     "king": king,
-    "queen": queen
+    "queen": queen,
+    "castles": []
   }
   kingdomArr.push(newKingdom);
   json.kingdoms = kingdomArr;
   _saveJSON(json);
 }
 
+const addCastle = (kingdomName, name) => {
+  const json = _getJSON();
+  const kingdom = json.kingdoms.filter((kingdom) => {
+    return kingdom.name === kingdomName;
+  })[0];
+  kingdom.castles.push({
+    "name": name,
+    "lieges": []
+  });
+  json.kingdoms.map((savedKingdom) => {
+    if (savedKingdom.name === kingdomName) {
+      return kingdom;
+    } else {
+      return savedKingdom;
+    }
+  })
+  _saveJSON(json);
+} 
+
 module.exports = {
   deleteKingdom,
-  addKingdom
+  addKingdom,
+  addCastle
 };

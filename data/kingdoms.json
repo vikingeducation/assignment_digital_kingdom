@@ -91,9 +91,15 @@
             ]
         },
         {
-            "name": "New Kingdom",
-            "king": "New King",
-            "queen": "New Queen"
+            "name": "Camelot",
+            "king": "Arthur",
+            "queen": "Merlin",
+            "castles": [
+                {
+                    "name": "New Castle",
+                    "lieges": []
+                }
+            ]
         }
     ]
 }

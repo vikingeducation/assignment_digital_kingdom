@@ -6,17 +6,25 @@ const {
   getKingdomInfo,
   getKingdomCastles,
   getCastleInfo,
-  getLiegeInfo
+  getLiegeInfo,
 } = require('../services/getter_services');
 
 const {
   deleteKingdom,
-  addKingdom
+  addKingdom,
+  addCastle
 } = require('../services/setter_services');
 
 router.get('/', (req, res) => {
   const allKingdoms = getKingdoms();
   res.render('kingdoms', {allKingdoms});
+});
+
+router.post('/:kingdom/castles', (req, res) => {
+  const kingdomName = req.params.kingdom;
+  const castleName = req.body.castle;
+  addCastle(kingdomName, castleName);
+  res.redirect("back");
 });
 
 router.post('/:kingdom/delete', (req, res) => {
