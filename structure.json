@@ -1,0 +1,107 @@
+{[
+  {
+    kingdom1: {
+      name: kingdomName,
+      king: {
+        name: kingName,
+        age: kingAge
+      },
+      queen: {
+        name: queenName,
+        age: queenAge
+      },
+      castles: [
+        {
+          name: castleName1,
+          location: castleLocation1,
+          lieges: [
+            {
+              name: liegeName1,
+              vassals: [
+                {
+                name: vassalName1,
+                job: vassalJob1
+                },
+                {
+                name: vassalName2,
+                job: vassalJob2
+                },
+                {
+                name: vassalName3,
+                job: vassalJob3
+                }
+              ]
+            },
+            {
+              name: liegeName2,
+              vassals: [
+                {
+                name: vassalName1,
+                job: vassalJob1
+                },
+                {
+                name: vassalName2,
+                job: vassalJob2
+                },
+                {
+                name: vassalName3,
+                job: vassalJob3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: castleName2,
+          location: castleLocation,
+          lieges: [
+            {
+              name: liegeName1,
+              vassals: [
+                {
+                name: vassalName1,
+                job: vassalJob1
+                },
+                {
+                name: vassalName2,
+                job: vassalJob2
+                },
+                {
+                name: vassalName3,
+                job: vassalJob3
+                }
+              ]
+            },
+            {
+              name: liegeName2,
+              vassals: [
+                {
+                name: vassalName1,
+                job: vassalJob1
+                },
+                {
+                name: vassalName2,
+                job: vassalJob2
+                },
+                {
+                name: vassalName3,
+                job: vassalJob3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    kingdom2: {
+
+    }
+  },
+  {
+    kingdom3:{
+
+    }
+  }
+]}

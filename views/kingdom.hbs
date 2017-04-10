@@ -1,0 +1,30 @@
+<div class="kingdom">
+  <p>Kingdom: {{this.kingdomName}}</a></p>
+</div>
+{{#each castles as |castle| }}
+  <div class="content-box">
+    <div class="castles">
+    {{!-- MAKE A LINK --}}
+      <a href="{{this.kingdomName}}{{castle.name}}">Name: {{castle.name}}</a>
+    </div>
+    <div class="castles">
+      <p>Location: {{castle.location}}</p>
+    </div>
+    <div class="castles">
+      <p>Number of Lieges: {{castle.liegeCount}}
+    </div>
+  </div>
+{{/each}}
+
+<br>
+<form method="post" action="/castles">
+  <h2>Add a Castle</h2>
+  <label for="name">Castle:</label>
+  <input type="text" name="name">
+  <input type="hidden" name="kingdom" value="{{kingdomName}}" />
+  <br>
+  <label for="location">Location:</label>
+  <input type="text" name="location">
+  <br>
+  <input type="submit">
+</form>

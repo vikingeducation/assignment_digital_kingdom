@@ -1,0 +1,42 @@
+<h1>Kingdoms</h1>
+
+{{#each kingdoms as |kingdom| }}
+  <div class="content-box">
+    <div class="kingdom">
+      <p>Kingdom <a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></p>
+    </div>
+    <div class="king">
+      <p>King <a href="#">{{kingdom.king.name}}</a></p>
+    </div>
+    <div class="queen">
+      <p>Queen <a href="#">{{kingdom.queen.name}}</a></p>
+    </div>
+    <div class="castles">
+      <p>Number of castles <a href="#">{{kingdom.castleCount}}</a></p>
+    </div>
+  </div>
+{{/each}}
+
+
+<br>
+<form method="post" action="/">
+  <h2>Add a Kingdom</h2>
+  <label for="kingdom">Kingdom:</label>
+  <input type="text" name="name">
+  <br>
+  <label for="king">King:</label>
+  <input type="text" name="kingName">
+  <label for="kingAge">Age:</label>
+  <input type="text" name="kingAge">
+  <br>
+  <label for="queen">Queen:</label>
+  <input type="text" name="queenName">
+  <label for="queenAge">Age:</label>
+  <input type="text" name="queenAge">
+  <br>
+  <input type="submit">
+</form>
+
+
+
+
