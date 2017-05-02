@@ -1,0 +1,28 @@
+{
+    "kingdoms": {
+        "Camelot": {
+            "name": "Camelot",
+            "king": "Arthur",
+            "queen": "Guinevere",
+            "castles": []
+        },
+        "Hogwarts": {
+            "name": "Hogwarts",
+            "king": "Harry",
+            "queen": "Ginny",
+            "castles": []
+        },
+        "GB": {
+            "name": "GB",
+            "king": "George",
+            "queen": "Elizabeth",
+            "castles": []
+        },
+        "Test": {
+            "name": "Test",
+            "king": "Joffrey",
+            "queen": "The White Witch",
+            "castles": []
+        }
+    }
+}

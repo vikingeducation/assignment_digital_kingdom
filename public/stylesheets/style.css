@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+form {
+  padding: 10px;
+  border: 1px;
+  border-color: black;
+  border-radius: 5px;
+  border-style: solid;;
+}
