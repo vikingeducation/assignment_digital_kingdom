@@ -1,0 +1,104 @@
+{
+    "kingdoms": {
+        "Camelot": {
+            "name": "Camelot",
+            "king": "Arthur",
+            "queen": "Guinevere",
+            "child": {
+                "Test": {
+                    "name": "Test",
+                    "type": "castle",
+                    "child": {
+                        "fred": {
+                            "name": "fred",
+                            "type": "liege",
+                            "child": {
+                                "dummy": {
+                                    "name": "dummy",
+                                    "type": "vassal",
+                                    "child": {}
+                                },
+                                "herman": {
+                                    "name": "herman",
+                                    "type": "vassal",
+                                    "child": {}
+                                },
+                                "fff": {
+                                    "name": "fff",
+                                    "type": "vassal",
+                                    "child": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "London": {
+                    "name": "London",
+                    "type": "castle",
+                    "child": {
+                        "fdsafsd": {
+                            "name": "fdsafsd",
+                            "type": "liege",
+                            "child": {
+                                "fdfd": {
+                                    "name": "fdfd",
+                                    "type": "vassal",
+                                    "child": {}
+                                }
+                            }
+                        },
+                        "fdsafd": {
+                            "name": "fdsafd",
+                            "type": "liege",
+                            "child": {}
+                        }
+                    }
+                },
+                "Manchester": {
+                    "name": "Manchester",
+                    "type": "castle",
+                    "child": {}
+                },
+                "Henry": {
+                    "name": "Henry",
+                    "type": "castle",
+                    "child": {}
+                }
+            }
+        },
+        "Hogwarts": {
+            "name": "Hogwarts",
+            "king": "Harry",
+            "queen": "Ginny",
+            "child": {
+                "Cupboard": {
+                    "name": "Cupboard",
+                    "type": "castle",
+                    "child": {
+                        "fred": {
+                            "name": "fred",
+                            "type": "liege",
+                            "child": {}
+                        },
+                        "george": {
+                            "name": "george",
+                            "type": "liege",
+                            "child": {}
+                        },
+                        "henry": {
+                            "name": "henry",
+                            "type": "liege",
+                            "child": {}
+                        }
+                    }
+                }
+            }
+        },
+        "GB": {
+            "name": "GB",
+            "king": "George",
+            "queen": "Elizabeth",
+            "child": {}
+        }
+    }
+}

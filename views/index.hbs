@@ -1,0 +1,55 @@
+<h1>{{title}}</h1>
+<div class="row">
+  <div class="col-xs-6">
+
+    <ol class="breadcrumb">
+      <li class="active"><a href="/kingdoms">Kingdoms</a></li>
+    </ol>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+
+    <table class="table table-hover">
+      <tr>
+        <th>Kingdom</th>
+        <th>King</th>
+        <th>Queen</th>
+        <th>Castles</th>
+      </tr>
+      {{#each kingdoms}}
+        <tr>
+          <td><a href="/kingdoms/{{this.name}}">{{this.name}}</a></td>
+          <td>{{this.king}}</td>
+          <td>{{this.queen}}</td>
+          <td>{{this.castles}}</td>
+
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <form class="" action="/kingdoms" method="post">
+      <div class="form-group">
+    <label for="kingdomName">Kingdom</label>
+    <input type="text" class="form-control" id="kingdomName" placeholder="Kingdom Name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="kingdomKing">King</label>
+    <input type="text" class="form-control" id="kingdomKing" placeholder="King Name" name="king">
+  </div>
+  <div class="form-group">
+    <label for="kingdomQueen">Queen</label>
+    <input type="text" class="form-control" id="kingdomQueen" placeholder="Queen Name" name="queen">
+  </div>
+      <button type="submit" class="btn btn-primary">Add New Kingdom</button>
+    </form>
+  </div>
+
+</div>
