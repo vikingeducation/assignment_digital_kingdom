@@ -13,9 +13,22 @@ function saveJson(json) {
   fs.writeFileSync(datafile, JSON.stringify(json, null, 4));
 }
 
+function getProperty( propertyName, object ) {
+  var parts = propertyName.split( "." ),
+    length = parts.length,
+    i,
+    property = object || this;
+  for ( i = 0; i < length; i++ ) {
+
+      property = property[parts[i]];
+
+  }
+  return property;
+}
+
 function createKingdom(name, king, queen) {
-  debug(`creating Kingdom ${name} with ${king} and ${queen}`);
-  return {name: name, king: king, queen: queen, castles: []};
+  debug(`creating new Kingdom ${name} with ${king} and ${queen}`);
+  return {name: name, king: king, queen: queen, child: {}};
 }
 
 function addKingdom(name, king, queen) {
@@ -26,23 +39,51 @@ function addKingdom(name, king, queen) {
   saveJson(json);
 }
 
-function createMinion(name, type) {
-  debug(`creating Minion ${name} of type ${type}`);
-  return {name: name, type: type, child: []};
-}
-
 function getKingdoms() {
   const json = getJson();
   let kingdoms = {};
   for (kingdom in json.kingdoms) {
-    count = json.kingdoms[kingdom].castles === undefined ? 0 : json.kingdoms[kingdom].castles.length;
+    debug(`getting Kingdoms working on ${kingdom}`);
+    count = Object.keys(json.kingdoms[kingdom].child) === undefined ? 0 : Object.keys(json.kingdoms[kingdom].child).length;
     kingdoms[kingdom] = {name: json.kingdoms[kingdom].name, king: json.kingdoms[kingdom].king, queen: json.kingdoms[kingdom].queen, castles: count};
   };
-  debug(`getting Kingdoms ${kingdoms}`);
+  debug(`got Kingdoms ${Object.keys(kingdoms)}`);
   return kingdoms;
 }
 
+function createMinion(name, type) {
+  debug(`creating new Minion ${name} of type ${type}`);
+  return {name: name, type: type, child: {}};
+}
+
+function addMinion(master, name, type) {
+  debug(`adding Minion ${name} of type ${type} for master ${master}`);
+  const json = getJson();
+  let parent = getProperty(master, json);
+  parent.child[name] = (createMinion(name, type));
+  saveJson(json);
+}
+
+function getMinions(master) {
+  debug(`retrieving minions of ${master}`);
+  const json = getJson();
+  let parent = getProperty(master, json);
+//  return parent.child;
+
+  let children = {};
+  for (child in parent.child) {
+    debug(`getting Children working on ${child}`);
+    count = Object.keys(parent.child[child].child) === undefined ? null : Object.keys(parent.child[child].child).length;
+    children[child] = {name: parent.child[child].name, count: count};
+  };
+  return children;
+}
+
+
+
 module.exports = {
   getKingdoms,
-  addKingdom
+  addKingdom,
+  getMinions,
+  addMinion
 };

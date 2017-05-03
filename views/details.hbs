@@ -1,0 +1,55 @@
+<h1>{{title}}</h1>
+<div class="row">
+  <div class="col-xs-6">
+
+    <ol class="breadcrumb">
+      <li><a href="/kingdoms/">Kingdoms</a></li>
+      <li><a href="/kingdoms/{{kingdom}}">{{kingdom}}</a></li>
+      {{#if castle}}
+        <li><a href="/kingdoms/{{kingdom}}/{{castle}}">{{castle}}</a></li>
+      {{/if}}
+      {{#if liege}}
+        <li><a href="/kingdoms/{{kingdom}}/{{castle}}/{{liege}}">{{liege}}</a></li>
+      {{/if}}
+    </ol>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+
+    <table class="table table-hover">
+      <tr>
+        <th>{{header1}}</th>
+        <th>{{header2}}</th>
+      </tr>
+      {{#each children}}
+        <tr>
+          {{#if ../liege}}
+            <td>{{this.name}}</td>
+          {{else}}
+          <td><a href="{{../action}}/{{this.name}}">{{this.name}}</a></td>
+          <td>{{this.count}}</td>
+          {{/if}}
+
+
+        </tr>
+      {{/each}}
+    </table>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <form class="" action="{{action}}" method="post">
+      <div class="form-group">
+    <label for="childName">{{header1}}</label>
+    <input type="text" class="form-control" id="childName" placeholder="{{header1}} Name" name="name">
+  </div>
+      <button type="submit" class="btn btn-primary">Add New {{header1}}</button>
+    </form>
+  </div>
+
+</div>
