@@ -19,9 +19,7 @@ function getProperty( propertyName, object ) {
     i,
     property = object || this;
   for ( i = 0; i < length; i++ ) {
-
       property = property[parts[i]];
-
   }
   return property;
 }
@@ -68,8 +66,6 @@ function getMinions(master) {
   debug(`retrieving minions of ${master}`);
   const json = getJson();
   let parent = getProperty(master, json);
-//  return parent.child;
-
   let children = {};
   for (child in parent.child) {
     debug(`getting Children working on ${child}`);
