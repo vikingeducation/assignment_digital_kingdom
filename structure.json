@@ -1,0 +1,34 @@
+{
+  "Kingdom1": {
+    "King": "George",
+    "Queen": "Elizabeth",
+    // this is nice and simple
+    "Lieges": {
+      "Earl": ["Vassal1", "Vassal2"],
+      "Duke": ["Vassal3", "Vassal4"]
+    }
+  },
+  "Kingdom2": {
+    "King": "George",
+    "Queen": "Elizabeth",
+    //This is way too complicated, let's not do this
+    "Lieges": [{
+      "Earl": [
+        "Vassal1", 
+        "Vassal2"
+      ]},{
+      "Duke": [
+        "Vassal3", 
+        "Vassal4"
+      ]}
+    ]
+  },
+  "Kingdom3": {
+    "King": "George",
+    "Queen": "Elizabeth",
+    "Lieges": {
+      "Earl": ["Vassal1", "Vassal2"],
+      "Duke": ["Vassal3", "Vassal4"]
+    }
+  }
+}
