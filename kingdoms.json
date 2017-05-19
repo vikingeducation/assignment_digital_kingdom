@@ -1,0 +1,38 @@
+{
+  "Kingdoms": {
+    "Westeros": {
+      "King": "Robert Baratheon",
+      "Queen": "Cersei Lannister",
+      "CastleCount": 2,
+      "Castles": {
+        "Harrenhal": { 
+          "LiegeCount": 2,
+          "Lieges": {
+            "Petyr Baelish": ["Vassal1,", "Vassal2"],
+            "Polliver": ["Vassal1", "Vassal2"]
+          }
+        }, 
+        "Casterly Rock": {
+          "LiegeCount": 2,
+          "Lieges": {
+          "Tywin Lannister": ["Vassal1,", "Vassal2"],
+          "Tyrion Lannister": ["Vassal1", "Vassal2"]
+          }
+        } 
+      }
+    },
+    "Nansur": {
+      "King": "Ikurei Xerius III",
+      "Queen": "Ikurei Istriya",
+      "CastleCount": 1,
+      "Castles": {
+        "Andiamine Heights": {
+          "LiegeCount": 1,
+          "Lieges": {
+            "Ikurei Conphas": ["Vassal1,", "Vassal2"]
+          }
+        }
+      }
+    }
+  }
+}

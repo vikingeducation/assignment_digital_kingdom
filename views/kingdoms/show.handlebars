@@ -1,0 +1,16 @@
+<h2>{{kingdom}}</h2>
+<hr>
+<ul class="demo-list-icon mdl-list">
+{{#each allCastles as |castle| }}
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">business</i>
+    Castle: <a href="/castles/{{@key}}">{{@key}}</a><br>
+    Lieges: {{#each castle.Lieges as |liege|}}
+      <p>{{@key}}</p>
+      {{/each}}
+    Liege Count: {{castle.LiegeCount}}<br>
+    </span>
+  </li>
+{{/each}}
+</ul>
