@@ -1,6 +1,5 @@
 const express = require("express");
 const kingdoms = require("./routes/kingdoms");
-const castles = require("./routes/castles");
 const expressHandlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 
@@ -16,11 +15,10 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.use("/kingdoms", kingdoms);
-app.use("/castles", castles);
 
-app.use("/", (req, res) => {
-  res.redirect("/kingdoms");
-});
+// app.use("/", (req, res) => {
+//   res.redirect("/kingdoms");
+// });
 
 app.use(express.static(__dirname + "/public"));
 

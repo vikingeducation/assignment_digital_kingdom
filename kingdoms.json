@@ -8,15 +8,27 @@
         "Harrenhal": { 
           "LiegeCount": 2,
           "Lieges": {
-            "Petyr Baelish": ["Vassal1,", "Vassal2"],
-            "Polliver": ["Vassal1", "Vassal2"]
+            "Petyr Baelish": {
+              "VassalCount": 3,
+              "Vassals": ["Vassal1", "Vassal2", "Vassal3"]
+            },
+            "Polliver": {
+              "VassalCount": 2,
+              "Vassals": ["Vassal1", "Vassal2"]
+            }
           }
         }, 
         "Casterly Rock": {
           "LiegeCount": 2,
           "Lieges": {
-          "Tywin Lannister": ["Vassal1,", "Vassal2"],
-          "Tyrion Lannister": ["Vassal1", "Vassal2"]
+            "Tywin Lannister": {
+              "VassalCount": 2,
+              "Vassals": ["Vassal1", "Vassal2"]
+            },
+            "Tyrion Lannister": {
+              "VassalCount": 2,
+              "Vassals": ["Vassal1", "Vassal2"]
+            }
           }
         } 
       }
@@ -29,7 +41,10 @@
         "Andiamine Heights": {
           "LiegeCount": 1,
           "Lieges": {
-            "Ikurei Conphas": ["Vassal1,", "Vassal2"]
+            "Ikurei Conphas": {
+              "VassalCount": 4,
+              "Vassals": ["Vassal1", "Vassal2", "Vassal3", "Vassal4"]
+            }
           }
         }
       }

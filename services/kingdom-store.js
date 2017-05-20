@@ -8,28 +8,40 @@ const _getJSON = () => {
 
 const getKingdoms = () => {
   const json = _getJSON();
-  // const kingdoms = Object.keys(json.Kingdoms);
-  let result = {};
-
   return json;
 };
 
 const getCastles = (kingdom) => {
   const json = _getJSON()[kingdom]["Castles"];
-  let result = {};
-
   return json;
-  // for (let castle in json) {
-  //   result[castle] = {};
-  //   result[castle]["Name"] = castle;
-  //   result[castle]["Lieges"] = Object.keys(json[castle]["Lieges"]);
-  //   result[castle]["LiegeCount"] = json[castle]["LiegeCount"];
-  // }
+};
 
-  // return result;
+const getLieges = (kingdom, castle) => {
+  const json = _getJSON()[kingdom]["Castles"][castle];
+  return json;
+};
+
+const getVassals = (kingdom, castle, liege) => {
+  const json = _getJSON()[kingdom]["Castles"][castle]["Lieges"][liege];
+  return json;
+};
+
+const addKingdom = (kingdom, king, queen) => {
+  const json = _getJSON();
+  if (json[kingdom]) return;
+
+  json[kingdom] = {
+    "King": king,
+    "Queen": queen,
+    "CastleCount": 0,
+    "Castles": {}
+  };
 };
 
 module.exports = {
   getKingdoms,
-  getCastles
+  getCastles,
+  getLieges,
+  getVassals,
+  addKingdom
 };

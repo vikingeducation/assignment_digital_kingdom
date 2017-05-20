@@ -1,25 +1,25 @@
-<h2>{{kingdom}}</h2>
+<h2>{{castle}}</h2>
 
 <hr>
-{{#each allCastles as |castle| }}
+{{#each allLieges.Lieges as |liege| }}
 <ul class="demo-list-icon mdl-list">
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">business</i>
-    Castle: <a href="/kingdoms/{{../kingdom}}/castles/{{@key}}">{{@key}}</a><br>
+    <i class="material-icons mdl-list__item-icon">face</i>
+    Liege: <a href="/kingdoms/{{../kingdom}}/castles/{{../castle}}/lieges/{{@key}}"> {{@key}}</a><br>
     </span>
   </li>
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
     <i class="material-icons mdl-list__item-icon">people</i>
-    Liege Count: {{castle.LiegeCount}}<br>
+    Vassal Count: {{liege.VassalCount}}<br>
     </span>
   </li>
-  {{#each castle.Lieges as |liege|}}
+  {{#each liege.Vassals}}
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
     <i class="material-icons mdl-list__item-icon">person</i>
-    Liege: <a href="/kingdoms/{{../../kingdom}}/castles/{{@../key}}/lieges/{{@key}}">{{@key}}</a>
+    Vassal: {{this}}
     </span>
   </li>
   {{/each}}
