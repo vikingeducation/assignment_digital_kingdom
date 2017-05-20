@@ -16,10 +16,6 @@ app.set("view engine", "handlebars");
 
 app.use("/kingdoms", kingdoms);
 
-// app.use("/", (req, res) => {
-//   res.redirect("/kingdoms");
-// });
-
 app.use(express.static(__dirname + "/public"));
 
 const port = process.env.PORT || 3002;
