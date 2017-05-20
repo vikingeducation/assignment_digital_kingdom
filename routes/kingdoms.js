@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   let kingdom = req.body.kingdom;
-  addKingdom(kingdom);
+  let king = req.body.king;
+  let queen = req.body.queen;
+  addKingdom(kingdom, king, queen);
   res.redirect("back");
 });
 
