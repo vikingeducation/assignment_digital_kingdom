@@ -3,7 +3,7 @@
         "Westeros": {
             "King": "Robert Baratheon",
             "Queen": "Cersei Lannister",
-            "CastleCount": 2,
+            "CastleCount": 3,
             "Castles": {
                 "Harrenhal": {
                     "LiegeCount": 2,
@@ -43,13 +43,17 @@
                             ]
                         }
                     }
+                },
+                "Fizz": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
                 }
             }
         },
         "Nansur": {
             "King": "Ikurei Xerius III",
             "Queen": "Ikurei Istriya",
-            "CastleCount": 1,
+            "CastleCount": 2,
             "Castles": {
                 "Andiamine Heights": {
                     "LiegeCount": 1,
@@ -64,20 +68,56 @@
                             ]
                         }
                     }
+                },
+                "Bazz": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
                 }
             }
         },
         "Foo": {
             "King": "Bar",
             "Queen": "Baz",
-            "CastleCount": 0,
-            "Castles": {}
+            "CastleCount": 5,
+            "Castles": {
+                "Bazz": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "Minister Bizz": {
+                            "VassalCount": 0,
+                            "Vassals": [
+                                "Foo",
+                                "Bar",
+                                "Bazz"
+                            ]
+                        }
+                    }
+                },
+                "Blorp": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
+                }
+            }
+        },
+        "The Totally Normal Kingdom": {
+            "King": "John Doe",
+            "Queen": "Jane Doe",
+            "CastleCount": 1,
+            "Castles": {
+                "Condo on Main Street": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "Bill": {
+                            "VassalCount": 3,
+                            "Vassals": [
+                                "Marge",
+                                "Joe",
+                                "Donny"
+                            ]
+                        }
+                    }
+                }
+            }
         }
-    },
-    "Foo": {
-        "King": "Bar",
-        "Queen": "Baz",
-        "CastleCount": 0,
-        "Castles": {}
     }
 }

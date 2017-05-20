@@ -1,28 +1,43 @@
-<h2>{{castle}}</h2>
+<div class="mdl-cell mdl-cell--5-col mdl-cell--2-offset">
+  <h2>{{castle}}</h2>
 
-<hr>
-{{#each allLieges.Lieges as |liege| }}
-<ul class="demo-list-icon mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">face</i>
-    Liege: <a href="/kingdoms/{{../kingdom}}/castles/{{../castle}}/lieges/{{@key}}"> {{@key}}</a><br>
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">people</i>
-    Vassal Count: {{liege.VassalCount}}<br>
-    </span>
-  </li>
-  {{#each liege.Vassals}}
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">person</i>
-    Vassal: {{this}}
-    </span>
-  </li>
+  <hr>
+  {{#each allLieges.Lieges as |liege| }}
+  <ul class="demo-list-icon mdl-list">
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">face</i>
+      Liege: <a href="/kingdoms/{{../kingdom}}/castles/{{../castle}}/lieges/{{@key}}"> {{@key}}</a><br>
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">people</i>
+      Vassal Count: {{liege.VassalCount}}<br>
+      </span>
+    </li>
+    {{#each liege.Vassals}}
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">person</i>
+      Vassal: {{this}}
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+  <hr>
   {{/each}}
-</ul>
-<hr>
-{{/each}}
+</div> 
+<div class="mdl-cell mdl-cell--2-col mdl-cell--1-offset">
+  <h4>Add New Liege</h4>
+  <form action="/kingdoms/{{kingdom}}/castles/{{castle}}/lieges" method="POST" id="submit">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="liege">
+      <label class="mdl-textfield__label" for="liege">Liege</label>
+    </div>
+    <br>
+    <button type="submit" form="submit" value="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Submit
+    </button>
+  </form>
+</div>
