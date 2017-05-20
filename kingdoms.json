@@ -118,6 +118,24 @@
                     }
                 }
             }
+        },
+        "One": {
+            "King": "More",
+            "Queen": "Time",
+            "CastleCount": 1,
+            "Castles": {
+                "Harder Better Faster Stronger": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "We're Gonna Celebrate": {
+                            "VassalCount": 1,
+                            "Vassals": [
+                                "Don't Stop the Dancing"
+                            ]
+                        }
+                    }
+                }
+            }
         }
     }
 }
