@@ -1,0 +1,141 @@
+{
+    "Kingdoms": {
+        "Westeros": {
+            "King": "Robert Baratheon",
+            "Queen": "Cersei Lannister",
+            "CastleCount": 3,
+            "Castles": {
+                "Harrenhal": {
+                    "LiegeCount": 2,
+                    "Lieges": {
+                        "Petyr Baelish": {
+                            "VassalCount": 3,
+                            "Vassals": [
+                                "Vassal1",
+                                "Vassal2",
+                                "Vassal3"
+                            ]
+                        },
+                        "Polliver": {
+                            "VassalCount": 2,
+                            "Vassals": [
+                                "Vassal1",
+                                "Vassal2"
+                            ]
+                        }
+                    }
+                },
+                "Casterly Rock": {
+                    "LiegeCount": 2,
+                    "Lieges": {
+                        "Tywin Lannister": {
+                            "VassalCount": 2,
+                            "Vassals": [
+                                "Vassal1",
+                                "Vassal2"
+                            ]
+                        },
+                        "Tyrion Lannister": {
+                            "VassalCount": 2,
+                            "Vassals": [
+                                "Vassal1",
+                                "Vassal2"
+                            ]
+                        }
+                    }
+                },
+                "Fizz": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
+                }
+            }
+        },
+        "Nansur": {
+            "King": "Ikurei Xerius III",
+            "Queen": "Ikurei Istriya",
+            "CastleCount": 2,
+            "Castles": {
+                "Andiamine Heights": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "Ikurei Conphas": {
+                            "VassalCount": 4,
+                            "Vassals": [
+                                "Vassal1",
+                                "Vassal2",
+                                "Vassal3",
+                                "Vassal4"
+                            ]
+                        }
+                    }
+                },
+                "Bazz": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
+                }
+            }
+        },
+        "Foo": {
+            "King": "Bar",
+            "Queen": "Baz",
+            "CastleCount": 5,
+            "Castles": {
+                "Bazz": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "Minister Bizz": {
+                            "VassalCount": 0,
+                            "Vassals": [
+                                "Foo",
+                                "Bar",
+                                "Bazz"
+                            ]
+                        }
+                    }
+                },
+                "Blorp": {
+                    "LiegeCount": 0,
+                    "Lieges": {}
+                }
+            }
+        },
+        "The Totally Normal Kingdom": {
+            "King": "John Doe",
+            "Queen": "Jane Doe",
+            "CastleCount": 1,
+            "Castles": {
+                "Condo on Main Street": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "Bill": {
+                            "VassalCount": 3,
+                            "Vassals": [
+                                "Marge",
+                                "Joe",
+                                "Donny"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "One": {
+            "King": "More",
+            "Queen": "Time",
+            "CastleCount": 1,
+            "Castles": {
+                "Harder Better Faster Stronger": {
+                    "LiegeCount": 1,
+                    "Lieges": {
+                        "We're Gonna Celebrate": {
+                            "VassalCount": 1,
+                            "Vassals": [
+                                "Don't Stop the Dancing"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

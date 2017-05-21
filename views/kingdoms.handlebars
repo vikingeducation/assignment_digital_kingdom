@@ -1,0 +1,54 @@
+<div class="mdl-cell mdl-cell--5-col mdl-cell--2-offset">
+  <h2>Kingdoms</h2>
+  <hr>
+  <ul class="demo-list-icon mdl-list">
+  {{#each allKingdoms as |kingdom| }}
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">terrain</i>
+      Kingdom: <a href="/kingdoms/{{@key}}">{{@key}}</a>
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">person</i>
+      King: {{kingdom.King}}
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">person</i>
+      Queen: {{kingdom.Queen}}
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+      <i class="material-icons mdl-list__item-icon">business</i>
+      Castle Count: {{kingdom.CastleCount}}
+      </span>
+    </li>
+  </ul>
+  <hr>
+  {{/each}}
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--1-offset">
+  <h4>Add New Kingdom</h4>
+  <form action="/kingdoms" method="POST" id="submit">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="kingdom">
+      <label class="mdl-textfield__label" for="kingdom">Kingdom</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="king">
+      <label class="mdl-textfield__label" for="kingdom">King</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="queen">
+      <label class="mdl-textfield__label" for="kingdom">Queen</label>
+    </div>
+    <br>
+    <button type="submit" form="submit" value="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Submit
+    </button>
+  </form>
+</div>
