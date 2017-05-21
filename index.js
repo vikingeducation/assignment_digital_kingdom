@@ -18,7 +18,7 @@ app.use("/kingdoms", kingdoms);
 
 app.use(express.static(__dirname + "/public"));
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3005;
 
 app.listen(port, () => {
   console.log(`Currently listening on ${ port }`);
