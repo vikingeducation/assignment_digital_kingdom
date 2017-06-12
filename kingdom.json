@@ -5,28 +5,28 @@
       "queen": "liz",
       "castles": {
           "castle1" : {
-              "legies" : {
-                  "legie1": {
+              "lieges" : {
+                  "liege1": {
                       "vassals": ["vassal1", "vassal2"]
                   },
-                  "legie3": {
+                  "liege3": {
                       "vassals": ["vassal1", "vassal2"]
                   },
-                  "legie4": {
+                  "liege4": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle2" : {
-              "legies" : {
-                  "legie5": {
+              "lieges" : {
+                  "liege5": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle3" : {
-              "legies" : {
-                  "legie6": {
+              "lieges" : {
+                  "liege6": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
@@ -38,28 +38,28 @@
       "queen": "cerci",
       "castles": {
           "castle4" : {
-              "legies" : {
-                  "legie7": {
+              "lieges" : {
+                  "liege7": {
                       "vassals": ["vassal1", "vassal2"]
                   },
-                  "legie8": {
+                  "liege8": {
                       "vassals": ["vassal1", "vassal2"]
                   },
-                  "legie9": {
+                  "liege9": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle5" : {
-              "legies" : {
-                  "legie10": {
+              "lieges" : {
+                  "liege10": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle6" : {
-              "legies" : {
-                  "legie11": {
+              "lieges" : {
+                  "liege11": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
@@ -71,22 +71,22 @@
       "queen": "Queen1",
       "castles": {
           "castle1" : {
-              "legies" : {
-                  "legie1": {
+              "lieges" : {
+                  "liege1": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle2" : {
-              "legies" : {
-                  "legie2": {
+              "lieges" : {
+                  "liege2": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
           },
           "castle3" : {
-              "legies" : {
-                  "legie3": {
+              "lieges" : {
+                  "liege3": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
