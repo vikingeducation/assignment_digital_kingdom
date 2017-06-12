@@ -45,25 +45,15 @@ const addCastles = (kingdomName, castleName) => {
 
 const addliegies = (kingdomName, castleName, liegeName) => {
   const json = getJson();
-<<<<<<< HEAD
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName] = {};
-=======
-  json.kingdoms[kingdomName]["castles"][castleName]["liege"][liegeName] = {};
->>>>>>> f1b3b689fe7900b78065add30d70bfc18741bcf5
 
   saveJson(json);
 }
 
-<<<<<<< HEAD
 const addVassals = (kingdomName, castleName, liegeName, vassalName) => {
   const json = getJson();
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"].push(vassalName);
   saveJson(json);
-=======
-const addVassals = (kingdomName, castleName, liegieName, vassalName) => {
-  const json = getJson();
-  json.kingdoms[kingdomName]["castles"][castleName]["liege"][liegieName]["vassals"].push(vassalName);  
->>>>>>> f1b3b689fe7900b78065add30d70bfc18741bcf5
 }
 
 module.exports = {
