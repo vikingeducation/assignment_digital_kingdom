@@ -7,8 +7,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const helpers = require('./helpers');
+
 const hbs = expressHandlebars.create({
   defaultLayout: "main",
+  helpers: helpers.registered
 });
 
 app.engine("handlebars", hbs.engine);
