@@ -31,7 +31,7 @@ const addKingdom = (kingdomName, kingName, queenName) => {
   json.kingdoms[kingdomName] = {};
   json.kingdoms[kingdomName]["king"] = kingName;
   json.kingdoms[kingdomName]["queen"] = queenName;
-  json.kingdoms[kingdomName]["castles"] = [];
+  json.kingdoms[kingdomName]["castles"] = {};
 
   saveJson(json);
 }

@@ -3,64 +3,68 @@
     "kingdom1": {
       "king": "arthur",
       "queen": "liz",
-      "castles": [
-        {
-          "castleName": "castle1",
-          "legies": [
-            {
-              "legieName": "legie1",
-              "vassals": [
-                "vassal1",
-                "vassal2"
-              ]
-            },
-            {
-              "legieName": "legie2",
-              "vassals": [
-                "vassal3",
-                "vassal4"
-              ]
-            },
-            {
-              "legieName": "legie3",
-              "vassals": [
-                "vassal5",
-                "vassal6"
-              ]
-            }
-          ]
-        },
-        {
-          "castleName": "castle2",
-          "legies": [
-            {
-              "legieName": "castle2Legie1",
-              "vassals": [
-                "castle2vassal1",
-                "castle2vassal2"
-              ]
-            }
-          ]
-        }
-      ]
+      "castles": {
+          "castle1" : {
+              "legies" : {
+                  "legie1": {
+                      "vassals": ["vassal1", "vassal2"]
+                  },
+                  "legie3": {
+                      "vassals": ["vassal1", "vassal2"]
+                  },
+                  "legie4": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle2" : {
+              "legies" : {
+                  "legie5": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle3" : {
+              "legies" : {
+                  "legie6": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          }
+      }
     },
     "kingdom2": {
       "king": "john",
       "queen": "cerci",
-      "castles": [
-        {
-          "castleName": "evilCastle1",
-          "legies": [
-            {
-              "legieName": "EvilLegie1",
-              "vassals": [
-                "EvilVassal1",
-                "EvilVassal2"
-              ]
-            }
-          ]
-        }
-      ]
+      "castles": {
+          "castle4" : {
+              "legies" : {
+                  "legie7": {
+                      "vassals": ["vassal1", "vassal2"]
+                  },
+                  "legie8": {
+                      "vassals": ["vassal1", "vassal2"]
+                  },
+                  "legie9": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle5" : {
+              "legies" : {
+                  "legie10": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle6" : {
+              "legies" : {
+                  "legie11": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          }
+      }
     },
     "kingdom3": {
       "king": "King1",
@@ -69,6 +73,20 @@
           "castle1" : {
               "legies" : {
                   "legie1": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle2" : {
+              "legies" : {
+                  "legie2": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
+          },
+          "castle3" : {
+              "legies" : {
+                  "legie3": {
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
