@@ -26,6 +26,12 @@ const getKingdomInfo = name => {
     return info;
 } 
 
+//returns all castles in a selected kingdom
+const getCastles = (kingdom) => {
+  const json = getJson();
+ return json.kingdoms[kingdom]["castles"]
+}
+
 const addKingdom = (kingdomName, kingName, queenName) => {
   let json = getJson();
   json.kingdoms[kingdomName] = {};

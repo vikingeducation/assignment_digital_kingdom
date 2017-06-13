@@ -2,14 +2,20 @@ const express = require('express');
 const router = express.Router();
 const { getKingdoms, getKingdomInfo, addKingdom } = require('../services/traverse-kingdom');
 
- 
- router.get("/", (req,res) => {
+
+router.get("/", (req, res) => {
     const getAllKingdoms = getKingdoms();
 
-    res.render("kingdoms", {getAllKingdoms});
- });
+    res.render("kingdoms", { getAllKingdoms });
+});
 
-router.post('/', (req,res) => {
+router.get('/:kingdom', (req,res) => {
+    const kingdomSelected = req.params.kingdom;
+    //get all castles for the selected kingdom
+    console.log(kingdomSelected);
+    res.end();
+});
+router.post('/', (req, res) => {
     const kingdomeName = req.body.kingdom;
     const kingName = req.body.king;
     const queenName = req.body.queen;
@@ -20,4 +26,4 @@ router.post('/', (req,res) => {
 });
 
 
- module.exports = router;
+module.exports = router;

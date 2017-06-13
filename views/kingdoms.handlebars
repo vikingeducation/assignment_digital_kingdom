@@ -3,7 +3,7 @@
     <div>
         {{#each getAllKingdoms as |kingdom|}}
         <div>
-            <h3>{{@key}}</h3>
+            <a href="/kingdoms/{{@key}}"><h3>{{@key}}</h3></a>
             <ul>
                 <li>King: {{kingdom.king}}</li>
                 <li>Queen: {{kingdom.queen}}</li>
