@@ -11,20 +11,20 @@ const saveJson = json => {
 };
 
 const getKingdoms = () => {
-    const json = getJson();
+  const json = getJson();
 
-    const allKingdoms = json.kingdoms;
-    return allKingdoms;
+  const allKingdoms = json.kingdoms;
+  return allKingdoms;
 }
 
 
 
 //get this info when specific kingdom is clicked
 const getKingdomInfo = name => {
-    const json = getJson();
-    const info = json.kingdoms[name];
-    return info;
-} 
+  const json = getJson();
+  const info = json.kingdoms[name];
+  return info;
+}
 
 //returns all castles in a selected kingdom
 const getCastles = (kingdom) => {
@@ -49,10 +49,16 @@ const addCastles = (kingdomName, castleName) => {
   saveJson(json);
 }
 
-const addLiegies = (kingdomName, castleName, LiegieName) => {
+const addliegies = (kingdomName, castleName, liegeName) => {
   const json = getJson();
-  json.kingdoms[kingdomName][castleName][LiegieName].push(castleName);
+  json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName] = {};
 
+  saveJson(json);
+}
+
+const addVassals = (kingdomName, castleName, liegeName, vassalName) => {
+  const json = getJson();
+  json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"].push(vassalName);
   saveJson(json);
 }
 
