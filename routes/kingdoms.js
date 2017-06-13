@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getKingdoms, getKingdomInfo, addKingdom } = require('../services/traverse-kingdom');
+const { getKingdoms, getKingdomInfo, addKingdom, getCastles, getLieges } = require('../services/traverse-kingdom');
 
 
 router.get("/", (req, res) => {
@@ -12,17 +12,26 @@ router.get("/", (req, res) => {
 router.get('/:kingdom', (req,res) => {
     const kingdomSelected = req.params.kingdom;
     //get all castles for the selected kingdom
-    console.log(kingdomSelected);
-    res.end();
+    const castles = getCastles(kingdomSelected);
+    
+    res.render('kingdom/show', {"kingdomName" : kingdomSelected, castles});
+});
+
+router.get('/:kingdom/:castle', (req,res) => {
+    const kingdomSelected = req.params.kingdom;
+    const castleSelected = req.params.castle;
+    const lieges = getLieges(kingdomSelected, castleSelected);
+
+    res.render('castle/show', {"castleName": castleSelected, lieges});
+
 });
 router.post('/', (req, res) => {
-    const kingdomeName = req.body.kingdom;
+    const kingdomName = req.body.kingdom;
     const kingName = req.body.king;
     const queenName = req.body.queen;
-    addKingdom(kingdomeName, kingName, queenName);
+    addKingdom(kingdomName, kingName, queenName);
 
     res.redirect("back");
-
 });
 
 

@@ -30,6 +30,13 @@
                       "vassals": ["vassal1", "vassal2"]
                   }
               }
+          },
+          "castle5" : {
+              "lieges" : {
+                  "liege6": {
+                      "vassals": ["vassal1", "vassal2"]
+                  }
+              }
           }
       }
     },

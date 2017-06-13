@@ -15,7 +15,7 @@ const getKingdoms = () => {
 
   const allKingdoms = json.kingdoms;
   return allKingdoms;
-}
+};
 
 
 
@@ -24,13 +24,20 @@ const getKingdomInfo = name => {
   const json = getJson();
   const info = json.kingdoms[name];
   return info;
-}
+};
 
 //returns all castles in a selected kingdom
 const getCastles = (kingdom) => {
   const json = getJson();
- return json.kingdoms[kingdom]["castles"]
-}
+  return json.kingdoms[kingdom]["castles"]
+};
+
+const getLieges = (kingdomName, castle) => {
+    const json = getJson();
+    console.log(json.kingdoms[kingdomName]["castles"][castle]["lieges"]);
+    return json.kingdoms[kingdomName]["castles"][castle]["lieges"];
+};
+
 
 const addKingdom = (kingdomName, kingName, queenName) => {
   let json = getJson();
@@ -40,30 +47,32 @@ const addKingdom = (kingdomName, kingName, queenName) => {
   json.kingdoms[kingdomName]["castles"] = {};
 
   saveJson(json);
-}
+};
 
 const addCastles = (kingdomName, castleName) => {
   const json = getJson();
   json.kingdoms[kingdomName]["castles"][castleName] = {};
 
   saveJson(json);
-}
+};
 
 const addliegies = (kingdomName, castleName, liegeName) => {
   const json = getJson();
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName] = {};
 
   saveJson(json);
-}
+};
 
 const addVassals = (kingdomName, castleName, liegeName, vassalName) => {
   const json = getJson();
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"].push(vassalName);
   saveJson(json);
-}
+};
 
 module.exports = {
   getKingdoms,
   getKingdomInfo,
-  addKingdom
+  addKingdom,
+  getCastles,
+  getLieges
 };
