@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getKingdoms, getCastles, getLieges, getVassals } = require('../services/kingdom_getters.js');
-const { addKingdom, addCastles, addLiegies, addVassals } = require('../services/kingdom_getters.js');
-const { deleteLiege, deleteCastle, deleteKingdom, deleteVassal } = require('../services/traverse-kingdom');
+const { getKingdoms, getCastles, getLieges, getVassals } = require('../services/kingdom_getters');
+const { addKingdom, addCastles, addLiegies, addVassals } = require('../services/kingdom_setters');
+const { deleteLiege, deleteCastle, deleteKingdom, deleteVassal } = require('../services/kingdom_deletes');
 
 
 router.get("/", (req, res) => {
