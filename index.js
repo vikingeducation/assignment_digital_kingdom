@@ -10,12 +10,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const hbs = expressHandlebars.create({
   defaultLayout: "main",
   helpers: {
-    ObjCount: function(obj){return Object.keys(obj).length;}
+    ObjCount: function (obj) {
+      if (typeof Object.keys(obj) === "undefined")
+        return 0;
+      else
+        return Object.keys(obj).length
+    }
   }
 });
 
-app.engine("handlebars" , hbs.engine);
-app.set("view engine" , "handlebars")
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars")
 
 
 //main path displaying all kingdoms
@@ -24,5 +29,5 @@ app.use('/kingdoms', kingdomRouter);
 
 
 app.listen(3000, "localhost", () => {
-    console.log(`Listening to port 3000`);
+  console.log(`Listening to port 3000`);
 })

@@ -1,17 +1,21 @@
 <div>
-    <div><h2>{{kingdomName}}</h2></div>
+    <div><h2>{{kingdomSelected}}</h2></div>
     <div>
         {{#each castles as |castle|}}
         <div>
-           <a href="/kingdoms/{{../kingdomName}}/{{@key}}"><h3>{{@key}}</h3></a> <span># of lieges {{ObjCount castle.lieges}}</span>
+           <a href="/kingdoms/{{../kingdomSelected}}/castles/{{@key}}"><h3>{{@key}}</h3></a> 
+           <span># of lieges {{ObjCount castle.lieges}}</span>
+           <form action="/kingdoms/{{../kingdomSelected}}/castles/{{@key}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
         </div>
         <br>
         {{/each}}
         <div>
             <h3>Add a new castle</h3>
-            <form action="/kingdoms/{{kingdomName}}/{{castle}}" method="POST">
+            <form action="/kingdoms/{{kingdomSelected}}" method="POST">
                 <label for="castle">Castle</label>
-                <input type="text" id="castle" name="castle" placeholder="Enter casltle name">
+                <input type="text" id="castle" name="castle" placeholder="Enter castle name">
                 <input type="submit" name="submit" value="Add">
             </form>
         </div>

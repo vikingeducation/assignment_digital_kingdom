@@ -1,5 +1,5 @@
 <div>
-    <div>Kingdoms</div>
+    <div><h2>Kingdoms</h2></div>
     <div>
         {{#each getAllKingdoms as |kingdom|}}
         <div>
@@ -10,12 +10,15 @@
                 <li># of Castles: {{ObjCount kingdom.castles}}</li>
                 <br>
             </ul>
+            <form action="/kingdoms/{{@key}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
         </div>
         {{/each}}
         <div>
             <h3>Add a new kingdom</h3>
             <form action="/kingdoms" method="POST">
-                <label for="kingdom">King</label>
+                <label for="kingdom">Kingdom</label>
                 <input type="text" id="kingdom" name="kingdom" placeholder="Enter kingdom name">
                 <label for="king">King</label>
                 <input type="text" id="king" name="king" placeholder="Enter King name">

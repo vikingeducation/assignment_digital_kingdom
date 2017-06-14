@@ -10,37 +10,12 @@ const saveJson = json => {
   fs.writeFileSync("./kingdom.json", JSON.stringify(json, null, 2));
 };
 
-const getKingdoms = () => {
-  const json = getJson();
-
-  const allKingdoms = json.kingdoms;
-  return allKingdoms;
-};
-
-
-
-//get this info when specific kingdom is clicked
-const getKingdomInfo = name => {
-  const json = getJson();
-  const info = json.kingdoms[name];
-  return info;
-};
-
-//returns all castles in a selected kingdom
-const getCastles = (kingdom) => {
-  const json = getJson();
-  return json.kingdoms[kingdom]["castles"]
-};
-
-const getLieges = (kingdomName, castle) => {
-    const json = getJson();
-    console.log(json.kingdoms[kingdomName]["castles"][castle]["lieges"]);
-    return json.kingdoms[kingdomName]["castles"][castle]["lieges"];
-};
-
-
 const addKingdom = (kingdomName, kingName, queenName) => {
   let json = getJson();
+
+  //check for existing object
+  if (json.kingdoms[kingdomName]) return;
+
   json.kingdoms[kingdomName] = {};
   json.kingdoms[kingdomName]["king"] = kingName;
   json.kingdoms[kingdomName]["queen"] = queenName;
@@ -51,28 +26,43 @@ const addKingdom = (kingdomName, kingName, queenName) => {
 
 const addCastles = (kingdomName, castleName) => {
   const json = getJson();
+
+  //check for existing object
+  if (json.kingdoms[kingdomName]["castles"][castleName]) return;
+
   json.kingdoms[kingdomName]["castles"][castleName] = {};
+  json.kingdoms[kingdomName]["castles"][castleName]["lieges"] = {};
 
   saveJson(json);
 };
 
-const addliegies = (kingdomName, castleName, liegeName) => {
+const addLiegies = (kingdomName, castleName, liegeName) => {
   const json = getJson();
+
+  //check for existing object
+  if (json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]) return;
+
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName] = {};
+  json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"] = [];
 
   saveJson(json);
 };
 
 const addVassals = (kingdomName, castleName, liegeName, vassalName) => {
   const json = getJson();
+
+  //check for existing object
+  if (json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"][vassalName]) return;
+
   json.kingdoms[kingdomName]["castles"][castleName]["lieges"][liegeName]["vassals"].push(vassalName);
+
   saveJson(json);
 };
 
+
 module.exports = {
-  getKingdoms,
-  getKingdomInfo,
   addKingdom,
-  getCastles,
-  getLieges
+  addCastles,
+  addLiegies,
+  addVassals,
 };
