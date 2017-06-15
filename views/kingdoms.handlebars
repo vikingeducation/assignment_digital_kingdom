@@ -1,9 +1,13 @@
 <div>
-    <div><h2>Kingdoms</h2></div>
-    <div>
+    <div class="title">
+        <h2>Kingdoms</h2>
+    </div>
+    <div class="container">
         {{#each getAllKingdoms as |kingdom|}}
-        <div>
-            <a href="/kingdoms/{{@key}}"><h3>{{@key}}</h3></a>
+        <div class="card">
+            <a class="card-header" href="/kingdoms/{{@key}}">
+                <h3>{{@key}}</h3>
+            </a>
             <ul>
                 <li>King: {{kingdom.king}}</li>
                 <li>Queen: {{kingdom.queen}}</li>
@@ -11,23 +15,26 @@
                 <br>
             </ul>
             <form action="/kingdoms/{{@key}}/delete" method="POST">
-                <button>Delete</button>
+                <button class="btn btn-primary">Delete</button>
             </form>
         </div>
         {{/each}}
+    </div>
+
+    <div class="forum-style">
         <div>
             <h3>Add a new kingdom</h3>
-            <form action="/kingdoms" method="POST">
+            <form action="/kingdoms" method="POST" class="form-inline">
                 <label for="kingdom">Kingdom</label>
-                <input type="text" id="kingdom" name="kingdom" placeholder="Enter kingdom name">
+                <input class="form-control" type="text" id="kingdom" name="kingdom" placeholder="Enter kingdom name">
                 <label for="king">King</label>
-                <input type="text" id="king" name="king" placeholder="Enter King name">
+                <input class="form-control" type="text" id="king" name="king" placeholder="Enter King name">
                 <label for="queen">Queen</label>
-                <input type="text" id="queen" name="queen" placeholder="Enter Queen name">
+                <input class="form-control" type="text" id="queen" name="queen" placeholder="Enter Queen name">
 
-                <input type="submit" name="submit" value="Add">
-
+                <input class="btn btn-primary" type="submit" name="submit" value="Add">
             </form>
         </div>
     </div>
+
 </div>

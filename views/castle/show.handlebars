@@ -1,26 +1,29 @@
 <div>
-    <div>
+    <div class="title">
         <h2>{{castleSelected}}</h2>
     </div>
-    <div>
+    <div class="container">
         {{#each lieges as |liege|}}
-        <div>
-            <a href="/kingdoms/{{../kingdomSelected}}/castles/{{../castleSelected}}/lieges/{{@key}}/vassals">
+        <div class="card">
+            <a class="card-header" href="/kingdoms/{{../kingdomSelected}}/castles/{{../castleSelected}}/lieges/{{@key}}/vassals">
                 <h3>{{@key}}</h3>
             </a>
-            <span># of vassals {{liege.vassals.length}}</span>
+            <span class="card-content"># of vassals {{liege.vassals.length}}</span>
             <form action="/kingdoms/{{../kingdomSelected}}/castles/{{../castleSelected}}/lieges/{{@key}}/delete" method="POST">
-                <button>Delete</button>
+                <button class="btn btn-primary">Delete</button>
             </form>
         </div>
         <br> {{/each}}
+    </div>
+    <div class="forum-style">
         <div>
             <h3>Add a new liege</h3>
-            <form action="/kingdoms/{{kingdomSelected}}/castles/{{castleSelected}}" method="POST">
+            <form action="/kingdoms/{{kingdomSelected}}/castles/{{castleSelected}}" method="POST" class="form-inline">
                 <label for="liege">Liege</label>
-                <input type="text" id="liege" name="liege" placeholder="Enter liege name">
-                <input type="submit" name="submit" value="Add">
+                <input class="form-control" type="text" id="liege" name="liege" placeholder="Enter liege name">
+                <input class="btn btn-primary" type="submit" name="submit" value="Add">
             </form>
         </div>
     </div>
+
 </div>

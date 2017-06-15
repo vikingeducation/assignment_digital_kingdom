@@ -25,7 +25,7 @@ app.set("view engine", "handlebars")
 
 //main path displaying all kingdoms
 app.use('/kingdoms', kingdomRouter);
-
+app.use(express.static(__dirname + "/public"));
 
 
 app.listen(3000, "localhost", () => {

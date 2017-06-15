@@ -8,7 +8,8 @@
           "lieges": {
             "liege3": {
               "vassals": [
-                "vassal2"
+                "vassal2",
+                "vassal5"
               ]
             },
             "liege4": {
@@ -95,8 +96,14 @@
                 "vassal1",
                 "vassal2"
               ]
+            },
+            "liege4": {
+              "vassals": []
             }
           }
+        },
+        "castle7": {
+          "lieges": {}
         }
       }
     },
