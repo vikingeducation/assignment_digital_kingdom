@@ -1,0 +1,16 @@
+{
+  "kingdoms": {
+    "Portland": {
+      "king": "Henry",
+      "queen": "Marie"
+    },
+    "Kansas": {
+      "king": "Bradley",
+      "queen": "Amber"
+    },
+    "Hamburg": {
+      "king": "Omar",
+      "queen": "Teresa"
+    }
+  }
+}
