@@ -1,13 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const expressHandlebars = require('express-handlebars');
 
-const router = express.Router();
+const kingdoms = require('./routes/kingdoms.js');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send("Kingdoms");
-})
+const hbs = expressHandlebars.create({
+  defaultLayout: "main"
+});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");''
+app.use(bodyParser.urlencoded({ extended: true}));
+
+app.use('/', kingdoms);
 
 app.listen(4000, () => {
   console.log("Listening on Port 4000");
