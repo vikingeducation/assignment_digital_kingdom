@@ -14,7 +14,9 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");''
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use('/', kingdoms);
+app.use('/kingdoms', kingdoms);
+
+app.use(express.static(__dirname + "/public"));
 
 app.listen(4000, () => {
   console.log("Listening on Port 4000");

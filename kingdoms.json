@@ -1,16 +1,163 @@
 {
-  "kingdoms": {
-    "Portland": {
+  "kingdoms": [
+    {
+      "kingdomName": "Portland",
       "king": "Henry",
-      "queen": "Marie"
+      "queen": "Marie",
+      "castles": [
+        {
+          "castleName": "White Castle",
+          "lieges": [
+            {
+              "liegeName": "Roberto",
+              "vassals": [
+                "Carl",
+                "Cara",
+                "Cogsworth"
+              ]
+            },
+            {
+              "liegeName": "Bethany",
+              "vassals": [
+                "Aaron"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Green Castle",
+          "lieges": [
+            {
+              "liegeName": "Bastion",
+              "vassals": [
+                "Carla",
+                "Tara"
+              ]
+            },
+            {
+              "liegeName": "Winston",
+              "vassals": [
+                "Hanzo",
+                "Genji"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Red Castle",
+          "lieges": [
+            {
+              "liege": "Kate"
+            }
+          ]
+        }
+      ]
     },
-    "Kansas": {
+    {
+      "kingdomName": "Kansas",
       "king": "Bradley",
-      "queen": "Amber"
+      "queen": "Amber",
+      "castles": [
+        {
+          "castleName": "White Castle",
+          "lieges": [
+            {
+              "liegeName": "Roberto",
+              "vassals": [
+                "Carl",
+                "Cara",
+                "Cogsworth"
+              ]
+            },
+            {
+              "liegeName": "Bethany",
+              "vassals": [
+                "Aaron"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Green Castle",
+          "lieges": [
+            {
+              "liegeName": "Bastion",
+              "vassals": [
+                "Carla",
+                "Tara"
+              ]
+            },
+            {
+              "liegeName": "Winston",
+              "vassals": [
+                "Hanzo",
+                "Genji"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Red Castle",
+          "lieges": [
+            {
+              "liege": "Kate"
+            }
+          ]
+        }
+      ]
     },
-    "Hamburg": {
+    {
+      "kingdomName": "Hamburg",
       "king": "Omar",
-      "queen": "Teresa"
+      "queen": "Teresa",
+      "castles": [
+        {
+          "castleName": "White Castle",
+          "lieges": [
+            {
+              "liegeName": "Roberto",
+              "vassals": [
+                "Carl",
+                "Cara",
+                "Cogsworth"
+              ]
+            },
+            {
+              "liegeName": "Bethany",
+              "vassals": [
+                "Aaron"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Green Castle",
+          "lieges": [
+            {
+              "liegeName": "Bastion",
+              "vassals": [
+                "Carla",
+                "Tara"
+              ]
+            },
+            {
+              "liegeName": "Winston",
+              "vassals": [
+                "Hanzo",
+                "Genji"
+              ]
+            }
+          ]
+        },
+        {
+          "castleName": "Red Castle",
+          "lieges": [
+            {
+              "liege": "Kate"
+            }
+          ]
+        }
+      ]
     }
-  }
+  ]
 }

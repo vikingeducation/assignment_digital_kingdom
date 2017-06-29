@@ -1,7 +1,12 @@
 <div>
   {{#each allKingdoms as |kingdom|}}
     <div>
-      {{kingdom}}
+      <a href="/kingdoms/{{kingdomName}}">
+        {{kingdom.kingdomName}}
+      </a>
+      {{kingdom.king}}
+      {{kingdom.queen}}
+      {{kingdom.castles.length}}
     </div>
   {{/each}}
 </div>
