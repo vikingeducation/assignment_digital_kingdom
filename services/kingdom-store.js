@@ -16,7 +16,6 @@ const getRulers = (kingdom) => {
   let rulers = {};
   rulers.king = json.kingdoms[kingdom].king;
   rulers.queen = json.kingdoms[kingdom].queen;
-  console.log(rulers);
   return rules;
 };
 
@@ -33,10 +32,30 @@ const getCastles = (searchKingdom) => {
   return selectedKingdom.castles;
 };
 
+const getLieges = (searchKingdom, searchCastle) => {
+  const allCastles = getCastles(searchKingdom);
 
+  let selectedCastle = (allCastles.find( (castle) => {
+    return castle.castleName === searchCastle;
+  }));
+
+  return selectedCastle.lieges;
+};
+
+const getVassals = (searchKingdom, searchCastle, searchLiege) => {
+  const allLieges = getLieges(searchKingdom, searchCastle);
+
+  let selectedLiege = (allLieges.find( (liege) => {
+    return liege.liegeName === searchLiege;
+  }));
+
+  return selectedLiege.vassals;
+};
 
 module.exports = {
   getKingdoms,
   getRulers,
-  getCastles
+  getCastles,
+  getLieges,
+  getVassals
 };

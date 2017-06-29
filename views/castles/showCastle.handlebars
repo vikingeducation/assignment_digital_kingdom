@@ -1,0 +1,17 @@
+<div>
+  {{kingdom}}
+    <div>
+      <div>
+        {{castle}}
+        </div>
+        {{#each allLieges as |liege|}}
+          <div>
+            <a href="/kingdoms/{{../kingdom}}/{{../castle}}/{{liege.liegeName}}">
+              {{liege.liegeName}}
+            </a>
+          {{liege.vassals.length}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
