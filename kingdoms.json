@@ -1,163 +1,169 @@
 {
-  "kingdoms": [
-    {
-      "kingdomName": "Portland",
-      "king": "Henry",
-      "queen": "Marie",
-      "castles": [
+    "kingdoms": [
         {
-          "castleName": "White Castle",
-          "lieges": [
-            {
-              "liegeName": "Roberto",
-              "vassals": [
-                "Carl",
-                "Cara",
-                "Cogsworth"
-              ]
-            },
-            {
-              "liegeName": "Bethany",
-              "vassals": [
-                "Aaron"
-              ]
-            }
-          ]
+            "kingdomName": "Portland",
+            "king": "Henry",
+            "queen": "Marie",
+            "castles": [
+                {
+                    "castleName": "White Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Roberto",
+                            "vassals": [
+                                "Carl",
+                                "Cara",
+                                "Cogsworth"
+                            ]
+                        },
+                        {
+                            "liegeName": "Bethany",
+                            "vassals": [
+                                "Aaron"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Green Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Bastion",
+                            "vassals": [
+                                "Carla",
+                                "Tara"
+                            ]
+                        },
+                        {
+                            "liegeName": "Winston",
+                            "vassals": [
+                                "Hanzo",
+                                "Genji"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Red Castle",
+                    "lieges": [
+                        {
+                            "liege": "Kate"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "castleName": "Green Castle",
-          "lieges": [
-            {
-              "liegeName": "Bastion",
-              "vassals": [
-                "Carla",
-                "Tara"
-              ]
-            },
-            {
-              "liegeName": "Winston",
-              "vassals": [
-                "Hanzo",
-                "Genji"
-              ]
-            }
-          ]
+            "kingdomName": "Kansas",
+            "king": "Bradley",
+            "queen": "Amber",
+            "castles": [
+                {
+                    "castleName": "White Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Roberto",
+                            "vassals": [
+                                "Carl",
+                                "Cara",
+                                "Cogsworth"
+                            ]
+                        },
+                        {
+                            "liegeName": "Bethany",
+                            "vassals": [
+                                "Aaron"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Green Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Bastion",
+                            "vassals": [
+                                "Carla",
+                                "Tara"
+                            ]
+                        },
+                        {
+                            "liegeName": "Winston",
+                            "vassals": [
+                                "Hanzo",
+                                "Genji"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Red Castle",
+                    "lieges": [
+                        {
+                            "liege": "Kate"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "castleName": "Red Castle",
-          "lieges": [
-            {
-              "liege": "Kate"
-            }
-          ]
+            "kingdomName": "Hamburg",
+            "king": "Omar",
+            "queen": "Teresa",
+            "castles": [
+                {
+                    "castleName": "White Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Roberto",
+                            "vassals": [
+                                "Carl",
+                                "Cara",
+                                "Cogsworth"
+                            ]
+                        },
+                        {
+                            "liegeName": "Bethany",
+                            "vassals": [
+                                "Aaron"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Green Castle",
+                    "lieges": [
+                        {
+                            "liegeName": "Bastion",
+                            "vassals": [
+                                "Carla",
+                                "Tara"
+                            ]
+                        },
+                        {
+                            "liegeName": "Winston",
+                            "vassals": [
+                                "Hanzo",
+                                "Genji"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "castleName": "Red Castle",
+                    "lieges": [
+                        {
+                            "liege": "Kate"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "kingdomName": "Finalandia",
+            "king": "Mister",
+            "queen": "Misses",
+            "castles": []
         }
-      ]
-    },
-    {
-      "kingdomName": "Kansas",
-      "king": "Bradley",
-      "queen": "Amber",
-      "castles": [
-        {
-          "castleName": "White Castle",
-          "lieges": [
-            {
-              "liegeName": "Roberto",
-              "vassals": [
-                "Carl",
-                "Cara",
-                "Cogsworth"
-              ]
-            },
-            {
-              "liegeName": "Bethany",
-              "vassals": [
-                "Aaron"
-              ]
-            }
-          ]
-        },
-        {
-          "castleName": "Green Castle",
-          "lieges": [
-            {
-              "liegeName": "Bastion",
-              "vassals": [
-                "Carla",
-                "Tara"
-              ]
-            },
-            {
-              "liegeName": "Winston",
-              "vassals": [
-                "Hanzo",
-                "Genji"
-              ]
-            }
-          ]
-        },
-        {
-          "castleName": "Red Castle",
-          "lieges": [
-            {
-              "liege": "Kate"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kingdomName": "Hamburg",
-      "king": "Omar",
-      "queen": "Teresa",
-      "castles": [
-        {
-          "castleName": "White Castle",
-          "lieges": [
-            {
-              "liegeName": "Roberto",
-              "vassals": [
-                "Carl",
-                "Cara",
-                "Cogsworth"
-              ]
-            },
-            {
-              "liegeName": "Bethany",
-              "vassals": [
-                "Aaron"
-              ]
-            }
-          ]
-        },
-        {
-          "castleName": "Green Castle",
-          "lieges": [
-            {
-              "liegeName": "Bastion",
-              "vassals": [
-                "Carla",
-                "Tara"
-              ]
-            },
-            {
-              "liegeName": "Winston",
-              "vassals": [
-                "Hanzo",
-                "Genji"
-              ]
-            }
-          ]
-        },
-        {
-          "castleName": "Red Castle",
-          "lieges": [
-            {
-              "liege": "Kate"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

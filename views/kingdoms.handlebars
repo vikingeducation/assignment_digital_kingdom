@@ -4,9 +4,27 @@
       <a href="/kingdoms/{{kingdomName}}">
         {{kingdom.kingdomName}}
       </a>
-      {{kingdom.king}}
-      {{kingdom.queen}}
-      {{kingdom.castles.length}}
+        {{kingdom.king}}
+        {{kingdom.queen}}
+        {{kingdom.castles.length}}
     </div>
   {{/each}}
+</div>
+
+<div>
+  <h2>Add Kingdom</h2>
+  <div>
+    <form action="/kingdoms" method="post">
+      <label>Kingdom: </label>
+      <input type="text" name="kingdomName" id="kingdomName" placeholder="Name">
+
+      <label>King: </label>
+      <input type="text" name="kingdomKing" id="kingdomKing" placeholder="King">
+
+      <label>Queen: </label>
+      <input type="text" name="kingdomQueen" id="kingdomQueen" placeholder="Queen">
+
+      <input type="submit" value="Add New Kingdom" method="post">
+    </form>
+  </div>
 </div>

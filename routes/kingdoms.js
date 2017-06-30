@@ -4,7 +4,8 @@ const {
   getRulers,
   getCastles,
   getLieges,
-  getVassals
+  getVassals,
+  addKingdom
 } = require('../services/kingdom-store');
 
 const router = express.Router();
@@ -33,6 +34,16 @@ router.get('/:kingdom/:castle/:liege', (req, res) => {
   const liege = req.params.liege;
   const allVassals = getVassals(kingdom, castle, liege);
   res.render('lieges/showLiege', {kingdom, castle, liege, allVassals });
+});
+
+router.post('/', (req, res) => {
+  const name = req.body.kingdomName;
+  const king = req.body.kingdomKing;
+  const queen = req.body.kingdomQueen;
+
+  addKingdom(name, king, queen);
+
+  res.redirect("back");
 });
 
 module.exports = router;

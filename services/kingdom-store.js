@@ -6,6 +6,10 @@ const getJson = () => {
   return json;
 };
 
+const saveJson = (json) => {
+  fs.writeFileSync("kingdoms.json", JSON.stringify(json, null, 4));
+};
+
 const getKingdoms = () => {
   const json = getJson();
   return json.kingdoms;
@@ -52,10 +56,24 @@ const getVassals = (searchKingdom, searchCastle, searchLiege) => {
   return selectedLiege.vassals;
 };
 
+const addKingdom = (name, king, queen) => {
+  let json = getJson();
+
+  json.kingdoms.push({
+    "kingdomName": name,
+    "king": king,
+    "queen": queen,
+    "castles": []
+  });
+
+  saveJson(json);
+}
+
 module.exports = {
   getKingdoms,
   getRulers,
   getCastles,
   getLieges,
-  getVassals
+  getVassals,
+  addKingdom
 };
