@@ -5,7 +5,10 @@ const {
   getCastles,
   getLieges,
   getVassals,
-  addKingdom
+  addKingdom,
+  addCastle,
+  addLiege,
+  addVassal
 } = require('../services/kingdom-store');
 
 const router = express.Router();
@@ -45,5 +48,14 @@ router.post('/', (req, res) => {
 
   res.redirect("back");
 });
+
+router.post('/:kingdom', (req, res) => {
+  const castleName = req.body.castleName;
+  const kingdomName = req.params.kingdom;
+
+  addCastle(kingdomName, castleName);
+
+  res.redirect("back");
+})
 
 module.exports = router;

@@ -11,3 +11,15 @@
     {{/each}}
   </div>
 </div>
+
+<div>
+  <h2>Add Castle</h2>
+  <div>
+    <form action="/kingdoms/{{kingdom}}" method="post">
+      <label>Castle: </label>
+      <input type="text" name="castleName" id="castleName" placeholder="Name">
+
+      <input type="submit" value="Add New Castle" method="post">
+    </form>
+  </div>
+</div>

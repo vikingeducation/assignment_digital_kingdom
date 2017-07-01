@@ -67,7 +67,38 @@ const addKingdom = (name, king, queen) => {
   });
 
   saveJson(json);
-}
+};
+
+const addCastle = (kingdomName, castleName) => {
+  // let oldCastles = getCastles(kingdomName);
+  // oldCastles.push(castleName);
+
+  let json = getJson();
+
+  let newKingdoms = json.kingdoms.map( (kingdom) => {
+    if (kingdom.kingdomName === kingdomName) {
+      kingdom.castles.push({
+        "castleName": castleName,
+        "lieges": []
+      });
+      return kingdom;
+    } else {
+      return kingdom;
+    }
+  });
+
+  json.kingdoms = newKingdoms;
+  saveJson(json);
+
+};
+
+const addLiege = (name) => {
+
+};
+
+const addVassal = (name) => {
+
+};
 
 module.exports = {
   getKingdoms,
@@ -75,5 +106,8 @@ module.exports = {
   getCastles,
   getLieges,
   getVassals,
-  addKingdom
+  addKingdom,
+  addCastle,
+  addLiege,
+  addVassal
 };

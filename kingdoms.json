@@ -163,7 +163,16 @@
             "kingdomName": "Finalandia",
             "king": "Mister",
             "queen": "Misses",
-            "castles": []
+            "castles": [
+                {
+                    "castleName": "My New Castle",
+                    "lieges": []
+                },
+                {
+                    "castleName": "My Other New Castle",
+                    "lieges": []
+                }
+            ]
         }
     ]
 }
