@@ -166,7 +166,12 @@
             "castles": [
                 {
                     "castleName": "My New Castle",
-                    "lieges": []
+                    "lieges": [
+                        {
+                            "liegeName": "Sombra",
+                            "vassals": []
+                        }
+                    ]
                 },
                 {
                     "castleName": "My Other New Castle",

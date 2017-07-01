@@ -56,6 +56,27 @@ router.post('/:kingdom', (req, res) => {
   addCastle(kingdomName, castleName);
 
   res.redirect("back");
-})
+});
+
+router.post('/:kingdom/:castle', (req, res) => {
+  const kingdomName = req.params.kingdom;
+  const castleName = req.params.castle;
+  const liegeName = req.body.liegeName;
+
+  addLiege(kingdomName, castleName, liegeName);
+
+  res.redirect("back");
+});
+
+router.post('/:kingdom/:castle/:liege', (req, res) => {
+  const kingdomName = req.params.kingdom;
+  const castleName = req.params.castle;
+  const liegeName = req.params.liege;
+  const vassalName = req.body.vassalName;
+
+  addVassal(kingdomName, castleName, liegeName, vassalName);
+
+  res.redirect("back");
+});
 
 module.exports = router;
