@@ -114,8 +114,35 @@ const addLiege = (kingdomName, castleName, liegeName) => {
   saveJson(json);
 };
 
-const addVassal = (name) => {
+const addVassal = (kingdomName, castleName, liegeName, vassalName) => {
+  console.log(liegeName);
+  let json = getJson();
 
+  let newKingdoms = json.kingdoms.map( (kingdom) => {
+    if (kingdom.kingdomName === kingdomName) {
+      kingdom.castles.map( (castle) => {
+        if (castle.castleName === castleName) {
+          castle.lieges.map( (liege) => {
+            if (liege.liegeName === liegeName) {
+              liege.vassals.push(vassalName)
+              return liege;
+            } else {
+              return liege;
+            }
+          });
+          return castle;
+        } else {
+          return castle;
+        }
+      });
+      return kingdom;
+    } else {
+      return kingdom;
+    }
+  });
+
+  json.kingdoms = newKingdoms;
+  saveJson(json);
 };
 
 module.exports = {
