@@ -100,7 +100,7 @@
                     "castleName": "Red Castle",
                     "lieges": [
                         {
-                            "liege": "Kate"
+                            "liegeName": "Kate"
                         }
                     ]
                 }

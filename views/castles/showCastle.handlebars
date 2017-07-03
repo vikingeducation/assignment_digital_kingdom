@@ -1,24 +1,26 @@
 <div>
-  {{kingdom}}
+  <h3>Kingdom: {{kingdom}}</h3>
     <div>
       <div>
-        {{castle}}
+        <h4>Castle: {{castle}}</h4>
+        <h5>Lieges:</h5>
         </div>
         {{#each allLieges as |liege|}}
-          <div>
+          <div class="list-div small-margin">
             <a href="/kingdoms/{{../kingdom}}/{{../castle}}/{{liege.liegeName}}">
               {{liege.liegeName}}
             </a>
-          {{liege.vassals.length}}
+          <div>
+            Number of Vassals: {{liege.vassals.length}}            
+          </div>
         </div>
       {{/each}}
     </div>
   </div>
-</div>
 
-<div>
+<div class="form-div extra-space">
   <h2>Add Liege</h2>
-  <div>
+  <div class="form-div">
     <form action="/kingdoms/{{kingdom}}/{{castle}}" method="post">
       <label>Liege: </label>
       <input type="text" name="liegeName" id="liegeName" placeholder="Name">

@@ -15,6 +15,9 @@ app.set("view engine", "handlebars");''
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use('/kingdoms', kingdoms);
+app.get('/', (req, res) => {
+  res.redirect('/kingdoms')
+});
 
 app.use(express.static(__dirname + "/public"));
 

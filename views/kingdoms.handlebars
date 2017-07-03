@@ -1,30 +1,42 @@
 <div>
   {{#each allKingdoms as |kingdom|}}
-    <div>
-      <a href="/kingdoms/{{kingdomName}}">
+    <div class="list-div">
+      <a href="/kingdoms/{{kingdomName}}" class="">
         {{kingdom.kingdomName}}
       </a>
-        {{kingdom.king}}
-        {{kingdom.queen}}
-        {{kingdom.castles.length}}
+      <div>
+        King: {{kingdom.king}}
+      </div>
+      <div>
+        Queen: {{kingdom.queen}}
+      </div>
+      <div>
+        Number of Castles: {{kingdom.castles.length}}
+      </div>
+
     </div>
   {{/each}}
 </div>
 
 <div>
   <h2>Add Kingdom</h2>
-  <div>
+  <div class="form-div">
     <form action="/kingdoms" method="post">
-      <label>Kingdom: </label>
-      <input type="text" name="kingdomName" id="kingdomName" placeholder="Name">
-
-      <label>King: </label>
-      <input type="text" name="kingdomKing" id="kingdomKing" placeholder="King">
-
-      <label>Queen: </label>
-      <input type="text" name="kingdomQueen" id="kingdomQueen" placeholder="Queen">
-
-      <input type="submit" value="Add New Kingdom" method="post">
+      <div class="form-item">
+        <label>Kingdom: </label>
+        <input type="text" name="kingdomName" id="kingdomName" placeholder="Name">
+      </div>
+      <div class="form-item">
+        <label>King: </label>
+        <input type="text" name="kingdomKing" id="kingdomKing" placeholder="King">
+      </div>
+      <div class="form-item">
+        <label>Queen: </label>
+        <input type="text" name="kingdomQueen" id="kingdomQueen" placeholder="Queen">
+      </div>
+      <div class="form-item">
+        <input type="submit" value="Add New Kingdom" method="post">
+      </div>
     </form>
   </div>
 </div>

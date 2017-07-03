@@ -2,4 +2,71 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Cinzel', serif;
+  color: #3d150d;
+}
+
+body {
+  background-color: #f9e6d6;
+}
+
+#main-header {
+  font-size: 55px;
+}
+
+#main-div {
+  padding: 20px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a:hover {
+  font-weight: 900;
+  color: #701d0d;
+}
+
+.list-div {
+  margin: 20px 5px;
+}
+
+.list-div div {
+  margin-top: 2px;
+}
+
+.small-margin {
+  margin: 5px;
+}
+
+.form-div {
+  margin-top: 5px;
+}
+
+.form-item {
+  margin-top: 2px;
+}
+
+.extra-space {
+  margin-top: 15px;
+}
+
+input[type="submit"] {
+  padding: 3px;
+  font-size: 14px;
 }
