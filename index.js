@@ -17,14 +17,15 @@ const port = process.env.PORT || "3000";
 app.use((req, res, next) => {
   //check kingdom function
   var urlArray = req.url.split("/");
-
+  console.log(urlArray);
   console.log("im the first use");
-  if (urlArray[0] != "kingdom") {
+  if (urlArray[1] != "kingdom") {
     //next();
     //send a 404
     console.log("but I 404");
+    res.end(fs.readFileSync("./index.html", "UTF-8"));
   } else {
-    req.requestedkingdom = urlArray[1];
+    req.requestedkingdom = urlArray[2].toLowerCase();
     next();
   }
 });
@@ -37,7 +38,7 @@ app.get("/kingdom/:kingdom/", (req, res) => {
   var htmlData = fs.readFileSync("./index.html", "UTF-8");
   htmlData = htmlData.replace(
     "{{ displayHere }}",
-    displayKingdomsObj[req.requestedkingdom]
+    kingdomObject[req.requestedkingdom]["king"]
   );
   // /let kingdom = req.params["kingdom"];
   //  let castle = req.params[castle];

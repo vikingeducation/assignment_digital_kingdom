@@ -1,5 +1,5 @@
 {
-  "Westeros": {
+  "westeros": {
     "king": "Jon Snow",
     "queen": "Cersei",
     "castles": {
@@ -9,7 +9,7 @@
       }
     }
   },
-  "Essos": {
+  "essos": {
     "king": "Hizdahr zo Loraq",
     "queen": "daenerys",
     "castles": {
