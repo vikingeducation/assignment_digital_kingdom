@@ -10,12 +10,12 @@
     }
   },
   "Essos": {
-    "king": "that weird consanat name",
+    "king": "Hizdahr zo Loraq",
     "queen": "daenerys",
     "castles": {
       "name": "pyramid",
       "lieges": {
-        "vassals": ["im not a vassel"]
+        "vassals": ["Tyrion"]
       }
     }
   }
