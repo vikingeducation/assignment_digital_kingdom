@@ -26,7 +26,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+	newKingdom(req.body.king, req.body.queen, req.body.kingdom);
 
+	res.redirect("back");
 })
 
 router.get("/:kingdomName", (req, res) => {
