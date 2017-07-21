@@ -1,16 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const { diveJson } = require("../utils/file_tools");
-const vassals = require("./vassals");
+const kingdoms = require("./kingdoms");
 
 router.get("/:vassal", (req, res) => {
-	let obj = req.diveObj;
+	let passArray = req.diveArray;
 
-	obj.vassals = "vassals";
-	obj.vassal = req.params.vassal;
+	passArray.push("vassals");
+	passArray.push(req.params.vassal);
 
-	let data = diveJson(obj);
+	let data = diveJson(passArray);
+	console.log(kingdoms);
 	res.send(`${data[0]}<br><pre>${data[1]}</pre>`);
+});
+
+router.use("/:vassal/kingdoms", (req, res, next) => {
+	req.diveArray.push('vassals');
+	req.diveArray.push(req.params.vassal);
+
+	next();
 });
 
 module.exports = router;

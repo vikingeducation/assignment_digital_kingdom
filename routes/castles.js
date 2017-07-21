@@ -4,18 +4,18 @@ const { diveJson } = require("../utils/file_tools");
 const lieges = require("./lieges");
 
 router.get("/:castle", (req, res) => {
-	let obj = req.diveObj;
+	let passArray = req.diveArray;
 
-	obj.castles = "castles";
-	obj.castle = req.params.castle;
+	passArray.push("castles");
+	passArray.push(req.params.castle);
 
-	let data = diveJson(obj);
+	let data = diveJson(passArray);
 	res.send(`${data[0]}<br><pre>${data[1]}</pre>`);
 });
 
 router.use("/:castle/lieges", (req, res, next) => {
-	req.diveObj.castles = 'castles';
-	req.diveObj.castle = req.params.castle;
+	req.diveArray.push('castles');
+	req.diveArray.push(req.params.castle);
 
 	next();
 

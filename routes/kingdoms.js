@@ -9,19 +9,27 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:kingdomName", (req, res) => {
-	let data = diveJson({kingdom: req.params.kingdomName});
+	let passArray = [];
+	if (req.diveArray) {
+		passArray = req.diveArray;
+	}
+
+	passArray.push("kingdom");
+	passArray.push(req.params.kingdomName);
+
+	let data = diveJson(passArray);
 	res.send(data[0] + "<br><pre>" + data[1] + "</pre>");
 });
 
 router.use("/:kingdomName/castles", function(req, res, next) {
-	req.diveObj = {
-		kingdom: req.params.kingdomName
+	if (!req.diveArray) {
+		req.diveArray = [];
 	}
+
+	req.diveArray.push("kingdoms");
+	req.diveArray.push(req.params.kingdomName);
+
 	next();
 }, castles);
-
-
-
-
 
 module.exports = router;
