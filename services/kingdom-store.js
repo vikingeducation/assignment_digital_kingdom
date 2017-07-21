@@ -11,13 +11,12 @@ const path = require("path");
 
 const getJsonData = () => {
   let data = fs.readFileSync(path.resolve(__dirname, "../kingdoms.json"));
-  console.log(data.toString());
   return data.toString();
 };
 
 // Just kingdom names (no children info)
 const getKingdoms = () =>
-  JSON.parse(getJsonData()).kingdoms.map(ele => ele.name);
+  JSON.parse(getJsonData()).kingdoms.map(ele => ele);
 
 const getCastles = () =>
   JSON.parse(getJsonData()).kingdoms.map(ele =>
