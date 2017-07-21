@@ -1,9 +1,7 @@
 {
-  "kingdoms": [
   "Westeros": {
     "king": "Jon Snow",
     "queen": "Cersei",
-//castles should be an array
     "castles": {
       "name": "Red Keep",
       "lieges": {
@@ -21,5 +19,5 @@
       }
     }
   }
-]
+
 }

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 var kingdomObject = require("./kingdom.json");
 const displayKingdomsObj = require("./displayKingdoms.js");
+const fs = require('fs');
 app.set("view engine", "hbs");
 
 const port = process.env.PORT || "3000";
@@ -14,9 +15,14 @@ const port = process.env.PORT || "3000";
 // });
 
 app.get("/", (req, res) => {
-  console.log(displayKingdomsObj.returnKingdoms());
-  res.end(displayKingdomsObj.returnKingdoms().join());
-});
+  var htmlData = fs.readFileSync("./index.html", "UTF-8");
+  htmlData = htmlData.replace(
+  "{{ displayHere }}",
+  displayKingdomsObj.returnKingdoms().join());
+  res.end(htmlData);
+  }
+);
+
 
 app.get("/kingdom/:kingdom/", (req, res) => {
   let kingdom = req.params["kingdom"];
