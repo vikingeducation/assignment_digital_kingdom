@@ -22,9 +22,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:kingdom", (req, res) => {
+  console.log(getKingdom(req.params.kingdom));
   res.render("kingdom", { kingdom: getKingdom(req.params.kingdom) });
   console.log(req.params.kingdom);
   console.log(getKingdom(req.params.kingdom));
+  console.log()
 });
 
 app.listen(port, host, () => {

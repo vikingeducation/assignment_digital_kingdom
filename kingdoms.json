@@ -11,6 +11,9 @@
             {
               "name": "Brian",
               "vassals": ["Gary", "George"]
+            },
+            { "name": "Harold",
+              "vassals": ["Toby", "Slenderman"]
             }
           ]
         },
