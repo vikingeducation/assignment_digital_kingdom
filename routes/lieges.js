@@ -4,6 +4,12 @@ const { diveJson } = require("../utils/file_tools");
 const vassals = require("./vassals");
 
 router.get("/:liege", (req, res) => {
+	let url = req.originalUrl;
+
+	if (url[url.length - 1] === "/") {
+		url = url.slice(0, url.length - 1);
+	}
+
 	let passArray = req.diveArray;
 
 	passArray.push("lieges");
@@ -13,6 +19,8 @@ router.get("/:liege", (req, res) => {
 
 	let obj = {
 		title: data[0],
+		currentPath: url,
+		nextPath: "vassals",
 		data: Object.keys(data[1]["vassals"])
 	}
 

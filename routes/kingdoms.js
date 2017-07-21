@@ -4,12 +4,30 @@ const { kingdomsJson, diveJson } = require("../utils/file_tools");
 const castles = require("./castles");
 
 router.get("/", (req, res) => {
+	let url = req.originalUrl;
+
+	if (url[url.length - 1] === "/") {
+		url = url.slice(0, url.length - 1);
+	}
+	
 	let data = kingdomsJson();
 
-	res.render('kingdoms', {data});
+	let obj = {
+		title: "Kingdoms",
+		data: data,
+		currentPath: url,
+	}
+
+	res.render('kingdoms', obj);
 });
 
 router.get("/:kingdomName", (req, res) => {
+	let url = req.originalUrl;
+
+	if (url[url.length - 1] === "/") {
+		url = url.slice(0, url.length - 1);
+	}
+
 	let passArray = [];
 	if (req.diveArray) {
 		passArray = req.diveArray;
@@ -22,10 +40,14 @@ router.get("/:kingdomName", (req, res) => {
 
 	let obj = {
 		title: data[0],
-		currentPath: req.originalUrl,
+		currentPath: url,
 		nextPath: "castles",
+		king: data[1]['king'],
+		queen: data[1]['queen'],
 		data: Object.keys(data[1]["castles"])
 	}
+
+	console.log(obj.currentPath, 'currentPath');
 
 	res.render('kingdom', obj);
 

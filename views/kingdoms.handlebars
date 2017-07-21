@@ -1,3 +1,7 @@
-<h1>Kingdoms</h1>
+<h1>{{title}}</h1>
 
-{{data}}
+<ul>
+{{#each data as |item|}}
+	<a href="{{../currentPath}}/{{item}}"><li>{{item}}</li></a>
+{{/each}}
+</ul>
