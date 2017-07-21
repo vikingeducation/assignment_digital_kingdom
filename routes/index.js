@@ -33,23 +33,32 @@ router.use(
 	router
 );
 
-function display(req, res, entity) {
-	let title;
-	var kingdoms = [];
-	if (!req.params.kingdomId) {
-		// Display all kingdoms for realms.
-		title = entity[0].toUpperCase() + entity.slice(1);
-		kingdoms = db.get(entity);
+const parentMap = {
+	kingdoms: 'vassals',
+	castles: 'kingdoms',
+	kings: 'kingdoms',
+	queens: 'kingdoms',
+	lieges: 'castles',
+	vassals: 'lieges'
+};
+
+function display(req, res, entityType) {
+	let title = entityType[0].toUpperCase() + entityType.slice(1);
+	let entities = [];
+	let entityId = req.params[entityType.slice(0, -1) + 'Id'];
+	let parentId = req.params[parentMap[entityType].slice(0, -1) + 'Id'];
+	if (!entityId) {
+		// Display all entities.
+		entities = db.get(entityType, undefined, parentId);
 	} else {
-		// We got one, display single kindom.
-		title = entity[0].toUpperCase() + entity.slice(1);
-		kingdoms = [db.get(entity, req.params.id)];
+		// We got one, display single entity.
+		entities = [db.get(entityType, entityId)];
 	}
 
 	// Render our page.
 	res.render('index', {
 		title: title,
-		entities: kingdoms
+		entities: entities
 	});
 }
 
