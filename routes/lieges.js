@@ -10,7 +10,24 @@ router.get("/:liege", (req, res) => {
 	passArray.push(req.params.liege);
 
 	let data = diveJson(passArray);
-	res.send(`${data[0]}<br><pre>${data[1]}</pre>`);
+
+	console.log(data[1], 'what is this')
+
+	let o = data[1];
+	let vassal = o.vassals;
+
+	console.log(vassal)
+
+	let obj = {
+		title: data[0],
+		data: Object.keys(data[1])
+	}
+
+
+
+	res.render('lieges', obj);
+
+	// res.render(`${data[0]}<br><pre>${data[1]}</pre>`);
 });
 
 router.use("/:liege/vassals", (req, res, next) => {

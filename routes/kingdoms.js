@@ -5,7 +5,11 @@ const castles = require("./castles");
 
 router.get("/", (req, res) => {
 	let data = kingdomsJson();
-	res.send(data);
+	console.log(typeof data, '????');
+
+	let dataStr = JSON.stringify(data);
+
+	res.render('kingdoms', { data: dataStr });
 });
 
 router.get("/:kingdomName", (req, res) => {
@@ -14,11 +18,19 @@ router.get("/:kingdomName", (req, res) => {
 		passArray = req.diveArray;
 	}
 
-	passArray.push("kingdom");
+	passArray.push("kingdoms");
 	passArray.push(req.params.kingdomName);
 
 	let data = diveJson(passArray);
-	res.send(data[0] + "<br><pre>" + data[1] + "</pre>");
+
+	let obj = {
+		title: data[0],
+		data: Object.keys(data[1])
+	}
+
+	res.render('kingdom', obj);
+
+	// res.render(data[0] + "<br><pre>" + data[1] + "</pre>");
 });
 
 router.use("/:kingdomName/castles", function(req, res, next) {

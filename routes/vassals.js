@@ -10,8 +10,15 @@ router.get("/:vassal", (req, res) => {
 	passArray.push(req.params.vassal);
 
 	let data = diveJson(passArray);
-	console.log(kingdoms);
-	res.send(`${data[0]}<br><pre>${data[1]}</pre>`);
+
+	let obj = {
+		title: data[0],
+		data: Object.keys(data[1])
+	}
+
+	res.render('vassals', obj);
+	
+	// res.render(`${data[0]}<br><pre>${data[1]}</pre>`);
 });
 
 router.use("/:vassal/kingdoms", (req, res, next) => {

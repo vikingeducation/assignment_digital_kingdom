@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Avonyel/assignment_digital_kingdom#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
     "nodemon": "^1.11.0"
   }
 }
