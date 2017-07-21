@@ -17,19 +17,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:kingdom", (req, res) => {
+  console.log(getResources(req));
   res.render("kingdom", getResources(req));
-});
-
-app.get("/:kingdom/castles", (req, res) => {
-  res.render("castles", getResources(req));
 });
 
 app.get("/:kingdom/castles/:castle", (req, res) => {
   res.render("castle", getResources(req));
-});
-
-app.get("/:kingdom/castles/:castle/lieges", (req, res) => {
-  res.render("lieges", getResources(req));
 });
 
 app.get("/:kingdom/castles/:castle/lieges/:liege", (req, res) => {
