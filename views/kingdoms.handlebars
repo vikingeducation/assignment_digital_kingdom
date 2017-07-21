@@ -1,5 +1,16 @@
 <h1>{{title}}</h1>
 
+<form action="/kingdoms" method="post">
+	<label for="king">King</label>
+	<input type="text" name="king">
+
+	<label for="queen">Queen</label>
+	<input type="text" name="queen">
+
+	<label for="Kingdom">Kingdom</label>
+	<input type="text" name="Kingdom">
+</form>
+
 <ul>
 {{#each data as |item|}}
 	<a href="{{../currentPath}}/{{item}}"><li>{{item}}</li></a>

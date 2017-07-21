@@ -7,6 +7,22 @@ const _readJson = () => {
 	return json;
 }
 
+const newKingdom = (king, queen, kingdomName) => {
+	let data = _readJson();
+
+	data.kingdoms[kingdomName] = {
+		king: king,
+		queen: queen,
+		castles: {}
+	};
+
+	data = JSON.stringify(data, null, 2);
+
+	console.log(data, "data?")
+
+	fs.writeFileSync("./data/kingdoms.json", data, "utf-8");
+}
+
 const kingdomsJson = () => {
 	let data = _readJson();
 	let kingdoms = Object.keys(data.kingdoms);
@@ -26,5 +42,6 @@ const diveJson = (params) => {
 
 module.exports = {
 	kingdomsJson,
-	diveJson
+	diveJson,
+	newKingdom
 }
