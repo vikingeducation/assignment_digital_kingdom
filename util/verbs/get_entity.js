@@ -1,6 +1,7 @@
 const read = require('../io').read;
 module.exports = (type, id) => {
 	let realm = read();
+	if (id === undefined) return realm[type];
 	let entity = realm[type][id];
 
 	for (let key in entity.children) {
