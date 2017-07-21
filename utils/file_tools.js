@@ -16,13 +16,28 @@ const kingdomsJson = () => {
 
 const kingdomJson = (kingdom) => {
 	let data = _readJson();
-	for (k in data.kingdoms) {
-		console.log(k)
+	kingdom = data.kingdoms[kingdom];
+
+	kingdom = JSON.stringify(kingdom, null, 2)
+
+	return kingdom;
+}
+
+const castleJson = (params) => {
+	let data = _readJson();
+	data = data.kingdoms;
+
+	for (key in params) {
+		data = data[key];
 	}
+	data = JSON.stringify(data, null, 2);
+	return data;
 }
 
 
 
 module.exports = {
-	kingdomsJson
+	kingdomsJson,
+	kingdomJson,
+	castleJson
 }
