@@ -1,13 +1,5 @@
 const read = require('../io').read;
-
-const parentMap = {
-	kingdoms: 'vassals',
-	castles: 'kingdoms',
-	kings: 'kingdoms',
-	queens: 'kingdoms',
-	lieges: 'castles',
-	vassals: 'lieges'
-};
+const parentMap = require('../io/parent_map');
 
 module.exports = (type, id, parentId) => {
 	let realm = read();

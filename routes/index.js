@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const db = require('../util/verbs');
+const parentMap = require('../util/io/parent_map');
 
 // Add our routes.
 router.all('/:kingdomId?', (req, res) => {
@@ -32,15 +33,6 @@ router.use(
 	'/:kingdomId/castles/:castleId/lieges/:liegeId/vassals/:vassalId/kingdoms',
 	router
 );
-
-const parentMap = {
-	kingdoms: 'vassals',
-	castles: 'kingdoms',
-	kings: 'kingdoms',
-	queens: 'kingdoms',
-	lieges: 'castles',
-	vassals: 'lieges'
-};
 
 function display(req, res, entityType) {
 	let title = entityType[0].toUpperCase() + entityType.slice(1);
