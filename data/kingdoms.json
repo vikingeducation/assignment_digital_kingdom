@@ -1,0 +1,67 @@
+{
+	"kingdoms": {
+		"Walt Disney Kingdom": {
+			"king": "Mickey",
+			"queen": "Minnie",
+			"castles": {
+				"Magic Castle": {
+					"lieges": {
+						"Goofy": {
+							"vassals": [
+								"Max",
+								"Pete"
+							]
+						},
+						"Donald": {
+							"vassals": [
+								"Huey",
+								"Dewey",
+								"Louie"
+							]
+						}
+					}
+				},
+				"Animal Castle": {
+					"lieges": {
+						"Simba": {
+							"vassals": [
+								"Timon",
+								"Pumbaa"
+							]
+						},
+						"Scar": {
+							"vassals": [
+								"Shenzi",
+								"Bonzai",
+								"Ed"
+							]
+						}
+					}
+				}
+			}
+		},
+		"Kingdom of the North": {
+			"king": "Eddard",
+			"queen": "Catelyn",
+			"castles": {
+				"Winterfell Castle": {
+					"lieges": {
+						"Bob": {
+							"vassals": [
+								"Billy",
+								"Joe"
+							]
+						},
+						"Andy": {
+							"vassals": [
+								"Dan",
+								"Dan II",
+								"Vlad"
+							]
+						}
+					}
+				}
+			}
+		}
+	}
+}

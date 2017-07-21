@@ -1,0 +1,22 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "Nested kingdom hierarchy thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avonyel/assignment_digital_kingdom.git"
+  },
+  "author": "Benny & Stephanie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avonyel/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/Avonyel/assignment_digital_kingdom#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
