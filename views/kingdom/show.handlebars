@@ -1,6 +1,8 @@
+<h1>Kingdom</h1>
 <h1>{{name}}</h1>
 <h1>{{kingdom.king}}</h1>
 <h1>{{kingdom.queen}}</h1>
 {{#each castles as |castle| }}
-  <p>{{castle}}</p>
+  <p><a href='./castle/{{castle}}'>{{castle}}</a></p>
+  <p>{{name}} <------Name</p>
 {{/each}}

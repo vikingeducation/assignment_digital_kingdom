@@ -1,6 +1,9 @@
 const Express = require("express");
 const router = Express.Router();
 const kingdomParser = require("../helpers/kingdomParser.js");
+const castle = require("./castles.js");
+
+router.use("/:kingdom_name/castle", castle);
 
 router.get("/:name", (req, res) => {
   let name = req.params.name;

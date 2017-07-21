@@ -7,6 +7,7 @@ const expressHandlebars = require("express-handlebars");
 
 //routers
 const kingdoms = require("./routes/kingdoms.js");
+const castle = require("./routes/castles.js");
 
 let host = "0.0.0.0";
 
