@@ -1,10 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { readJson } = require("../utils/file_tools");
+const { kingdomsJson } = require("../utils/file_tools");
 
 router.get("/", (req, res) => {
-	let data = JSON.stringify(readJson(), null, 2);
+	let data = kingdomsJson();
 	res.send(data);
+});
+
+router.get("/:kingdomName", (req, res) => {
+	res.send(`it's working ${req.params.kingdomName}`);
 });
 
 module.exports = router;
