@@ -1,1 +1,1 @@
-let kingdom = require('./lib/kingdom');
+const realm = require('./lib/realm');
