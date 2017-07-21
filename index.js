@@ -36,6 +36,7 @@ app.post("/", (req, res) => {
   res.redirect("back");
 });
 
+app.use("/kingdoms/:id/castle", castle);
 app.use("/kingdoms", kingdoms);
 
 app.listen(3000, host, function() {

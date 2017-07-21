@@ -6,9 +6,15 @@ let getJSON = () => {
   return json;
 };
 
+let getLieges = (castleName, kingdomName) => {
+  let json = getJSON();
+  let kingdom = json[kingdomName];
+  console.log(json[kingdomName].castles[castleName]);
+  return kingdom;
+};
+
 let getKingdoms = () => {
   // returns array of keys
-
   let kingdoms = getJSON();
   let kingdomNames = Object.keys(kingdoms);
   return kingdomNames;
