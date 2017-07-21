@@ -1,4 +1,50 @@
 {
-  "Camelot": {},
-  "Place": {}
+  "Camelot": {
+    "king": "Arthur",
+    "quuen": "Guinevere",
+    "castles": {
+      "The Really Stoney Castle": {},
+      "Castle Danger": {},
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      }
+    }
+  },
+  "Camelot": {
+    "king": "Arthur",
+    "quuen": "Guinevere",
+    "castles": {
+      "The Really Stoney Castle": {},
+      "Castle Danger": {},
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      },
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      }
+    }
+  }
 }
