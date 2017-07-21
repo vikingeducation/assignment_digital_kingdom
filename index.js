@@ -21,6 +21,9 @@ app.engine("handlebars", hbs.engine);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use("/kingdoms/:id/castle", castle);
+app.use("/kingdoms", kingdoms);
+
 //Routing Code
 app.get("/", function(req, res) {
   let kingdoms = kingdomParser.getKingdoms();
@@ -35,8 +38,6 @@ app.post("/", (req, res) => {
   kingdomParser.getKingdomInput(name);
   res.redirect("back");
 });
-
-app.use("/kingdoms", kingdoms);
 
 app.listen(3000, host, function() {
   console.log("Example app listening on port 3000!");
