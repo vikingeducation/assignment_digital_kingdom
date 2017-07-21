@@ -1,70 +1,18 @@
 {
   "kingdoms": {
-    "parentType": "vassals",
     "1": {
       "parentId": 2,
       "name": "Spain",
-      "children": { "castles": [1] }
+      "children": {
+        "castles": [
+          1
+        ]
+      }
     },
     "2": {
       "parentId": 4,
       "name": "Britannia"
-    }
-  },
-  "castles": {
-    "parentType": "kingdoms",
-    "1": {
-      "parentId": 1,
-      "name": "la Vela Blanca",
-      "children": { "lieges": [1] }
     },
-    "2": {
-      "parentId": 2,
-      "name": "Edinburgh"
-    }
+    "parentType": "vassals"
   },
-  "kings": {
-    "parentType": "kingdoms",
-    "1": {
-      "parentId": 1,
-      "name": "Felipe VI"
-    },
-    "2": {
-      "parentId": 2,
-      "name": "Edward VIII"
-    }
-  },
-  "queens": {
-    "parentType": "kingdoms",
-    "1": {
-      "parentId": 1,
-      "name": "Letizia Ortiz Rocasolano"
-    },
-    "2": {
-      "parentId": 2,
-      "name": "Elizabeth Alexandra Mary"
-    }
-  },
-  "lieges": {
-    "parentType": "castles",
-    "1": {
-      "parentId": 1,
-      "name": "Cadiz"
-    },
-    "2": {
-      "parentId": 2,
-      "name": "Prince Philip"
-    }
-  },
-  "vassals": {
-    "parentType": "lieges",
-    "1": {
-      "parentId": 1,
-      "name": "Mariano Rajoy Brey"
-    },
-    "2": {
-      "parentId": 2,
-      "name": "Theresa May"
-    }
-  }
 }

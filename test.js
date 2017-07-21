@@ -1,3 +1,7 @@
-const get = require('./util/verbs').get;
-
-console.log(get('kingdoms', 2));
+const create = require('./util/verbs').post;
+create({
+	type: 'castles',
+	parentType: 'kingdoms',
+	parentId: 1,
+	name: 'Awesome Castle'
+});
