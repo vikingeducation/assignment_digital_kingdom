@@ -5,7 +5,7 @@ const displayKingdomsObj = require("./displayKingdoms.js");
 const fs = require("fs");
 
 app.set("view engine", "hbs");
-const hbsTemp = require("./clickableTemplete");
+//const hbsTemp = require("./clickableTemplate.hbs");
 const port = process.env.PORT || "3000";
 
 // app.use((req, res, next) => {
@@ -36,13 +36,20 @@ app.get("/", (req, res) => {
   console.log("just a normal get");
   //for each kingdom
 
-  //displayKingdomsObj.returnKingdoms().foreach(res.render("hbsTemp", { name: "Viking" }));
+let kingdomsArray = displayKingdomsObj.returnKingdoms();
+
+// kingdomsArray.forEach(function(element) {
+//   res.render('clickableTemplate', {name: element});
+// });
+
+res.render('clickableTemplate', {name: kingdomsArray});
 
   htmlData = htmlData.replace(
     "{{ displayHere }}",
     displayKingdomsObj.returnKingdoms().join()
   );
-  res.end(htmlData);
+
+ // res.end(htmlData);
 });
 
 app.get("/kingdom/:kingdom/", (req, res) => {
