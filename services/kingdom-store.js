@@ -15,12 +15,16 @@ const getJsonData = () => {
 };
 
 // Just kingdom names (no children info)
-const getKingdoms = () =>
-  JSON.parse(getJsonData()).kingdoms.map(ele => ele);
+const getKingdoms = () => JSON.parse(getJsonData()).kingdoms.map(ele => ele);
+
+const getKingdom = name =>
+  JSON.parse(getJsonData()).kingdoms.map(ele => {
+    if (ele.name === name) return ele[0];
+  });
 
 const getCastles = () =>
   JSON.parse(getJsonData()).kingdoms.map(ele =>
     ele.castles.map(ele => ele.name)
   );
 
-module.exports = { getKingdoms, getCastles };
+module.exports = { getKingdoms, getKingdom, getCastles };
