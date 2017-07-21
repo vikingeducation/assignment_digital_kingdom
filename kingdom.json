@@ -4,7 +4,7 @@
     "queen": "Cersei",
     "castles": [
       {
-        "name": "Red Keep",
+        "name": "Red_Keep",
         "lieges": {
           "vassals": ["im a vassel"]
         }
