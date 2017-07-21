@@ -1,18 +1,20 @@
 function realm(req, res) {
-	// Check for kingdom id.
-	let title;
-	if (!req.params.kingdomId) {
-		// Display all kingdoms for realms.
-		title = 'Kingdoms';
-	} else {
-		// We got one, display single kindom.
-		title = 'Kingdom';
-	}
+  // Check for kingdom id.
+  console.log(req.params);
 
-	// Render our page.
-	res.render('index', {
-		title: title
-	});
+  let title;
+  if (!req.params.kingdomId) {
+    // Display all kingdoms for realms.
+    title = 'Kingdoms';
+  } else {
+    // We got one, display single kindom.
+    title = 'Kingdom';
+  }
+
+  // Render our page.
+  res.render('index', {
+    title: title
+  });
 }
 
 module.exports = realm;

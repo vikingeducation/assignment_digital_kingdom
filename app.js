@@ -1,1 +1,1 @@
-const realm = require('./lib/realm');
+const realm = require('./index.js');
