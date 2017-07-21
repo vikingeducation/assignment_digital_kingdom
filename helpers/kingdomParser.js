@@ -7,6 +7,8 @@ let getJSON = () => {
 };
 
 let getKingdoms = () => {
+  // returns array of keys
+
   let kingdoms = getJSON();
   let kingdomNames = Object.keys(kingdoms);
   return kingdomNames;
@@ -18,7 +20,13 @@ let getKingdom = name => {
   return kingdom;
 };
 
+let getKingdomInput = input => {
+  let kingdoms = getKingdoms();
+  console.log(kingdoms);
+};
+
 module.exports = {
   getKingdoms,
-  getKingdom
+  getKingdom,
+  getKingdomInput
 };
