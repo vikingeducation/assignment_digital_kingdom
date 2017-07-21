@@ -4,15 +4,8 @@ var kingdomObject = require("./kingdom.json");
 const displayKingdomsObj = require("./displayKingdoms.js");
 const fs = require("fs");
 
-
-
-
 app.set("view engine", "hbs");
-
-
-
-
-
+const hbsTemp = require("./clickableTemplete");
 const port = process.env.PORT || "3000";
 
 // app.use((req, res, next) => {
@@ -29,7 +22,7 @@ app.use((req, res, next) => {
   var urlArray = req.url.split("/");
   // console.log(urlArray);
   // console.log("im the first use");
-  console.log(urlArray)
+  console.log(urlArray);
   if (urlArray[1] == "kingdom" && urlArray[2] !== undefined) {
     req.requestedkingdom = urlArray[2].toLowerCase();
     next();
@@ -40,15 +33,20 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
+  console.log("just a normal get");
+  //for each kingdom
+
+  //displayKingdomsObj.returnKingdoms().foreach(res.render("hbsTemp", { name: "Viking" }));
+
   htmlData = htmlData.replace(
     "{{ displayHere }}",
-    displayKingdomsObj.returnKingdoms().join());
+    displayKingdomsObj.returnKingdoms().join()
+  );
   res.end(htmlData);
 });
 
-
 app.get("/kingdom/:kingdom/", (req, res) => {
- htmlData = fs.readFileSync("./index.html", "UTF-8");
+  htmlData = fs.readFileSync("./index.html", "UTF-8");
   htmlData = htmlData.replace(
     "{{ displayHere }}",
     kingdomObject[req.requestedkingdom]["king"]
