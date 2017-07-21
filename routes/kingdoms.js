@@ -13,9 +13,13 @@ router.get("/:kingdomName", (req, res) => {
 	res.send("<pre>" + data + "</pre>");
 });
 
-router.use("/:kingdomName/castles", function(req, res) {
-	console.log(req.params);
-	castles;
-});
+router.use("/:kingdomName/castles", function(req, res, next) {
+	req.kingdomName = req.params.kingdomName
+	next();
+}, castles);
+
+
+
+
 
 module.exports = router;

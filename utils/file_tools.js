@@ -28,7 +28,17 @@ const castleJson = (params) => {
 	data = data.kingdoms;
 
 	for (key in params) {
-		data = data[key];
+		let castle = params[key]
+		console.log(data);
+		data = data[params[key]]
+
+		console.log(data, 'this is data');
+		// data = data[key];
+		// console.log(params[key], 'this is the params')
+		// console.log(data, 'this is the data')
+		// console.log(key, 'this is the key')
+		// console.log(data[key], 'this is the value')
+
 	}
 	data = JSON.stringify(data, null, 2);
 	return data;
