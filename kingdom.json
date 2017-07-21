@@ -2,12 +2,12 @@
   "westeros": {
     "king": "Jon Snow",
     "queen": "Cersei",
-    "castles": {
+    "castles": [{
       "name": "Red Keep",
       "lieges": {
         "vassals": ["im a vassel"]
       }
-    }
+    }]
   },
   "essos": {
     "king": "Hizdahr zo Loraq",

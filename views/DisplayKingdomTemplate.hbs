@@ -1,4 +1,4 @@
-{{name}}
+{{kingdomName}}
 <ul class="kinglist">
 <div href = "http://localhost:3000/kingdom/{{kingName}}">{{kingName}}<br></br></div>
 </ul>
@@ -8,7 +8,8 @@
 <ul class="castlelist">
   {{#each castles}}
 
-<a href = "http://localhost:3000/castle/{{name}}">{{name}}<br></br></a>
+<a href = "http://localhost:3000/kingdom/
+{{kingdomName}}/castle/{{name}}">{{name}}<br></br></a>
 
   {{/each}}
 </ul>
