@@ -28,8 +28,11 @@ const diveJson = (params) => {
 	data = data.kingdoms;
 
 	for (key in params) {
+		// console.log(key, 'key')
+		// console.log(params, 'params')
 		data = data[params[key]];
-		console.log(data);
+
+		// console.log(data);
 	}
 
 	let names = Object.keys(params)

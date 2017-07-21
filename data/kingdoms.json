@@ -7,34 +7,35 @@
 				"Magic Castle": {
 					"lieges": {
 						"Goofy": {
-							"vassals": [
-								"Max",
-								"Pete"
-							]
+							"vassals": 
+								{
+									"Max": "",
+									"Pete": ""
+								}
 						},
 						"Donald": {
-							"vassals": [
-								"Huey",
-								"Dewey",
-								"Louie"
-							]
+							"vassals": {
+								"Huey": "",
+								"Dewey": "",
+								"Louie": ""
+							}
 						}
 					}
 				},
 				"Animal Castle": {
 					"lieges": {
 						"Simba": {
-							"vassals": [
-								"Timon",
-								"Pumbaa"
-							]
+							"vassals": {
+								"Timon": "",
+								"Pumbaa": ""
+							}
 						},
 						"Scar": {
-							"vassals": [
-								"Shenzi",
-								"Bonzai",
-								"Ed"
-							]
+							"vassals": {
+								"Shenzi": "",
+								"Bonzai": "",
+								"Ed": ""
+							}
 						}
 					}
 				}
@@ -47,17 +48,17 @@
 				"Winterfell Castle": {
 					"lieges": {
 						"Bob": {
-							"vassals": [
-								"Billy",
-								"Joe"
-							]
+							"vassals": {
+								"Billy": "",
+								"Joe": ""
+							}
 						},
 						"Andy": {
-							"vassals": [
-								"Dan",
-								"Dan II",
-								"Vlad"
-							]
+							"vassals": {
+								"Dan": "",
+								"Dan II": "",
+								"Vlad": ""
+							}
 						}
 					}
 				}
