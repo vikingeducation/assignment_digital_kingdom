@@ -5,8 +5,11 @@
       <div>{{liege.name}}</div>
       <h3>Vassals</h3>
       {{#each liege.vassals as |vassal|}}
-        <div>{{vassal.name}}</div>
+        <div>{{vassal}}</div>
       {{/each}}
+      <form action="{{@root.name}}/lieges/{{liege.name}}">
+        <button type="submit">Visit this liege!</button>
+      </form>
     {{/each}}
   </div>
   </secion>

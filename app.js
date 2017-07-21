@@ -22,6 +22,7 @@ app.get("/:kingdom", (req, res) => {
 });
 
 app.get("/:kingdom/castles/:castle", (req, res) => {
+  console.log(req.params.castle);
   res.render("castle", getResources(req));
 });
 
