@@ -1,7 +1,7 @@
 {
   "Camelot": {
     "king": "Arthur",
-    "quuen": "Guinevere",
+    "queen": "Guinevere",
     "castles": {
       "The Really Stoney Castle": {},
       "Castle Danger": {},
@@ -25,7 +25,7 @@
   },
   "else": {
     "king": "Arthur",
-    "quuen": "Guinevere",
+    "queen": "Guinevere",
     "castles": {
       "The Really Stoney Castle": {},
       "Castle Danger": {},
