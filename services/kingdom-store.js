@@ -1,25 +1,27 @@
-
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 //get data
-  //readFileSync
+//readFileSync
 //add data
-  //readFileSync
+//readFileSync
 //save data  //dont export
-  //readFileSync
+//readFileSync
 //delete data
-  //readFileSync
+//readFileSync
 
 const getJsonData = () => {
-  let data = fs.readFileSync(path.resolve(__dirname, "kingdoms.json"));
+  let data = fs.readFileSync(path.resolve(__dirname, "../kingdoms.json"));
   console.log(data.toString());
-  //  = fs.readFileSync("kingdoms.json");
   return data.toString();
-}
+};
 
 // Just kingdom names (no children info)
-const getKingdoms = () => JSON.parse(getJsonData()).kingdoms.map(ele => ele.name);
+const getKingdoms = () =>
+  JSON.parse(getJsonData()).kingdoms.map(ele => ele.name);
 
+const getCastles = () =>
+  JSON.parse(getJsonData()).kingdoms.map(ele =>
+    ele.castles.map(ele => ele.name)
+  );
 
-
-module.exports = {getKingdoms}
+module.exports = { getKingdoms, getCastles };
