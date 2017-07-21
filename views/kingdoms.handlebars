@@ -2,7 +2,9 @@
   <div class="row">
 
     {{#each kingdoms as |kdm|}}
-    <btn class="btn-success">Visit the King of {{kdm.name}}</btn>
+    <form action="/{{kdm.name}}">
+      <button type="submit" class="btn-success">Visit the Kingdom of {{kdm.name}}</button>
+    </form>
       <div class="col-xs-4">
         <h4>{{kdm.name}}</h4>
         <ul>
