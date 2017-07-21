@@ -1,25 +1,30 @@
 const express = require("express");
 const app = express();
 var kingdomObject = require("./kingdom.json");
-
+const DisplayKingdoms = require("./displayKingdoms.js")
 app.set("view engine", "hbs");
 
 const port = process.env.PORT || "3000";
 
-app.use((req, res, next) => {
-  console.log(req.url + " - " + new Date());
-  next();
+// app.use((req, res, next) => {
+//   let kingdom = req.params['kingdom'];
+//   let castle = req.params['castle'];
+//   console.log(kingdom);
+//   next();
+// });
+
+app.get("/", (req, res) => {
+  console.log(displayKingdoms.returnKingdoms);
+  res.end(displayKingdoms.returnKingdoms);
 });
 
-app.get("kingdoms/:kingdom/castles/:castle", () => {
-  let kingdom = req.params.kingdom;
-  let castle = req.params.castle;
+
+app.get("/kingdom/:kingdom/", (req, res) => {
+  let kingdom = req.params["kingdom"];
+//  let castle = req.params[castle];
   console.log(kingdom);
+  res.end(kingdom);
 });
 
-app.get("/x/y", (req, res) => {
-  // req.params
-  res.end("hi");
-});
 
 app.listen(port);
