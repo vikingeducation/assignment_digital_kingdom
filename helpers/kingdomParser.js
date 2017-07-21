@@ -6,11 +6,10 @@ let getJSON = () => {
   return json;
 };
 
-let getLieges = (castleName, kingdomName) => {
+let getLieges = (castleName, kingdom) => {
   let json = getJSON();
-  let kingdom = json[kingdomName];
-  console.log(Object.keys(json[kingdomName].castles[castleName]));
-  return kingdom;
+
+  return Object.keys(kingdom.castles[castleName]);
 };
 
 let getKingdoms = () => {
@@ -73,7 +72,8 @@ let writeJSON = json_obj => {
 module.exports = {
   getKingdoms,
   getKingdom,
-  getKingdomInput
+  getKingdomInput,
+  getLieges
 };
 
 ///thoughts on rewriting getKingdomInput to be reusable
