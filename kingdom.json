@@ -1,53 +1,22 @@
 {
-  'France':{
-    king: ,
-    queen: ,
-    castle: {
-      lieges: {
-        vassals: [
-          // for super optional recursion
-          // {}, 
-          // {}, 
-          // {}
-          'serf', 'yeoman', 'thrall'
-
-        ]
+  "Westeros": {
+    "king": "Jon Snow",
+    "queen": "Cersei",
+    "castles": {
+      "name": "Red Keep",
+      "lieges": {
+        "vassals": ["im a vassel"]
       }
     }
   },
-  'England':{
-    king: ,
-    queen: ,
-    castle: {
-      lieges: {
-        vassals: [
-          // for super optional recursion
-          // {}, 
-          // {}, 
-          // {}
-          'serf', 'yeoman', 'thrall'
-
-        ]
+  "Essos": {
+    "king": "that weird consanat name",
+    "queen": "danyers",
+    "castles": {
+      "name": "pyramid",
+      "lieges": {
+        "vassals": ["im not a vassel"]
       }
     }
-  },
-'Westeros':{
-    king: 'Jon Snow',
-    queen: 'Cersei',
-    castles: {
-      name: 'Red Keep',
-      lieges: {
-        vassals: [
-          // for super optional recursion
-          // {}, 
-          // {}, 
-          // {}
-          'serf', 'yeoman', 'thrall'
-
-        ]
-      }
-    }
-  },
-
-
+  }
 }
