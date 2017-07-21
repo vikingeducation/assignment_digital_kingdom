@@ -1,6 +1,6 @@
 const Express = require("express");
 const app = Express();
-const getKingdoms = require("./helpers/getKingdoms.js");
+const kingdomParser = require("./helpers/kingdomParser.js");
 
 const expressHandlebars = require("express-handlebars");
 
@@ -19,12 +19,12 @@ app.engine("handlebars", hbs.engine);
 
 //Routing Code
 app.get("/", function(req, res) {
-  let kingdoms = getKingdoms();
+  let kingdoms = kingdomParser.getKingdoms();
   //render
   res.render("kingdoms/show", { kingdoms });
 });
 
-app.use("/kingdoms");
+app.use("/kingdoms", kingdoms);
 
 app.listen(3000, host, function() {
   console.log("Example app listening on port 3000!");
