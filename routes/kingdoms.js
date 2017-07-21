@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { kingdomsJson, kingdomJson } = require("../utils/file_tools");
+const { kingdomsJson, diveJson } = require("../utils/file_tools");
 const castles = require("./castles");
 
 router.get("/", (req, res) => {
@@ -9,12 +9,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:kingdomName", (req, res) => {
-	let data = kingdomJson(req.params.kingdomName);
-	res.send("<pre>" + data + "</pre>");
+	let data = diveJson({kingdom: req.params.kingdomName});
+	res.send(data[0] + "<br><pre>" + data[1] + "</pre>");
 });
 
 router.use("/:kingdomName/castles", function(req, res, next) {
-	req.kingdomName = req.params.kingdomName
+	req.diveObj = {
+		kingdom: req.params.kingdomName
+	}
 	next();
 }, castles);
 

@@ -23,25 +23,25 @@ const kingdomJson = (kingdom) => {
 	return kingdom;
 }
 
-const castleJson = (params) => {
+const diveJson = (params) => {
 	let data = _readJson();
 	data = data.kingdoms;
 
 	for (key in params) {
-		let castle = params[key]
+		data = data[params[key]];
 		console.log(data);
-		data = data[params[key]]
-
-		console.log(data, 'this is data');
-		// data = data[key];
-		// console.log(params[key], 'this is the params')
-		// console.log(data, 'this is the data')
-		// console.log(key, 'this is the key')
-		// console.log(data[key], 'this is the value')
-
 	}
+
+	let names = Object.keys(params)
+	let name = names[names.length - 1];
+
+	// data = data[params["kingdom"]].castles
+
+	// data = data[params["castle"]];
+	// console.log(data);
+
 	data = JSON.stringify(data, null, 2);
-	return data;
+	return [params[name], data];
 }
 
 
@@ -49,5 +49,5 @@ const castleJson = (params) => {
 module.exports = {
 	kingdomsJson,
 	kingdomJson,
-	castleJson
+	diveJson
 }

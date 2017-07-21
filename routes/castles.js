@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { castleJson } = require("../utils/file_tools");
+const { diveJson } = require("../utils/file_tools");
 
 router.get("/:castle", (req, res) => {
 	let castleName = req.params.castle;
@@ -8,12 +8,12 @@ router.get("/:castle", (req, res) => {
 	
 	let obj = {
 		kingdom: kingdomName,
+		castles: "castles",
 		castle: castleName
 	}
 
-	let data = castleJson(obj);
-	// res.send("<pre>" + data + "</pre>")
-	res.send("reached here")
+	let data = diveJson(obj);
+	res.send(`${data[0]}<br><pre>${data[1]}</pre>`)
 });
 
 module.exports = router;
