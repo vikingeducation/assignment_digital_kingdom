@@ -35,33 +35,36 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   console.log("just a normal get");
   //for each kingdom
+  let kingdomsArray = displayKingdomsObj.returnKingdoms();
 
-let kingdomsArray = displayKingdomsObj.returnKingdoms();
+  res.render("clickableTemplate", { name: kingdomsArray });
 
-// kingdomsArray.forEach(function(element) {
-//   res.render('clickableTemplate', {name: element});
-// });
+  // htmlData = htmlData.replace(
+  //   "{{ displayHere }}",
+  //   displayKingdomsObj.returnKingdoms().join()
+  // );
 
-res.render('clickableTemplate', {name: kingdomsArray});
-
-  htmlData = htmlData.replace(
-    "{{ displayHere }}",
-    displayKingdomsObj.returnKingdoms().join()
-  );
-
- // res.end(htmlData);
+  //res.end(htmlData);
 });
 
 app.get("/kingdom/:kingdom/", (req, res) => {
-  htmlData = fs.readFileSync("./index.html", "UTF-8");
-  htmlData = htmlData.replace(
-    "{{ displayHere }}",
-    kingdomObject[req.requestedkingdom]["king"]
-  );
-  // /let kingdom = req.params["kingdom"];
-  //  let castle = req.params[castle];
-  console.log(displayKingdomsObj[req.requestedkingdom] + "test here");
-  res.end(htmlData);
-});
+  res.render("DisplayKingdomTemplate", {
+    name: req.requestedkingdom,
+    kingName: kingdomObject[req.requestedkingdom]["king"],
+    queenName: kingdomObject[req.requestedkingdom]["queen"],
+    castles: kingdomObject[req.requestedkingdom]["castles"]
+  });
 
+  //res.end(htmlData);
+});
+app.get("/castle/:castles/", (req, res) => {
+  res.render("DisplayCastleTemplate", {
+    name: req.requestedkingdom,
+    kingName: kingdomObject[req.requestedkingdom]["king"],
+    queenName: kingdomObject[req.requestedkingdom]["queen"],
+    castles: kingdomObject[req.requestedkingdom]["castles"]
+  });
+
+  //res.end(htmlData);
+});
 app.listen(port);

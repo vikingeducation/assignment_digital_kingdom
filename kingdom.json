@@ -12,11 +12,19 @@
   "essos": {
     "king": "Hizdahr zo Loraq",
     "queen": "daenerys",
-    "castles": {
-      "name": "pyramid",
-      "lieges": {
-        "vassals": ["Tyrion"]
+    "castles": [
+      {
+        "name": "pyramid",
+        "lieges": {
+          "vassals": ["Tyrion"]
+        }
+      },
+      {
+        "name": "dragonstone",
+        "lieges": {
+          "vassals": ["jon cottington"]
+        }
       }
-    }
+    ]
   }
 }
