@@ -5,11 +5,8 @@ const castles = require("./castles");
 
 router.get("/", (req, res) => {
 	let data = kingdomsJson();
-	console.log(typeof data, '????');
 
-	let dataStr = JSON.stringify(data);
-
-	res.render('kingdoms', { data: dataStr });
+	res.render('kingdoms', {data});
 });
 
 router.get("/:kingdomName", (req, res) => {
@@ -25,7 +22,9 @@ router.get("/:kingdomName", (req, res) => {
 
 	let obj = {
 		title: data[0],
-		data: Object.keys(data[1])
+		currentPath: req.originalUrl,
+		nextPath: "castles",
+		data: Object.keys(data[1]["castles"])
 	}
 
 	res.render('kingdom', obj);

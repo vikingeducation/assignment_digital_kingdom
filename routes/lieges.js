@@ -11,19 +11,10 @@ router.get("/:liege", (req, res) => {
 
 	let data = diveJson(passArray);
 
-	console.log(data[1], 'what is this')
-
-	let o = data[1];
-	let vassal = o.vassals;
-
-	console.log(vassal)
-
 	let obj = {
 		title: data[0],
-		data: Object.keys(data[1])
+		data: Object.keys(data[1]["vassals"])
 	}
-
-
 
 	res.render('lieges', obj);
 

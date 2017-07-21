@@ -17,8 +17,6 @@ router.get("/:vassal", (req, res) => {
 	}
 
 	res.render('vassals', obj);
-	
-	// res.render(`${data[0]}<br><pre>${data[1]}</pre>`);
 });
 
 router.use("/:vassal/kingdoms", (req, res, next) => {

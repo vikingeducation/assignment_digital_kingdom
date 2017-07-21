@@ -21,11 +21,8 @@ const diveJson = (params) => {
 		data = data[param];
 	});
 
-	data = JSON.stringify(data, null, 2);
 	return [params[params.length - 1], data];
 }
-
-
 
 module.exports = {
 	kingdomsJson,

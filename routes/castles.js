@@ -13,7 +13,7 @@ router.get("/:castle", (req, res) => {
 
 	let obj = {
 		title: data[0],
-		data: Object.keys(data[1])
+		data: Object.keys(data[1]["lieges"])
 	}
 
 	res.render('castles', obj);
