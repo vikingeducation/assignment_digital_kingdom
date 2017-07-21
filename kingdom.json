@@ -11,7 +11,7 @@
   },
   "Essos": {
     "king": "that weird consanat name",
-    "queen": "danyers",
+    "queen": "daenerys",
     "castles": {
       "name": "pyramid",
       "lieges": {
@@ -19,5 +19,4 @@
       }
     }
   }
-
 }
