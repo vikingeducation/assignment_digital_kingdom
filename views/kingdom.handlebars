@@ -1,0 +1,11 @@
+<section class="container">
+  <div class="row">
+    <h1>Welcome to {{kingdom.name}}</h1>
+    {{#each kingdom.castles as |castle|}}
+      <h2>{{castle.name}}</h2>
+      {{#each castle.lieges as |liege|}}
+        <h3>{{liege.name}}</h3>
+      {{/each}}
+    {{/each}}
+  </div>
+  </secion>
