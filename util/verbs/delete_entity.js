@@ -1,5 +1,6 @@
 const parentMap = require('../io/parent_map');
 const { read, write } = require('../io');
+
 function deleteEntity(realm, type, id) {
   let entity = realm[type][id];
   if (!entity) return parentMap[type];
@@ -23,6 +24,7 @@ module.exports = (type, id) => {
   let realm = read();
 
   let entity = realm[type][id];
+  // If we don't have an entity, load the kingdoms page
   if (entity === null) return 'vassals';
   // Grok the parent
   let parentType = parentMap[type];

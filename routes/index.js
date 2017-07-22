@@ -60,9 +60,18 @@ function _extractDisplayData(req, entityType) {
     // We got oHowever, GET, POST, PUT and DELETE are supported by the implementations of XMLHttpRequest (i.e. AJAX calls) in all the major web browsers (IE, Firefox, Safari, Chrome, Opera).ne, display single entity.
     entities = [db.get(entityType, entityId)];
   }
+
+  // Get the current path, dropping trailing slashes
+  let path =
+    req.originalUrl.slice(-1) === '/'
+      ? req.originalUrl.slice(0, -1)
+      : req.originalUrl;
+  console.log(path.split('/').slice(0, -2));
+  console.log(path);
   return {
     title: title,
-    entities: entities
+    entities: entities,
+    path: path
   };
 }
 
