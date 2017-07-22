@@ -1,25 +1,6 @@
 {
   "kingdoms": {
-    "0": {
-      "name": "bananarama",
-      "children": {
-        "kings": [
-          0
-        ],
-        "queens": [
-          0
-        ],
-        "castles": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "id": 0
-    }
+    "0": null
   },
   "castles": {
     "0": {

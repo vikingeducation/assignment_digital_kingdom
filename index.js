@@ -7,6 +7,7 @@ const router = require('./routes');
 const expressHandlebars = require('express-handlebars');
 
 // Helpers
+const url = require('url');
 const helperLoader = new require('load-helpers')();
 const helpers = require('./views/helpers');
 
@@ -15,6 +16,15 @@ const exphbs = expressHandlebars.create({
 	helpers: helpers,
 	partialsDir: 'views/partials',
 	defaultLayout: 'default'
+});
+
+// Body parser.
+app.use(require('body-parser').urlencoded({ extended: false }));
+
+// Delete transmogrifier.
+app.use((req, res, next) => {
+	if (req.query.delete) req.method = 'delete';
+	next();
 });
 
 const PORT = process.env.PORT || process.argv[2] || 3000;
@@ -26,6 +36,11 @@ app.set('view engine', 'handlebars');
 // Load routes.
 // app.use('/', router);
 app.use('/kingdoms', router);
+
+// Add our routes.
+app.all('/', (req, res) => {
+	res.status(301).redirect('/kingdoms');
+});
 
 app.listen(PORT, HOST, () => {
 	console.log(`Listening at http://${HOST}:${PORT}`);

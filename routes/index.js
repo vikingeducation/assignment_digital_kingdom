@@ -2,56 +2,92 @@ const router = require('express').Router();
 const db = require('../util/verbs');
 const parentMap = require('../util/io/parent_map');
 
-// Add our routes.
 router.all('/:kingdomId?', (req, res) => {
-	display(req, res, 'kingdoms');
+	parseRouteAction(req, res, 'kingdoms');
 });
 
-router.all('/:kingdomId/king', (req, res) => {
-	display(req, res, 'kings');
+router.all('/:kingdomId/castles/:castleId', (req, res) => {
+	parseRouteAction(req, res, 'castles');
 });
 
-router.all('/:kingdomId/queen', (req, res) => {
-	display(req, res, 'queens');
-});
-
-router.all('/:kingdomId/castles/:castleId?', (req, res) => {
-	display(req, res, 'castles');
-});
-
-router.all('/:kingdomId/castles/:castleId/lieges/:liegeId?', (req, res) => {
-	display(req, res, 'lieges');
+router.all('/:kingdomId/castles/:castleId/lieges/:liegeId', (req, res) => {
+	parseRouteAction(req, res, 'lieges');
 });
 
 router.all(
-	'/:kingdomId/castles/:castleId/lieges/:liegeId/vassals/:vassalId?',
+	'/:kingdomId/castles/:castleId/lieges/:liegeId/vassals/:vassalId',
 	(req, res) => {
-		display(req, res, 'vassals');
+		parseRouteAction(req, res, 'vassals');
 	}
 );
+
 router.use(
 	'/:kingdomId/castles/:castleId/lieges/:liegeId/vassals/:vassalId/kingdoms',
 	router
 );
 
+function parseRouteAction(req, res, entity) {
+	// Interrogate req.method and invoke correspond function
+	let middleMan = {
+		get: display,
+		post: insert,
+		delete: remove
+	};
+
+	// Only support middle man methods.
+	if (!Object.keys(middleMan).includes(req.method.toLowerCase())) {
+		return res.status(405).send('Method not supported bruh!');
+	}
+
+	// Invoke it.
+	middleMan[req.method.toLowerCase()](req, res, entity);
+}
+
 function display(req, res, entityType) {
+	// Render our page.
+	res.render('index', _extractDisplayData(req, entityType));
+}
+
+function _extractDisplayData(req, entityType) {
 	let title = entityType[0].toUpperCase() + entityType.slice(1);
 	let entities = [];
 	let entityId = req.params[entityType.slice(0, -1) + 'Id'];
 	let parentId = req.params[parentMap[entityType].slice(0, -1) + 'Id'];
 	if (!entityId) {
 		// Display all entities.
-		entities = db.get(entityType, undefined, parentId);
+		entities = db.get(entityType);
 	} else {
-		// We got one, display single entity.
+		// We got oHowever, GET, POST, PUT and DELETE are supported by the implementations of XMLHttpRequest (i.e. AJAX calls) in all the major web browsers (IE, Firefox, Safari, Chrome, Opera).ne, display single entity.
 		entities = [db.get(entityType, entityId)];
+	}
+	return {
+		title: title,
+		entities: entities
+	};
+}
+
+function insert(req, res, entityType) {
+	// Insert entity into db.
+	db.put(entityType, req.body.name);
+
+	// Render our page.
+	display(req, res, entityType);
+}
+
+function remove(req, res, entityType) {
+	// Remove entity from db.
+	let parentType = db.del(
+		entityType,
+		req.params[entityType.slice(0, -1) + 'Id']
+	);
+	console.log(parentType);
+	if (parentType === 'vassals') {
+		console.log('wtf');
+		return res.status(302).redirect('/kingdoms');
 	}
 
 	// Render our page.
-	res.render('index', {
-		title: title,
-		entities: entities
-	});
+	display(req, res, parentType);
 }
 
 module.exports = router;
