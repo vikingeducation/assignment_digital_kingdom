@@ -26,4 +26,5 @@ if (process.argv[2] === 'build') {
 
 if (process.argv[2] === 'run') {
   // do stuff
+  console.log(get('kingdom', 0));
 }

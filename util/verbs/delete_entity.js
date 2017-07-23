@@ -1,5 +1,6 @@
 const io = require('../io');
 
+// Recursively delete entities
 function deleteEntity(realm, type, id) {
   let entity = realm[type][id];
   if (!entity) return false;

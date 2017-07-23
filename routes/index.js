@@ -2,21 +2,21 @@ const router = require('express').Router();
 const actions = require('./actions');
 
 router.all('/:kingdom', (req, res) => {
-  parseRouteAction(req, res, 'kingdom');
+  parseRouteAction(req, res, 'Kingdom');
 });
 
 router.all('/:kingdom/castles/:castle', (req, res) => {
-  parseRouteAction(req, res, 'castle');
+  parseRouteAction(req, res, 'Castle');
 });
 
 router.all('/:kingdom/castles/:castle/lieges/:liege', (req, res) => {
-  parseRouteAction(req, res, 'liege');
+  parseRouteAction(req, res, 'Liege');
 });
 
 router.all(
   '/:kingdom/castles/:castle/lieges/:liege/vassals/:vassal',
   (req, res) => {
-    parseRouteAction(req, res, 'vassal');
+    parseRouteAction(req, res, 'Vassal');
   }
 );
 

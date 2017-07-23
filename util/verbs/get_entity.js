@@ -21,7 +21,9 @@ module.exports = (type, id) => {
   return currentEntity;
 };
 
-function _populateChildren(realm, currentEntity) {
+function _populateChildren(realm, currentEntity, depth) {
+  if (depth === undefined) depth = 2;
+  if (!depth) return;
   let newChildren = [];
   let childType = io.child(currentEntity.type);
   // Grab all of the real children from their ids
@@ -30,6 +32,6 @@ function _populateChildren(realm, currentEntity) {
   });
   currentEntity.children = newChildren;
   currentEntity.children.forEach(child => {
-    _populateChildren(realm, child);
+    _populateChildren(realm, child, depth - 1);
   });
 }

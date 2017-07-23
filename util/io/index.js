@@ -6,25 +6,25 @@ module.exports = {
   read: () => JSON.parse(fs.readFileSync('./data/realm.json'), 'utf8'),
   reset: () =>
     module.exports.write({
-      kingdom: {},
-      castle: {},
-      liege: {},
-      vassal: {}
+      Kingdom: {},
+      Castle: {},
+      Liege: {},
+      Vassal: {}
     }),
   parent: childType => _parent[childType],
   child: parentType => _child[parentType],
-  valid: entityType => Object.keys(_parent).includes(entity)
+  valid: entityType => Object.keys(_parent).includes(entityType)
 };
 
 const _parent = {
-  kingdom: 'vassal',
-  castle: 'kingdom',
-  liege: 'castle',
-  vassal: 'liege'
+  Kingdom: 'Vassal',
+  Castle: 'Kingdom',
+  Liege: 'Castle',
+  Vassal: 'Liege'
 };
 const _child = {
-  kingdom: 'castle',
-  castle: 'liege',
-  liege: 'vassal',
-  vassal: 'kingdom'
+  Kingdom: 'Castle',
+  Castle: 'Liege',
+  Liege: 'Vassal',
+  Vassal: 'Kingdom'
 };

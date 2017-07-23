@@ -2,6 +2,8 @@ const io = require('../io');
 
 // If id is specified, we will overwrite!
 module.exports = (type, name, parentId, id) => {
+  // Cleanly handle invalid type
+  if (!io.valid(type)) return false;
   // Load the database
   let realm = io.read();
   // Generate new ID if we don't have one
@@ -29,7 +31,7 @@ module.exports = (type, name, parentId, id) => {
 
   // Write the new realm to the file.
   io.write(realm);
-  return newId;
+  return newEntity;
 };
 
 // Return a valid unique id for a given entity type
