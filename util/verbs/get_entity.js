@@ -1,9 +1,9 @@
 const read = require('../io').read;
-const parentMap = require('../io/parent_map');
+const entMap = require('../io/entity_map');
 
 module.exports = (type, id) => {
   // Return an empty list if given an invalid entity type
-  if (!Object.keys(parentMap).includes(type)) return [];
+  if (!Object.keys(entMap.parent).includes(type)) return [];
 
   let realm = read();
   let parsedEntities = [];
@@ -24,13 +24,11 @@ module.exports = (type, id) => {
 
 function _populateChildren(realm, currentEntity) {
   let newChildren = [];
+  let childType = entMap.child[currentEntity.type];
   // Grab all of the real children from their ids
-  for (let childType in currentEntity.children) {
-    currentEntity.children[childType].forEach(childId => {
-      realm[childType][childId].type = childType;
-      newChildren.push(realm[childType][childId]);
-    });
-  }
+  currentEntity.children.forEach(childId => {
+    newChildren.push(realm[childType][childId]);
+  });
   currentEntity.children = newChildren;
   currentEntity.children.forEach(child => {
     _populateChildren(realm, child);

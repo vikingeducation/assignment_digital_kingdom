@@ -45,7 +45,7 @@ function parseRouteAction(req, res, entity) {
 
 function display(req, res, entityType) {
   // Render our page.
-  res.render('index', _extractDisplayData(req, entityType));
+  return res.render('index', _extractDisplayData(req, entityType));
 }
 
 function _extractDisplayData(req, entityType) {

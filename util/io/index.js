@@ -6,11 +6,9 @@ module.exports = {
   read: () => JSON.parse(fs.readFileSync('./data/realm.json'), 'utf8'),
   reset: () =>
     module.exports.write({
-      kingdoms: {},
-      castles: {},
-      kings: {},
-      queens: {},
-      lieges: {},
-      vassals: {}
+      kingdom: {},
+      castle: {},
+      liege: {},
+      vassal: {}
     })
 };
