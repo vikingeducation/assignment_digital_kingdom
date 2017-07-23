@@ -1,3 +1,8 @@
+const PORT = process.env.PORT || process.argv[2] || 3000;
+const HOST = 'localhost';
+
+const db = require('../util/verbs');
+
 const app = require('express')();
 
 // Router
@@ -6,42 +11,39 @@ const router = require('./routes');
 // Handlebars
 const expressHandlebars = require('express-handlebars');
 
-// Helpers
-const url = require('url');
-const helperLoader = new require('load-helpers')();
-const helpers = require('./views/helpers');
-
-// Create engine instance of handlebars
+// Build engine instance
 const exphbs = expressHandlebars.create({
-	helpers: helpers,
-	partialsDir: 'views/partials',
-	defaultLayout: 'default'
+  helpers: helpers,
+  partialsDir: 'views/partials',
+  defaultLayout: 'default'
 });
 
-// Body parser.
+app.engine('handlebars', exphbs.engine);
+app.set('view engine', 'handlebars');
+
+// Body parser to get post data
 app.use(require('body-parser').urlencoded({ extended: false }));
 
 // Delete transmogrifier.
 app.use((req, res, next) => {
-	if (req.query.delete) req.method = 'delete';
-	next();
+  if (req.query.delete) req.method = 'delete';
+  next();
 });
-
-const PORT = process.env.PORT || process.argv[2] || 3000;
-const HOST = 'localhost';
-
-app.engine('handlebars', exphbs.engine);
-app.set('view engine', 'handlebars');
 
 // Load routes.
 // app.use('/', router);
 app.use('/kingdoms', router);
 
-// Add our routes.
-app.all('/', (req, res) => {
-	res.status(301).redirect('/kingdoms');
+// View the realm.
+app.get('/', (req, res) => {
+  const options = {
+    title: 'The Realm',
+    entities: db.get('kingdom'),
+    paths: null // build_path function/module?
+  };
+  return res.render('realm', options);
 });
 
 app.listen(PORT, HOST, () => {
-	console.log(`Listening at http://${HOST}:${PORT}`);
+  console.log(`Listening at http://${HOST}:${PORT}`);
 });

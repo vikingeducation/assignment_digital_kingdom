@@ -13,11 +13,17 @@ if (process.argv[2] === 'build') {
         let liegeId = put('liege', `Liege ${l}`, castleId);
 
         for (let v = 0; v < 10; v++) {
-          put('vassal', `Vassal ${v}`, liegeId);
+          let vassalId = put('vassal', `Vassal ${v}`, liegeId);
+
+          for (let k2 = 0; k2 < 2; k2++) {
+            put('kingdom', `Imaginary Kingdom ${k2}`, vassalId);
+          }
         }
       }
     }
   }
 }
 
-del('kingdom', 0);
+if (process.argv[2] === 'run') {
+  // do stuff
+}

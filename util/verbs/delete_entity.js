@@ -1,5 +1,4 @@
-const entMap = require('../io/entity_map');
-const { read, write } = require('../io');
+const io = require('../io');
 
 function deleteEntity(realm, type, id) {
   let entity = realm[type][id];
@@ -7,7 +6,7 @@ function deleteEntity(realm, type, id) {
 
   if (entity.children.length) {
     entity.children.forEach(childId => {
-      deleteEntity(realm, entMap.child[type], childId);
+      deleteEntity(realm, io.child(type), childId);
     });
   }
 
@@ -17,13 +16,13 @@ function deleteEntity(realm, type, id) {
 
 module.exports = (type, id) => {
   // Read Database
-  let realm = read();
+  let realm = io.read();
 
   let entity = realm[type][id];
   // If we don't have an entity, load the kingdoms page
   if (entity === null) return false;
   // Grok the parent
-  let parentType = entMap.parent[type];
+  let parentType = io.parent(type);
   let parentId = entity.parentId;
 
   // Recursively delete children
@@ -35,6 +34,6 @@ module.exports = (type, id) => {
     childArray = childArray.splice(childArray.indexOf(+id), 1);
   }
 
-  write(realm);
+  io.write(realm);
   return true;
 };

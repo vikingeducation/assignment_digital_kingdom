@@ -1,11 +1,10 @@
-const read = require('../io').read;
-const entMap = require('../io/entity_map');
+const io = require('../io');
 
 module.exports = (type, id) => {
   // Return an empty list if given an invalid entity type
-  if (!Object.keys(entMap.parent).includes(type)) return [];
+  if (!io.valid(type)) return [];
 
-  let realm = read();
+  let realm = io.read();
   let parsedEntities = [];
 
   // Return all of an entity if we don't have a particular id
@@ -24,7 +23,7 @@ module.exports = (type, id) => {
 
 function _populateChildren(realm, currentEntity) {
   let newChildren = [];
-  let childType = entMap.child[currentEntity.type];
+  let childType = io.child(currentEntity.type);
   // Grab all of the real children from their ids
   currentEntity.children.forEach(childId => {
     newChildren.push(realm[childType][childId]);
