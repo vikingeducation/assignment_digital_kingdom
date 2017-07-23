@@ -1,0 +1,41 @@
+{
+  "Camelot": {
+    "king": "Arthur",
+    "queen": "Guinevere",
+    "castles": {
+      "The Really Stoney Castle": {},
+      "Castle Danger": {},
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome", "Gorlok"],
+        "?????": ["Karl2", ""]
+      }
+    }
+  },
+  "else": {
+    "king": "Arthur",
+    "queen": "Guinevere",
+    "castles": {
+      "The Really Stoney Castle": {},
+      "Castle Danger": {},
+      "Tintegal": {
+        "Bob": ["Tim", "Karl", "Danger-irksome"],
+        "?????": ["Karl2", ""]
+      }
+    }
+  },
+  "Elsewhere": {
+    "king": "Alexander",
+    "queen": "Methudaslak",
+    "castles": {}
+  },
+  "Parsifal": {
+    "king": "Alexander",
+    "queen": "Methudaslak",
+    "castles": {}
+  },
+  "Great Places": {
+    "king": "Alexander",
+    "queen": "Methudaslak",
+    "castles": {}
+  }
+}
