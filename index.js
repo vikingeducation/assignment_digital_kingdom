@@ -37,9 +37,10 @@ app.use('/kingdoms', router);
 app.get('/', (req, res) => {
   const options = {
     title: 'The Realm',
-    entities: db.get('kingdom'),
-    paths: null // build_path function/module?
+    entities: db.get('Kingdom'),
+    gcType: 'Liege'
   };
+  console.log(options.entities);
   return res.render('realm', options);
 });
 

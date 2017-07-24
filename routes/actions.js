@@ -6,9 +6,14 @@ const actions = {
     // Render our page.
     let entityId = req.params[entityType];
     let entity = db.get(entityType, entityId);
-    if (!entityId || entity === []) _redirect(res);
+    if (isNaN(+entityId) || !entity) return _redirect(res);
+    let gcType = io.child(io.child(entityType));
 
-    return res.render('kingdom', { entity: entity });
+    return res.render('kingdom', {
+      entity: entity,
+      title: entity.name,
+      gcType: gcType
+    });
   },
   post: function(req, res, entityType) {
     // Insert entity into db.

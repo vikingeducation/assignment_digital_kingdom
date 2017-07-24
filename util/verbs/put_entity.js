@@ -45,7 +45,7 @@ function _getnewId(realm, type) {
 function _buildPath(realm, entity) {
   let parent = realm[io.parent(entity.type)][entity.parentId];
   let type = entity.type[0].toLowerCase() + entity.type.slice(1);
-  let path = `/${type}/${entity.id}`;
+  let path = `/${type}s/${entity.id}`;
   if (parent) {
     // Get moar ancestors
     path = _buildPath(realm, parent) + path;
