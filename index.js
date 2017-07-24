@@ -1,12 +1,7 @@
 const PORT = process.env.PORT || process.argv[2] || 3000;
 const HOST = 'localhost';
 
-const db = require('./util/verbs');
-
 const app = require('express')();
-
-// Router
-const router = require('./routes');
 
 // Handlebars
 const expressHandlebars = require('express-handlebars');
@@ -29,21 +24,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// Load routes.
-// app.use('/', router);
-app.use('/kingdoms', router);
-
-// View the realm.
-app.get('/', (req, res) => {
-  const options = {
-    title: 'The Realm',
-    entities: db.get('Kingdom'),
-    gcType: 'Liege'
-  };
-  console.log(options.entities);
-  return res.render('realm', options);
-});
+// Routers
+app.use('/', require('./routes/realm'));
+app.use('/kingdoms', require('./routes/kingdom'));
 
 app.listen(PORT, HOST, () => {
   console.log(`Listening at http://${HOST}:${PORT}`);
 });
+
+// Reset JSON
+require('./util/io').reset();

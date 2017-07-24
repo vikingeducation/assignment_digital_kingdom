@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const actions = require('./actions');
 
-router.all('/:Kingdom', (req, res) => {
+router.all('/:Kingdom/:royal?', (req, res) => {
   parseRouteAction(req, res, 'Kingdom');
 });
 

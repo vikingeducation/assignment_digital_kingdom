@@ -1,11 +1,18 @@
+{{#if entity.royals}} {{#if entity.royals.king}}
+<section class="col-xs-2">
+  <h3>King {{entity.royals.king}}</h3>
+</section>
+{{else}} {{>new type='King' path=entity.kingPath}} {{/if}} {{#if entity.royals.queen}}
+<section class="col-xs-2">
+  <h3>Queen {{entity.royals.queen}}</h3>
+</section>
+{{else}} {{>new type='Queen' path=entity.queenPath}} {{/if}} {{/if}}
+
 <article class="col-xs-12">
-  {{#unless realm}}
-  <h2>{{entity.type}}</h2>
-  {{/unless}}
   <div class="row">
     {{#each entity.children as |child|}}
     <section class="col-xs-2">
-      <h4><a href="{{child.path}}">{{child.name}}</a></h4>
+      <h4><a href="{{child.path}}">{{child.type}}: {{child.name}}</a></h4>
       <h5>{{../gcType}}s: {{child.children.length}}</h5>
     </section>
     {{/each}}

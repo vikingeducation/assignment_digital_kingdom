@@ -7,23 +7,37 @@ const actions = {
     let entityId = req.params[entityType];
     let entity = db.get(entityType, entityId);
     if (isNaN(+entityId) || !entity) return _redirect(res);
-    let gcType = io.child(io.child(entityType));
+    let childType = io.child(entityType);
+    let gcType = io.child(childType);
 
     return res.render('kingdom', {
       entity: entity,
-      title: entity.name,
+      title: `${entity.type} ${entity.name}`,
+      childType: childType,
       gcType: gcType
     });
   },
   post: function(req, res, entityType) {
-    // Insert entity into db.
-    let newEntity = db.put(entityType, req.body.name);
-
-    return _redirect(
-      res,
-      newEntity.parentPath,
-      newEntity.path && newEntity.parentPath
-    );
+    if (req.params.royal) {
+      // Adding a royal
+      let entityId = req.params[entityType];
+      let entity = db.get(entityType, entityId, true);
+      entity.royals[req.params.royal] = req.body.name;
+      db.put(entity);
+      return _redirect(res, entity.path, true);
+    } else {
+      // Inserting a new entity into db.
+      let newEntity = db.post(
+        io.child(entityType),
+        req.body.name,
+        req.params[entityType]
+      );
+      return _redirect(
+        res,
+        newEntity.parentPath,
+        newEntity.path && newEntity.parentPath
+      );
+    }
   },
   delete: function(req, res, entityType) {
     // Remove entity from db.
@@ -36,9 +50,8 @@ const actions = {
 
 // Redirect to a given path, or the Realm
 function _redirect(res, path, pathCondition) {
-  res.statusCode = 303;
   if (path && pathCondition) return res.redirect(path);
-  return res.redirect('/');
+  return res.redirect(303, '/');
 }
 
 module.exports = actions;

@@ -1,6 +1,6 @@
 const io = require('../io');
 
-module.exports = (type, id) => {
+module.exports = (type, id, noPopulate) => {
   // Return an empty list if given an invalid entity type
   if (!io.valid(type)) return [];
 
@@ -19,7 +19,7 @@ module.exports = (type, id) => {
   // Failsafe in case we don't have an entity
   if (currentEntity === null || currentEntity === undefined) return null;
 
-  _populateChildren(realm, currentEntity);
+  if (!noPopulate) _populateChildren(realm, currentEntity);
 
   return currentEntity;
 };
