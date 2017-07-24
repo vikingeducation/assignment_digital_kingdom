@@ -9,6 +9,7 @@ module.exports = (type, id) => {
 
   // Return all of an entity if we don't have a particular id
   if (id === undefined) {
+    console.log(type);
     return Object.values(realm[type]);
   }
 

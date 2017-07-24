@@ -1,7 +1,7 @@
 <main class="container">
 	<section class="row">
 		<header class="col-xs-12">
-			<h1>{{title}}</h1>
+			<h1>{{entity.name}}</h1>
 		</header>
 		{{#each entities as |entity| }}
 		<article class="col-xs-12">
@@ -9,10 +9,10 @@
 			<div class="row">
 				{{#each entity.children as |child|}}
 				<section class="col-xs-2">
-					<h4><a href="{{../../path}}/{{child.type}}/{{child.id}}">{{child.name}}</a></h4>
+					<h4><a href="{{child.path}}">{{child.name}}</a></h4>
 					<ul>
 						{{#each child.children as |grandchild|}}
-						<li><a href="{{../../../path}}/{{child.type}}/{{child.id}}/{{grandchild.type}}/{{grandchild.id}}">{{grandchild.name}}</a></li>
+						<li><a href="{{grandchild.path}}">{{grandchild.name}}</a></li>
 						{{/each}}
 					</ul>
 				</section>

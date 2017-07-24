@@ -1,7 +1,7 @@
 const PORT = process.env.PORT || process.argv[2] || 3000;
 const HOST = 'localhost';
 
-const db = require('../util/verbs');
+const db = require('./util/verbs');
 
 const app = require('express')();
 
@@ -13,7 +13,6 @@ const expressHandlebars = require('express-handlebars');
 
 // Build engine instance
 const exphbs = expressHandlebars.create({
-  helpers: helpers,
   partialsDir: 'views/partials',
   defaultLayout: 'default'
 });

@@ -21,7 +21,7 @@ module.exports = (type, name, parentId, id) => {
 
   // If we have a parent, add to parent's child object and set parent path
   if (!isNaN(+parentId)) {
-    parent = realm[io.parent(type)][parentId];
+    let parent = realm[io.parent(type)][parentId];
     parent.children.push(newId);
     newEntity.parentPath = _buildPath(realm, parent);
   }
@@ -43,16 +43,12 @@ function _getnewId(realm, type) {
 }
 
 function _buildPath(realm, entity) {
-  let path = '';
   let parent = realm[io.parent(entity.type)][entity.parentId];
-  if (!parent) {
-    // We've reached the furthest ancestor
-    path = `/${entity.type}/${entity.id}`;
-  } else {
+  let type = entity.type[0].toLowerCase() + entity.type.slice(1);
+  let path = `/${type}/${entity.id}`;
+  if (parent) {
     // Get moar ancestors
-    path = _buildPath(realm, parent);
-    // Add ourselves
-    path += `/${entity.type}/${entity.id}`;
+    path = _buildPath(realm, parent) + path;
   }
   return path;
 }
