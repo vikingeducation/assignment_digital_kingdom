@@ -1,0 +1,17 @@
+<div>
+  {{#each kingdoms as |kingdom|}}
+    <div>
+      <p>Name: {{kingdom.kingdomName}}</p>
+      <p>King: {{kingdom.king}}</p>
+      <p>Queen: {{kingdom.queen}}</p>
+      <p>Number of Castles: {{kingdom.castles.length}}</p>
+    </div>
+  {{/each}}
+</div>
+
+<div>
+  <form method="POST", action="/kingdoms">
+    <input type="text" name="name" placeholder="Enter New Kingdom">
+    <input type="submit">
+  </form>
+</div>
