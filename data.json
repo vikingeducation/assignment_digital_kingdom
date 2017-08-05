@@ -1,0 +1,20 @@
+{
+  "kingdoms": [
+    {
+      "kingdomName": "Neverwinter",
+      "king": "James",
+      "queen": "Sara",
+      "castles": [
+        {
+          "castleName": "Crystal",
+          "lieges": [
+            {
+              "name": "Tacco",
+              "vassals": ["Mark", "Katherine"]
+            }
+          ]
+        }
+      ]
+    }
+  ] 
+}
