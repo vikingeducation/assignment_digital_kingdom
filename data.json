@@ -6,21 +6,24 @@
             "queen": "Sara",
             "castles": [
                 {
-                    "castleName": "Crystal",
-                    "lieges": [
-                        {
-                            "name": "Tacco",
-                            "vassals": [
-                                "Mark",
-                                "Katherine"
-                            ]
-                        }
-                    ]
+                    "castleName": "Math"
+                },
+                {
+                    "castleName": "asd"
                 }
             ]
         },
         {
-            "kingdomName": "Fancy Town"
+            "kingdomName": "Fancy Town",
+            "castles": [
+                {
+                    "castleName": "asd",
+                    "lieges": [{
+                      "name": "Bob",
+                      "vassals": ["Terry"]
+                    }]
+                }
+            ]
         }
     ]
 }

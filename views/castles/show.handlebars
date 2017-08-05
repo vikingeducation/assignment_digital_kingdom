@@ -1,0 +1,9 @@
+<h1>{{castle.castleName}}</h1>
+<div>
+  {{#each lieges as |liege|}}
+  <div>
+    <a>Name: {{liege.name}}</a>
+    <p>Number of Vassals: {{liege.vassals.length}}</p>
+  </div>
+  {{/each}}
+</div>
