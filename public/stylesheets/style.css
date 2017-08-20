@@ -17,4 +17,16 @@ body {
   #kingdoms li, #castles li, #leiges li {
     font-size: 2em; }
 
+#create {
+  float: left;
+  margin-left: 86px; }
+  #create li {
+    list-style: none; }
+  #create ul {
+    padding: 15px 0 0 0;
+    margin: 0; }
+  #create input {
+    width: 300px;
+    height: 30px; }
+
 /*# sourceMappingURL=style.css.map */

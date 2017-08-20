@@ -30,3 +30,23 @@ body{
 		font-size: 2em;
 	}
 }
+
+#create{
+	float: left;
+	margin-left: 86px;
+
+	li{ 
+		list-style: none;
+
+	}
+
+	ul{
+		padding: 15px 0 0 0;
+		margin: 0;
+	}
+
+	input{ 
+		width: 300px;
+		height: 30px;
+		 }
+}
