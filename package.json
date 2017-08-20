@@ -13,5 +13,17 @@
     "hbs": "~4.0.1",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
-  }
+  },
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bparkerproductions/assignment_digital_kingdom.git"
+  },
+  "author": "Brandon Parker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bparkerproductions/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/bparkerproductions/assignment_digital_kingdom#readme"
 }

@@ -1,0 +1,41 @@
+{
+	"kingdoms": [
+	{	
+
+		"name": "ether",
+
+		"kings":[
+			"Arthur",
+			"Thomas",
+			"George",
+			"Xanthar The Great II"
+		],
+
+		"queens":[
+			"Mary",
+			"Mary-Jo",
+			"Jirdiino",
+			"Lauren"
+		],
+
+		"castles":[
+			{
+				"name": "Xatham",
+				"leiges": [
+					"Fork's Way",
+					"Nile River",
+					"End's Road"
+				]
+			},
+
+			{
+				"name": "Creeks",
+				"leiges": [
+					"Arthimidus's Foot",
+					"Poor Underway"
+				]
+			}
+		]
+	}
+	]
+}

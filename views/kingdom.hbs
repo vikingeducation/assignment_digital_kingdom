@@ -1,0 +1,10 @@
+<h1> Kingdom {{name}} </h1>
+
+<div id="castles">
+	<h3> Castles: {{amount}} </h3>
+	<ul>
+		{{#each castles as |c|}}
+			<li><a href="{{../name}}/castle/{{c.name}}">{{c.name}}</a></li>
+		{{/each}}
+	</ul>
+</div>

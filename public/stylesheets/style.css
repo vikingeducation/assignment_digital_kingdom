@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  padding: 25px; }
+  body p, body li, body a {
+    font-family: "Open Sans", sans-serif; }
 
-a {
-  color: #00B7FF;
-}
+#kingdoms, #castles, #leiges {
+  background-color: rgba(57, 78, 228, 0.81);
+  padding: 10px;
+  width: 35%; }
+  #kingdoms h3, #castles h3, #leiges h3 {
+    text-align: center;
+    font-size: 1.5em; }
+  #kingdoms ul, #castles ul, #leiges ul {
+    list-style: none; }
+  #kingdoms a, #castles a, #leiges a {
+    text-decoration: none; }
+  #kingdoms li, #castles li, #leiges li {
+    font-size: 2em; }
+
+/*# sourceMappingURL=style.css.map */

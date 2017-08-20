@@ -1,0 +1,32 @@
+$blue: rgba(57, 78, 228, 0.81);
+
+body{
+	p,li,a{
+		font-family: "Open Sans", sans-serif;
+	}
+
+	padding: 25px;
+}
+
+#kingdoms, #castles, #leiges{
+	background-color: $blue;
+	padding: 10px;
+	width: 35%;
+
+	h3{
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	li{
+		font-size: 2em;
+	}
+}
