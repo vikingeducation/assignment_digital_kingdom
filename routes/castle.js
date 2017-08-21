@@ -26,6 +26,7 @@ router.get("/:name", function(req, res){
 
 router.post("/", function(req, res){
 	var name = req.body.name;
+	name = name.replace(/\s/gi, "-");
 	wrapper.addLeige(kingdom_name, name, castle_name);
 	res.redirect("back");
 })

@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
 	var name = req.body.name;
+	name = name.replace(/\s/gi, "-");
 	wrapper.addKingdom(name);
 	res.redirect("back");
 })

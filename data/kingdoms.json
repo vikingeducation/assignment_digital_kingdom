@@ -5,7 +5,7 @@
             "Arthur",
             "Thomas",
             "George",
-            "Xanthar The Great II"
+            "Xanthar-The-Great-II"
         ],
         "queens": [
             "Mary",
@@ -17,24 +17,40 @@
             {
                 "name": "Xatham",
                 "leiges": [
-                    "Fork's Way",
-                    "Nile River",
-                    "End's Road"
+                    {
+                        "name": "Nile-River",
+                        "vassels": []
+                    }
                 ]
             },
             {
                 "name": "Creeks",
                 "leiges": [
-                    "Arthimidus's Foot",
-                    "Poor Underway"
+                    {
+                        "name": "BubbleGum-Island",
+                        "vassels": []
+                    }
                 ]
             },
             {
-                "name": "Lore's Path",
+                "name": "Lore's-Path",
                 "leiges": []
             },
             {
-                "name": "Gallow's Underwat",
+                "name": "Gallow's-Underway",
+                "leiges": [
+                    {
+                        "name": "Dead-tree-bark",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Kokoos-Retreat-and-resort",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Crook's-Underway",
                 "leiges": []
             }
         ]
@@ -51,8 +67,13 @@
                 "leiges": []
             },
             {
-                "name": "Lore's Path",
-                "leiges": []
+                "name": "Lore's-Path",
+                "leiges": [
+                    {
+                        "name": "Lore",
+                        "vassels": []
+                    }
+                ]
             },
             {
                 "name": "Horses",
@@ -60,12 +81,21 @@
                     {
                         "name": "stable",
                         "vassels": []
+                    },
+                    {
+                        "name": "cattle-and-calves",
+                        "vassels": []
                     }
                 ]
             },
             {
-                "name": "More pigs",
-                "leiges": []
+                "name": "More-pigs",
+                "leiges": [
+                    {
+                        "name": "oinko",
+                        "vassels": []
+                    }
+                ]
             },
             {
                 "name": "stable",
@@ -80,6 +110,32 @@
                     },
                     {
                         "name": "nwe",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Trance",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Newton's-Bridge",
+                "leiges": []
+            }
+        ]
+    },
+    {
+        "name": "Lorem's-Tarnishing-Overcoming",
+        "castles": [
+            {
+                "name": "Released-Slaved-Unite",
+                "leiges": [
+                    {
+                        "name": "AAA-Anon-Group-One",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Proxy",
                         "vassels": []
                     }
                 ]

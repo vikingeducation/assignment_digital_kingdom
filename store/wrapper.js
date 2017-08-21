@@ -32,7 +32,7 @@ var Wrapper = {
 	getCastles: function(kingdom){
 		var json = this.getKingdoms();
 		var castles = this.search_items(json, kingdom, 'castles');
-		return castles === undefined ? JSON.parse([]) : castles;
+		return castles === undefined ? [] : castles;
 	},
 
 	addCastle: function(kingdom, castle){
@@ -89,6 +89,12 @@ var Wrapper = {
 		});
 		return object;
 	},
+
+	clean_url(url){
+		var new_url = url.replace("%", " ").replace(/[0-9]+/, "");
+		console.log(url);
+		return new_url;
+	}
 
 }
 

@@ -19,6 +19,7 @@ router.get('/:kingdomname', function(req, res){
 
 router.post('/', function(req, res){
 	var name = req.body.name;
+	name = name.replace(/\s/gi, "-");
 	wrapper.addCastle(kingdom_name, name);
 	res.redirect("back");
 });
