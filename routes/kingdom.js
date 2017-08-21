@@ -8,12 +8,15 @@ router.get('/:kingdomname', function(req, res){
 	kingdom_name = req.params.kingdomname;
 	var castles = wrapper.getCastles(kingdom_name);
 	var num_castles = castles.length;
-
+	var kings = wrapper.getKings(kingdom_name);
+	var queens = wrapper.getQueens(kingdom_name);
 
 	res.render('kingdom', {
 		name: kingdom_name,
 		castles: castles,
-		amount: num_castles
+		amount: num_castles,
+		kings: kings,
+		queens: queens
 	});
 });
 

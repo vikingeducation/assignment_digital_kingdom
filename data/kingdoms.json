@@ -57,6 +57,18 @@
     },
     {
         "name": "farmville",
+        "kings": [
+            "Arthur",
+            "Thomas",
+            "George",
+            "Xanthar-The-Great-II"
+        ],
+        "queens": [
+            "Mary",
+            "Mary-Jo",
+            "Jirdiino",
+            "Lauren"
+        ],
         "castles": [
             {
                 "name": "pigs",
@@ -126,6 +138,18 @@
     },
     {
         "name": "Lorem's-Tarnishing-Overcoming",
+        "kings": [
+            "Arthur",
+            "Thomas",
+            "George",
+            "Xanthar-The-Great-II"
+        ],
+        "queens": [
+            "Mary",
+            "Mary-Jo",
+            "Jirdiino",
+            "Lauren"
+        ],
         "castles": [
             {
                 "name": "Released-Slaved-Unite",
@@ -141,5 +165,15 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Ipsum",
+        "castles": [
+            {
+                "name": "Griffethstein",
+                "leiges": []
+            }
+        ],
+        "queens": []
     }
 ]

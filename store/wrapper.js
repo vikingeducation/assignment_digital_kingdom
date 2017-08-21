@@ -8,6 +8,18 @@ var Wrapper = {
 		return json;
 	},
 
+	getKings: function(kingdom_name){
+		var json = this.getKingdoms();
+		var kings = this.search_items(json, kingdom_name, "kings");
+		return kings;
+	},
+
+	getQueens: function(kingdom_name){
+		var json = this.getKingdoms();
+		var kings = this.search_items(json, kingdom_name, "queens");
+		return kings;
+	},
+
 	addKingdom: function(kingdom){
 		var kingdoms = this.getKingdoms();
 
@@ -17,6 +29,8 @@ var Wrapper = {
 		//empty arrays so other methods can use .push later
 		new_kingdom.castles = [];
 		new_kingdom.castles.leiges = [];
+		new_kingdom.castles.kings = [];
+		new_kingdom.queens = [];
 
 		kingdoms.push(new_kingdom);
 
@@ -89,13 +103,6 @@ var Wrapper = {
 		});
 		return object;
 	},
-
-	clean_url(url){
-		var new_url = url.replace("%", " ").replace(/[0-9]+/, "");
-		console.log(url);
-		return new_url;
-	}
-
 }
 
 module.exports = Wrapper;
