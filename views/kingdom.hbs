@@ -1,0 +1,59 @@
+<h1> Kingdom {{name}} </h1>
+
+<div id="castles">
+
+	{{#if amount}}
+		<h3> Castles: {{amount}} </h3>
+	{{else}}
+		<h3> No Castles. How about you create one? </h3>
+	{{/if}}
+
+	<div id="lists">
+		<ul>
+			{{#if castles }}
+				<h2> Castles </h2>
+			{{/if}}
+
+			{{#each castles as |c|}}
+				<li><a href="{{../name}}/castle/{{c.name}}">{{c.name}}</a></li>
+			{{/each}}
+		</ul>
+		
+		<ul class="kings">
+			{{#if kings}}
+				<h2> Kings </h2>
+			{{else}}
+				<h2> No kings </h2>
+			{{/if}}
+
+			{{#each kings as |k|}}
+				<li> {{k}} </li>
+			{{/each}}
+		</ul>
+
+		<ul class="queens">
+			{{#if kings}}
+				<h2> Queens </h2>
+			{{else}}
+				<h2> No queens </h2>
+			{{/if}}
+
+			{{#each queens as |q|}}
+					<li> {{q}} </li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
+
+<div id="create">
+	<form action="/kingdom" method="post">
+		<ul>
+			<li>
+				<input name="name" id="name" type="text">
+			</li>
+			<li>
+				<input type="submit">
+			</li>
+		</ul>
+	</form>
+</div>

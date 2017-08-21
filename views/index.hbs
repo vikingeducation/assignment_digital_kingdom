@@ -1,0 +1,23 @@
+<h1> Amount of Kingdoms: {{amount}} </h1>
+
+<div id="kingdoms">
+<h3> Kingdoms </h3>
+	<ul>
+		{{#each kingdoms as |k|}}
+			<a href="/kingdom/{{k.name}}"><li>{{k.name}}</li></a>
+		{{/each}}
+	</ul>
+</div>
+
+<div id="create">
+	<form action="/" method="POST">
+		<ul>
+			<li>
+				<input name="name" id="name" type="text">
+			</li>
+			<li>
+				<input type="submit">
+			</li>
+		</ul>
+	</form>
+</div>

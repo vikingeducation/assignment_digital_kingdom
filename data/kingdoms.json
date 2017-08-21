@@ -1,0 +1,179 @@
+[
+    {
+        "name": "ether",
+        "kings": [
+            "Arthur",
+            "Thomas",
+            "George",
+            "Xanthar-The-Great-II"
+        ],
+        "queens": [
+            "Mary",
+            "Mary-Jo",
+            "Jirdiino",
+            "Lauren"
+        ],
+        "castles": [
+            {
+                "name": "Xatham",
+                "leiges": [
+                    {
+                        "name": "Nile-River",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Creeks",
+                "leiges": [
+                    {
+                        "name": "BubbleGum-Island",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Lore's-Path",
+                "leiges": []
+            },
+            {
+                "name": "Gallow's-Underway",
+                "leiges": [
+                    {
+                        "name": "Dead-tree-bark",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Kokoos-Retreat-and-resort",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Crook's-Underway",
+                "leiges": []
+            }
+        ]
+    },
+    {
+        "name": "farmville",
+        "kings": [
+            "Arthur",
+            "Thomas",
+            "George",
+            "Xanthar-The-Great-II"
+        ],
+        "queens": [
+            "Mary",
+            "Mary-Jo",
+            "Jirdiino",
+            "Lauren"
+        ],
+        "castles": [
+            {
+                "name": "pigs",
+                "leiges": []
+            },
+            {
+                "name": "cows",
+                "leiges": []
+            },
+            {
+                "name": "Lore's-Path",
+                "leiges": [
+                    {
+                        "name": "Lore",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Horses",
+                "leiges": [
+                    {
+                        "name": "stable",
+                        "vassels": []
+                    },
+                    {
+                        "name": "cattle-and-calves",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "More-pigs",
+                "leiges": [
+                    {
+                        "name": "oinko",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "stable",
+                "leiges": [
+                    {
+                        "name": "snorkle",
+                        "vassels": []
+                    },
+                    {
+                        "name": "paddy",
+                        "vassels": []
+                    },
+                    {
+                        "name": "nwe",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Trance",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "Newton's-Bridge",
+                "leiges": []
+            }
+        ]
+    },
+    {
+        "name": "Lorem's-Tarnishing-Overcoming",
+        "kings": [
+            "Arthur",
+            "Thomas",
+            "George",
+            "Xanthar-The-Great-II"
+        ],
+        "queens": [
+            "Mary",
+            "Mary-Jo",
+            "Jirdiino",
+            "Lauren"
+        ],
+        "castles": [
+            {
+                "name": "Released-Slaved-Unite",
+                "leiges": [
+                    {
+                        "name": "AAA-Anon-Group-One",
+                        "vassels": []
+                    },
+                    {
+                        "name": "Proxy",
+                        "vassels": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ipsum",
+        "castles": [
+            {
+                "name": "Griffethstein",
+                "leiges": []
+            }
+        ],
+        "queens": []
+    }
+]

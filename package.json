@@ -1,0 +1,29 @@
+{
+  "name": "kingdom",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "hbs": "~4.0.1",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bparkerproductions/assignment_digital_kingdom.git"
+  },
+  "author": "Brandon Parker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bparkerproductions/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/bparkerproductions/assignment_digital_kingdom#readme"
+}

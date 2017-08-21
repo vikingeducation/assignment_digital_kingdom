@@ -1,0 +1,63 @@
+$blue: rgba(57, 78, 228, 0.81);
+
+body{
+	p,li,a{
+		font-family: "Open Sans", sans-serif;
+	}
+
+	padding: 25px;
+}
+
+#lists{
+	display: flex;
+	justify-content: center;
+}
+
+#kingdoms, #castles, #leiges, #leaders{
+	background-color: $blue;
+	padding: 10px;
+	
+
+	h3{
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	li{
+		font-size: 2em;
+	}
+}
+
+#create{
+	display: flex;
+	justify-content: center;
+
+	li{ 
+		list-style: none;
+
+	}
+
+	ul{
+		padding: 15px 0 0 0;
+		margin: 0;
+	}
+
+	input{ 
+		width: 300px;
+		height: 30px;
+		 }
+}
+
+#leaders{
+	ul{
+		list-style: none;
+	}
+}

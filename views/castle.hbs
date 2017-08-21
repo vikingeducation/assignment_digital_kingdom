@@ -1,0 +1,28 @@
+<h1> Castle {{name}} </h1>
+
+<div id="leiges">
+	{{#if amount}}
+		<h3> Leiges: {{amount}} </h3>
+	{{else}}
+		<h3> No Leiges. How about you create one? </h3>
+	{{/if}}
+
+	<ul>
+		{{#each leiges as |l|}}
+			<li><a href="#"> {{l.name}} </a></li>
+		{{/each}}
+	</ul>
+</div>
+
+<div id="create">
+	<form action="/kingdom/{{kingdom_name}}/castle" method="post">
+		<ul>
+			<li>
+				<input name="name" id="name" type="text">
+			</li>
+			<li>
+				<input type="submit">
+			</li>
+		</ul>
+	</form>
+</div>
