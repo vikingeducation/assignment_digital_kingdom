@@ -32,20 +32,21 @@ var Wrapper = {
 	getCastles: function(kingdom){
 		var json = this.getKingdoms();
 		var castles = this.search_items(json, kingdom, 'castles');
-		return castles === undefined ? [] : castles
+		return castles === undefined ? JSON.parse([]) : castles;
 	},
 
 	addCastle: function(kingdom, castle){
-		var kingdoms = this.getKingdoms();
-		//console.log(castles);
+		var json = this.getKingdoms();
+
 		var new_castle = {}
 		new_castle.name = castle;
 		new_castle.leiges = [];
 
-		var castles = this.search_items(kingdoms, kingdom, "castles");
+		//find the correct kingdom to push to
+		var castles = this.search_items(json, kingdom, "castles");
 		castles.push(new_castle);
 
-		fs.writeFileSync(file, JSON.stringify(kingdoms, null, 4))
+		fs.writeFileSync(file, JSON.stringify(json, null, 4))
 		
 	},
 
@@ -55,16 +56,40 @@ var Wrapper = {
 		return leiges;
 	},
 
+	addLeige: function(kingdom, leige, castleName){
+		var json = this.getKingdoms();
+
+		var new_leige = {}
+		new_leige.name = leige;
+		new_leige.vassels = [];
+
+		var object;
+
+		json.forEach((obj) => {
+			if(obj.name == kingdom){
+  				var castles = obj['castles'];
+  				//nested search within castle name
+  				var leiges = this.search_items(castles, castleName, 'leiges');
+  				object = leiges;
+			}
+		});
+		object.push(new_leige);
+
+		fs.writeFileSync(file, JSON.stringify(json, null, 4))
+	},
+
 	search_items: function(json, name, asset){
 		var object;
 		//get name property by looping through array
 		json.forEach((obj) => {
+			//when it finds the kingdom, return asset from it
 			if(obj.name == name){
-				object = obj[asset];
+  				object = obj[asset];
 			}
 		});
 		return object;
-	}
+	},
+
 }
 
 module.exports = Wrapper;

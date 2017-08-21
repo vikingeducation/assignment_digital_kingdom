@@ -9,16 +9,16 @@
 
 	<ul>
 		{{#each leiges as |l|}}
-			<li><a href="#"> {{l}} </a></li>
+			<li><a href="#"> {{l.name}} </a></li>
 		{{/each}}
 	</ul>
 </div>
 
 <div id="create">
-	<form>
+	<form action="/kingdom/{{kingdom_name}}/castle" method="post">
 		<ul>
 			<li>
-				<input type="text">
+				<input name="name" id="name" type="text">
 			</li>
 			<li>
 				<input type="submit">

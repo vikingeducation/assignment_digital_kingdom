@@ -53,6 +53,36 @@
             {
                 "name": "Lore's Path",
                 "leiges": []
+            },
+            {
+                "name": "Horses",
+                "leiges": [
+                    {
+                        "name": "stable",
+                        "vassels": []
+                    }
+                ]
+            },
+            {
+                "name": "More pigs",
+                "leiges": []
+            },
+            {
+                "name": "stable",
+                "leiges": [
+                    {
+                        "name": "snorkle",
+                        "vassels": []
+                    },
+                    {
+                        "name": "paddy",
+                        "vassels": []
+                    },
+                    {
+                        "name": "nwe",
+                        "vassels": []
+                    }
+                ]
             }
         ]
     }
