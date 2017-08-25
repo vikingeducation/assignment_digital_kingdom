@@ -1,42 +1,4 @@
 
-// const getKingdoms = () => {
-//   const json = getJson();
-//   const kingdoms = Object.keys(json.Kingdoms);
-//   return kingdoms;
-// };
-//
-// const getKings = () => {
-//   const json = getJson();
-//   const allKingdoms = getKingdoms();
-//   var kings = [];
-//   for (var i = 0; i < allKingdoms.length; i++) {
-//     if (json.Kingdoms[allKingdoms[i]].King){
-//       kings[i] = json.Kingdoms[allKingdoms[i]].King;
-//     }
-//     else {
-//       kings[i] = "None";
-//     }
-//   }
-//   kings = [].concat.apply([], kings);
-//   return kings;
-// }
-//
-// const getQueens = () => {
-//   const json = getJson();
-//   const allKingdoms = getKingdoms();
-//   var queens = [];
-//   for (var i = 0; i < allKingdoms.length; i++) {
-//     if (json.Kingdoms[allKingdoms[i]].Queen){
-//       queens[i] = json.Kingdoms[allKingdoms[i]].Queen;
-//     }
-//     else {
-//       queens[i] = "None";
-//     }
-//   }
-//   queens = [].concat.apply([], queens);
-//   return queens;
-// }
-
 const fs = require("fs");
 
 const getJson = () => {

@@ -1,23 +1,11 @@
 
-  //const allKingdomsNames = getKingdoms();
-
-  //const kingdoms = data.Kingdoms;
-
-  // var kingdomFromName = function(kingdomName) {
-  //   var kingdomObject = kingdoms[kingdomName];
-  //
-  //   kingdomObject.name = kingdomName;
-  //   return kingdomObject;
-  // }
-  //
-  // kingdomObjects = allKingdomsNames.map(kingdomFromName);
-  //console.log(kingdomObjects);
 const express = require("express");
 const {
   addKingdom, getJson, addCastle, addLiege, addVassal
 } = require("../services/kingdom-store");
 const router = express.Router();
 
+//----GETS---
 router.get("/", (req, res) => {
   const data = getJson();
   res.render("home", { data })
@@ -47,6 +35,7 @@ router.get("/:kingdomId/:castleId/:liegeId", (req, res) => {
   res.render("liege/view", { data, kingdomId, castleId, liegeId })
 })
 
+//----POSTS-----
 router.post("/", (req, res) => {
   const kingdomName = req.body.kingdomName;
   const kingName = req.body.kingName;
