@@ -1,0 +1,86 @@
+[
+ {
+  "id": "0",
+  "Kingdom": "Carlburg",
+  "King": "Henry",
+  "Queen": "Flo",
+  "Castles": [
+   {
+    "id": "0",
+    "name": "Opper",
+    "Lieges": [
+     {
+      "id": "0",
+      "name": "John",
+      "Vassals": [
+       {
+        "id": "0",
+        "name": "asas"
+       },
+       {
+        "id": "1",
+        "name": "Crystal"
+       },
+       {
+        "id": "2",
+        "name": "asas"
+       },
+       {
+        "id": "3",
+        "name": "asas"
+       },
+       {
+        "id": "4",
+        "name": "asa"
+       },
+       {
+        "id": "5",
+        "name": "asas"
+       },
+       {
+        "id": "6",
+        "name": "asas"
+       },
+       {
+        "id": "7",
+        "name": "John"
+       },
+       {
+        "id": "8",
+        "name": "jakw"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "1",
+    "name": "asas"
+   }
+  ]
+ },
+ {
+  "id": "1",
+  "Kingdom": "asas",
+  "King": "afsf",
+  "Queen": "affa",
+  "Castles": [
+   {
+    "id": "0",
+    "name": "adad",
+    "Lieges": [
+     {
+      "id": "0",
+      "name": "affaf",
+      "Vassals": [
+       {
+        "id": "0",
+        "name": "afaf"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]
