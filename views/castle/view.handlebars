@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Lieges for {{data.name}}</h3>
+  </div>
+</div>
+{{#each data.Lieges as |liege|}}
+<div class="row">
+  <div class="col-sm-6">
+    <a class ="btn btn-info" href="/kingdoms/{{../kingdomId}}/{{../castleId}}/{{liege.id}}">
+      {{liege.name}}
+    </a>
+    Vassals:
+    {{liege.Vassals.length}}
+  </div>
+</div>
+{{/each}}
+<div class="row">
+  <div class="col-sm-6">
+Add Liege
+  </div>
+</div>
+    <form action="/kingdoms/{{kingdomId}}/castles/{{castleId}}/lieges" method="POST">
+
+  <div class="row">
+    <div class="col-sm-6">
+  <input type="text" name="liegeName" id="name" placeholder="Liege">
+</div>
+</div>
+
+      <div class="row">
+        <div class="col-sm-6">
+      <input type="submit" class="btn btn-success" value="Add New Liege" method="post">
+    </div>
+  </div>
+    </form>

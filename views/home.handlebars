@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Kingdoms</h3>
+  </div>
+</div>
+{{#each data as |kingdom|}}
+<div class="row">
+  <div class="col-sm-6">
+    <a class ="btn btn-info" href="/kingdoms/{{kingdom.id}}">
+      {{kingdom.Kingdom}}
+    </a>
+    <p> King: {{kingdom.King}}</p>
+    <p> Queen: {{kingdom.Queen}}</p>
+  </div>
+</div>
+{{/each}}
+<div class="row">
+  <div class="col-sm-6">
+Add Kingdom
+  </div>
+</div>
+    <form action="/kingdoms" method="POST">
+      <div class="row">
+        <div class="col-sm-6">
+      <input type="text" name="kingdomName" id="name" placeholder="Kingdom">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+  Add King
+    </div>
+  </div>
+      <form action="/kingdoms" method="POST">
+        <div class="row">
+          <div class="col-sm-6">
+        <input type="text" name="kingName" id="name" placeholder="King">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+    Add Queen
+      </div>
+    </div>
+        <form action="/kingdoms" method="POST">
+          <div class="row">
+            <div class="col-sm-6">
+          <input type="text" name="queenName" id="name" placeholder="Queen">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+      <input type="submit" class="btn btn-success" value="Add New Kingdom" method="post">
+    </div>
+  </div>
+    </form>
