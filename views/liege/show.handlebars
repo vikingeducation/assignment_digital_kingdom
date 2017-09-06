@@ -1,0 +1,27 @@
+<div>
+    <div class="title">
+        <h2>{{liegeSelected}}</h2>
+    </div>
+    <div class="container">
+        {{#each vassals as |vassal|}}
+        <div class="card">
+            <span class="card-header">{{vassal}}</span>
+            <form action="/kingdoms/{{../kingdomSelected}}/castles/{{../castleSelected}}/lieges/{{../liegeSelected}}/vassals/{{vassal}}/delete"
+                method="POST">
+                <button class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+        <br> {{/each}}
+    </div>
+    <div class="forum-style">
+        <div>
+            <h3>Add a new vassal</h3>
+            <form action="/kingdoms/{{kingdomSelected}}/castles/{{castleSelected}}/lieges/{{liegeSelected}}" method="POST">
+                <label for="vassal">Vassals</label>
+                <input class="form-control" type="text" id="vassal" name="vassal" placeholder="Enter vassal name">
+                <input class="btn btn-primary" type="submit" name="submit" value="Add">
+            </form>
+        </div>
+    </div>
+
+</div>

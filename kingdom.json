@@ -1,0 +1,147 @@
+{
+  "kingdoms": {
+    "kingdom1": {
+      "king": "arthur",
+      "queen": "liz",
+      "castles": {
+        "castle1": {
+          "lieges": {
+            "liege3": {
+              "vassals": [
+                "vassal2",
+                "vassal5"
+              ]
+            },
+            "liege4": {
+              "vassals": [
+                "vassal1",
+                "vassal2",
+                "vassal3"
+              ]
+            }
+          }
+        },
+        "castle2": {
+          "lieges": {
+            "liege5": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle3": {
+          "lieges": {
+            "liege6": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle5": {
+          "lieges": {
+            "liege6": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "kingdom2": {
+      "king": "john",
+      "queen": "cerci",
+      "castles": {
+        "castle4": {
+          "lieges": {
+            "liege7": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            },
+            "liege8": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            },
+            "liege9": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle5": {
+          "lieges": {
+            "liege10": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle6": {
+          "lieges": {
+            "liege11": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            },
+            "liege4": {
+              "vassals": []
+            }
+          }
+        },
+        "castle7": {
+          "lieges": {}
+        }
+      }
+    },
+    "kingdom3": {
+      "king": "King1",
+      "queen": "Queen1",
+      "castles": {
+        "castle1": {
+          "lieges": {
+            "liege1": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle2": {
+          "lieges": {
+            "liege2": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        },
+        "castle3": {
+          "lieges": {
+            "liege3": {
+              "vassals": [
+                "vassal1",
+                "vassal2"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

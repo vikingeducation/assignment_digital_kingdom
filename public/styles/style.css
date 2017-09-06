@@ -1,0 +1,54 @@
+body{
+    background-color: cadetblue !important;
+    font-family: Helvetica, sans-serif
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card-header {
+    position: relative;
+    margin: 2px;
+    height: 50px;
+    text-decoration: none;
+}
+
+.card {
+    background: #FFFFA5;
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content {
+    padding: 5px;
+
+}
+
+.forum-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card a:hover {
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+}

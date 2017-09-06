@@ -1,0 +1,40 @@
+<div>
+    <div class="title">
+        <h2>Kingdoms</h2>
+    </div>
+    <div class="container">
+        {{#each getAllKingdoms as |kingdom|}}
+        <div class="card">
+            <a class="card-header" href="/kingdoms/{{@key}}">
+                <h3>{{@key}}</h3>
+            </a>
+            <ul>
+                <li>King: {{kingdom.king}}</li>
+                <li>Queen: {{kingdom.queen}}</li>
+                <li># of Castles: {{ObjCount kingdom.castles}}</li>
+                <br>
+            </ul>
+            <form action="/kingdoms/{{@key}}/delete" method="POST">
+                <button class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="forum-style">
+        <div>
+            <h3>Add a new kingdom</h3>
+            <form action="/kingdoms" method="POST" class="form-inline">
+                <label for="kingdom">Kingdom</label>
+                <input class="form-control" type="text" id="kingdom" name="kingdom" placeholder="Enter kingdom name">
+                <label for="king">King</label>
+                <input class="form-control" type="text" id="king" name="king" placeholder="Enter King name">
+                <label for="queen">Queen</label>
+                <input class="form-control" type="text" id="queen" name="queen" placeholder="Enter Queen name">
+
+                <input class="btn btn-primary" type="submit" name="submit" value="Add">
+            </form>
+        </div>
+    </div>
+
+</div>
