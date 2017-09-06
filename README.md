@@ -1,2 +1,2 @@
-# assignment_digital_kingdom
-Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!
+# digital_kingdom
+digital kingdom of your wildest dreams! Populated with fawning vassals!
