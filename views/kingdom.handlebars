@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<h3>King: {{king}}</h3>
+<h3>Queen: {{queen}}</h3>
+
+<ul>
+{{#each data as |item|}}
+	<a href="{{../currentPath}}/{{../nextPath}}/{{item}}"><li>{{item}}</li></a>
+{{/each}}
+</ul>
