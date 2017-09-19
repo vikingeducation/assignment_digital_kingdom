@@ -1,0 +1,15 @@
+<section class="container">
+  <div class="row">
+    <h1>Welcome to {{kingdom.name}}</h1>
+    {{#each kingdom.castles as |castle|}}
+      <h2>{{castle.name}}</h2>
+      <h3>Lieges:</h3>
+      {{#each castle.lieges as |liege|}}
+        <h3>{{liege.name}}</h3>
+      {{/each}}
+      <form action="{{../kingdom.name}}/castles/{{castle.name}}">
+        <button type="submit">Visit this castle!</button>
+      </form>
+    {{/each}}
+  </div>
+  </secion>

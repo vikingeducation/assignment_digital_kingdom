@@ -1,0 +1,41 @@
+{
+  "kingdoms": [
+    {
+      "name": "kingdom1",
+      "kings": ["Charles", "Jim"],
+      "queens": ["Barbara"],
+      "castles": [
+        {
+          "name": "castle1",
+          "lieges": [
+            {
+              "name": "Brian",
+              "vassals": ["Gary", "George"]
+            },
+            { "name": "Harold",
+              "vassals": ["Toby", "Slenderman"]
+            }
+          ]
+        },
+        {
+          "name": "castle2",
+          "lieges": [
+            {
+              "name": "Tony",
+              "vassals": ["Tim", "Morgan"]
+            }
+          ]
+        },
+        {
+          "name": "castle3",
+          "lieges": [
+            {
+              "name": "Arnold",
+              "vassals": ["Kit", "Chris"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

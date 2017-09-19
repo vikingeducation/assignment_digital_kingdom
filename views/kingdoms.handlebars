@@ -1,0 +1,31 @@
+<section class="container">
+  <div class="row">
+
+    {{#each kingdoms as |kdm|}}
+    <form action="/{{kdm.name}}">
+      <button type="submit" class="btn-success">Visit the Kingdom of {{kdm.name}}</button>
+    </form>
+      <div class="col-xs-4">
+        <h4>{{kdm.name}}</h4>
+        <ul>
+          {{#each kings as |king|}}
+            <li>The Great: {{king}}</li>
+          {{/each}}
+        </ul>
+
+        <ul>
+          {{#each queens as |queen|}}
+            <li>Her Majesty: {{queen}}</li>
+          {{/each}}
+        </ul>
+
+        {{#each castles}}
+          <div>
+            castle
+          </div>
+        {{/each}}
+        <h6>{{ "number of castles?!" }}</h6>
+      </div>
+    {{/each}}
+  </div>
+  </secion>
