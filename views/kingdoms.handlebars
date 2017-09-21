@@ -1,0 +1,22 @@
+<div class="box">
+  <h2 class="title">kingdoms</h2>
+  <div class="box-copy">
+    {{#each allKingdoms as |kingdom|}}
+      <div class="row">
+        <a href="/kingdoms/{{kingdom}}">{{kingdom}}</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="box">
+  <h2 class="title">Add a Kingdom</h2>
+  <div class="box-copy">
+    <form action="/kingdom" method="POST">
+      <input type="text" name="kingdom" placeholder="Kingdom Name">
+      <input type="text" name="king" placeholder="Kings Name">
+      <input type="text" name="queen" placeholder="Queens name">
+      <input type="submit" value="Add New Kingdom" method="post">
+    </form>
+  </div>
+</div>
