@@ -19,4 +19,10 @@ jsonModule.getCastle = kingdom => {
 	return castles;
 };
 
+jsonModule.getLeiges = castle => {
+	const json = jsonModule.readJson();
+	const leiges = json[castle]["leiges"];
+	console.log(leiges);
+};
+
 module.exports = jsonModule;

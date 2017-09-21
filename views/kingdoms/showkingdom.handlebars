@@ -1,9 +1,10 @@
 <div class="box">
   <h2 class="title">{{kingdom}}</h2>
   <div class="box-copy">
+    <h3>Castles in {{kingdom}}</h3>
     {{#each obj as |castle|}}
       <div class="row">
-        <a href="/{{castle.name}}">{{castle.name}}</a>
+        <a href="kingdoms/{{..kingdom}}/castles/{{castle.name}}">{{castle.name}}</a>
         {{#each castle.leiges as |leige|}}
         <h5>{{leige.name}}</h5>
         {{/each}}
@@ -16,7 +17,7 @@
   <h2 class="title">Add a Castle</h2>
   <div class="box-copy">
     <form action="/castle" method="POST">
-      <input type="text" name="castke" placeholder="Castle Name">
+      <input type="text" name="castle" placeholder="Castle Name">
       <input type="submit" value="Add New Castle" method="post">
     </form>
   </div>

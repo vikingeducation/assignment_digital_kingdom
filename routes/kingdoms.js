@@ -15,4 +15,11 @@ router.get("/kingdoms/:kingdom", (req, res) => {
 	res.render("kingdoms/showkingdom", { kingdom, obj });
 });
 
+/*router.get("/:kingdom/:castle", (req, res) => {
+	var castle = req.params.castle;
+	console.log("castle", castle);
+	//var obj = jsonModule.getLeiges(castle);
+	res.render("castles/showcastle", { castle });
+});*/
+
 module.exports = router;
