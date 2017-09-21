@@ -10,8 +10,8 @@ router.get("/", (req, res) => {
 
 router.get("/:kingdom", (req, res) => {
 	var kingdom = req.params.kingdom;
-	console.log(kingdom);
-	res.end(kingdom);
+	var obj = jsonModule.getCastle(kingdom);
+	res.render("kingdoms/showkingdom", { kingdom, obj });
 });
 
 module.exports = router;

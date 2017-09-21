@@ -10,8 +10,13 @@ jsonModule.readJson = () => {
 
 jsonModule.getKingdoms = () => {
 	const json = jsonModule.readJson();
-	const kingdoms = Object.keys(json);
 	return json;
+};
+
+jsonModule.getCastle = kingdom => {
+	const json = jsonModule.readJson();
+	const castles = json[kingdom]["castles"];
+	return castles;
 };
 
 module.exports = jsonModule;
