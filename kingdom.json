@@ -1,5 +1,6 @@
-{
-	"USA": {
+[
+	{
+		"name": "USA",
 		"king": "Trump",
 		"queen": "Melania",
 		"castles": [
@@ -36,7 +37,8 @@
 			}
 		]
 	},
-	"Middle Earth": {
+	{
+		"name": "Middle Earth",
 		"king": "Aragorn",
 		"queen": "arwen",
 		"castles": [
@@ -73,4 +75,4 @@
 			}
 		]
 	}
-}
+]
