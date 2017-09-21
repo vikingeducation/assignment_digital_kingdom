@@ -17,6 +17,8 @@ app.set("view engine", "handlebars");
 
 app.use("/", kingdoms);
 
+app.use(express.static(__dirname + "/public"));
+
 //server
 const port = 3000;
 const host = "localhost";
