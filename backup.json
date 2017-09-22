@@ -1,0 +1,78 @@
+{
+	"USA": {
+		"name": "USA",
+		"king": "Trump",
+		"queen": "Melania",
+		"castles": [
+			{
+				"name": "white house",
+				"leiges": [
+					{
+						"name": "Mike Pence",
+						"vassals": ["Sarah Sanders", "Rex"]
+					},
+					{
+						"name": "Mnuchin",
+						"vassals": ["Jeff", "Ben"]
+					}
+				]
+			},
+			{
+				"name": "House",
+				"leiges": [
+					{
+						"name": "Paul Ryan",
+						"vassals": ["Steve Scalise", "Kevin"]
+					}
+				]
+			},
+			{
+				"name": "Senate",
+				"leiges": [
+					{
+						"name": "Mitch McConnell",
+						"vassals": ["John Mcain", "Jeff Flake"]
+					}
+				]
+			}
+		]
+	},
+	"Middle Earth": {
+		"name": "Middle Earth",
+		"king": "Aragorn",
+		"queen": "arwen",
+		"castles": [
+			{
+				"name": "Gondor",
+				"leiges": [
+					{
+						"name": "Tom",
+						"vassals": ["Dick", "Sally"]
+					},
+					{
+						"name": "Jerry",
+						"vassals": ["Jeff", "Ben"]
+					}
+				]
+			},
+			{
+				"name": "The Shire",
+				"leiges": [
+					{
+						"name": "Bilbo",
+						"vassals": ["frodo", "sam"]
+					}
+				]
+			},
+			{
+				"name": "Mordor",
+				"leiges": [
+					{
+						"name": "Sauron",
+						"vassals": ["Sarumon", "Shelob"]
+					}
+				]
+			}
+		]
+	}
+}

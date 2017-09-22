@@ -3,6 +3,8 @@ const jsonModule = require("../services/kingdom-store");
 
 const router = express.Router();
 
+//GET ROUTES
+
 router.get("/", (req, res) => {
 	var kingdoms = jsonModule.getKingdoms();
 	res.render("kingdoms", { kingdoms });
@@ -28,6 +30,16 @@ router.get("/kingdoms/:kingdom/castles/:castle/leiges/:leige", (req, res) => {
 	var castle = req.params.castle;
 	var vassals = jsonModule.getVassals(kingdom, castle, leige);
 	res.render("leiges/showleige", { kingdom, castle, leige, vassals });
+});
+
+//POST ROUTES
+
+router.post("/kingdom", (req, res) => {
+	var kingdom = req.body.kingdom;
+	var king = req.body.king;
+	var queen = req.body.queen;
+	jsonModule.addKingdom(kingdom, king, queen);
+	res.redirect("back");
 });
 
 module.exports = router;
