@@ -42,4 +42,13 @@ router.post("/kingdom", (req, res) => {
 	res.redirect("back");
 });
 
+router.post("/kingdoms/:kingdom/castle", (req, res) => {
+	var kingdom = req.params.kingdom;
+	var castle = req.body.castle;
+	jsonModule.addCastle(kingdom, castle);
+	res.redirect("back");
+
+	//look at animals.js
+});
+
 module.exports = router;

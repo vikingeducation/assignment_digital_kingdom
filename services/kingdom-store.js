@@ -21,7 +21,7 @@ function searchArray(json, name, query) {
 }
 
 const writeJson = json => {
-	fs.writeFileSync("kingdom.json", JSON.stringify(json, null, 4));
+	fs.writeFileSync("kingdom.json", JSON.stringify(json, null, 2));
 };
 
 const jsonModule = {};
@@ -58,7 +58,32 @@ jsonModule.getVassals = (kingdom, castle, leige) => {
 jsonModule.addKingdom = (kingdom, king, queen) => {
 	var json = readJson();
 
-	//writeJson(json)
+	var newKingdom = {
+		name: kingdom,
+		king: king,
+		queen: queen,
+		castles: []
+	};
+
+	json.thekingdoms.push(newKingdom);
+};
+
+jsonModule.addCastle = (kingdom, castle) => {
+	var castlesArr = jsonModule.getCastles(kingdom);
+	var json = readJson();
+
+	var newCastle = {
+		name: castle,
+		leiges: []
+	};
+
+	json.thekingdoms.forEach(obj => {
+		if (obj.name == kingdom) {
+			obj.castles.push(newCastle);
+		}
+	});
+
+	writeJson(json);
 };
 
 module.exports = jsonModule;
