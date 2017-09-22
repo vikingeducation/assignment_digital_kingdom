@@ -1,7 +1,7 @@
 <div class="box">
   <h2 class="title">{{castle}}</h2>
   <div class="box-copy">
-    {{#each obj as |leige|}}
+    {{#each leiges as |leige|}}
       <div class="row">
         <a href="/{{leige.name}}">{{leige.name}}</a>
         {{#each leige.vassal as |vassal|}}

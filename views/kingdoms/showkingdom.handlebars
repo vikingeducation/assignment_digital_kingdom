@@ -2,12 +2,14 @@
   <h2 class="title">{{kingdom}}</h2>
   <div class="box-copy">
     <h3>Castles in {{kingdom}}</h3>
-    {{#each obj as |castle|}}
+    {{#each castles as |castle|}}
       <div class="row">
-        <a href="kingdoms/{{..kingdom}}/castles/{{castle.name}}">{{castle.name}}</a>
-        {{#each castle.leiges as |leige|}}
-        <h5>{{leige.name}}</h5>
-        {{/each}}
+        <a href="{{../kingdom}}/castles/{{castle.name}}">
+          {{castle.name}}
+        </a>
+          {{#each castle.leiges as |leige|}}
+            <h5>{{leige.name}}</h5>
+          {{/each}}
       </div>
     {{/each}}
   </div>

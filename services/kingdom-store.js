@@ -13,10 +13,14 @@ jsonModule.getKingdoms = () => {
 	return json;
 };
 
-jsonModule.getCastle = kingdom => {
+jsonModule.getCastles = kingdom => {
 	const json = jsonModule.readJson();
 	const castles = json[kingdom]["castles"];
 	return castles;
+};
+
+jsonModule.getCastle = (kingdom, castle) => {
+	//array search
 };
 
 jsonModule.getLeiges = castle => {
@@ -24,5 +28,11 @@ jsonModule.getLeiges = castle => {
 	const leiges = json[castle]["leiges"];
 	console.log(leiges);
 };
+
+jsonModule.getLiege = (kingdom, leige) => {
+	//array search
+};
+
+//getvassel
 
 module.exports = jsonModule;
