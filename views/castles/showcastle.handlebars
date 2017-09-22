@@ -1,11 +1,11 @@
 <div class="box">
-  <h2 class="title">{{castle}}</h2>
+  <h2 class="title">Castle {{castle}} in {{kingdom}}</h2>
   <div class="box-copy">
     {{#each leiges as |leige|}}
       <div class="row">
-        <a href="/{{leige.name}}">{{leige.name}}</a>
-        {{#each leige.vassal as |vassal|}}
-        <h5>{{vassal.name}}</h5>
+        <a href="/kingdoms/{{../kingdom}}/castles/{{../castle}}/leiges/{{leige.name}}">{{leige.name}}</a>
+        {{#each leige.vassals as |vassal|}}
+        <h5>{{vassal}}</h5>
         {{/each}}
       </div>
     {{/each}}

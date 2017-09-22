@@ -19,20 +19,27 @@ jsonModule.getCastles = kingdom => {
 	return castles;
 };
 
-jsonModule.getCastle = (kingdom, castle) => {
-	//array search
+jsonModule.getLeiges = (kingdom, castle) => {
+	const json = jsonModule.getCastles(kingdom);
+	const leiges = searchArray(json, castle, "leiges");
+	return leiges;
 };
 
-jsonModule.getLeiges = castle => {
-	const json = jsonModule.readJson();
-	const leiges = json[castle]["leiges"];
-	console.log(leiges);
+jsonModule.getVassals = (kingdom, castle, leige) => {
+	const json = jsonModule.getLeiges(kingdom, castle);
+	const vassals = searchArray(json, leige, "vassals");
+	return vassals;
 };
 
-jsonModule.getLiege = (kingdom, leige) => {
-	//array search
-};
+function searchArray(json, name, query) {
+	var object;
 
-//getvassel
+	json.forEach(obj => {
+		if (obj.name == name) {
+			object = obj[query];
+		}
+	});
+	return object;
+}
 
 module.exports = jsonModule;
