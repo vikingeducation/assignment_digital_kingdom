@@ -93,12 +93,17 @@
               "name": "Sauron",
               "vassals": [
                 "Sarumon",
-                "Shelob"
+                "Shelob",
+                "orc1",
+                "orc2"
               ]
             },
             {
               "name": "uruk",
-              "vassals": []
+              "vassals": [
+                "orc1",
+                "orc2"
+              ]
             }
           ]
         }
@@ -108,7 +113,19 @@
       "name": "westeros",
       "king": "John",
       "queen": "Dany",
-      "castles": []
+      "castles": [
+        {
+          "name": "winterfell",
+          "leiges": [
+            {
+              "name": "sansa",
+              "vassals": [
+                "breine"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

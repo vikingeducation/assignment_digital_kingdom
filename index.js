@@ -1,5 +1,4 @@
 const express = require("express");
-//const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 const jsonModule = require("./services/kingdom-store");
@@ -14,11 +13,9 @@ const hbs = expressHandlebars.create({
 });
 
 app.engine("handlebars", hbs.engine);
-//app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "handlebars");
 
 app.use("/", kingdoms);
-//app.use("/:kingdom", kingdoms);
 
 app.use(express.static(__dirname + "/public"));
 

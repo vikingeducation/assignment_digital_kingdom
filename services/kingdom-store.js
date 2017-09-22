@@ -24,6 +24,7 @@ const writeJson = json => {
 	fs.writeFileSync("kingdom.json", JSON.stringify(json, null, 2));
 };
 
+//obj to wrap METHODS
 const jsonModule = {};
 
 //GET METHODS
@@ -98,6 +99,25 @@ jsonModule.addLeige = (kingdom, castle, leige) => {
 			obj1.castles.forEach(obj2 => {
 				if (obj2.name == castle) {
 					obj2.leiges.push(newLeige);
+				}
+			});
+		}
+	});
+
+	writeJson(json);
+};
+
+jsonModule.addVassal = (kingdom, castle, leige, vassal) => {
+	var json = readJson();
+
+	//holy chaining batman
+	json.thekingdoms.forEach(obj1 => {
+		if (obj1.name == kingdom) {
+			obj1.castles.forEach(obj2 => {
+				if (obj2.name == castle) {
+					obj2.leiges.forEach(ob3 => {
+						ob3.vassals.push(vassal);
+					});
 				}
 			});
 		}

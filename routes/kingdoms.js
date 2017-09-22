@@ -57,4 +57,16 @@ router.post("/kingdoms/:kingdom/castle/:castle/leige", (req, res) => {
 	res.redirect("back");
 });
 
+router.post(
+	"/kingdoms/:kingdom/castle/:castle/leige/:leige/vassal",
+	(req, res) => {
+		var kingdom = req.params.kingdom;
+		var castle = req.params.castle;
+		var leige = req.params.leige;
+		var vassal = req.body.vassal;
+		jsonModule.addVassal(kingdom, castle, leige, vassal);
+		res.redirect("back");
+	}
+);
+
 module.exports = router;

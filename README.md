@@ -3,3 +3,5 @@ Build the digital kingdom of your wildest dreams! Populate it with fawning vassa
 
 
 Gregory Alford
+
+To start. run npm install and then node index
