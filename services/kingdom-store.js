@@ -69,7 +69,6 @@ jsonModule.addKingdom = (kingdom, king, queen) => {
 };
 
 jsonModule.addCastle = (kingdom, castle) => {
-	var castlesArr = jsonModule.getCastles(kingdom);
 	var json = readJson();
 
 	var newCastle = {
@@ -80,6 +79,27 @@ jsonModule.addCastle = (kingdom, castle) => {
 	json.thekingdoms.forEach(obj => {
 		if (obj.name == kingdom) {
 			obj.castles.push(newCastle);
+		}
+	});
+
+	writeJson(json);
+};
+
+jsonModule.addLeige = (kingdom, castle, leige) => {
+	var json = readJson();
+
+	var newLeige = {
+		name: leige,
+		vassals: []
+	};
+
+	json.thekingdoms.forEach(obj1 => {
+		if (obj1.name == kingdom) {
+			obj1.castles.forEach(obj2 => {
+				if (obj2.name == castle) {
+					obj2.leiges.push(newLeige);
+				}
+			});
 		}
 	});
 
