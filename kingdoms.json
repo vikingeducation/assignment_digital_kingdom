@@ -1,0 +1,238 @@
+{
+  "The North": {
+    "King": "Rob Stark",
+    "Queen": "Maggie Stark",
+    "Castles": {
+      "Winterfell Castle": {
+        "Lieges": {
+          "Edward Clark": {
+            "Vassals": [
+              "Bob",
+              "Frank",
+              "Tom"
+            ]
+          },
+          "Henry": {
+            "Vassals": [
+              "Jim",
+              "Dwight"
+            ]
+          }
+        },
+      "South Brick": {
+        "Lieges": {
+          "Marcos": {
+            "Vassals": [
+              "Kevin",
+              "Smitty"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "The Mountain and the Vale": {
+    "King": "Frank Arryn",
+    "Queen": "Emily Arryn",
+    "Castles": {
+      "Skylark Castle": {
+        "Lieges": {
+          "Adrian": {
+            "Vassals": [
+              "Ade",
+              "Alby",
+              "Sig"
+            ]
+          },
+          "Alexander": {
+            "Vassals": [
+              "Bert",
+              "Allen",
+              "Vincent",
+              "Tom"
+            ]
+          }
+        },
+      "Valley Overlook": {
+        "Lieges": {
+          "Ambrose": {
+            "Vassals": [
+              "Al",
+              "Lon"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "The Isles and Rivers": {
+    "King": "Henry Hoare",
+    "Queen": "Henrietta Hoare",
+    "Castles": {
+      "Water Defense": {
+        "Lieges": {
+          "Alister": {
+            "Vassals": [
+              "Ron",
+              "Harry",
+              "Neville",
+              "Seamus"
+            ]
+          },
+          "Bradford": {
+            "Vassals": [
+              "Bran",
+              "Hodor",
+              "Bill"
+            ]
+          }
+        },
+      "Water Palace": {
+        "Lieges": {
+          "Corey": {
+            "Vassals": [
+              "Conny",
+              "Craig"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "The Rock": {
+    "King": "Jamie Lanister",
+    "Queen": "His Sister (Ewwww)",
+    "Castles": {
+      "Casterly Rock": {
+        "Lieges": {
+          "Curtis": {
+            "Vassals": [
+              "Clive",
+              "Woody",
+              "Ernie",
+              "Sam",
+              "Irvine"
+            ]
+          },
+          "Ernesto": {
+            "Vassals": [
+              "Emery",
+              "Frank",
+              "Gabe",
+              "Gerry"
+            ]
+          }
+        },
+      "Grand Stage": {
+        "Lieges": {
+          "Francis": {
+            "Vassals": [
+              "Jerry",
+              "Gary"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "The Stormlands": {
+    "King": "Daniel Durrandon",
+    "Queen": "Daniella Durrandon",
+    "Castles": {
+      "Dome of Durr": {
+        "Lieges": {
+          "George": {
+            "Vassals": [
+              "Bert",
+              "Gil",
+              "Tom",
+              "Steve"
+            ]
+          },
+          "Spartucus": {
+            "Vassals": [
+              "Bill",
+              "Craig",
+              "Gio"
+            ]
+          }
+        },
+      "Durr Palace": {
+        "Lieges": {
+          "Marcus": {
+            "Vassals": [
+              "Horace",
+              "Ace"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "The Reach": {
+    "King": "Gary Gardener",
+    "Queen": "Gina Gardener",
+    "Castles": {
+      "Plantis Castle": {
+        "Lieges": {
+          "James": {
+            "Vassals": [
+              "Jay",
+              "Ive",
+              "Jeff"
+            ]
+          },
+          "Jeffrey": {
+            "Vassals": [
+              "Kelvin",
+              "Faran"
+            ]
+          }
+        },
+      "Grown Palace": {
+        "Lieges": {
+          "Lindon": {
+            "Vassals": [
+              "Loyde",
+              "Lyn"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "Dourne": {
+    "King": "Mark Martel",
+    "Queen": "Mary Martel",
+    "Castles": {
+      "Alcazar": {
+        "Lieges": {
+          "Jaun": {
+            "Vassals": [
+              "Jorge",
+              "Phil",
+              "Max",
+              "Milo"
+            ]
+          },
+          "Michael": {
+            "Vassals": [
+              "Milton",
+              "Clark",
+              "Bruce"
+            ]
+          }
+        },
+      "Seville Palace": {
+        "Lieges": {
+          "Brutus": {
+            "Vassals": [
+              "Peter",
+              "Will"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
