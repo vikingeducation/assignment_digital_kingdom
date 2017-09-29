@@ -1,9 +1,12 @@
 var KingdomsHelper = {};
 
 KingdomsHelper.kingdomsPath = () => '/kingdoms/';
-KingdomsHelper.kingdomPath = (id) => `/kingdoms/${ id }`;
+KingdomsHelper.kingdomPath = (name) => `/kingdoms/${ name }`;
 KingdomsHelper.newKingdomPath = () => '/kingdoms/new';
-KingdomsHelper.editKingdomPath = (id) => `/kingdoms/${ id }/edit`;
-KingdomsHelper.destroyKingdomPath = (id) => `/kingdoms/${ id }/?_method=delete`;
+
+// -------- View Helpers --------- //
+KingdomsHelper.anyCastles = (kingdom) => {
+  return Object.keys(kingdom.castles).length !== 0;
+};
 
 module.exports = KingdomsHelper;

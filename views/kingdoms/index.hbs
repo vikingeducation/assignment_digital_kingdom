@@ -1,0 +1,32 @@
+<h1 class="pull-left">
+  Kingdoms
+</h1>
+<div class="pull-right">
+  <h4 class="text-center">New Kingdom</h4>
+  <form class="form-inline" action="{{newKingdomPath}}" method="POST">
+    <div class="form-group mx-sm-3">
+      <input type="text" class="form-control" id="kingdom" aria-describedby="kingdom_name_input" placeholder="Kingdom Name" name="kingdomName">
+    </div>
+    <div class="form-group mx-sm-3">
+      <input type="text" class="form-control" id="king" aria-describedby="king_input" placeholder="King" name="king">
+    </div>
+    <div class="form-group mx-sm-3">
+      <input type="text" class="form-control" id="queen" aria-describedby="queen_input" placeholder="Queen" name="queen">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<hr class="clear">
+<div class='col-sm-12'>
+  {{#each kingdoms}}
+    <div class="col-sm-4">
+      <a href={{kingdomPath @key}}>{{formatName @key}}</a>
+      <ul>
+        <li>King: {{this.king}}</li>
+        <li>Queen: {{this.queen}}</li>
+        <li>Castles: {{this.castleNumber}}</li>
+      </ul>
+    </div>
+  {{/each}}
+</div>
+

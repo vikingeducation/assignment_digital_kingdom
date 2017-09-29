@@ -1,19 +1,22 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var exphbs = require('express-handlebars');
-var helpers = require('./helpers');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const morganToolkit = require('morgan-toolkit')(logger);
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const helpers = require('./helpers');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const kingdoms = require('./routers/kingdoms');
+const castles = require('./routers/castles');
+const leiges = require('./routers/leiges');
+const vassals = require('./routers/vassals');
 
-var app = express();
+const app = express();
 
 // view engine setup
-var hbs = exphbs.create({
+const hbs = exphbs.create({
   helpers: helpers,
   partialsDir: 'views/',
   defaultLayout: 'main_layout.hbs'
@@ -22,26 +25,40 @@ var hbs = exphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(morganToolkit());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.get('/', (req, res) => {
+  res.redirect('/kingdoms');
+});
+
+// Handle DELETE method overiding for helpers
+app.use((req, res, next) => {
+  if (req.query._method == 'delete') {
+    req.method = 'DELETE';
+    req.url = req.path;
+  }
+  next();
+});
+
+app.use('/kingdoms', kingdoms);
+app.use('/castles', castles);
+app.use('/leiges', leiges);
+app.use('/vassals', vassals);
+
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

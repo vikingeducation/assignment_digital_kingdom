@@ -1,9 +1,17 @@
 var CastlesHelper = {};
 
-CastlesHelper.castlesPath = () => '/castles/';
-CastlesHelper.castlePath = (id) => `/castles/${ id }`;
+// -------- Paths --------- //
+CastlesHelper.castlePath = (name) => `/castles/${ name }`;
 CastlesHelper.newCastlePath = () => '/castles/new';
-CastlesHelper.editCastlePath = (id) => `/castles/${ id }/edit`;
-CastlesHelper.destroyCastlePath = (id) => `/castles/${ id }/?_method=delete`;
+
+
+// -------- View Helpers --------- //
+CastlesHelper.anyLeiges = (castle) => {
+  return Object.keys(castle.leiges).length !== 0;
+};
+
+CastlesHelper.liegeAmount = (castle) => {
+  return Object.keys(castle.leiges).length;
+};
 
 module.exports = CastlesHelper;

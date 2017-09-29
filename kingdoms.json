@@ -1,235 +1,244 @@
 {
-  "The North": {
-    "King": "Rob Stark",
-    "Queen": "Maggie Stark",
-    "Castles": {
-      "Winterfell Castle": {
-        "Lieges": {
-          "Edward Clark": {
-            "Vassals": [
-              "Bob",
-              "Frank",
-              "Tom"
-            ]
-          },
-          "Henry": {
-            "Vassals": [
-              "Jim",
-              "Dwight"
-            ]
+  "kingdoms": {
+    "The-North": {
+      "king": "Rob Stark",
+      "queen": "Maggie Stark",
+      "castles": {
+        "Winterfell-Castle": {
+          "leiges": {
+            "Edward-Clark": {
+              "vassals": [
+                "Bob",
+                "Frank",
+                "Tom"
+              ]
+            },
+            "Henry": {
+              "vassals": [
+                "Jim",
+                "Dwight"
+              ]
+            }
           }
         },
-      "South Brick": {
-        "Lieges": {
-          "Marcos": {
-            "Vassals": [
-              "Kevin",
-              "Smitty"
-            ]
+        "South-Brick": {
+          "leiges": {
+            "Marcos": {
+              "vassals": [
+                "Kevin",
+                "Smitty"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "The Mountain and the Vale": {
-    "King": "Frank Arryn",
-    "Queen": "Emily Arryn",
-    "Castles": {
-      "Skylark Castle": {
-        "Lieges": {
-          "Adrian": {
-            "Vassals": [
-              "Ade",
-              "Alby",
-              "Sig"
-            ]
-          },
-          "Alexander": {
-            "Vassals": [
-              "Bert",
-              "Allen",
-              "Vincent",
-              "Tom"
-            ]
+    },
+    "The-Mountain-and-the-Vale": {
+      "king": "Frank Arryn",
+      "queen": "Emily Arryn",
+      "castles": {
+        "Skylark-Castle": {
+          "leiges": {
+            "Adrian": {
+              "vassals": [
+                "Ade",
+                "Alby",
+                "Sig"
+              ]
+            },
+            "Alexander": {
+              "vassals": [
+                "Bert",
+                "Allen",
+                "Vincent",
+                "Tom"
+              ]
+            }
           }
         },
-      "Valley Overlook": {
-        "Lieges": {
-          "Ambrose": {
-            "Vassals": [
-              "Al",
-              "Lon"
-            ]
+        "Valley-Overlook": {
+          "leiges": {
+            "Ambrose": {
+              "vassals": [
+                "Al",
+                "Lon"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "The Isles and Rivers": {
-    "King": "Henry Hoare",
-    "Queen": "Henrietta Hoare",
-    "Castles": {
-      "Water Defense": {
-        "Lieges": {
-          "Alister": {
-            "Vassals": [
-              "Ron",
-              "Harry",
-              "Neville",
-              "Seamus"
-            ]
-          },
-          "Bradford": {
-            "Vassals": [
-              "Bran",
-              "Hodor",
-              "Bill"
-            ]
+    },
+    "The-Isles-and-Rivers": {
+      "king": "Henry Hoare",
+      "queen": "Henrietta Hoare",
+      "castles": {
+        "Water-Defense": {
+          "leiges": {
+            "Alister": {
+              "vassals": [
+                "Ron",
+                "Harry",
+                "Neville",
+                "Seamus"
+              ]
+            },
+            "Bradford": {
+              "vassals": [
+                "Bran",
+                "Hodor",
+                "Bill"
+              ]
+            }
           }
         },
-      "Water Palace": {
-        "Lieges": {
-          "Corey": {
-            "Vassals": [
-              "Conny",
-              "Craig"
-            ]
+        "Water-Palace": {
+          "leiges": {
+            "Corey": {
+              "vassals": [
+                "Conny",
+                "Craig"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "The Rock": {
-    "King": "Jamie Lanister",
-    "Queen": "His Sister (Ewwww)",
-    "Castles": {
-      "Casterly Rock": {
-        "Lieges": {
-          "Curtis": {
-            "Vassals": [
-              "Clive",
-              "Woody",
-              "Ernie",
-              "Sam",
-              "Irvine"
-            ]
-          },
-          "Ernesto": {
-            "Vassals": [
-              "Emery",
-              "Frank",
-              "Gabe",
-              "Gerry"
-            ]
+    },
+    "The-Rock": {
+      "king": "Jamie Lanister",
+      "queen": "His Sister (Ewwww)",
+      "castles": {
+        "Casterly-Rock": {
+          "leiges": {
+            "Curtis": {
+              "vassals": [
+                "Clive",
+                "Woody",
+                "Ernie",
+                "Sam",
+                "Irvine"
+              ]
+            },
+            "Ernesto": {
+              "vassals": [
+                "Emery",
+                "Frank",
+                "Gabe",
+                "Gerry"
+              ]
+            }
           }
         },
-      "Grand Stage": {
-        "Lieges": {
-          "Francis": {
-            "Vassals": [
-              "Jerry",
-              "Gary"
-            ]
+        "Grand-Stage": {
+          "leiges": {
+            "Francis": {
+              "vassals": [
+                "Jerry",
+                "Gary"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "The Stormlands": {
-    "King": "Daniel Durrandon",
-    "Queen": "Daniella Durrandon",
-    "Castles": {
-      "Dome of Durr": {
-        "Lieges": {
-          "George": {
-            "Vassals": [
-              "Bert",
-              "Gil",
-              "Tom",
-              "Steve"
-            ]
-          },
-          "Spartucus": {
-            "Vassals": [
-              "Bill",
-              "Craig",
-              "Gio"
-            ]
+    },
+    "The-Stormlands": {
+      "king": "Daniel Durrandon",
+      "queen": "Daniella Durrandon",
+      "castles": {
+        "Dome-of-Durr": {
+          "leiges": {
+            "George": {
+              "vassals": [
+                "Bert",
+                "Gil",
+                "Tom",
+                "Steve"
+              ]
+            },
+            "Spartucus": {
+              "vassals": [
+                "Bill",
+                "Craig",
+                "Gio"
+              ]
+            }
           }
         },
-      "Durr Palace": {
-        "Lieges": {
-          "Marcus": {
-            "Vassals": [
-              "Horace",
-              "Ace"
-            ]
+        "Durr-Palace": {
+          "leiges": {
+            "Marcus": {
+              "vassals": [
+                "Horace",
+                "Ace"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "The Reach": {
-    "King": "Gary Gardener",
-    "Queen": "Gina Gardener",
-    "Castles": {
-      "Plantis Castle": {
-        "Lieges": {
-          "James": {
-            "Vassals": [
-              "Jay",
-              "Ive",
-              "Jeff"
-            ]
-          },
-          "Jeffrey": {
-            "Vassals": [
-              "Kelvin",
-              "Faran"
-            ]
+    },
+    "The-Reach": {
+      "king": "Gary Gardener",
+      "queen": "Gina Gardener",
+      "castles": {
+        "Plantis-Castle": {
+          "leiges": {
+            "James": {
+              "vassals": [
+                "Jay",
+                "Ive",
+                "Jeff"
+              ]
+            },
+            "Jeffrey": {
+              "vassals": [
+                "Kelvin",
+                "Faran"
+              ]
+            }
           }
         },
-      "Grown Palace": {
-        "Lieges": {
-          "Lindon": {
-            "Vassals": [
-              "Loyde",
-              "Lyn"
-            ]
+        "Grown-Palace": {
+          "leiges": {
+            "Lindon": {
+              "vassals": [
+                "Loyde",
+                "Lyn"
+              ]
+            }
           }
         }
       }
-    }
-  },
-  "Dourne": {
-    "King": "Mark Martel",
-    "Queen": "Mary Martel",
-    "Castles": {
-      "Alcazar": {
-        "Lieges": {
-          "Jaun": {
-            "Vassals": [
-              "Jorge",
-              "Phil",
-              "Max",
-              "Milo"
-            ]
-          },
-          "Michael": {
-            "Vassals": [
-              "Milton",
-              "Clark",
-              "Bruce"
-            ]
+    },
+    "Dourne": {
+      "king": "Mark Martel",
+      "queen": "Mary Martel",
+      "castles": {
+        "Alcazar": {
+          "leiges": {
+            "Jaun": {
+              "vassals": [
+                "Jorge",
+                "Phil",
+                "Max",
+                "Milo"
+              ]
+            },
+            "Michael": {
+              "vassals": [
+                "Milton",
+                "Clark",
+                "Bruce"
+              ]
+            }
           }
         },
-      "Seville Palace": {
-        "Lieges": {
-          "Brutus": {
-            "Vassals": [
-              "Peter",
-              "Will"
-            ]
+        "Seville-Palace": {
+          "leiges": {
+            "Brutus": {
+              "vassals": [
+                "Peter",
+                "Will"
+              ]
+            }
           }
         }
       }
