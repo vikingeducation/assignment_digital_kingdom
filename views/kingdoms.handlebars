@@ -1,14 +1,14 @@
 <div class="container">
 
-  {{#each allKingdoms as |kingdoms|}}
+  {{#each kingdoms as |kingdom|}}
     <div class="card">
-      <img src={{kingdoms.url}} alt="Avatar">
+      <img src={{kingdom.url}} alt="sigil">
       <div class="details">
-        <h2><b>{{kingdoms.name}}</b></h2> 
+        <h2><a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></h2> 
         <span>
-          <p><b>King:</b> {{kingdoms.king}}</p>
-          <p><b>Queen:</b> {{kingdoms.queen}}</p>
-          <p><b># of Castles:</b> {{kingdoms.castles.length}}</p>
+          <p><b>King:</b> {{kingdom.king}}</p>
+          <p><b>Queen:</b> {{kingdom.queen}}</p>
+          <p><b># of Castles:</b> {{kingdom.castles.length}}</p>
         </span>
       </div>
     </div>      

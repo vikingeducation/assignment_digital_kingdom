@@ -1,7 +1,7 @@
 {
     "kingdoms": [
         {
-            "name": "Stark",
+            "name": "House Stark",
             "king": "no one",
             "queen": "Sansa Stark",
             "url": "../images/stark.png",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "name": "Tully",
+            "name": "House Tully",
             "king": "Edmure Tully",
             "queen": "Roslin Frey",
             "url": "../images/tully.png",
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "name": "Arryn",
+            "name": "House Arryn",
             "king": "Robin Arryn",
             "queen": "no one",
             "url": "../images/arryn.png",
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "name": "Lannister",
+            "name": "House Lannister",
             "king": "no one",
             "queen": "Cersei Lannister",
             "url": "../images/lannister.png",
@@ -48,7 +48,7 @@
             ]
         },
         {
-            "name": "Baratheon",
+            "name": "House Baratheon",
             "king": "Gendry",
             "queen": "no one",
             "url": "../images/baratheon.png",
@@ -59,7 +59,7 @@
             ]
         },
         {
-            "name": "Tyrell",
+            "name": "House Tyrell",
             "king": "no one",
             "queen": "Olenna Tyrell",
             "url": "../images/tyrell.png",
@@ -70,7 +70,7 @@
             ]
         },
         {
-            "name": "Martell",
+            "name": "House Martell",
             "king": "no one",
             "queen": "Ellaria Sand",
             "url": "../images/martell.png",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "name": "Targaryen",
+            "name": "House Targaryen",
             "king": "no one",
             "queen": "Daenerys Targaryen",
             "url": "../images/targaryen.png",
@@ -98,7 +98,7 @@
             ]
         },
         {
-            "name": "Greyjoy",
+            "name": "House Greyjoy",
             "king": "Euron Greyjoy",
             "queen": "no one",
             "url": "../images/greyjoy.png",

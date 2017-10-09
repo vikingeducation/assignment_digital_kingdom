@@ -26,30 +26,34 @@ const addKingdom = (name, king, queen) => {
   saveJson(json);
 };
 
-// const getAnimals = species => {
-//   const json = getJson();
-//   const animals = json.species[species];
-//   return animals;
-// };
+const getCastles = kingdomName => {
+  const json = getJson();
+  let castles = [];
 
-// const addAnimal = (species, name) => {
-//   const json = getJson();
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      castles = kingdom.castles;
+    }
+  });
 
-//   json.species[species].push(name);
+  return castles;
+};
 
-//   saveJson(json);
-// };
+const addCastle = (kingdomName, castleName) => {
+  const json = getJson();
+  let newCastle = {};
+  newCastle.name = castleName;
+  newCastle.lieges = [];
 
-// const releaseAnimal = (species, name) => {
-//   const json = getJson();
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name == kingdomName) {
+      kingdom.castles.push(newCastle);
+    }
+  });
 
-//   const animals = json.species[species];
-//   const newAnimals = animals.filter(animal => animal !== name);
+  saveJson(json);
+};
 
-//   json.species[species] = newAnimals;
-
-//   saveJson(json);
-// };
 
 const saveJson = json => {
   fs.writeFileSync("kingdoms.json", JSON.stringify(json, null, 4));
@@ -57,8 +61,7 @@ const saveJson = json => {
 
 module.exports = {
   getKingdoms,
-  addKingdom
-  // getAnimals,
-  // addAnimal,
-  // releaseAnimal,
+  addKingdom,
+  getCastles,
+  addCastle
 };
