@@ -1,0 +1,32 @@
+<div class="container">
+
+  {{#each allKingdoms as |kingdoms|}}
+    <div class="card">
+      <img src={{kingdoms.url}} alt="Avatar">
+      <div class="details">
+        <h2><b>{{kingdoms.name}}</b></h2> 
+        <span>
+          <p><b>King:</b> {{kingdoms.king}}</p>
+          <p><b>Queen:</b> {{kingdoms.queen}}</p>
+          <p><b># of Castles:</b> {{kingdoms.castles.length}}</p>
+        </span>
+      </div>
+    </div>      
+  {{/each}}
+  <div class="card">
+    <div class="box--title"><h2>Add Kingdom</h2></div>
+    <div>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <input class="form-control" type="text" name="name" id="name" placeholder="Kingdom">
+          <input class="form-control" type="text" name="king" id="king" placeholder="King">
+          <input class="form-control"type="text" name="queen" id="queen" placeholder="Queen">
+          <br>
+          <input type="submit" class="btn">
+
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>

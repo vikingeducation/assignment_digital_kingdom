@@ -1,0 +1,128 @@
+.card {
+  /* Add shadows to create the "card" effect */
+  background-color: burlywood;
+  transition: 0.3s;
+  height: 300px;
+  width: 250px;
+  float: left;
+  border: solid 1px black;
+  margin: 10px;
+  color: maroon;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.6);
+}
+
+/* Add some padding inside the card container */
+.details {
+    padding: 5px 16px;
+}
+
+.container: {
+  position: relative;
+  align-content: center;
+}
+
+
+img {
+  height: 50%;
+  margin: auto;
+  margin-top: 1px;
+  display: block;
+  width: 60%;
+}
+
+body {
+  background-color: wheat;
+  font-family: sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  text-align: center;
+  color: maroon;
+}
+
+span p {
+  line-height: 70%;
+}
+
+.box {
+  background-color: white;
+  width: 200px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.box--content {
+  padding: 15px;
+}
+
+.box--title {
+  color: maroon;
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.member {
+  font-weight: bold
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: maroon;
+  background-color: wheat;
+  margin-bottom: 10px;
+  border: solid 1px black;
+}
+
+.btn {
+  border-radius: 10px;
+  width: 100px;
+  margin-top: 10px
+}
+
+.remove {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.remove button {
+  cursor: pointer;
+  font-size: 10px;
+  color: gray;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  display: inline-block;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+.remove button:hover {
+  color: red;
+}

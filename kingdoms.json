@@ -1,0 +1,112 @@
+{
+    "kingdoms": [
+        {
+            "name": "Stark",
+            "king": "no one",
+            "queen": "Sansa Stark",
+            "url": "../images/stark.png",
+            "castles": [
+                {
+                    "name": "Winterfell"
+                }
+            ]
+        },
+        {
+            "name": "Tully",
+            "king": "Edmure Tully",
+            "queen": "Roslin Frey",
+            "url": "../images/tully.png",
+            "castles": [
+                {
+                    "name": "Riverrun"
+                }
+            ]
+        },
+        {
+            "name": "Arryn",
+            "king": "Robin Arryn",
+            "queen": "no one",
+            "url": "../images/arryn.png",
+            "castles": [
+                {
+                    "name": "The Eyrie"
+                }
+            ]
+        },
+        {
+            "name": "Lannister",
+            "king": "no one",
+            "queen": "Cersei Lannister",
+            "url": "../images/lannister.png",
+            "castles": [
+                {
+                    "name": "Red Keep"
+                },
+                {
+                    "name": "Casterly Rock"
+                }
+            ]
+        },
+        {
+            "name": "Baratheon",
+            "king": "Gendry",
+            "queen": "no one",
+            "url": "../images/baratheon.png",
+            "castles": [
+                {
+                    "name": "Storm's End"
+                }
+            ]
+        },
+        {
+            "name": "Tyrell",
+            "king": "no one",
+            "queen": "Olenna Tyrell",
+            "url": "../images/tyrell.png",
+            "castles": [
+                {
+                    "name": "Highgarden"
+                }
+            ]
+        },
+        {
+            "name": "Martell",
+            "king": "no one",
+            "queen": "Ellaria Sand",
+            "url": "../images/martell.png",
+            "castles": [
+                {
+                    "name": "Sunspear"
+                }
+            ]
+        },
+        {
+            "name": "Targaryen",
+            "king": "no one",
+            "queen": "Daenerys Targaryen",
+            "url": "../images/targaryen.png",
+            "castles": [
+                {
+                    "name": "Dragon Stone"
+                },
+                {
+                    "name": "Great Pyramid"
+                },
+                {
+                    "name": "Summerhall"
+                }
+            ]
+        },
+        {
+            "name": "Greyjoy",
+            "king": "Euron Greyjoy",
+            "queen": "no one",
+            "url": "../images/greyjoy.png",
+            "castles": [
+                {
+                    "name": "Pyke"
+                }
+            ]
+        }
+    ]
+}
