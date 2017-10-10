@@ -2,7 +2,11 @@
 
   {{#each kingdoms as |kingdom|}}
     <div class="card">
+      <form class="remove" action="/{{kingdom.name}}/remove" method="post">
+        <p class="close-icon"></p>
+      </form>
       <img src={{kingdom.url}} alt="sigil">
+
       <div class="details">
         <h2><a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></h2> 
         <span>
@@ -13,6 +17,7 @@
       </div>
     </div>      
   {{/each}}
+
   <div class="card">
     <div class="box--title"><h2>Add Kingdom</h2></div>
     <div>
@@ -23,10 +28,9 @@
           <input class="form-control"type="text" name="queen" id="queen" placeholder="Queen">
           <br>
           <input type="submit" class="btn">
-
         </div>
       </form>
     </div>
   </div>
-  
+
 </div>

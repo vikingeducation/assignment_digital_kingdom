@@ -15,36 +15,37 @@ const getKingdoms = () => {
 const addKingdom = (name, king, queen) => {
   const json = getJson();
   if (json.kingdoms[name]) return;
-  let newKingdom = {};
-  newKingdom.name = name;
-  newKingdom.king = king;
-  newKingdom.queen = queen;
-  newKingdom.url = "../images/blank.png";
-  newKingdom.castles = [];
+  const newKingdom = {
+    name: name,
+    king: king,
+    queen: queen,
+    url: "../images/blank.png",
+    castles: []
+  };
+  
   json.kingdoms.push(newKingdom);
+  saveJson(json);
+};
 
+const removeKingdom = (name) => {
+  const json = getJson();
+  const kingdoms = json.kingdoms;
+  json.kingdoms = kingdoms.filter(kingdom => kingdom.name !== name);
   saveJson(json);
 };
 
 const getCastles = kingdomName => {
-  const json = getJson();
-  let castles = [];
-
-  json.kingdoms.forEach(kingdom => {
-    if (kingdom.name == kingdomName) {
-      castles = kingdom.castles;
-    }
-  });
-
-  return castles;
+  return getJson().kingdoms
+    .filter(kingdom => kingdom.name === kingdomName)[0].castles;
 };
 
 const addCastle = (kingdomName, castleName) => {
   const json = getJson();
-  let newCastle = {};
-  newCastle.name = castleName;
-  newCastle.lieges = [];
-
+  const newCastle = {
+    name: castleName,
+    lieges: []
+  };
+  
   json.kingdoms.forEach(kingdom => {
     if (kingdom.name == kingdomName) {
       kingdom.castles.push(newCastle);
@@ -62,6 +63,7 @@ const saveJson = json => {
 module.exports = {
   getKingdoms,
   addKingdom,
+  removeKingdom,
   getCastles,
   addCastle
 };
