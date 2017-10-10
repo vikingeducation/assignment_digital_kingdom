@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express();
 const fs = require('fs');
-const routes = require("./routes/routes");
+const kingdoms = require("./routes/kingdoms");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }))
 const expressHandlebars = require("express-handlebars");
@@ -10,11 +10,13 @@ const hbs = expressHandlebars.create({
   defaultLayout: "main"
 })
 
-app.engine("handlebards", hbs.engine);
-app.set("view engine", "handlebards");
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
-app.get('/animals', (req, res) => {
-  res.send('animals')
+app.use('/kingdoms', kingdoms);
+
+app.get('/', (req, res) => {
+  res.redirect("/kingdoms");
 })
 
 app.use(express.static(__dirname + "/public"))
