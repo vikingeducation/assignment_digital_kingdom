@@ -1,8 +1,97 @@
 {
-  "kingdom" :
-    {
-    "Big": [],
-    "Small": [],
-    "ice":[]
-  }
+    "kingdom": [
+        {
+            "name": "the best",
+            "king": "pencil",
+            "queen": "pen",
+            "casltes": [
+                {
+                    "name": "best castle",
+                    "leiges": [
+                        {
+                            "name": "best leige",
+                            "vassals": [
+                                "v1",
+                                "v2"
+                            ]
+                        },
+                        {
+                            "name": "2nd best leige",
+                            "vassals": [
+                                "21, 22"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "2nd best castle",
+                    "leiges": [
+                        {
+                            "name": "noone",
+                            "vassals": [
+                                "v21",
+                                "v22"
+                            ]
+                        },
+                        {
+                            "name": "someone",
+                            "vassals": [
+                                "212, 223"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "town",
+            "king": "Kingdo",
+            "queen": "Queendo",
+            "casltes": [
+                {
+                    "name": "kingdo castle",
+                    "leiges": [
+                        {
+                            "name": "google",
+                            "vassals": [
+                                "v1",
+                                "v2"
+                            ]
+                        },
+                        {
+                            "name": "microsoft",
+                            "vassals": [
+                                "21, 22"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "queendo castle",
+                    "leiges": [
+                        {
+                            "name": "apple",
+                            "vassals": [
+                                "banana",
+                                "orange"
+                            ]
+                        },
+                        {
+                            "name": "amazon",
+                            "vassals": [
+                                "cool stuff",
+                                "223"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "milnd",
+            "king": "king",
+            "queen": "queen",
+            "castles": []
+        }
+    ]
 }

@@ -1,14 +1,14 @@
-<h2><a href="/species">All Species</a></h2>
+<h2><a href="/kingdoms">All kingdoms</a></h2>
 
 <div class="box">
-  <div class="box--title">{{species}}</div>
   <div class="box--content">
     {{#each kingdoms as |kingdom|}}
     <div class="animal">
-      {{kingdom}}
-      <form class="remove" action="/species/{{../species}}/animals/{{animal}}/release" method="post">
-        <button>Release</button>
-      </form>
+      <b> Kingdom Name: </b> <a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a> <br>
+      <b> King </b> {{kingdom.king}} <br>
+      <b> Queen </b> {{kingdom.queen}} </br>
+      number of castles {{kingdom.castles.length}} </br>
+    </br>
     </div>
     {{/each}}
   </div>
@@ -17,9 +17,11 @@
 <div class="box">
   <div class="box--title">Add Kingdom</div>
   <div class="box--content">
-    <form action="/species/{{kingdoms}}" method="POST">
+    <form action="/kingdoms/" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
-      <input type="submit" value="Add New Animal" method="post">
+      <input type="text" name="king" id="king" placeholder="king">
+      <input type="text" name="queen" id="queen" placeholder="queen">
+      <input type="submit" value="Add New kingdom" method="post">
     </form>
   </div>
 </div>
