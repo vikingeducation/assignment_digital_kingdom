@@ -10,6 +10,24 @@ const saveJson = json => {
   fs.writeFileSync("kingdoms.json", JSON.stringify(json, null, 4));
 };
 
+const searchArray = (name, array) => {
+
+  for (let i = 0; i < array.length; i++ ){
+    if (array[i].name === name){
+      console.log(array[i]);
+      return array[i]
+    }
+  }
+  // array.forEach(obj => {
+  //   if (obj.name === name) {
+  //     var search = obj
+  //     console.log("search", search)
+  //     return search;
+  //   }
+  // })
+  return search
+}
+
 const getKingdoms = () => {
   const json = getJson();
   const kingdoms = json.kingdom;
@@ -30,7 +48,9 @@ const addKingdom =(name, king, queen) => {
 
 const getCastles = (kngdm) => {
   const json = getJson()
-  const castles = json.kingdom[kngdm];
+  const kingdom =  searchArray(kngdm, json.kingdom)
+  const castles = kingdom.castles
+  console.log("castles" , castles)
   return castles;
 }
 

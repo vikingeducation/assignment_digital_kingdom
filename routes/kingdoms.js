@@ -23,9 +23,10 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:kingdom", (req, res) => {
-  const kingdom = getCastles(req.params.kingdom)
+  const kingdom = req.params.kingdom
+  const castles = getCastles(req.params.kingdom)
   console.log("kingdom", kingdom)
-  res.render('kingdom', kingdom)
+  res.render('castle', {kingdom, castles})
 
 })
 

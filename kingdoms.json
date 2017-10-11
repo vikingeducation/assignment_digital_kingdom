@@ -1,22 +1,22 @@
 {
     "kingdom": [
         {
-            "name": "the best",
+            "name": "thebest",
             "king": "pencil",
             "queen": "pen",
-            "casltes": [
+            "castles": [
                 {
-                    "name": "best castle",
+                    "name": "bestcastle",
                     "leiges": [
                         {
-                            "name": "best leige",
+                            "name": "bestleige",
                             "vassals": [
                                 "v1",
                                 "v2"
                             ]
                         },
                         {
-                            "name": "2nd best leige",
+                            "name": "2ndbestleige",
                             "vassals": [
                                 "21, 22"
                             ]
@@ -24,7 +24,7 @@
                     ]
                 },
                 {
-                    "name": "2nd best castle",
+                    "name": "2ndbestcastle",
                     "leiges": [
                         {
                             "name": "noone",
@@ -47,9 +47,9 @@
             "name": "town",
             "king": "Kingdo",
             "queen": "Queendo",
-            "casltes": [
+            "castles": [
                 {
-                    "name": "kingdo castle",
+                    "name": "kingdocastle",
                     "leiges": [
                         {
                             "name": "google",
@@ -67,7 +67,7 @@
                     ]
                 },
                 {
-                    "name": "queendo castle",
+                    "name": "queendocastle",
                     "leiges": [
                         {
                             "name": "apple",
