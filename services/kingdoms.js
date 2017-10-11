@@ -70,10 +70,10 @@ const addCastle = (name, kngdm) => {
   saveJson(json)
 }
 
-const getLieges = (kingdom, castle) => {
-  const castlesData = getCastles(kingdom);
-  const vassals = Object.keys(castlesData[castle])
-  return vassals
+const getLieges = (kngdm, castle) => {
+  const castlesData = getCastles(kngdm);
+  const foundcastle = searchArray(castle, castlesData)
+  return foundcastle;
 }
 
 const getVassals = (kingdom, castle) => {
@@ -87,5 +87,6 @@ module.exports = {
   addKingdom,
   getCastles,
   addCastle,
+  getLieges,
   getVassals
 }

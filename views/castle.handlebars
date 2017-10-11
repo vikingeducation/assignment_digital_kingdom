@@ -4,8 +4,8 @@
   <div class="box--content">
     {{#each castles as |castle|}}
     <div class="animal">
-      <b> Castle Name: </b> <a href="/kingdoms/{{kingdom}}/{{castle.name}}">{{castle.name}}</a> <br>
-      number of Leiges {{castle.leiges.length}} </br>
+      <b> Castle Name: </b> <a href="/kingdoms/{{../kingdom}}/{{castle.name}}">{{castle.name}}</a> <br>
+      number of Lieges {{castle.lieges.length}} </br>
     </br>
     </div>
     {{/each}}
@@ -13,9 +13,9 @@
 </div>
 
 <div class="box">
-  <div class="box--title">Add Kingdom</div>
+  <div class="box--title">Add Castle</div>
   <div class="box--content">
-    <form action="/kingdoms/{{kingdom}}" method="POST">
+    <form action="/kingdoms/{{../kingdom}}" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
       <input type="submit" value="Add New Castle" method="post">
     </form>

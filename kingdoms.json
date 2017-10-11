@@ -7,7 +7,7 @@
             "castles": [
                 {
                     "name": "bestcastle",
-                    "leiges": [
+                    "lieges": [
                         {
                             "name": "bestleige",
                             "vassals": [
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "2ndbestcastle",
-                    "leiges": [
+                    "lieges": [
                         {
                             "name": "noone",
                             "vassals": [
@@ -43,7 +43,7 @@
                 },
                 {
                     "name": "3rdbestcastle",
-                    "leiges": []
+                    "lieges": []
                 }
             ]
         },
@@ -54,7 +54,7 @@
             "castles": [
                 {
                     "name": "kingdocastle",
-                    "leiges": [
+                    "lieges": [
                         {
                             "name": "google",
                             "vassals": [
@@ -72,7 +72,7 @@
                 },
                 {
                     "name": "queendocastle",
-                    "leiges": [
+                    "lieges": [
                         {
                             "name": "apple",
                             "vassals": [

@@ -7,6 +7,7 @@ const {
   addKingdom,
   getCastles,
   addCastle,
+  getLieges,
   getVassals
 } = require("../services/kingdoms")
 
@@ -39,7 +40,12 @@ router.post("/:kingdom", (req, res) => {
 
 })
 
-router.get("/:kingdom/:castles", (req, res) =>{
+router.get("/:kingdom/:castle", (req, res) =>{
+  const kingdomname = req.params.kingdom
+  const castlename = req.params.castle
+  const castleInfo = getLieges(kingdomname, castlename)
+  console.log("castleInfo", castleInfo)
+  res.render('lieges', {kingdomname, castlename, castleInfo})
 })
 
 router.get("/:kingdom/:castles/:lieges", (req, res) => {
