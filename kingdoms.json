@@ -20,6 +20,10 @@
                             "vassals": [
                                 "21, 22"
                             ]
+                        },
+                        {
+                            "name": "try",
+                            "vassals": []
                         }
                     ]
                 },
@@ -43,6 +47,10 @@
                 },
                 {
                     "name": "3rdbestcastle",
+                    "lieges": []
+                },
+                {
+                    "name": "niiiccc",
                     "lieges": []
                 }
             ]
@@ -95,6 +103,22 @@
             "name": "milnd",
             "king": "king",
             "queen": "queen",
+            "castles": []
+        },
+        {
+            "name": "liegetest",
+            "castles": []
+        },
+        {
+            "name": "try",
+            "castles": []
+        },
+        {
+            "name": "s",
+            "castles": []
+        },
+        {
+            "name": "",
             "castles": []
         }
     ]

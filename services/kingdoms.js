@@ -59,14 +59,11 @@ const addCastle = (name, kngdm) => {
     if (obj.name === kngdm){
       obj.castles.push({
         name,
-        leiges: []
+        "lieges": []
       })
-      console.log("obj", obj)
     }
-    console.log("iterating obje", obj)
   })
 
-  console.log("json", json)
   saveJson(json)
 }
 
@@ -74,6 +71,30 @@ const getLieges = (kngdm, castle) => {
   const castlesData = getCastles(kngdm);
   const foundcastle = searchArray(castle, castlesData)
   return foundcastle;
+}
+
+const addLiege = (kngdm, castle, name) => {
+  console.log("i was called");
+  var json = getJson();
+
+  json.kingdom.forEach(obj => {
+    if (obj.name === kngdm){
+      console.log("found kingdom");
+      obj.castles.forEach(cstl => {
+        if (cstl.name === castle){
+          console.log("found castle,", cstl);
+          cstl.lieges.push({
+            name,
+            "vassals" :[]
+          })
+          console.log("cstl", cstl)
+        }
+      })
+    }
+  })
+
+  saveJson(json)
+
 }
 
 const getVassals = (kingdom, castle) => {
@@ -88,5 +109,6 @@ module.exports = {
   getCastles,
   addCastle,
   getLieges,
+  addLiege,
   getVassals
 }
