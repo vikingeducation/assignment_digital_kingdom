@@ -12,18 +12,22 @@
                             "name": "bestleige",
                             "vassals": [
                                 "v1",
-                                "v2"
+                                "v2",
+                                "try"
                             ]
                         },
                         {
                             "name": "2ndbestleige",
                             "vassals": [
-                                "21, 22"
+                                "21",
+                                "22"
                             ]
                         },
                         {
                             "name": "try",
-                            "vassals": []
+                            "vassals": [
+                                "s"
+                            ]
                         }
                     ]
                 },

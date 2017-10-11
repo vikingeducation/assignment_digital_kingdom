@@ -68,10 +68,8 @@ const addCastle = (name, kngdm) => {
 }
 
 const getLieges = (kngdm, castle) => {
-  console.log("get lieges was called", kngdm, castle);
   const castlesData = getCastles(kngdm);
   const foundcastle = searchArray(castle, castlesData)
-  console.log("foundcastle", foundcastle)
   return foundcastle;
 }
 
@@ -100,10 +98,33 @@ const addLiege = (kngdm, castle, name) => {
 
 const getVassals = (kngdm, castle, liege) => {
   const liegeData = getLieges(kngdm, castle);
-  console.log("liegeData", liegeData)
   const foundLiege = searchArray(liege, liegeData.lieges)
-  console.log("foundLiege", foundLiege)
   return foundLiege
+}
+
+const addVassal = (kngdm, castle, liege, name) => {
+
+  var json = getJson();
+
+  json.kingdom.forEach(obj => {
+    if (obj.name === kngdm){
+      console.log("found kingdom");
+      obj.castles.forEach(cstl => {
+        if (cstl.name === castle){
+          console.log("found castle,", cstl);
+          cstl.lieges.forEach(leader => {
+            if (leader.name === liege) {
+              leader.vassals.push(name)
+              console.log("leader", leader);
+            }
+          })
+        }
+      })
+    }
+  })
+
+  saveJson(json)
+
 }
 
 module.exports = {
@@ -113,5 +134,6 @@ module.exports = {
   addCastle,
   getLieges,
   addLiege,
-  getVassals
+  getVassals,
+  addVassal
 }
