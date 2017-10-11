@@ -15,11 +15,9 @@
 <div class="box">
   <div class="box--title">Add Kingdom</div>
   <div class="box--content">
-    <form action="/kingdoms/" method="POST">
+    <form action="/kingdoms/{{kingdom}}" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
-      <input type="text" name="king" id="king" placeholder="king">
-      <input type="text" name="queen" id="queen" placeholder="queen">
-      <input type="submit" value="Add New kingdom" method="post">
+      <input type="submit" value="Add New Castle" method="post">
     </form>
   </div>
 </div>

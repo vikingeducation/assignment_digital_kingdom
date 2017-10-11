@@ -14,7 +14,6 @@ const searchArray = (name, array) => {
 
   for (let i = 0; i < array.length; i++ ){
     if (array[i].name === name){
-      console.log(array[i]);
       return array[i]
     }
   }
@@ -25,7 +24,7 @@ const searchArray = (name, array) => {
   //     return search;
   //   }
   // })
-  return search
+  // return search
 }
 
 const getKingdoms = () => {
@@ -50,8 +49,25 @@ const getCastles = (kngdm) => {
   const json = getJson()
   const kingdom =  searchArray(kngdm, json.kingdom)
   const castles = kingdom.castles
-  console.log("castles" , castles)
   return castles;
+}
+
+const addCastle = (name, kngdm) => {
+  var json = getJson();
+
+  json.kingdom.forEach(obj => {
+    if (obj.name === kngdm){
+      obj.castles.push({
+        name,
+        leiges: []
+      })
+      console.log("obj", obj)
+    }
+    console.log("iterating obje", obj)
+  })
+
+  console.log("json", json)
+  saveJson(json)
 }
 
 const getLieges = (kingdom, castle) => {
@@ -70,5 +86,6 @@ module.exports = {
   getKingdoms,
   addKingdom,
   getCastles,
+  addCastle,
   getVassals
 }
