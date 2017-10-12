@@ -27,3 +27,6 @@ This page lists the name of vassals in their service. It allows for the creation
 Handlebars used for views    
 Express.static middleware to serve up static assets, such as stylesheets.   
 Router middleware to organize app into neatly contained modules.   
+
+
+#### Start app using `npm start`
