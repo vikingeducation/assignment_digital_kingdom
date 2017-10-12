@@ -3,7 +3,7 @@
   {{#each kingdoms as |kingdom|}}
     <div class="card">
       <form class="remove" action="/{{kingdom.name}}/remove" method="post">
-        <p class="close-icon"></p>
+        <input type="submit" class="close-icon" value="" />
       </form>
       <img src={{kingdom.url}} alt="sigil">
 
@@ -23,11 +23,11 @@
     <div>
       <form action="/" method="POST">
         <div class="form-group">
-          <input class="form-control" type="text" name="name" id="name" placeholder="Kingdom">
-          <input class="form-control" type="text" name="king" id="king" placeholder="King">
-          <input class="form-control"type="text" name="queen" id="queen" placeholder="Queen">
+          <input class="form-control" type="text" name="name" id="name" placeholder="Kingdom" required />
+          <input class="form-control" type="text" name="king" id="king" placeholder="King" required /> 
+          <input class="form-control" type="text" name="queen" id="queen" placeholder="Queen" required />
           <br>
-          <input type="submit" class="btn">
+          <input type="submit" class="btn" />
         </div>
       </form>
     </div>

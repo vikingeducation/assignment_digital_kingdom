@@ -1,22 +1,36 @@
 const express = require("express");
 const {
   getCastles,
-  addCastle
+  addCastle,
+  removeCastle
 } = require("../services/kingdom-store");
 
 const router = express.Router();
 
-router.get("/:kingdomName", (req, res) => {
-  const kingdomName = req.params.kingdomName;
-  let castles = getCastles(kingdomName);
-  res.render('castles', { kingdomName, castles });
+router.get("/:kingdom", (req, res) => {
+  const kingdom = req.params.kingdom;
+  const castles = getCastles(kingdom);
+
+  res.render('castles', { kingdom, castles });
 });
 
-router.post('/:kingdomName', (req, res) => {
-  const kingdomName = req.params.kingdomName;
-  addCastle(kingdomName, req.body.castleName);
-  const castles = getCastles(kingdomName);
-  res.render('castles', { kingdomName, castles });
+router.post('/:kingdom', (req, res) => {
+  const kingdom = req.params.kingdom;
+
+  addCastle(kingdom, req.body.castle);
+
+  const castles = getCastles(kingdom);
+  res.render('castles', { kingdom, castles });
+});
+
+// remove castle from a kingdom
+router.post("/:kingdom/castles/:castle/remove", (req, res) => {
+  const kingdom = req.params.kingdom;
+  const castle = req.params.castle;
+
+  removeCastle(kingdom, castle);
+
+  res.redirect('back')
 });
 
 module.exports = router;

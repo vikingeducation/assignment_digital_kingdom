@@ -7,7 +7,38 @@
             "url": "../images/stark.png",
             "castles": [
                 {
-                    "name": "Winterfell"
+                    "name": "Winterfell",
+                    "lieges": [
+                        {
+                            "name": "House Mormont",
+                            "url": "../images/mormont.png",
+                            "vassals": [
+                                "Glover",
+                                "Hornwood",
+                                "Mazin",
+                                "Reed",
+                                "Tallhart",
+                                "Cerwyn"
+                            ]
+                        },
+                        {
+                            "name": "House Bolton",
+                            "url": "../images/bolton.png",
+                            "vassals": [
+                                "Whitehill",
+                                "Umber"
+                            ]
+                        },
+                        {
+                            "name": "House Karstark",
+                            "url": "../images/karstark.png",
+                            "vassals": [
+                                "Dustin",
+                                "Ryswell",
+                                "Manderly"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -18,7 +49,30 @@
             "url": "../images/tully.png",
             "castles": [
                 {
-                    "name": "Riverrun"
+                    "name": "Riverrun",
+                    "lieges": [
+                        {
+                            "name": "House Blackwood",
+                            "url": "../images/blackwood.png",
+                            "vassals": [
+                                "Bracken",
+                                "Mallister",
+                                "Whent",
+                                "Mooton",
+                                "Smallwood",
+                                "Darry"
+                            ]
+                        },
+                        {
+                            "name": "House Frey",
+                            "url": "../images/frey.png",
+                            "vassals": [
+                                "Hoare",
+                                "Durrandon",
+                                "Mudd"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -29,7 +83,21 @@
             "url": "../images/arryn.png",
             "castles": [
                 {
-                    "name": "The Eyrie"
+                    "name": "The Eyrie",
+                    "lieges": [
+                        {
+                            "name": "House Baelish",
+                            "url": "../images/baelish.png",
+                            "vassals": [
+                                "Royce",
+                                "Egen",
+                                "Waynwood",
+                                "Corbray",
+                                "Hunter",
+                                "Lynderly"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -40,10 +108,53 @@
             "url": "../images/lannister.png",
             "castles": [
                 {
-                    "name": "Red Keep"
+                    "name": "Red Keep",
+                    "lieges": [
+                        {
+                            "name": "House Blount",
+                            "url": "../images/blount.png",
+                            "vassals": [
+                                "Slynt",
+                                "Rosby",
+                                "Thorne"
+                            ]
+                        },
+                        {
+                            "name": "House Clegane",
+                            "url": "../images/clegane.png",
+                            "vassals": [
+                                "Rykker",
+                                "Gaunt",
+                                "Stokeworth",
+                                "Crakehall"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "Casterly Rock"
+                    "name": "Casterly Rock",
+                    "lieges": [
+                        {
+                            "name": "House Swyft",
+                            "url": "../images/swyft.png",
+                            "vassals": [
+                                "Leflord",
+                                "Marbrand",
+                                "Payne"
+                            ]
+                        },
+                        {
+                            "name": "House Reyne",
+                            "url": "../images/reyne.png",
+                            "vassals": [
+                                "Westerling",
+                                "Hetherspoon",
+                                "Yarwyk",
+                                "Lorch",
+                                "Greenfield"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -54,7 +165,39 @@
             "url": "../images/baratheon.png",
             "castles": [
                 {
-                    "name": "Storm's End"
+                    "name": "Storm's End",
+                    "lieges": [
+                        {
+                            "name": "House Dondarrion",
+                            "url": "../images/dondarrion.png",
+                            "vassals": [
+                                "Caron",
+                                "Selmy",
+                                "Swann"
+                            ]
+                        },
+                        {
+                            "name": "House Tarth",
+                            "url": "../images/tarth.png",
+                            "vassals": [
+                                "Traut",
+                                "Errol",
+                                "Estermont",
+                                "Musgood",
+                                "Grandison",
+                                "Peasebury"
+                            ]
+                        },
+                        {
+                            "name": "House Seaworth",
+                            "url": "../images/seaworth.png",
+                            "vassals": [
+                                "Connington",
+                                "Wylde",
+                                "Morrigan"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -65,7 +208,27 @@
             "url": "../images/tyrell.png",
             "castles": [
                 {
-                    "name": "Highgarden"
+                    "name": "Highgarden",
+                    "lieges": [
+                        {
+                            "name": "House Hightower",
+                            "url": "../images/hightower.png",
+                            "vassals": [
+                                "Cuy",
+                                "Bulwer",
+                                "Beesbury"
+                            ]
+                        },
+                        {
+                            "name": "House Redwyne",
+                            "url": "../images/redwyne.png",
+                            "vassals": [
+                                "Florent",
+                                "Fossoway",
+                                "Oakheart"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -76,7 +239,30 @@
             "url": "../images/martell.png",
             "castles": [
                 {
-                    "name": "Sunspear"
+                    "name": "Sunspear",
+                    "lieges": [
+                        {
+                            "name": "House Dalt",
+                            "url": "../images/dalt.png",
+                            "vassals": [
+                                "Allywrion",
+                                "Blackmont",
+                                "Gargalen",
+                                "Jordayne",
+                                "Yronwood"
+                            ]
+                        },
+                        {
+                            "name": "House Dayne",
+                            "url": "../images/dayne.png",
+                            "vassals": [
+                                "Qorgyle",
+                                "Manwoody",
+                                "Santagar",
+                                "Uller"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -87,13 +273,142 @@
             "url": "../images/targaryen.png",
             "castles": [
                 {
-                    "name": "Dragon Stone"
+                    "name": "Dragon Stone",
+                    "lieges": [
+                        {
+                            "name": "House Lannister",
+                            "url": "../images/lannister.png",
+                            "vassals": [
+                                "Blount",
+                                "Clegane",
+                                "Westerling",
+                                "Rykker",
+                                "Gaunt",
+                                "Stokeworth",
+                                "Crakehall",
+                                "Slynt",
+                                "Rosby",
+                                "Thorne",
+                                "Swyft",
+                                "Crakehall",
+                                "Leflord",
+                                "Marbrand",
+                                "Payne",
+                                "Reyne",
+                                "Hetherspoon",
+                                "Yarwyk",
+                                "Lorch",
+                                "Greenfield"
+                            ]
+                        },
+                        {
+                            "name": "House Baratheon",
+                            "url": "../images/baratheon.png",
+                            "vassals": [
+                                "Dondarrion",
+                                "Tarth",
+                                "Seaworth",
+                                "Caron",
+                                "Selmy",
+                                "Swann",
+                                "Trant",
+                                "Errol",
+                                "Estermont",
+                                "Musgood",
+                                "Grandison",
+                                "Peasebury",
+                                "Connington",
+                                "Wylde",
+                                "Morrigan"
+                            ]
+                        },
+                        {
+                            "name": "House Stark",
+                            "url": "../images/stark.png",
+                            "vassals": [
+                                "Mormont",
+                                "Karstark",
+                                "Bolton",
+                                "Glover",
+                                "Hornwood",
+                                "Mazin",
+                                "Reed",
+                                "Tallhart",
+                                "Cerwyn",
+                                "Dustin",
+                                "Ryswell",
+                                "Manderly"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "Great Pyramid"
+                    "name": "Great Pyramid",
+                    "lieges": [
+                        {
+                            "name": "House Tully",
+                            "url": "../images/tully.png",
+                            "vassals": [
+                                "Blackwood",
+                                "Frey",
+                                "Bracken",
+                                "Mallister",
+                                "Whent",
+                                "Mooton",
+                                "Smallwood",
+                                "Darry"
+                            ]
+                        },
+                        {
+                            "name": "House Arryn",
+                            "url": "../images/arryn.png",
+                            "vassals": [
+                                "Baelish",
+                                "Royce",
+                                "Egen",
+                                "Waynwood",
+                                "Corbray",
+                                "Hunter",
+                                "Lynderly"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "Summerhall"
+                    "name": "Summerhall",
+                    "lieges": [
+                        {
+                            "name": "House Tyrell",
+                            "url": "../images/tyrell.png",
+                            "vassals": [
+                                "Hightower",
+                                "Redwyne",
+                                "Cuy",
+                                "Bulwer",
+                                "Beesbury",
+                                "Florent",
+                                "Fossoway",
+                                "Oakheart"
+                            ]
+                        },
+                        {
+                            "name": "House Martell",
+                            "url": "../images/martell.png",
+                            "vassals": [
+                                "Dalt",
+                                "Dayne",
+                                "Allywrion",
+                                "Blackmont",
+                                "Gargalen",
+                                "Jordayne",
+                                "Yronwood",
+                                "Qorgyle",
+                                "Manwoody",
+                                "Santagar",
+                                "Uller"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -104,7 +419,21 @@
             "url": "../images/greyjoy.png",
             "castles": [
                 {
-                    "name": "Pyke"
+                    "name": "Pyke",
+                    "lieges": [
+                        {
+                            "name": "House Blacktyde",
+                            "url": "../images/blacktyde.png",
+                            "vassals": [
+                                "Botley",
+                                "Drumm",
+                                "Goodbrother",
+                                "Harlaw",
+                                "Merlyn",
+                                "Sparr"
+                            ]
+                        }
+                    ]
                 }
             ]
         }

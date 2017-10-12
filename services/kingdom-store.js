@@ -14,7 +14,12 @@ const getKingdoms = () => {
 
 const addKingdom = (name, king, queen) => {
   const json = getJson();
-  if (json.kingdoms[name]) return;
+  const kingdoms = json.kingdoms;
+
+  //check duplicates
+  const duplicates = kingdoms.filter(kingdom => kingdom.name === name);
+  if (duplicates.length > 0) return;
+
   const newKingdom = {
     name: name,
     king: king,
@@ -41,14 +46,146 @@ const getCastles = kingdomName => {
 
 const addCastle = (kingdomName, castleName) => {
   const json = getJson();
+  const castles = getCastles(kingdomName);
+
+  //check duplicates
+  const duplicates = castles.filter(castle => castle.name === castleName);
+  if (duplicates.length > 0) return;
+
   const newCastle = {
     name: castleName,
     lieges: []
   };
   
   json.kingdoms.forEach(kingdom => {
-    if (kingdom.name == kingdomName) {
+    if (kingdom.name === kingdomName) {
       kingdom.castles.push(newCastle);
+    }
+  });
+
+  saveJson(json);
+};
+
+const removeCastle = (kingdomName, castleName) => {
+  const json = getJson();
+
+  const castles = getCastles(kingdomName); 
+  const newCastles = castles.filter(castle => castle.name !== castleName);
+
+  console.log(newCastles);
+  
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles = newCastles;
+    }
+  });
+
+  saveJson(json);
+};
+
+const getLieges = (kingdomName, castleName) => {
+  const json = getJson();
+  let lieges = [];
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name === castleName) {
+          lieges = castle.lieges;
+        }
+      });
+    }
+  });
+
+  return lieges;
+};
+
+const addLiege = (kingdomName, castleName, liegeName) => {
+  const json = getJson();
+  const lieges = getLieges(kingdomName, castleName);
+
+  //check duplicates
+  const duplicates = lieges.filter(liege => liege.name === liegeName);
+  if (duplicates.length > 0) return;
+
+  const newLiege = {
+    name: liegeName,
+    url: "../images/blank.png",
+    vassals: []
+  };
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name === castleName) {
+          castle.lieges.push(newLiege);
+        }
+      });
+    }
+  });
+
+  saveJson(json);
+};
+
+const removeLiege = (kingdomName, castleName, liegeName) => {
+  const json = getJson();
+
+  const lieges = getLieges(kingdomName, castleName); 
+  const newLieges = lieges.filter(liege => liege.name !== liegeName);
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name === castleName) {
+          castle.lieges = newLieges;
+        }
+      });
+    }
+  });
+
+  saveJson(json);
+};
+
+const getVassals = (kingdomName, castleName, liegeName) => {
+  const json = getJson();
+  let vassals = [];
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name === castleName) {
+          castle.lieges.forEach(liege => {
+            if (liege.name === liegeName) {
+              vassals = liege.vassals;
+            }
+          });
+        }
+      });
+    }
+  });
+
+  return vassals;
+};
+
+const addVassal = (kingdomName, castleName, liegeName, vassalName) => {
+  const json = getJson();
+  const vassals = getVassals(kingdomName, castleName, liegeName);
+
+  //check duplicates
+  const duplicates = vassals.includes(vassalName);
+  if (duplicates) return;
+
+  json.kingdoms.forEach(kingdom => {
+    if (kingdom.name === kingdomName) {
+      kingdom.castles.forEach(castle => {
+        if (castle.name === castleName) {
+          castle.lieges.forEach(liege => {
+            if (liege.name === liegeName) {
+              liege.vassals.push(vassalName);
+            }
+          });
+        }
+      });
     }
   });
 
@@ -65,5 +202,11 @@ module.exports = {
   addKingdom,
   removeKingdom,
   getCastles,
-  addCastle
+  addCastle,
+  removeCastle,
+  getLieges,
+  addLiege,
+  removeLiege,
+  getVassals,
+  addVassal
 };
