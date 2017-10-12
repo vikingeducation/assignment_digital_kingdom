@@ -25,5 +25,5 @@ app.use('/kingdoms/', vassals);
 app.use(express.static(__dirname + "/public"));
 
 app.listen(4200, () => {
-  console.log("Winter is Coming!");
+  console.log("Winter is Coming! Check out localhost:4200!!");
 });
