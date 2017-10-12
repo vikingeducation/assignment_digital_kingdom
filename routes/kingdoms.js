@@ -28,7 +28,7 @@ router.post("/:kingdom/remove", (req, res) => {
   const kingdom = req.params.kingdom;
   removeKingdom(kingdom);
 
-  res.redirect("back"); // not rendering correctly
+  res.redirect("back"); 
 });
 
 module.exports = router;

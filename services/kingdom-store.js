@@ -35,6 +35,7 @@ const addKingdom = (name, king, queen) => {
 const removeKingdom = (name) => {
   const json = getJson();
   const kingdoms = json.kingdoms;
+  
   json.kingdoms = kingdoms.filter(kingdom => kingdom.name !== name);
   saveJson(json);
 };
@@ -71,8 +72,6 @@ const removeCastle = (kingdomName, castleName) => {
 
   const castles = getCastles(kingdomName); 
   const newCastles = castles.filter(castle => castle.name !== castleName);
-
-  console.log(newCastles);
   
   json.kingdoms.forEach(kingdom => {
     if (kingdom.name === kingdomName) {
@@ -85,7 +84,7 @@ const removeCastle = (kingdomName, castleName) => {
 
 const getLieges = (kingdomName, castleName) => {
   const json = getJson();
-  let lieges = [];
+  const lieges = [];
 
   json.kingdoms.forEach(kingdom => {
     if (kingdom.name === kingdomName) {
