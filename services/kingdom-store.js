@@ -84,7 +84,7 @@ const removeCastle = (kingdomName, castleName) => {
 
 const getLieges = (kingdomName, castleName) => {
   const json = getJson();
-  const lieges = [];
+  let lieges = [];
 
   json.kingdoms.forEach(kingdom => {
     if (kingdom.name === kingdomName) {
