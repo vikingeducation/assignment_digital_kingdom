@@ -1,63 +1,49 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const { castlesCounter } = require('../services/kingdoms-store.js');
+const { readJSON, writeJSON } = require('../services/kingdoms-store.js');
+const path = './data/kingdoms.json';
 
 
 
 router.get('/', (req, res) => {
-  const path = './data/kingdoms.json';
+  readJSON(path)
+    .then((data) => {
+      const kingdomsArr = data.kingdoms;
 
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      throw err;
-    }
-
-    data = data.toString();
-    data = JSON.parse(data);
-
-    // get kingdoms array
-    const kingdomsArr = data.kingdoms;
-    // display king name, queen name, kingdom name, # of castles in kingdom in view
-    res.render('kingdoms', {
-      kingdoms: kingdomsArr
-    });
-  });
+      res.render('kingdoms', {
+        kingdoms: kingdomsArr
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+    })
 });
+
 
 router.post('/new', (req, res) => {
   const { kingdom, king, queen } = req.body;
-  const path = './data/kingdoms.json';
-  let newKingdoms;
 
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      throw err;
-    }
+  const newKingdom = {
+    name: kingdom,
+    king: king,
+    queen: queen
+  };
 
-    data = data.toString();
-    data = JSON.parse(data);
+  readJSON(path)
+    .then((data) => {
+      data.kingdoms.push(newKingdom);
+      const newData = JSON.stringify(data, null, 2);
 
-    const newKingdom = {
-      name: kingdom,
-      king: king,
-      queen, queen
-    }
-
-    data.kingdoms.push(newKingdom);
-    newKingdoms = data;
-
-    fs.writeFile(path, JSON.stringify(newKingdoms, null, 2), (err) => {
-      if (err) {
-        throw err;
-      }
-
+      writeJSON(path, newData);
       res.render('kingdoms', {
-        kingdoms: newKingdoms.kingdoms
-      });
-    });
+        kingdoms: data.kingdoms
+      })
 
-  });
+    })
+    .catch((err) => {
+      console.error(err);
+    })
 });
 
 
@@ -65,65 +51,51 @@ router.get('/:id', (req, res) => {
   const kingdomIdx = req.params.id;
   const path = './data/kingdoms.json';
 
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      throw err;
-    }
+  readJSON(path)
+    .then((data) => {
+      const kingdom = data.kingdoms[kingdomIdx];
 
-    data = data.toString();
-    data = JSON.parse(data);
-
-    const kingdom = data.kingdoms[kingdomIdx];
-
-    // show name of each castle in kingdom
-    // show # of lieges in each castle
-    const castlesArr = kingdom.castles;
-    res.render('kingdom', {
-      kingdomIdx: kingdomIdx,
-      kingdomName: kingdom.name,
-      castles: castlesArr
-    });
-
-
-  });
-
+      // show name of each castle in the kingdom
+      const castlesArr = kingdom.castles;
+      
+      res.render('kingdom', {
+        kingdomName: kingdom.name,
+        kingdomIdx,
+        castles: castlesArr,
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+    })
 });
 
 
 router.post('/:id/edit', (req, res) => {
   // edit the kingdom by adding new castle
   const kingdomIdx = req.params.id;
-  const castleName = req.body.castleName;
-  const path = './data/kingdoms.json';
+  const { castleName } = req.body;
 
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      throw err;
-    }
+  const newCastle = {
+    name: castleName
+  };
 
-    data = data.toString();
-    data = JSON.parse(data);
+  readJSON(path)
+    .then((data) => {
+      data.kingdoms[kingdomIdx].castles.push(newCastle);
 
-    const newCastle = {
-      name: castleName
-    };
-
-    data.kingdoms[kingdomIdx].castles.push(newCastle);
-
-    fs.writeFile(path, JSON.stringify(data, null, 2), (err) => {
-      if (err) {
-        throw err;
-      }
+      writeJSON(path, JSON.stringify(data, null, 2));
 
       res.render('kingdom', {
         kingdomName: data.kingdoms[kingdomIdx].name,
         castles: data.kingdoms[kingdomIdx].castles,
-        kingdomIdx: kingdomIdx
+        kingdomIdx
       })
+
+    })
+    .catch((err) => {
+      console.error(err);
     })
 
-
-  })
 });
 
 
