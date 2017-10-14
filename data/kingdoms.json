@@ -1,0 +1,28 @@
+{
+  "kingdoms": [
+    {
+      "name": "Kingdom of Dogs",
+      "king": "King Bow Wow",
+      "queen": "Queen Barky",
+      "castles": [
+        {
+          "name": "Castle of Spot",
+          "lieges": [],
+          "vassals": []
+        }
+      ]
+    },
+    {
+      "name": "Kingdom of Cats",
+      "king": "King Meoooow",
+      "queen": "Queen Kitty",
+      "castles": [
+        {
+          "name": "Castle of Fluffy",
+          "lieges": [],
+          "vassals": []
+        }
+      ]
+    }
+  ]
+}

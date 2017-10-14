@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kingdoms</title>
+  </head>
+  <body>
+
+    {{#each kingdoms as |kingdom|}}
+      <div>
+        <h3><a href='/kingdoms/kingdom/{{@index}}'>{{kingdom.name}}</a></h3>
+        <p>{{kingdom.king}}</p>
+        <p>{{kingdom.queen}}</p>
+        <p># of castles: {{kingdom.castles.length}}</p>
+        <hr />
+      </div>
+    {{/each}}
+
+    <div>
+      <form action='/kingdoms/new' method='POST'>
+        <input type='text' placeholder='Kingdom Name' name='kingdom' />
+        <input type='text' placeholder='King Name' name='king' />
+        <input type='text' placeholder='Queen Name' name='queen' />
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+
+  </body>
+</html>
