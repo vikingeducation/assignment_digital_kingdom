@@ -7,7 +7,7 @@
       "castles": [
         {
           "name": "Castle of Spot",
-          "lieges": [],
+          "lieges": ["Lieges_1", "Lieges_2"],
           "vassals": []
         }
       ]
@@ -19,7 +19,7 @@
       "castles": [
         {
           "name": "Castle of Fluffy",
-          "lieges": [],
+          "lieges": ["Person_1", "Person_2", "Person_3"],
           "vassals": []
         }
       ]

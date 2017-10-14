@@ -8,7 +8,7 @@
 
     {{#each kingdoms as |kingdom|}}
       <div>
-        <h3><a href='/kingdoms/kingdom/{{@index}}'>{{kingdom.name}}</a></h3>
+        <h3><a href='/kingdoms/{{@index}}'>{{kingdom.name}}</a></h3>
         <p>{{kingdom.king}}</p>
         <p>{{kingdom.queen}}</p>
         <p># of castles: {{kingdom.castles.length}}</p>
@@ -17,6 +17,7 @@
     {{/each}}
 
     <div>
+      <h3>Add a new kingdom:</h3>
       <form action='/kingdoms/new' method='POST'>
         <input type='text' placeholder='Kingdom Name' name='kingdom' />
         <input type='text' placeholder='King Name' name='king' />
