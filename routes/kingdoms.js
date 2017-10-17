@@ -57,7 +57,7 @@ router.get('/:id', (req, res) => {
 
       // show name of each castle in the kingdom
       const castlesArr = kingdom.castles;
-      
+
       res.render('kingdom', {
         kingdomName: kingdom.name,
         kingdomIdx,
@@ -95,9 +95,61 @@ router.post('/:id/edit', (req, res) => {
     .catch((err) => {
       console.error(err);
     })
+});
+
+
+router.get('/:kingdomId/castles/:castleId', (req, res) => {
+  const kingdomId = req.params.kingdomId;
+  const castleIdx = req.params.castleId;
+
+  readJSON(path)
+    .then((data) => {
+      const castleData = data.kingdoms[kingdomId].castles[castleIdx];
+      const { name, lieges, vassals } = castleData;
+
+      res.render('castle', {
+        castleName: name,
+        lieges,
+        vassals: vassals.length,
+        kingdomId,
+        castleIdx
+      });
+
+    })
+    .catch((err) => {
+      console.error(err);
+    })
 
 });
 
+
+router.post('/:kingdomId/castles/:castleId/edit', (req, res) => {
+  const kingdomId = req.params.kingdomId;
+  const castleIdx = req.params.castleId;
+  const newLiege = req.body.liege;
+
+
+
+  readJSON(path)
+    .then((data) => {
+      data.kingdoms[kingdomId].castles[castleIdx].lieges.push(newLiege);
+      const castleData = data.kingdoms[kingdomId].castles[castleIdx];
+      const { name, lieges, vassals } = castleData;
+
+      writeJSON(path, JSON.stringify(data, null, 2));
+      res.render('castle', {
+        castleName: name,
+        lieges,
+        vassals: vassals.length,
+        kingdomId,
+        castleIdx
+      });
+
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+});
 
 
 

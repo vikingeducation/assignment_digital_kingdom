@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Castle</title>
+  </head>
+  <body>
+
+    <h1>Castle</h1>
+
+    <p>{{castleName}}</p>
+
+    {{#each lieges as |liege|}}
+      <p>{{liege}}</p>
+    {{/each}}
+    
+    <p># of vassals: {{vassals}}</p>
+
+
+    <div>
+      <form action='/kingdoms/{{kingdomId}}/castles/{{castleIdx}}/edit' method='POST'>
+        <input type='text' placeholder='Enter a liege name' name='liege'>
+        <button type='submit'>Add liege</button>
+      </form>
+    </div>
+
+  </body>
+</html>

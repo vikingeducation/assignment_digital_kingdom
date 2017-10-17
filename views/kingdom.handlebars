@@ -8,7 +8,7 @@
     <h1>{{kingdomName}}</h1>
 
     {{#each castles as |castle|}}
-      <p>{{castle.name}}</p>
+      <p><a href='/kingdoms/{{../kingdomIdx}}/castles/{{@index}}'>{{castle.name}}</a></p>
       <p># of lieges: {{castle.lieges.length}}</p>
       <hr />
     {{/each}}
