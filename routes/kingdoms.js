@@ -27,7 +27,8 @@ router.post('/new', (req, res) => {
   const newKingdom = {
     name: kingdom,
     king: king,
-    queen: queen
+    queen: queen,
+    castles: [],
   };
 
   readJSON(path)
@@ -76,7 +77,9 @@ router.post('/:id/edit', (req, res) => {
   const { castleName } = req.body;
 
   const newCastle = {
-    name: castleName
+    name: castleName,
+    lieges: [],
+    vassals: [],
   };
 
   readJSON(path)
