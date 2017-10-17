@@ -6,18 +6,22 @@
   </head>
   <body>
 
-    <h1>Castle</h1>
+    <div class='header'>
+      <h1>Castle View</h1>
+    </div>
 
-    <p>{{castleName}}</p>
+    <div class='box'>
+      <h3 id='castle-name'>{{castleName}}</h3>
 
-    {{#each lieges as |liege|}}
-      <p>{{liege}}</p>
-    {{/each}}
+      {{#each lieges as |liege|}}
+        <p>{{liege}}</p>
+      {{/each}}
 
-    <p># of vassals: {{vassals}}</p>
+      <p># of vassals: {{vassals}}</p>
+    </div>
 
-
-    <div>
+    <div class='form'>
+      <h3>Add a new liege</h3>
       <form action='/kingdoms/{{kingdomId}}/castles/{{castleId}}/edit' method='POST'>
         <input type='text' placeholder='Enter a liege name' name='liege'>
         <button type='submit'>Add liege</button>

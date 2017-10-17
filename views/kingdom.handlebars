@@ -5,15 +5,19 @@
     <title>Kingdom</title>
   </head>
   <body>
-    <h1>{{kingdomName}}</h1>
+
+    <div class='header'>
+      <h1>{{kingdomName}}</h1>
+    </div>
 
     {{#each castles as |castle|}}
-      <p><a href='/kingdoms/{{../kingdomIdx}}/castles/{{@index}}'>{{castle.name}}</a></p>
-      <p># of lieges: {{castle.lieges.length}}</p>
-      <hr />
+      <div class='box'>
+        <h3><a href='/kingdoms/{{../kingdomIdx}}/castles/{{@index}}'>{{castle.name}}</a></h3>
+        <p># of lieges: {{castle.lieges.length}}</p>
+      </div>
     {{/each}}
 
-    <div>
+    <div class='form'>
       <h3>Add a new castle to the kingdom:</h3>
       <form action='/kingdoms/{{kingdomIdx}}/edit' method='POST'>
         <input type='text' placeholder='Enter a castle name' name='castleName' />
