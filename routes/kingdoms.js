@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const { readJSON, writeJSON } = require('../services/kingdoms-store.js');
+const { readJSON, writeJSON, addCastle, addLiege } = require('../services/kingdoms-store.js');
 const path = './data/kingdoms.json';
 
 
@@ -81,7 +81,7 @@ router.post('/:id/edit', (req, res) => {
 
   readJSON(path)
     .then((data) => {
-      data.kingdoms[kingdomIdx].castles.push(newCastle);
+      data = addCastle(data, newCastle, kingdomIdx);
 
       writeJSON(path, JSON.stringify(data, null, 2));
 
@@ -99,12 +99,11 @@ router.post('/:id/edit', (req, res) => {
 
 
 router.get('/:kingdomId/castles/:castleId', (req, res) => {
-  const kingdomId = req.params.kingdomId;
-  const castleIdx = req.params.castleId;
+  const { kingdomId, castleId } = req.params;
 
   readJSON(path)
     .then((data) => {
-      const castleData = data.kingdoms[kingdomId].castles[castleIdx];
+      const castleData = data.kingdoms[kingdomId].castles[castleId];
       const { name, lieges, vassals } = castleData;
 
       res.render('castle', {
@@ -112,7 +111,7 @@ router.get('/:kingdomId/castles/:castleId', (req, res) => {
         lieges,
         vassals: vassals.length,
         kingdomId,
-        castleIdx
+        castleId
       });
 
     })
@@ -124,16 +123,14 @@ router.get('/:kingdomId/castles/:castleId', (req, res) => {
 
 
 router.post('/:kingdomId/castles/:castleId/edit', (req, res) => {
-  const kingdomId = req.params.kingdomId;
-  const castleIdx = req.params.castleId;
+  const { kingdomId, castleId } = req.params;
   const newLiege = req.body.liege;
-
 
 
   readJSON(path)
     .then((data) => {
-      data.kingdoms[kingdomId].castles[castleIdx].lieges.push(newLiege);
-      const castleData = data.kingdoms[kingdomId].castles[castleIdx];
+      data = addLiege(data, kingdomId, castleId, newLiege);
+      const castleData = data.kingdoms[kingdomId].castles[castleId];
       const { name, lieges, vassals } = castleData;
 
       writeJSON(path, JSON.stringify(data, null, 2));
@@ -142,7 +139,7 @@ router.post('/:kingdomId/castles/:castleId/edit', (req, res) => {
         lieges,
         vassals: vassals.length,
         kingdomId,
-        castleIdx
+        castleId
       });
 
     })
