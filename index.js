@@ -15,6 +15,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use('/kingdoms', kingdoms);
+
 app.use(express.static(__dirname + '/public'));
 
 app.listen(3000, () => {

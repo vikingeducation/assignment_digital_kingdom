@@ -3,8 +3,13 @@
 <div class="box">
   <div class="box--title">{{kingdom}}</div>
   <div class="box--content">
-    {{#each castles as |castle|}}
-      {{>results unit='castle' kingdom=../kingdom castle=castle.name liege='' unitName=castle.name subUnitName='Lieges' subUnitCount=castle.lieges}}
+    {{#each allCastles as |castle|}}
+      <div class="castle">
+        <a href="/kingdoms/{{../kingdom}}/castles/{{castle.name}}">{{castle.name}}</a>
+        <ul>
+          <li>Lieges: {{castle.lieges}}</li>
+        </ul>
+      </div>
     {{/each}}
   </div>
 </div>
@@ -12,9 +17,10 @@
 <div class="box">
   <div class="box--title">Add Castle</div>
   <div class="box--content">
-    <form action="/kingdoms/{{kingdom}}" method="POST">
+    <form action="/kingdoms/{{kingdom}}/castles/" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
       <input type="submit" value="Add New Castle" method="post">
     </form>
   </div>
 </div>
+<!-- {{>results unit='castle' kingdom=../kingdom castle=castle.name liege='' unitName=castle.name subUnitName='Lieges' subUnitCount=castle.lieges}} -->

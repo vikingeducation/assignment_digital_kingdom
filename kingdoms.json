@@ -5,90 +5,40 @@
             "queen": "Mary",
             "castles": {
                 "RohanCastle1": {
-                    "Liege1": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2",
-                            "Vassal3",
-                            "bob"
-                        ]
-                    },
-                    "Liege2": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    },
-                    "liege3": {
-                        "vassals": []
+                    "lieges": {
+                        "Liege1": {
+                            "vassals": [
+                                "Pete",
+                                "Bob",
+                                "Joe"
+                            ]
+                        },
+                        "Liege2": {
+                            "vassals": [
+                                "Eenie",
+                                "Meenie",
+                                "Karen"
+                            ]
+                        },
+                        "Tres": {
+                            "vassals": []
+                        }
                     }
-                },
-                "RohanCastle2": {
-                    "Liege 1": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    },
-                    "Liege 2": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    }
-                },
-                "RohanCastle3": {},
-                "fsdf": {},
-                "harda": {}
+                }
             }
         },
-        "Gryffindor": {
-            "king": "Doug",
-            "queen": "Lisa",
+        "Griff": {
+            "king": "No",
+            "queen": "Yes",
             "castles": {
-                "GryffCastle1": {
-                    "Liege 1": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    },
-                    "Liege 2": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    }
-                },
-                "GryffCastle2": {
-                    "Liege 1": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    },
-                    "Liege 2": {
-                        "vassals": [
-                            "Vassal 1",
-                            "Vassal 2"
-                        ]
-                    }
-                },
-                "GryffCastle3": {}
+                "GriffCast1": {
+                    "lieges": {}
+                }
             }
         },
-        "Kingdom 3": {
-            "castles": {}
-        },
-        "Kingdom 4": {
-            "castles": {}
-        },
-        "Kingdom 5": {
-            "king": "Joe",
-            "queen": "Joleen",
-            "castles": {}
-        },
-        "gg": {
+        "Hip": {
+            "king": "haka",
+            "queen": "maka",
             "castles": {}
         }
     }
