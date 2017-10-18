@@ -18,14 +18,15 @@ const getKingdoms = () => {
   return kingdoms;
 };
 
-const getCastles = (kingdom) => {
+const getCastles = (kingdom, pathStub) => {
   const json = _getJson();
   const castleNames = Object.keys(json.kingdoms[kingdom].castles);
   const castles = [];
   castleNames.forEach((castle) => {
     castles.push({
       name: castle,
-      lieges: Object.keys(json.kingdoms[kingdom].castles[castle].lieges).length
+      lieges: Object.keys(json.kingdoms[kingdom].castles[castle].lieges).length,
+      path: `${pathStub}/castles/${castle}`
     });
   });
   return castles;

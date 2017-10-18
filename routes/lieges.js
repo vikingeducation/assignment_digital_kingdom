@@ -29,6 +29,4 @@ router.post('/:liege/vassals', (req, res) => {
   res.redirect('back');
 });
 
-// router.use('/:kingdom/:castle/:liege', vassals);
-
 module.exports = router;

@@ -5,22 +5,9 @@
   <div class="box--title">{{castle}}</div>
   <div class="box--content">
     {{#each allLieges as |liege|}}
-      <div class="liege">
-        <a href="/kingdoms/{{../kingdom}}/castles/{{../castle}}/lieges/{{liege.name}}">{{liege.name}}</a>
-        <ul>
-          <li>Vassals: {{liege.vassals}}</li>
-        </ul>
-      </div>
+      {{>results unit='liege' path=liege.path unitName=liege.name subUnitName='Vassals' subUnitCount=liege.vassals}}
     {{/each}}
   </div>
 </div>
 
-<div class="box">
-  <div class="box--title">Add Liege</div>
-  <div class="box--content">
-    <form action="/kingdoms/{{kingdom}}/castles/{{castle}}/lieges" method="POST">
-      <input type="text" name="name" id="name" placeholder="Name">
-      <input type="submit" value="Add New Liege" method="post">
-    </form>
-  </div>
-</div>
+{{>add unitName='Liege' postPath=postPath}}

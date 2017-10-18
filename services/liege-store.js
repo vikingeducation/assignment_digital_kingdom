@@ -11,7 +11,7 @@ const getVassals = (kingdom, castle, liege) => {
 
 const addVassal = (kingdom, castle, liege, name) => {
   const json = _getJson();
-  if (json.kingdoms[kingdom].castles[castle].lieges[liege].name) return;
+  if (json.kingdoms[kingdom].castles[castle].lieges[liege].vassals[name]) return;
   json.kingdoms[kingdom].castles[castle].lieges[liege].vassals.push(name);
   _saveJson(json);
 };

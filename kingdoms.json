@@ -21,9 +21,31 @@
                             ]
                         },
                         "Tres": {
+                            "vassals": [
+                                "Jan",
+                                "Feb",
+                                "Mar"
+                            ]
+                        },
+                        "Quatro": {
+                            "vassals": []
+                        },
+                        "Five": {
+                            "vassals": [
+                                "Uno"
+                            ]
+                        }
+                    }
+                },
+                "RohCast2": {
+                    "lieges": {
+                        "First": {
                             "vassals": []
                         }
                     }
+                },
+                "Another": {
+                    "lieges": {}
                 }
             }
         },

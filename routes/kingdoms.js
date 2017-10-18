@@ -20,9 +20,13 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:kingdom', (req, res) => {
+  const path = req.originalUrl;
+  const postPath = `${path}/castles`;
   const kingdom = req.params.kingdom;
-  const allCastles = getCastles(kingdom);
-  res.render('castles/show', { allCastles, kingdom });
+  const allCastles = getCastles(kingdom, path);
+  res.render('castles/show', {
+    allCastles, kingdom, postPath
+  });
 });
 
 router.use('/:kingdom/castles', castles);
