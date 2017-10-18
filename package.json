@@ -1,0 +1,22 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomahau/assignment_digital_kingdom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomahau/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/thomahau/assignment_digital_kingdom#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
