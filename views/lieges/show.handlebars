@@ -1,0 +1,13 @@
+<h2><a href="/kingdoms">All Kingdoms</a></h2>
+<h2><a href="/kingdoms/{{kingdom}}">{{kingdom}}'s Castles</a></h2>
+
+<div class="box">
+  <div class="box--title">{{castle}}</div>
+  <div class="box--content">
+    {{#each allLieges as |liege|}}
+      {{>results unit='liege' path=liege.path unitName=liege.name subUnitName='Vassals' subUnitCount=liege.vassals}}
+    {{/each}}
+  </div>
+</div>
+
+{{>add unitName='Liege' postPath=postPath}}

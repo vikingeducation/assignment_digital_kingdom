@@ -1,0 +1,67 @@
+{
+    "kingdoms": {
+        "Rohan": {
+            "king": "Bob",
+            "queen": "Mary",
+            "castles": {
+                "RohanCastle1": {
+                    "lieges": {
+                        "Liege1": {
+                            "vassals": [
+                                "Pete",
+                                "Bob",
+                                "Joe"
+                            ]
+                        },
+                        "Liege2": {
+                            "vassals": [
+                                "Eenie",
+                                "Meenie",
+                                "Karen"
+                            ]
+                        },
+                        "Tres": {
+                            "vassals": [
+                                "Jan",
+                                "Feb",
+                                "Mar"
+                            ]
+                        },
+                        "Quatro": {
+                            "vassals": []
+                        },
+                        "Five": {
+                            "vassals": [
+                                "Uno"
+                            ]
+                        }
+                    }
+                },
+                "RohCast2": {
+                    "lieges": {
+                        "First": {
+                            "vassals": []
+                        }
+                    }
+                },
+                "Another": {
+                    "lieges": {}
+                }
+            }
+        },
+        "Griff": {
+            "king": "No",
+            "queen": "Yes",
+            "castles": {
+                "GriffCast1": {
+                    "lieges": {}
+                }
+            }
+        },
+        "Hip": {
+            "king": "haka",
+            "queen": "maka",
+            "castles": {}
+        }
+    }
+}

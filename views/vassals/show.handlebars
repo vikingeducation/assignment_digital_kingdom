@@ -1,0 +1,24 @@
+<h2><a href="/kingdoms">All Kingdoms</a></h2>
+<h2><a href="/kingdoms/{{kingdom}}">{{kingdom}}'s Castles</a></h2>
+<h2><a href="/kingdoms/{{kingdom}}/castles/{{castle}}">{{castle}}'s Lieges</a></h2>
+
+<div class="box">
+  <div class="box--title">{{liege}}</div>
+  <div class="box--content">
+    {{#each allVassals as |vassal|}}
+    <div class="vassal">
+      {{vassal}}
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="box">
+  <div class="box--title">Add Vassal</div>
+  <div class="box--content">
+    <form action="/kingdoms/{{kingdom}}/castles/{{castle}}/lieges/{{liege}}/vassals" method="POST">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="submit" value="Add New Vassal" method="post">
+    </form>
+  </div>
+</div>
