@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Main page</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+  <h1>Digital Kingdom</h1>
+
+  {{{body}}}
+
+  <form action='/' method='get'>
+    <div class="form-group">
+      <label for="inputUsername">User</label>
+      <input name='king' type="text" class="form-control" id="inputUsername" aria-describedby="inputUsername" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="inputRepo">Repo</label>
+      <input name='queen' type="text" class="form-control" id="inputRepo" placeholder="Enter repo">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">
+        Check me out
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  {{#each gods as |god|}}
+  <div class="god">
+    <div class="god-name">
+      <a href="/gods/{{god.name}}">
+         {{god.name}}
+       </a>
+    </div>
+
+    <div class="god-domains">
+      {{#each god.domains as |domain|}}
+        <div class="god-domain">
+          {{domain}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
+
+
+</body>
+
+</html>

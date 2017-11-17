@@ -1,15 +1,17 @@
 const express = require('express');
 const router = express.Router();
-<<<<<<< HEAD
 const fs = require('fs')
 const kingdom = require('./kingdomstore').kingdoms
+
 
 
 
 router.get('/', (req,res) =>{
 
 
-res.send(kingdom())
+let kingVariables = kingdom()
+console.log(kingVariables)
+res.render('main', { kingdomVariables, kingdomVariables })
 
 })
 

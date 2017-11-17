@@ -4,7 +4,7 @@ const kingdoms = () => {
  	const data = fs.readFileSync('./data/kingdoms.json');
  	const json = JSON.parse(data);
  	const kingdom = Object.keys(json);
- 	let kingdoms = {};
+ 	let kingdoms = [];
  	const names = []
  	/*for (var i = 0; i < kingdom.length; i++) {
  		names.push(json[kingdom[i]]);
@@ -62,13 +62,11 @@ k
  	}
 
 
- 	for (var i =0; i < kings.length; i++) {
-     for (var k in json) {
-     kingdoms[i] = json[k]
-
+ 	for (var i =0; i < kingdom.length; i++) {
+     kingdoms.push(json[kingdom[i]])
 }
 
-}
+
 return kingdoms
 }
 
