@@ -19,34 +19,18 @@ app.use(morganToolkit());
 
 //Castle router
 const castles = require("./routers/castles");
+const lieges = require("./routers/lieges");
+const kingdoms = require("./routers/kingdoms");
 app.use("/castles", castles);
+app.use("/lieges", lieges);
+app.use("/kingdoms", kingdoms);
+
 
 //Get methods
 app.get("/", (req, res) => {
   res.end("hello world");
 });
 
-app.get("/kingdoms", (req, res) => {
-  var kingdoms = world.getKingdoms();
-  let keys = Object.keys(kingdoms);
-  let kingdomArray = [];
-  keys.forEach(key => {
-    kingdomArray.push(kingdoms[key]);
-  });
-  res.render("kingdoms", { kingdoms: kingdomArray });
-});
-
-app.get("/kingdoms/:id", (req, res) => {
-  var kingdom = world.getKingdom(req.params.id);
-  var castleIds = kingdom.castleIds;
-  var castles = world.getCastles();
-  let castleArray = [];
-  castleIds.forEach(id => {
-    castleArray.push(castles[id]);
-  });
-
-  res.render("kingdom", { kingdom: kingdom, castles: castleArray });
-});
 
 /*
 app.get("/castles/:id", (req, res) => {
@@ -60,14 +44,7 @@ app.get("/castles/:id", (req, res) => {
 });
 
 */
-app.get("/lieges/:id", (req, res) => {
-  var liege = world.getLiege(req.params.id);
-  var vassalArray = [];
-  liege["vassalIds"].forEach(vassalId => {
-    vassalArray.push(world.getVassal(vassalId));
-  });
-  res.render("liege", { liege: liege, vassals: vassalArray });
-});
+
 
 app.post("/:resource", (req, res) => {
   let resource = req.params.resource;
@@ -75,8 +52,7 @@ app.post("/:resource", (req, res) => {
   let ownerType = req.body.ownerType;
   let name = req.body.name;
   world.addResource(name, resource, ownerId, ownerType);
-  console.log("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
-  res.redirect("/" + ownerType + "/" + ownerId);
+  res.redirect("back");
 });
 
 app.listen(3000, "localhost", () => {
