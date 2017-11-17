@@ -6,7 +6,6 @@ var router = require("./router.js");
 const app = express();
 const exphbs = require("express-handlebars");
 
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -54,10 +53,12 @@ app.get("/lieges/:id", (req, res) => {
   res.render("liege", { liege: liege, vassals: vassalArray });
 });
 
-app.post("/:resource", (req, res)=>{
+app.post("/:resource", (req, res) => {
   let resource = req.params.resource;
+  let ownerId = req.body.ownerId;
+  let ownerType = req.body.ownerType;
   let name = req.body.name;
-  router.addResource(name, resource);
+  router.addResource(name, resource, ownerId, ownerType);
 });
 
 app.listen(3000, "localhost", () => {

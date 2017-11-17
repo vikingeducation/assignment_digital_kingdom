@@ -1,21 +1,19 @@
 var express = require("express");
 var fs = require("fs");
 
-
-let kingdomData =fs.readFileSync("./data/kingdoms.json", "utf8");
-let castleData  = fs.readFileSync("./data/castles.json", "utf8");
+let kingdomData = fs.readFileSync("./data/kingdoms.json", "utf8");
+let castleData = fs.readFileSync("./data/castles.json", "utf8");
 let liegeData = fs.readFileSync("./data/lieges.json", "utf8");
 let vassalData = fs.readFileSync("./data/vassals.json", "utf8");
 let resourceKeys = {
-  kingdoms:["id","name","queenId","kingId","castleIds"],
-  kings:["id","name"],
-  queens:["id","name"],
-  castles:["id","name","liegeIds"],
-  lieges:["id","name","vassalIds"],
-  vassals:["id","name"]
-}
+  kingdoms: ["id", "name", "queenId", "kingId", "castleIds"],
+  kings: ["id", "name"],
+  queens: ["id", "name"],
+  castles: ["id", "name", "liegeIds"],
+  lieges: ["id", "name", "vassalIds"],
+  vassals: ["id", "name"]
+};
 let data = {
-  
   getKingdoms: () => {
     let json = JSON.parse(kingdomData);
     return json;
@@ -51,35 +49,40 @@ let data = {
     return json[id];
   },
 
-  addResource: (name, resource) =>{
-    let resources={
+  addResource: (name, resource, ownerId, ownerType) => {
+    let resources = {
       kingdoms: kingdomData,
       castles: castleData,
       lieges: liegeData,
       vassals: vassalData
     };
     let resourceData = resources[resource];
-    console.log("resourceData is "+ resourceData);
+    console.log("resourceData is " + resourceData);
     resourceData = JSON.parse(resourceData);
     let keys = resourceKeys[resource];
     newResource = {};
-    keys.forEach(key =>{
-      if (key.charAt(key.length-1)=="s"){
-        newResource[key]=[];
-      }
-      else{
+    keys.forEach(key => {
+      if (key.charAt(key.length - 1) == "s") {
+        newResource[key] = [];
+      } else {
         newResource[key] = undefined;
       }
-    })
+    });
     newResource.name = name;
     let idArray = Object.keys(resourceData);
-    let lastId = idArray[idArray.length-1];
+    let lastId = idArray[idArray.length - 1];
     lastId = Number(lastId);
     let newId = lastId + 1;
     newResource.id = newId.toString();
     resourceData[newResource.id] = newResource;
     resourceData = JSON.stringify(resourceData, null, "  ");
-    fs.writeFileSync("./data/"+resource+".json", resourceData);
+    fs.writeFileSync("./data/" + resource + ".json", resourceData);
+
+    //Connect to owner
+    if (ownerId) {
+      let owner = JSON.parse(resources[ownerType])[ownerId];
+      if (owner.charAt(key.length))
+    }
   }
 };
 module.exports = data;

@@ -38,5 +38,10 @@
     "id": "5",
     "name": "New Kingdom",
     "castleIds": []
+  },
+  "6": {
+    "id": "6",
+    "name": "6",
+    "castleIds": []
   }
 }
