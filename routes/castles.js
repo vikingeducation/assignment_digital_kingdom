@@ -1,19 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs')
-const kingdom = require('./kingdomstore').kingdoms
+const castles = require('./kingdomstore').castles
+
 
 
 
 router.get('/', (req,res) =>{
 
 
-res.send(kingdom())
+res.send(castles())
 
 })
 
-module.exports = router
 
-
-
-
+ 	module.exports = router 
