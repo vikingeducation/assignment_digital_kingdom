@@ -18,41 +18,47 @@ const getKingdomsObject = () => {
   return json;
 };
 
-const getKingdomNames = kingdomsObject => {
-  let names = [];
-  for (kingdom in kingdomsObject) {
-    names.push(kingdomsObject[kingdom]['name']);
+class Kingdoms {
+  constructor(kingdomsObject) {
+    this.kingdomsObject = kingdomsObject;
   }
-  return names;
-};
 
-const getKingNames = kingdomsObject => {
-  let kingIds = [];
-  for (kingdom in kingdomsObject) {
-    kingIds.push(kingdomsObject[kingdom]['kingId']);
+  getKingdomNames() {
+    let names = [];
+    for (kingdom in this.kingdomsObject) {
+      names.push(this.kingdomsObject[kingdom]['name']);
+    }
+    return names;
   }
-  const data = fs.readFileSync('./data/kings.json');
-  const json = JSON.parse(data);
-  return kingIds.map(id => json[id]['name']);
-};
 
-const getQueenNames = kingdomsObject => {
-  let queenIds = [];
-  for (kingdom in kingdomsObject) {
-    queenIds.push(kingdomsObject[kingdom]['queenId']);
+  getKingNames() {
+    let kingIds = [];
+    for (kingdom in this.kingdomsObject) {
+      kingIds.push(this.kingdomsObject[kingdom]['kingId']);
+    }
+    const data = fs.readFileSync('./data/kings.json');
+    const json = JSON.parse(data);
+    return kingIds.map(id => json[id]['name']);
   }
-  const data = fs.readFileSync('./data/queens.json');
-  const json = JSON.parse(data);
-  return queenIds.map(id => json[id]['name']);
-};
 
-const getCastleNumber = kingdomsObject => {
-  let castleNumber = [];
-  for (kingdom in kingdomsObject) {
-    castleNumber.push(kingdomsObject[kingdom]['castleIds'].length);
+  getQueenNames() {
+    let queenIds = [];
+    for (kingdom in this.kingdomsObject) {
+      queenIds.push(this.kingdomsObject[kingdom]['queenId']);
+    }
+    const data = fs.readFileSync('./data/queens.json');
+    const json = JSON.parse(data);
+    return queenIds.map(id => json[id]['name']);
   }
-  return castleNumber;
-};
+
+  getCastleNumber() {
+    let castleNumber = [];
+    for (kingdom in this.kingdomsObject) {
+      castleNumber.push(this.kingdomsObject[kingdom]['castleIds'].length);
+    }
+    return castleNumber;
+  }
+}
 
 const kingdomsObject = getKingdomsObject();
 const kingdomNames = getKingdomNames(kingdomsObject);
@@ -74,7 +80,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 
-const kingdomCount = _.range(kingdomNames.length)
+const kingdomCount = _.range(kingdomNames.length);
 
 app.get('/', (req, res) => {
   res.render('kingdoms', {
