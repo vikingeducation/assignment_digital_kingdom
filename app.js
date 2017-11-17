@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/kingdoms", (req, res) => {
   var kingdoms = router.getKingdoms();
   let keys = Object.keys(kingdoms);
-  let kingdomArray=[];
-  keys.forEach(key =>{
+  let kingdomArray = [];
+  keys.forEach(key => {
     kingdomArray.push(kingdoms[key]);
-  })
-  res.render("kingdoms", {kingdoms:kingdomArray});
+  });
+  res.render("kingdoms", { kingdoms: kingdomArray });
 });
 
 app.get("/kingdom/:id", (req, res) => {
@@ -27,11 +27,30 @@ app.get("/kingdom/:id", (req, res) => {
   var castleIds = kingdom.castleIds;
   var castles = router.getCastles();
   let castleArray = [];
-  castleIds.forEach(id =>{
+  castleIds.forEach(id => {
     castleArray.push(castles[id]);
   });
 
-  res.render("kingdom", {kingdom:kingdom, castles:castleArray});
+  res.render("kingdom", { kingdom: kingdom, castles: castleArray });
+});
+
+app.get("/castles/:id", (req, res) => {
+  var castles = router.getCastles(req.params.id);
+  var castle = castles[req.params.id];
+  let liegeArray = [];
+  castle["liegeIds"].forEach(liegeId => {
+    liegeArray.push(router.getLiege(liegeId));
+  });
+  res.render("castle", { castle: castle, lieges: liegeArray });
+});
+
+app.get("/lieges/:id", (req, res) => {
+  var liege = router.getLiege(req.params.id);
+  var vassalArray = [];
+  liege["vassalIds"].forEach(vassalId => {
+    vassalArray.push(router.getVassal(vassalId));
+  });
+  res.render("liege", { liege: liege, vassals: vassalArray });
 });
 
 app.listen(3000, "localhost", () => {
