@@ -88,6 +88,13 @@ router.get('/', function(req, res, next) {
   next();
 });
 
+router.post('/:kingdom/:castle/:liege/', function(req,res,next) {
+	let newVassal = { id: Object.key(hierarchy.vassals).length, name: req.params.name };
+	hierarchy.vassals[Object.key(hierarchy.vassals).length]= newVassal;
+	hierarchy.lieges[req.params.liege].vassalIds.push(newVassal.id);
+	
+})
+
 
 
 module.exports = router;
