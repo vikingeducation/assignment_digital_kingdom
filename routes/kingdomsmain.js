@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+<<<<<<< HEAD
 const fs = require('fs')
 const kingdom = require('./kingdomstore').kingdoms
 
@@ -13,6 +14,7 @@ res.send(kingdom())
 })
 
 module.exports = router
+
 
 
 
