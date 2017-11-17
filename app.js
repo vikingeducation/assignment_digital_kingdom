@@ -66,7 +66,8 @@ app.post("/:resource", (req, res) => {
   let ownerType = req.body.ownerType;
   let name = req.body.name;
   router.addResource(name, resource, ownerId, ownerType);
-  res.redirect("back");
+  console.log("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
+  res.redirect("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
 });
 
 app.listen(3000, "localhost", () => {

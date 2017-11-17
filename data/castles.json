@@ -40,5 +40,10 @@
     "id": "6",
     "name": "another",
     "liegeIds": []
+  },
+  "7": {
+    "id": "7",
+    "name": "Test",
+    "liegeIds": []
   }
 }
