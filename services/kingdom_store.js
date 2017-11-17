@@ -1,10 +1,10 @@
 const fs = require("fs");
-const kingdomsObject = require("../data/kingdoms.json");
-const kingsObject = require("../data/kings.json");
-const queensObject = require("../data/queens.json");
-const castlesObject = require("../data/castles.json");
-const liegesObject = require("../data/lieges.json");
-const vassalsObject = require("../data/vassals.json");
+const kingdomsObject = Promise.resolve(require("../data/kingdoms.json"));
+const kingsObject = Promise.resolve(require("../data/kings.json"));
+const queensObject = Promise.resolve(require("../data/queens.json"));
+const castlesObject = Promise.resolve(require("../data/castles.json"));
+const liegesObject = Promise.resolve(require("../data/lieges.json"));
+const vassalsObject = Promise.resolve(require("../data/vassals.json"));
 
 /*const getJson = () => {
   return new Promise((resolve, reject) => {
@@ -17,10 +17,24 @@ const vassalsObject = require("../data/vassals.json");
   });
 };*/
 
-const getKingdoms = () => {
-  const kingdoms = Object.keys(kingdomsObject);
-  return kingdoms;
+const callArray = () => {
+  //const kingdomsArray = kingdomsObject.map(val => val);
+  //console.log(kingdomsArray);
+  console.log(kingdomsObject);
 };
+
+/*const getKingdoms = () => {
+  const kingdomNames = [];
+  const kingdomKings = [];
+  const kingdomQueens = [];
+  const kingdoms = Object.keys(kingdomsObject);
+  for (i = 0; i < kingdoms.length; i++) {
+    kingdomNames[i] = kingdomsObject[kingdoms][name];
+    kingdomKings[i] = kingdomsObject[kingdoms][kingId];
+    kingdomQueens[i] = kingdomsOBject[kingdoms][queenId];
+  });
+  return kingdoms;
+};*/
 
 /*const getKingdoms = () => {
   const json = getJson().then(data => Object.keys(data));
@@ -33,4 +47,4 @@ const getKingdoms = () => {
   const kingdomProps = json.
 };*/
 
-module.exports = { getKingdoms };
+module.exports = { callArray };
