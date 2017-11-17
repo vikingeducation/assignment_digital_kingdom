@@ -1,8 +1,9 @@
 <div class="box">
   <div class="box--title">Kingdoms</div>
   <div class="box--content">
-    {{#each kingdomCount as |i|}}
-    <p> {{i}}</p>    
+    {{#each test as |kingdom|}}
+    {{kingdom.kingdom}}<br />
+    {{kingdom.king}} 
    {{/each}}
   </div>
 </div>

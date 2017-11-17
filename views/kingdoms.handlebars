@@ -1,21 +1,13 @@
 <div class="box">
   <div class="box--title">Kingdoms</div>
   <div class="box--content">
-    {{#each kingdomCount as |i|}}
-      <div class="kingdom">
-        <a href="/kingdoms/{{kingdomNames[i]}}">
-          <h2>{{kingdomNames[i]}}<h2>
-          <ol>
-            <li>{{kingNames[i]}}</li>
-            <li>{{queenNames[i]}}</li>
-            <li>{{caslteCount[i]}}</li>
-          </ol>
-        </a>
-      </div>
-    {{/each}}
+    {{test.king}}
+    {{#each test as |kingdom|}}
+    {{kingdom.kingdoms}}<br />
+    {{kingdom.king}}
+   {{/each}}
   </div>
 </div>
-
 <div class="box">
   <div class="box--title">Add Species</div>
   <div class="box--content">
