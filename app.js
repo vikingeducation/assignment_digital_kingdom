@@ -12,6 +12,9 @@ const hbs = expressHandlebars.create({
   // helpers: helpers.registered
 });
 
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 let Kingdoms = new kingdoms.Kingdoms();
 
 // const kingdomsObject = Kingdoms.getKingdomsObject();
@@ -69,12 +72,20 @@ app.get("/", (req, res) => {
     test: test
   });
 });
-
+/*
+app.get("/kingdoms/new", (req, res) => {
+   res.render("kingdoms", {
+    test: test
+  });
+})
+*/
 app.post("/kingdoms/new", (req, res) => {
   const data = fs.readFileSync("./data/kingdoms.json");
   const json = JSON.parse(data);
-  json["3"] = {
-    "id": 3,
+  console.log(data)
+  console.log(req.body);
+  json["4"]= {
+    "id": 4,
     "name": "Viking",
     "kingId": 2,
     "queenId": 2,
@@ -84,6 +95,7 @@ app.post("/kingdoms/new", (req, res) => {
     ]
   }
   fs.writeFileSync("./data/kingdoms.json", JSON.stringify(json, null, 4))
+  res.redirect('/');
 })
 
 app.listen(3000, () => {
