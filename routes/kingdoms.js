@@ -11,6 +11,7 @@ const castlesObject = Promise.resolve(require('../data/castles.json'));
 const liegesObject = Promise.resolve(require('../data/lieges.json'));
 const vassalsObject = Promise.resolve(require('../data/vassals.json'));
 
+<<<<<<< HEAD
 router.get('/', (req, res) => {
   //let kingdoms = Kingdoms.getKingdoms().then(console.log);
   Kingdoms.callArray();
@@ -19,6 +20,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/kingdoms', (req, res) => {
+=======
+router.get("/", (req, res) => {
+>>>>>>> 2aff6f8c77d6d50bfc312bf46367ba37740e5db8
   let kingdoms;
   kingdomsObject
     .then(data => {
@@ -51,7 +55,10 @@ router.get('/kingdoms/:kingdom', (req, res) => {
     .catch(err => res.render('error,', { err }));
 });
 
+
 router.get('/kingdoms/:kingdom/castles/:castle', (req, res) => {});
+
+
 
 // router.get(
 //   '/kingdoms/:kingdom/castles/:castle/lieges/:liege',
