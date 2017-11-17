@@ -4,33 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Main page</title>
+  <title>Kingdoms</title>
   <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
 
-  <h1>Kings</h1>
+  <h1>Kingdoms</h1>
 
   {{{body}}}
 
-  {{#each gods as |god|}}
-  <div class="god">
-    <div class="god-name">
-      <a href="/gods/{{god.name}}">
-         {{god.name}}
+  {{#each kingdoms as |kingdom|}}
+  <div class="kingdom">
+    <div class="kingdom-name">
+      <a href="/">
+          <h1>Kingdom
+              {{kingdom.name}}</h1>
        </a>
     </div>
 
-    <div class="god-domains">
-      {{#each god.domains as |domain|}}
-        <div class="god-domain">
-          {{domain}}
-        </div>
+    <div class="kingdom-domains">
+        <h1>Kingdom King {{kingdom.kingname}} </h1>
+        <h1>Kingdom Queen{{kingdom.queenname}}</h1>
+            
+        <h1>Kingdom Castles {{kingdom.castlesLength}}</h1></p>
+       
       {{/each}}
     </div>
   </div>
-{{/each}}
+
 
 
 </body>
