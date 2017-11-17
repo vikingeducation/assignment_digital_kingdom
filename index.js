@@ -10,7 +10,7 @@ const kingdoms = require('./routes/kingdoms');
 const port = 3000;
 const host = 'localhost';
 
-app.get('/', kingdoms);
+app.use('/', kingdoms);
 
 app.listen(port, host, () =>
   console.log(`Now listening on http://${host}:${port}/`)
