@@ -5,3 +5,9 @@
   <div class="Name">{{kingdom.name}}</div>
 </div>
 {{/each}}
+
+<h2>Make a new kingdom</h2>
+<form method="post" action="/kingdoms">
+  <label>Name:</label><input type="text" name="name">
+  <input type="submit">
+</form>

@@ -6,6 +6,7 @@ var router = require("./router.js");
 const app = express();
 const exphbs = require("express-handlebars");
 
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -22,7 +23,7 @@ app.get("/kingdoms", (req, res) => {
   res.render("kingdoms", { kingdoms: kingdomArray });
 });
 
-app.get("/kingdom/:id", (req, res) => {
+app.get("/kingdoms/:id", (req, res) => {
   var kingdom = router.getKingdom(req.params.id);
   var castleIds = kingdom.castleIds;
   var castles = router.getCastles();
@@ -51,6 +52,12 @@ app.get("/lieges/:id", (req, res) => {
     vassalArray.push(router.getVassal(vassalId));
   });
   res.render("liege", { liege: liege, vassals: vassalArray });
+});
+
+app.post("/:resource", (req, res)=>{
+  let resource = req.params.resouce;
+  let name = req.body.name;
+
 });
 
 app.listen(3000, "localhost", () => {
