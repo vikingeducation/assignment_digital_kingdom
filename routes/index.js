@@ -22,15 +22,26 @@ function getCurrentState(paramObj){
 		keys =  hierarchy.kingdoms[paramObj.kingdom].castleIds;
 		displayObject = hierarchy.castles;
 		returnArray = keys.map(x => {
-			displayObject[x].display = hierarchy.lieges[displayObject[x].liegeIds].map( y => {
-				return `${hierarchy.lieges[y].name}  Number of vassals: ${hierarchy.lieges[y].vassalIds.length}`;
-			})}); 
+			displayObject[x].display = displayObject[x].liegeIds.map( y => {
+				return `Liege Name: ${hierarchy.lieges[y].name}  Number of vassals: ${hierarchy.lieges[y].vassalIds.length}`;
+			})
+			return displayObject[x];
+		}); 
 	} else if(!paramObj.liege){
 		keys = hierarchy.castles[paramObj.castle].liegeIds;
 		displayObject = hierarchy.lieges;
+		returnArray = keys.map(x => {
+			displayObject[x].display = displayObject[x].vassalIds.map( y => {
+				return `Vassal Name: ${hierarchy.vassals[y].name}`;
+			})
+			return displayObject[x];
+		}); 
 	}else {
 		keys = hierarchy.lieges[paramObj.liege].vassalIds;
 		displayObject = hierarchy.vassals;
+		returnArray = keys.map(x => {
+			return displayObject[x];
+		})
 	}
 	
 
