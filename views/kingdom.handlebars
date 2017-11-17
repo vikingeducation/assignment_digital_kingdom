@@ -1,0 +1,9 @@
+<h1>"Kingdom"</h1>
+  <div class="kingdom">
+  <div class="ID">{{kingdom.id}}</div>
+  <div class="Name">{{kingdom.name}}</div>
+  {{#each castles as |castle|}}
+    <div class="castleName">{{castle.name}}</div>
+    <div class="liegeNumber">{{castle.liegeIds.length}}</div>
+  {{/each}}
+</div>

@@ -14,12 +14,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/kingdoms", (req, res) => {
   var kingdoms = router.getKingdoms();
-  let kingdoms = {
-    keys: Object.keys(kingdoms),
-    kingdoms: kingdoms
-  };
-  console.log(localObj.kingdoms);
-  res.render("kingdoms", localObj);
+  let keys = Object.keys(kingdoms);
+  let kingdomArray=[];
+  keys.forEach(key =>{
+    kingdomArray.push(kingdoms[key]);
+  })
+  res.render("kingdoms", {kingdoms:kingdomArray});
+});
+
+app.get("/kingdom/:id", (req, res) => {
+  var kingdom = router.getKingdom(req.params.id);
+  var castleIds = kingdom.castleIds;
+  var castles = router.getCastles();
+  let castleArray = [];
+  castleIds.forEach(id =>{
+    castleArray.push(castles[id]);
+  });
+
+  res.render("kingdom", {kingdom:kingdom, castles:castleArray});
 });
 
 app.listen(3000, "localhost", () => {

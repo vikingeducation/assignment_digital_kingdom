@@ -7,8 +7,13 @@ let data = {
     let json = JSON.parse(data);
     return json;
   },
-  getKings: ()=>{
-    let data = fs.readFileSync('./data/kings.json', 'utf8');
+  getKingdom: (id)=>{
+    let data = fs.readFileSync('./data/kingdoms.json', 'utf8');
+    let json = JSON.parse(data);
+    return json[id];
+  },
+  getCastles: ()=>{
+    let data = fs.readFileSync('./data/castles.json', 'utf8');
     let json = JSON.parse(data);
     return json;
   }
