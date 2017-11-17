@@ -1,0 +1,22 @@
+<div class="box">
+  <div class="box--title">Kingdoms</div>
+  <div class="box--content">
+    {{#each kingdomNames as |name|}}
+      <div class="kingdom">
+        <a href="/species/{{name}}">
+          {{name}}
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="box">
+  <div class="box--title">Add Species</div>
+  <div class="box--content">
+    <form action="/animals" method="POST">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="submit" value="Add New Species" method="post">
+    </form>
+  </div>
+</div>
