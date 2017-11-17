@@ -55,9 +55,9 @@ app.get("/lieges/:id", (req, res) => {
 });
 
 app.post("/:resource", (req, res)=>{
-  let resource = req.params.resouce;
+  let resource = req.params.resource;
   let name = req.body.name;
-
+  router.addResource(name, resource);
 });
 
 app.listen(3000, "localhost", () => {

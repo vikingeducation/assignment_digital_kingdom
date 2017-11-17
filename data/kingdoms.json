@@ -28,5 +28,15 @@
       3,
       4
     ]
+  },
+  "4": {
+    "id": "4",
+    "name": "The Best Kingdom Evah",
+    "castleIds": []
+  },
+  "5": {
+    "id": "5",
+    "name": "New Kingdom",
+    "castleIds": []
   }
 }
