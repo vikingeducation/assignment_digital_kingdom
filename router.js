@@ -80,14 +80,14 @@ let data = {
 
     //Connect to owner
     if (ownerId) {
-      let ownerData = JSON.parse(resources[ownerType])
+      let ownerData = JSON.parse(resources[ownerType]);
       let owner = ownerData[ownerId];
       let resourceType = resource;
-      resourceType = resourceType.slice(0, resourceType.length-1);
+      resourceType = resourceType.slice(0, resourceType.length - 1);
       resourceType += "Ids";
-      console.log("resourceType is "+resourceType);
-      console.log("owner is "+owner)
-      console.log("owner[resourceType] is "+owner[resourceType])
+      console.log("resourceType is " + resourceType);
+      console.log("owner is " + owner);
+      console.log("owner[resourceType] is " + owner[resourceType]);
       owner[resourceType].push(Number(newResource.id));
       let modifiedOwnerType = JSON.stringify(ownerData, null, "  ");
       fs.writeFileSync("./data/" + ownerType + ".json", modifiedOwnerType);

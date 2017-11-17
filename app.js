@@ -12,6 +12,13 @@ app.set("view engine", "handlebars");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const morgan = require("morgan");
+const morganToolkit = require("morgan-toolkit")(morgan);
+
+app.use(morganToolkit());
+
+//Get methods
+
 app.get("/kingdoms", (req, res) => {
   var kingdoms = router.getKingdoms();
   let keys = Object.keys(kingdoms);
@@ -59,6 +66,8 @@ app.post("/:resource", (req, res) => {
   let ownerType = req.body.ownerType;
   let name = req.body.name;
   router.addResource(name, resource, ownerId, ownerType);
+  console.log("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
+  res.redirect("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
 });
 
 app.listen(3000, "localhost", () => {
