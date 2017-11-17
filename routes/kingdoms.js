@@ -12,13 +12,6 @@ const liegesObject = Promise.resolve(require("../data/lieges.json"));
 const vassalsObject = Promise.resolve(require("../data/vassals.json"));
 
 router.get("/", (req, res) => {
-  //let kingdoms = Kingdoms.getKingdoms().then(console.log);
-  Kingdoms.callArray();
-  //let kingdoms = Kingdoms.getKingdoms();
-  //res.send();
-});
-
-router.get("/kingdoms", (req, res) => {
   let kingdoms;
   kingdomsObject
     .then(data => {
@@ -36,23 +29,35 @@ router.get("/kingdoms", (req, res) => {
     .catch(err => res.render("error", { err }));
 });
 
-router.get("/kingdoms/:kingdom", (req, res) => {
-  let kingdom = req.params.kingdom;
+router.get('/kingdoms/:kingdom', (req, res) => {
   let castles;
-  castlesObject
+  let kingdom;
+  kingdomsObject
     .then(data => {
-      castles = data;
-      return kingdomsObject;
+      kingdom = data[req.params.kingdom];
+      return castlesObject;
     })
     .then(data => {
-      castles[kingdom].kingdom = data[kingdom].name;
-      castles[kingdom].castleIdArray = data[kingdom].castleIds;
-      res.render("castles", { castles });
+      kingdom.castles = kingdom.castleIds.map(val => data[val]);
+      res.render('castles', { kingdom });
     })
-    .catch(err => res.render("error,", { err }));
+    .catch(err => res.render('error,', { err }));
 });
 
-// router.get('/kingdoms/:kingdom/castles/:castle', (req, res) => {});
+router.get('/kingdoms/:kingdom/castles/:castle', (req, res) => {
+  let castle = req.params.kingdom;
+  let lieges;
+  liegesObject
+  .then(data => {
+    lieges = data;
+    return castlesObject;
+  .then(data => {
+    lieges[castle].liegeArray = data[castle].castleIdArray;
+    lieges[castle].castle = data[castle].name;
+    res.render(err => res.render("error,"))
+  })
+  })
+});
 //
 // router.get(
 //   '/kingdoms/:kingdom/castles/:castle/lieges/:liege',
