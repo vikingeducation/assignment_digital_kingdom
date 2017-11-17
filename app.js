@@ -2,7 +2,7 @@
 var fs = require("fs");
 var http = require("http");
 var express = require("express");
-var router = require("./router.js");
+var world = require("./world.js");
 const app = express();
 const exphbs = require("express-handlebars");
 
@@ -18,9 +18,12 @@ const morganToolkit = require("morgan-toolkit")(morgan);
 app.use(morganToolkit());
 
 //Get methods
+app.get("/", (req, res)=>{
+  res.end("hello world");
+})
 
 app.get("/kingdoms", (req, res) => {
-  var kingdoms = router.getKingdoms();
+  var kingdoms = world.getKingdoms();
   let keys = Object.keys(kingdoms);
   let kingdomArray = [];
   keys.forEach(key => {
@@ -30,9 +33,9 @@ app.get("/kingdoms", (req, res) => {
 });
 
 app.get("/kingdoms/:id", (req, res) => {
-  var kingdom = router.getKingdom(req.params.id);
+  var kingdom = world.getKingdom(req.params.id);
   var castleIds = kingdom.castleIds;
-  var castles = router.getCastles();
+  var castles = world.getCastles();
   let castleArray = [];
   castleIds.forEach(id => {
     castleArray.push(castles[id]);
@@ -42,20 +45,20 @@ app.get("/kingdoms/:id", (req, res) => {
 });
 
 app.get("/castles/:id", (req, res) => {
-  var castles = router.getCastles(req.params.id);
+  var castles = world.getCastles(req.params.id);
   var castle = castles[req.params.id];
   let liegeArray = [];
   castle["liegeIds"].forEach(liegeId => {
-    liegeArray.push(router.getLiege(liegeId));
+    liegeArray.push(world.getLiege(liegeId));
   });
   res.render("castle", { castle: castle, lieges: liegeArray });
 });
 
 app.get("/lieges/:id", (req, res) => {
-  var liege = router.getLiege(req.params.id);
+  var liege = world.getLiege(req.params.id);
   var vassalArray = [];
   liege["vassalIds"].forEach(vassalId => {
-    vassalArray.push(router.getVassal(vassalId));
+    vassalArray.push(world.getVassal(vassalId));
   });
   res.render("liege", { liege: liege, vassals: vassalArray });
 });
@@ -65,9 +68,9 @@ app.post("/:resource", (req, res) => {
   let ownerId = req.body.ownerId;
   let ownerType = req.body.ownerType;
   let name = req.body.name;
-  router.addResource(name, resource, ownerId, ownerType);
+  world.addResource(name, resource, ownerId, ownerType);
   console.log("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
-  res.redirect("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
+  res.redirect('/');
 });
 
 app.listen(3000, "localhost", () => {
