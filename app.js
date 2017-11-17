@@ -29,6 +29,7 @@ const kingName;
 */
 
 const test = [
+  /*
   {
     kingdoms: "Viking",
     king: "Arthurs"
@@ -37,25 +38,53 @@ const test = [
     kingdoms: "Digital",
     king: "Elon"
   }
+  */
 ];
+
+let keys = Object.keys(Kingdoms.returnKingdomObject())
+let num = keys.length
+let i = 0
+
+while (i < num){
+  test.push(
+    {
+      kingdoms: Kingdoms.getKingdomNames()[i],
+      king: Kingdoms.getKingNames()[i],
+      queen: Kingdoms.getQueenNames()[i],
+      numberOfCastle: Kingdoms.getCastleNumber()[i]
+    }
+  )
+  i++
+}
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-const kingdomCount = _.range(kingdomNames.length);
+// const kingdomCount = _.range(kingdomNames.length);
 
 app.get("/", (req, res) => {
   res.render("kingdoms", {
-    kingdomCount: kingdomCount,
-    kingdomNames: kingdomNames,
-    kingNames: kingNames,
-    queenNames: queenNames,
-    castleNumber: castleNumber,
     test: test
   });
 });
+
+app.post("/kingdoms/new", (req, res) => {
+  const data = fs.readFileSync("./data/kingdoms.json");
+  const json = JSON.parse(data);
+  json["3"] = {
+    "id": 3,
+    "name": "Viking",
+    "kingId": 2,
+    "queenId": 2,
+    "castleIds": [
+      3,
+      4
+    ]
+  }
+  fs.writeFileSync("./data/kingdoms.json", JSON.stringify(json, null, 4))
+})
 
 app.listen(3000, () => {
   console.log("server started");

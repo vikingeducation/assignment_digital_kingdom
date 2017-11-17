@@ -1,19 +1,22 @@
 <div class="box">
   <div class="box--title">Kingdoms</div>
   <div class="box--content">
-    {{test.king}}
     {{#each test as |kingdom|}}
-    {{kingdom.kingdoms}}<br />
-    {{kingdom.king}}
+    {{kingdom.kingdoms}}
+    <ul>
+      <li>king: {{kingdom.king}}</li>
+      <li>queen: {{kingdom.queen}}</li>
+      <li>castles: {{kingdom.numberOfCastle}}</li>
+    </ul>
    {{/each}}
   </div>
 </div>
 <div class="box">
-  <div class="box--title">Add Species</div>
+  <div class="box--title">Add Kingdoms</div>
   <div class="box--content">
-    <form action="/animals" method="POST">
+    <form action="/kingdoms/new" method="POST">
       <input type="text" name="name" id="name" placeholder="Name">
-      <input type="submit" value="Add New Species" method="post">
+      <input type="submit" value="Add New Kingdom" method="post">
     </form>
   </div>
 </div>

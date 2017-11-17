@@ -9,7 +9,11 @@ const getKingdomsObject = () => {
 class Kingdoms {
   constructor() {
     this.kingdomsObject = getKingdomsObject();
-    console.log(this.kingdomsObject);
+    //console.log(this.kingdomsObject);
+  }
+
+  returnKingdomObject() {
+    return this.kingdomsObject
   }
 
   getKingdomNames() {
