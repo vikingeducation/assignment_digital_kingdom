@@ -1,10 +1,14 @@
 var express = require("express");
 var fs = require("fs");
 
-let kingdomData = fs.readFileSync("./data/kingdoms.json", "utf8");
-let castleData = fs.readFileSync("./data/castles.json", "utf8");
-let liegeData = fs.readFileSync("./data/lieges.json", "utf8");
-let vassalData = fs.readFileSync("./data/vassals.json", "utf8");
+let kingdomData = () => fs.readFileSync("./data/kingdoms.json", "utf8");
+
+let castleData = () => fs.readFileSync("./data/castles.json", "utf8");
+
+let liegeData = () => fs.readFileSync("./data/lieges.json", "utf8");
+
+let vassalData = () => fs.readFileSync("./data/vassals.json", "utf8");
+
 let resourceKeys = {
   kingdoms: ["id", "name", "queenId", "kingId", "castleIds"],
   kings: ["id", "name"],
@@ -19,42 +23,42 @@ let data = {
     return json;
   },
   getKingdom: id => {
-    let data = kingdomData;
+    let data = kingdomData();
     let json = JSON.parse(data);
     return json[id];
   },
   getCastles: () => {
-    let data = castleData;
+    let data = castleData();
     let json = JSON.parse(data);
     return json;
   },
   getLieges: () => {
-    let data = liegeData;
+    let data = liegeData();
     let json = JSON.parse(data);
     return json;
   },
   getLiege: id => {
-    let data = liegeData;
+    let data = liegeData();
     let json = JSON.parse(data);
     return json[id];
   },
   getVassals: () => {
-    let data = vassalData;
+    let data = vassalData();
     let json = JSON.parse(data);
     return json;
   },
   getVassal: id => {
-    let data = vassalData;
+    let data = vassalData();
     let json = JSON.parse(data);
     return json[id];
   },
 
   addResource: (name, resource, ownerId, ownerType) => {
     let resources = {
-      kingdoms: kingdomData,
-      castles: castleData,
-      lieges: liegeData,
-      vassals: vassalData
+      kingdoms: kingdomData(),
+      castles: castleData(),
+      lieges: liegeData(),
+      vassals: vassalData()
     };
     let resourceData = resources[resource];
     resourceData = JSON.parse(resourceData);

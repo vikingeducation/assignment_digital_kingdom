@@ -17,13 +17,14 @@ const morganToolkit = require("morgan-toolkit")(morgan);
 
 app.use(morganToolkit());
 
-const castles = require('./routers/castles');
-app.use('/castles', castles);
+//Castle router
+const castles = require("./routers/castles");
+app.use("/castles", castles);
 
 //Get methods
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
   res.end("hello world");
-})
+});
 
 app.get("/kingdoms", (req, res) => {
   var kingdoms = world.getKingdoms();
@@ -75,7 +76,7 @@ app.post("/:resource", (req, res) => {
   let name = req.body.name;
   world.addResource(name, resource, ownerId, ownerType);
   console.log("http://localhost:3000" + "/" + ownerType + "/" + ownerId);
-  res.redirect('/');
+  res.redirect("/" + ownerType + "/" + ownerId);
 });
 
 app.listen(3000, "localhost", () => {
