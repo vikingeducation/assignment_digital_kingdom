@@ -9,6 +9,10 @@
     <a href="./{{item.id}}/">
     {{item.name}}
     </a>
+    {{#each item.display as |display|}}
+    	{{display}}
+    {{/each}}
     </div>
+
   {{/each}}
 </div>
