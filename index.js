@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use strict';
 
 const Express = require('express');
@@ -10,6 +9,12 @@ const kingdoms = require('./routes/kingdoms');
 
 const port = 3000;
 const host = 'localhost';
+const hbs = hb.create({
+  partialsDir: 'views/',
+  defaultLayout: 'main'
+});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use('/', kingdoms);
 
