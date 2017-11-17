@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Main page</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+  <h1>Queens</h1>
+
+  {{{body}}}
+
+  {{#each gods as |god|}}
+  <div class="god">
+    <div class="god-name">
+      <a href="/gods/{{god.name}}">
+         {{god.name}}
+       </a>
+    </div>
+
+    <div class="god-domains">
+      {{#each god.domains as |domain|}}
+        <div class="god-domain">
+          {{domain}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
+
+
+</body>
+
+</html>
