@@ -1,12 +1,14 @@
-'use strict';
+"use strict";
 
-const Express = require('express');
+const Express = require("express");
 const router = Express.Router();
-const Kingdoms = require('../services/kingdom_store.js');
-const fs = require('fs');
+const Kingdoms = require("../services/kingdom_store.js");
+const fs = require("fs");
 
-router.get('/', (req, res) => {
-  let kingdoms = Kingdoms.getKingdoms().then(console.log);
+router.get("/", (req, res) => {
+  //let kingdoms = Kingdoms.getKingdoms().then(console.log);
+  let kingdoms = Kingdoms.getKingdoms();
+  res.send(kingdoms);
 });
 module.exports = router;
 
