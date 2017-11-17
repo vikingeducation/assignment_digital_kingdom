@@ -12,4 +12,6 @@
 <form method="post" action="/lieges">
   <label>Name:</label><input type="text" name="name">
   <input type="submit">
+  <input type="hidden" name = "ownerId" value = {{castle.id}}>
+  <input type="hidden" name = "ownerType" value = "castles">
 </form>

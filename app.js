@@ -17,6 +17,9 @@ const morganToolkit = require("morgan-toolkit")(morgan);
 
 app.use(morganToolkit());
 
+const castles = require('./routers/castles');
+app.use('/castles', castles);
+
 //Get methods
 app.get("/", (req, res)=>{
   res.end("hello world");
@@ -44,6 +47,7 @@ app.get("/kingdoms/:id", (req, res) => {
   res.render("kingdom", { kingdom: kingdom, castles: castleArray });
 });
 
+/*
 app.get("/castles/:id", (req, res) => {
   var castles = world.getCastles(req.params.id);
   var castle = castles[req.params.id];
@@ -54,6 +58,7 @@ app.get("/castles/:id", (req, res) => {
   res.render("castle", { castle: castle, lieges: liegeArray });
 });
 
+*/
 app.get("/lieges/:id", (req, res) => {
   var liege = world.getLiege(req.params.id);
   var vassalArray = [];

@@ -45,5 +45,10 @@
     "id": "7",
     "name": "fred",
     "liegeIds": []
+  },
+  "8": {
+    "id": "8",
+    "name": "red",
+    "liegeIds": []
   }
 }
