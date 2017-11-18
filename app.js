@@ -17,30 +17,6 @@ const hbs = expressHandlebars.create({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let Kingdoms = new kingdoms.Kingdoms();
-
-// const kingdomsObject = Kingdoms.getKingdomsObject();
-const kingdomNames = Kingdoms.getKingdomNames();
-const kingNames = Kingdoms.getKingNames();
-const queenNames = Kingdoms.getQueenNames();
-const castleNumber = Kingdoms.getCastleNumber();
-
-const test = [];
-
-let keys = Object.keys(Kingdoms.returnKingdomObject());
-let num = keys.length;
-let i = 0;
-
-while (i < num) {
-  test.push({
-    kingdoms: Kingdoms.getKingdomNames()[i],
-    king: Kingdoms.getKingNames()[i],
-    queen: Kingdoms.getQueenNames()[i],
-    numberOfCastle: Kingdoms.getCastleNumber()[i]
-  });
-  i++;
-}
-
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
@@ -49,7 +25,29 @@ app.use(express.static(__dirname + "/public"));
 // const kingdomCount = _.range(kingdomNames.length);
 
 app.get("/", (req, res) => {
-  console.log(test);
+  let Kingdoms = new kingdoms.Kingdoms();
+
+  // const kingdomsObject = Kingdoms.getKingdomsObject();
+  const kingdomNames = Kingdoms.getKingdomNames();
+  const kingNames = Kingdoms.getKingNames();
+  const queenNames = Kingdoms.getQueenNames();
+  const castleNumber = Kingdoms.getCastleNumber();
+
+  const test = [];
+
+  let keys = Object.keys(Kingdoms.returnKingdomObject());
+  let num = keys.length;
+  let i = 0;
+
+  while (i < num) {
+    test.push({
+      kingdoms: Kingdoms.getKingdomNames()[i],
+      king: Kingdoms.getKingNames()[i],
+      queen: Kingdoms.getQueenNames()[i],
+      numberOfCastle: Kingdoms.getCastleNumber()[i]
+    });
+    i++;
+  }
   res.render("kingdoms", {
     test: test
   });

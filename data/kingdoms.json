@@ -29,5 +29,33 @@
         "kingId": 4,
         "queenId": 4,
         "castleIds": []
+    },
+    "5": {
+        "id": 5,
+        "name": "Kay",
+        "kingId": 5,
+        "queenId": 5,
+        "castleIds": []
+    },
+    "6": {
+        "id": 6,
+        "name": "Bob",
+        "kingId": 6,
+        "queenId": 6,
+        "castleIds": []
+    },
+    "7": {
+        "id": 7,
+        "name": "LOL",
+        "kingId": 7,
+        "queenId": 7,
+        "castleIds": []
+    },
+    "8": {
+        "id": 8,
+        "name": "CA",
+        "kingId": 8,
+        "queenId": 8,
+        "castleIds": []
     }
 }
