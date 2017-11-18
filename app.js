@@ -21,9 +21,13 @@ app.use(morganToolkit());
 const castles = require("./routers/castles");
 const lieges = require("./routers/lieges");
 const kingdoms = require("./routers/kingdoms");
-app.use("/castles", castles);
-app.use("/lieges", lieges);
-app.use("/kingdoms", kingdoms);
+//app.use("/castles", castles);
+//app.use("/lieges", lieges);
+//app.use("/kingdoms", kingdoms);
+
+
+const router = require("./router");
+app.use("/", router);
 
 
 //Get methods

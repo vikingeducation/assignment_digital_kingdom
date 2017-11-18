@@ -62,5 +62,10 @@
     "id": "9",
     "name": "castle black",
     "liegeIds": []
+  },
+  "10": {
+    "id": "10",
+    "name": "castle red",
+    "liegeIds": []
   }
 }

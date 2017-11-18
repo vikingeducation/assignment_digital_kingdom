@@ -19,7 +19,7 @@ let resourceKeys = {
 };
 let data = {
   getKingdoms: () => {
-    let json = JSON.parse(kingdomData);
+    let json = JSON.parse(kingdomData());
     return json;
   },
   getKingdom: id => {
