@@ -13,7 +13,7 @@ class Kingdoms {
   }
 
   returnKingdomObject() {
-    return this.kingdomsObject
+    return this.kingdomsObject;
   }
 
   getKingdomNames() {

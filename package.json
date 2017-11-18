@@ -1,21 +1,26 @@
 {
   "name": "assignment_digital_kingdom",
   "version": "1.0.0",
-  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "description":
+    "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
   "main": "app.js",
   "scripts": {
-    "seed": "cp ./seeds/* ./data"
+    "seed": "cp ./seeds/* ./data",
+    "start": "nodemon --ignore data/ app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vikingeducation/assignment_digital_kingdom.git"
+    "url":
+      "git+https://github.com/vikingeducation/assignment_digital_kingdom.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vikingeducation/assignment_digital_kingdom/issues"
+    "url":
+      "https://github.com/vikingeducation/assignment_digital_kingdom/issues"
   },
-  "homepage": "https://github.com/vikingeducation/assignment_digital_kingdom#readme",
+  "homepage":
+    "https://github.com/vikingeducation/assignment_digital_kingdom#readme",
   "dependencies": {
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
