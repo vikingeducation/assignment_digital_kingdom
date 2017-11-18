@@ -1,0 +1,17 @@
+<h1>"Kingdom"</h1>
+  <div class="kingdom">
+  <div class="ID">{{kingdom.id}}</div>
+  <div class="Name">{{kingdom.name}}</div>
+  {{#each castles as |castle|}}
+    <div class="castleName">{{castle.name}}</div>
+    <div class="liegeNumber">{{castle.liegeIds.length}}</div>
+  {{/each}}
+</div>
+
+<h2>Make a new Castle</h2>
+<form method="post" action="/castles">
+  <label>Name:</label><input type="text" name="name">
+  <input type="submit">
+  <input type="hidden" name = "ownerId" value = {{kingdom.id}}>
+  <input type="hidden" name = "ownerType" value = "kingdoms">
+</form>
