@@ -11,7 +11,7 @@ router.get('/', (req,res) =>{
 
 let kingVariables = kingdom()
 console.log(kingVariables)
-res.render('main', { kingdomVariables, kingdomVariables })
+res.render('kings', {kingVariables: kingVariables})
 
 })
 
