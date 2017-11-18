@@ -89,12 +89,51 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/:kingdom/:castle/:liege/', function(req,res,next) {
-	let newVassal = { id: Object.key(hierarchy.vassals).length, name: req.params.name };
-	hierarchy.vassals[Object.key(hierarchy.vassals).length]= newVassal;
+	let fs = require('fs');
+	let currentState = getCurrentState(req.params);
+	let newVassal = { id: Object.keys(hierarchy.vassals).length +1, name: req.body.name };
+	let name = '';
+	hierarchy.vassals[Object.keys(hierarchy.vassals).length + 1]= newVassal;
 	hierarchy.lieges[req.params.liege].vassalIds.push(newVassal.id);
-	
+	console.log(hierarchy.vassals);
+	console.log(req.headers);
+	fs.writeFileSync('./data/vassals.json', JSON.stringify(hierarchy.vassals));
+	fs.writeFileSync('./data/lieges.json', JSON.stringify(hierarchy.lieges));
+	res.render('index', { items: currentState})
 })
 
+
+router.post('/:kingdom/:castle/', function(req,res,next) {
+	let fs = require('fs');
+	let currentState = getCurrentState(req.params);
+	let newLiege = { id: Object.keys(hierarchy.lieges).length, name: req.body.name };
+	hierarchy.lieges[Object.keys(hierarchy.lieges).length]= newLiege;
+	hierarchy.castles[req.params.castle].liegeIds.push(newLiege.id);
+	fs.writeFileSync('./data/lieges.json', JSON.stringify(hierarchy.lieges));
+	fs.writeFileSync('./data/castles.json', JSON.stringify(hierarchy.castles));
+	res.render('index', { items: currentState})
+})
+
+router.post('/:kingdom/', function(req,res,next) {
+	let fs = require('fs');
+	let currentState = getCurrentState(req.params);
+	let newCastle = { id: Object.keys(hierarchy.castles).length, name: req.body.name };
+	hierarchy.castles[Object.keys(hierarchy.castles).length]= newCastle;
+	hierarchy.kingdoms[req.params.kingdom].castleIds.push(newCastle.id);
+	fs.writeFileSync('./data/castles.json', JSON.stringify(hierarchy.castles));
+	fs.writeFileSync('./data/kingdoms.json', JSON.stringify(hierarchy.kingdoms));
+	res.render('index', { items: currentState})
+})
+
+
+router.post('/', function(req,res,next) {
+	let fs = require('fs');
+	let currentState = getCurrentState(req.params);
+	let newKingdom = { id: Object.key(hierarchy.kingdoms).length, name: req.body.name };
+	hierarchy.kingdoms[Object.keys(hierarchy.kingdoms).length]= newKingdom;
+	fs.writeFileSync('./data/kingdoms.json', JSON.stringify(hierarchy.kingdoms));
+	res.render('index', { items: currentState})
+})
 
 
 module.exports = router;
