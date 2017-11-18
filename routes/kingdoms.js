@@ -1,17 +1,17 @@
-'use strict';
+"use strict";
 
-const Express = require('express');
+const Express = require("express");
 const router = Express.Router();
-const Kingdoms = require('../services/kingdom_store.js');
-const fs = require('fs');
-const kingdomsObject = Promise.resolve(require('../data/kingdoms.json'));
-const kingsObject = Promise.resolve(require('../data/kings.json'));
-const queensObject = Promise.resolve(require('../data/queens.json'));
-const castlesObject = Promise.resolve(require('../data/castles.json'));
-const liegesObject = Promise.resolve(require('../data/lieges.json'));
-const vassalsObject = Promise.resolve(require('../data/vassals.json'));
+const Kingdoms = require("../services/kingdom_store.js");
+const fs = require("fs");
+const kingdomsObject = Promise.resolve(require("../data/kingdoms.json"));
+const kingsObject = Promise.resolve(require("../data/kings.json"));
+const queensObject = Promise.resolve(require("../data/queens.json"));
+const castlesObject = Promise.resolve(require("../data/castles.json"));
+const liegesObject = Promise.resolve(require("../data/lieges.json"));
+const vassalsObject = Promise.resolve(require("../data/vassals.json"));
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   let kingdoms;
   kingdomsObject
     .then(data => {
@@ -19,17 +19,17 @@ router.get('/', (req, res) => {
       return kingsObject;
     })
     .then(data => {
-      kingdoms['1'].king = data['1'].name;
+      kingdoms["1"].king = data["1"].name;
       return queensObject;
     })
     .then(data => {
-      kingdoms['1'].queen = data['1'].name;
-      res.render('homepage', { kingdoms });
+      kingdoms["1"].queen = data["1"].name;
+      res.render("homepage", { kingdoms });
     })
-    .catch(err => res.render('error', { err }));
+    .catch(err => res.render("error", { err }));
 });
 
-router.get('/kingdoms/:kingdom', (req, res) => {
+router.get("/kingdoms/:kingdom", (req, res) => {
   let castles;
   let kingdom;
   kingdomsObject
@@ -39,12 +39,12 @@ router.get('/kingdoms/:kingdom', (req, res) => {
     })
     .then(data => {
       kingdom.castles = kingdom.castleIds.map(val => data[val]);
-      res.render('castles', { kingdom });
+      res.render("castles", { kingdom });
     })
-    .catch(err => res.render('error,', { err }));
+    .catch(err => res.render("error,", { err }));
 });
 
-router.get('/kingdoms/:kingdom/castles/:castle', (req, res) => {
+router.get("/kingdoms/:kingdom/castles/:castle", (req, res) => {
   let lieges;
   let castle;
   castlesObject
@@ -54,9 +54,10 @@ router.get('/kingdoms/:kingdom/castles/:castle', (req, res) => {
     })
     .then(data => {
       castle.lieges = castle.liegeIds.map(val => data[val]);
-      res.render('lieges', { castle });
+      console.log(castle);
+      res.render("lieges", { castle });
     })
-    .catch(err => res.render('error,', { err }));
+    .catch(err => res.render("error,", { err }));
 });
 
 // router.get(
