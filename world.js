@@ -32,6 +32,11 @@ let data = {
     let json = JSON.parse(data);
     return json;
   },
+  getCastle: id => {
+    let data = castleData();
+    let json = JSON.parse(data);
+    return json[id];
+  },
   getLieges: () => {
     let data = liegeData();
     let json = JSON.parse(data);
