@@ -10,6 +10,7 @@ router.get('/', (req,res) =>{
 
 
 let kingVariables = kingdom()
+//kingVariables = JSON.stringify(kingVariables)
 console.log(kingVariables)
 res.render('kings', {kingVariables: kingVariables})
 
