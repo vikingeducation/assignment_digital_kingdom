@@ -1,0 +1,17 @@
+<h1>"Castle"</h1>
+  <div class="castle">
+  <div class="ID">{{castle.id}}</div>
+  <div class="Name">{{castle.name}}</div>
+  {{#each lieges as |liege|}}
+    <div class="liegeName">{{liege.name}}</div>
+    <div class="vassalsNumber">{{liege.vassalIds.length}}</div>
+  {{/each}}
+</div>
+
+<h2>Make a new Liege</h2>
+<form method="post" action="/lieges">
+  <label>Name:</label><input type="text" name="name">
+  <input type="submit">
+  <input type="hidden" name = "ownerId" value = {{castle.id}}>
+  <input type="hidden" name = "ownerType" value = "castles">
+</form>

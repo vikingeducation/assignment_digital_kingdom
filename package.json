@@ -1,0 +1,30 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "app.js",
+  "scripts": {
+    "seed": "cp ./seeds/* ./data",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore data/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelLangenfeld/assignment_digital_kingdom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelLangenfeld/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/SamuelLangenfeld/assignment_digital_kingdom#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "morgan": "^1.9.0",
+    "morgan-toolkit": "^1.0.2"
+  }
+}

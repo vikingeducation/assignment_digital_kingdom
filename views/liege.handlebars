@@ -1,0 +1,19 @@
+<h1>"Liege"</h1>
+  <div class="liege">
+  <div class="ID">{{liege.id}}</div>
+  <div class="Name">{{liege.name}}</div>
+<h2>"Vassals"</h2>
+  {{#each vassals as |vassal|}}
+    <div class="vassalid">{{vassal.id}}</div>
+    <div class="vassalName">{{vassal.name}}</div>
+  {{/each}}
+</div>
+
+
+<h2>Make a new Vassal</h2>
+<form method="post" action="/vassals">
+  <label>Name:</label><input type="text" name="name">
+  <input type="submit">
+  <input type="hidden" name = "ownerId" value = {{liege.id}}>
+  <input type="hidden" name = "ownerType" value = "lieges">
+</form>
