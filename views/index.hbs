@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<div class="items">	
+	
+
+  {{#each items as |item|}}
+    <div class="item">
+    <a href="./{{item.id}}/">
+    {{item.name}}
+    </a>
+    {{#each item.display as |display|}}
+    	<br>{{display}}
+    {{/each}}
+    </div>
+  {{/each}}
+</div>
+
+<form action="." method="post">
+<input type="text" name="name">
+<input type="submit" value="Submit">
+</form>
+
