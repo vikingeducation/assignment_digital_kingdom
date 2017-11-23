@@ -1,0 +1,33 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Digital",
+        "kingId": 1,
+        "queenId": 1,
+        "castleIds": [
+            1,
+            2
+        ]
+    },
+    "2": {
+        "id": 2,
+        "name": "New York",
+        "kingId": 2,
+        "queenId": 2,
+        "castleIds": []
+    },
+    "3": {
+        "id": 3,
+        "name": "Dallas",
+        "kingId": 3,
+        "queenId": 3,
+        "castleIds": []
+    },
+    "4": {
+        "id": 4,
+        "name": "Dallas",
+        "kingId": 4,
+        "queenId": 4,
+        "castleIds": []
+    }
+}
