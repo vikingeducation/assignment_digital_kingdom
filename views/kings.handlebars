@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Main page</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+
+  <{{#each kingVariables as |kingdom|}}
+  {{kingVariables}}
+  <div class="kingdom">
+    <div class="kingdom-name">
+      <a href="/">
+          <h1>Kingdom
+              {{kingdom.name}}</h1>
+       </a>
+    </div>
+
+    <div class="kingdom-domains">
+        <h1>King {{this.kingname}} </h1>
+        <h1> Queen {{kingdom.queenname}}</h1>
+            
+        <h1> Castles {{kingdom.castlesLength}}</h1></p>
+       
+      {{/each}}
+    </div>
+  </div
+
+
+
+
+
+</body>
+
+</html>
+
