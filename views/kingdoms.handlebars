@@ -1,0 +1,24 @@
+<h1 class="text-center">Here are our Kingdoms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">King</th>
+      <th scope="col">Queen</th>
+      <th scope="col">Number of Castles</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each kingdomsTree }}
+    <tr>
+      <th scope="row">{{@key}}</th>
+      <td>{{this.name}}</td>
+      <td>{{../kingsTree[this.kingId][name]}}</td>
+      <td>{{this.queenId}}</td>
+      <td>{{this.castleIds}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
