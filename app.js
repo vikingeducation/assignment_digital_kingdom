@@ -1,16 +1,25 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 const router = require('./routes/kingdoms');
+const Handlebars = require('handlebars');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-// const hbs = expressHbs.create({mainLayout: 'main'});
+Handlebars.registerHelper('convertIdsToNames', function(json, id, name) {
+  if ( id == 0 ) return;
+  if ( json[id][name] == 0) {
+    return 0
+  };
+  return json[id][name];
+});
+
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.use(bodyParser.urlencoded({ extended: true }) );
 app.use(express.static(__dirname + '/public/css'));
-
 app.use("/kingdoms", router);
 
 

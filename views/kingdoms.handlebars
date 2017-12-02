@@ -15,10 +15,34 @@
     <tr>
       <th scope="row">{{@key}}</th>
       <td>{{this.name}}</td>
-      <td>{{../kingsTree[this.kingId][name]}}</td>
-      <td>{{this.queenId}}</td>
-      <td>{{this.castleIds}}</td>
+      <td>{{{ convertIdsToNames ../kingsTree this.kingId "name" }}}</td>
+      <td>{{ convertIdsToNames ../queensTree this.queenId "name" }}</td>
+      <td>{{ this.castleIds.length }}</td>
     </tr>
   {{/each}}
   </tbody>
 </table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm-8">
+
+      <form action="/kingdoms" method="POST">
+        <br><br>
+        <h3 class="text-center">Create a new kingdom</h3>
+        <div class="form-group">
+          <input type="text" id="name" name="name" class="form-control" placeholder="Kingom's name">
+        </div>
+
+        <div class="center">
+          <button type="submit" class="btn btn-primary" method="post">Create</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>

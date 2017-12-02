@@ -3,3 +3,7 @@ div.padder {
   margin-top: 10px;
   color: #666;
 }
+
+div.center {
+  text-align: center;
+}

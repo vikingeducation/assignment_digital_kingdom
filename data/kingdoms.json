@@ -18,5 +18,12 @@
       3,
       4
     ]
+  },
+  "3": {
+    "id": 3,
+    "name": "Kielce",
+    "kingId": 0,
+    "queenId": 0,
+    "castleIds": []
   }
 }
