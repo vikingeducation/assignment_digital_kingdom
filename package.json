@@ -22,6 +22,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "handlebars": "^4.0.11",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "load-helpers": "^1.0.1"
   }
 }

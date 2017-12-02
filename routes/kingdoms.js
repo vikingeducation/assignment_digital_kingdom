@@ -25,7 +25,7 @@ const router = express.Router();
 // const vassals = Object.keys(vassalsTree);
 
 
-router.get("/", (req, res) => {
+router.get('/kingdoms', (req, res) => {
   const kingdoms = Object.keys( getKings() );
   res.render('kingdoms', {  kingdoms,
                             kingdomsTree: getKingdoms(),
@@ -35,10 +35,29 @@ router.get("/", (req, res) => {
                           });
 });
 
-router.post("/", (req, res) => {
+router.post('/kingdoms', (req, res) => {
   const name = req.body.name
   addKingdoms(name);
   res.redirect('back');
 })
+
+router.get("/kingdoms/:name", (req, res) => {
+  const name = req.param.name
+  const castles = Object.keys(castlesTree);
+  res.render('kingdoms/show', { castles,
+                                kingdomsTree: getKingdoms(),
+                                castlesTree: getCastles()
+                          });
+});
+// A view for each Kingdom.
+// This page should list the names of each castle in the kingdom along with the number of lieges housed within each.
+// This page should allow for the creation of new castles.
+
+
+
+// A view for each Castle.
+// A view for each Liege.
+// A view for each Kingdom.
+
 
 module.exports = router;

@@ -1,23 +1,20 @@
-<h1 class="text-center">Here are our Kingdoms</h1>
+<h1 class="text-center">The Kingdom of {{ name }}</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">King</th>
-      <th scope="col">Queen</th>
-      <th scope="col">Number of Castles</th>
+      <th scope="col">Name of the castle</th>
+      <th scope="col">Registry number</th>
+      <th scope="col">Number of Lieges</th>
     </tr>
   </thead>
   <tbody>
-  {{#each kingdomsTree }}
+  {{#each castlesTree }}
     <tr>
       <th scope="row">{{@key}}</th>
-      <td><a href={{{ ../kingdomPath this.name }}}>{{this.name}}</a></td>
+      <td>{{this.name}}</td>
       <td>{{{ convertIdsToNames ../kingsTree this.kingId "name" }}}</td>
-      <td>{{ convertIdsToNames ../queensTree this.queenId "name" }}</td>
-      <td>{{ this.castleIds.length }}</td>
+      <td>{{ this.liegeIds.length }}</td>
     </tr>
   {{/each}}
   </tbody>
@@ -46,3 +43,5 @@
     </div>
   </div>
 </div>
+
+{{>form name='kingdom' bigName='Kingdom' action='/kingdom'}}

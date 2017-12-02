@@ -25,5 +25,12 @@
     "kingId": 0,
     "queenId": 0,
     "castleIds": []
+  },
+  "4": {
+    "id": 4,
+    "name": "Zabrze",
+    "kingId": 0,
+    "queenId": 0,
+    "castleIds": []
   }
 }
