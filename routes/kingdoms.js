@@ -5,7 +5,8 @@ const { getKingdoms,
         getCastles,
         getLieges,
         getVassals,
-        addKingdoms }  = require('../services/kingdoms-store');
+        addKingdoms,
+        addCastles }  = require('../services/kingdoms-store');
 const Handlebars = require('handlebars');
 
 const router = express.Router();
@@ -41,17 +42,24 @@ router.post('/kingdoms', (req, res) => {
   res.redirect('back');
 })
 
-router.get("/kingdoms/:name", (req, res) => {
-  const name = req.param.name
-  const castles = Object.keys(castlesTree);
-  res.render('kingdoms/show', { castles,
-                                kingdomsTree: getKingdoms(),
+router.get("/kingdom/:id", (req, res) => {
+  const id = req.params.id;
+  const kingdomsTree = getKingdoms();
+  const kingdomName = kingdomsTree[id]['name'];
+  const castleIds = kingdomsTree[id]['castleIds'];
+  res.render('kingdom/view', {  id,
+                                castleIds,
+                                kingdomName,
                                 castlesTree: getCastles()
                           });
 });
-// A view for each Kingdom.
-// This page should list the names of each castle in the kingdom along with the number of lieges housed within each.
-// This page should allow for the creation of new castles.
+
+router.post('/kingdom/:id', (req, res) => {
+  const kingdomId = req.params.id;
+  const name = req.body.name
+  addCastles(name, kingdomId);
+  res.redirect('back');
+})
 
 
 

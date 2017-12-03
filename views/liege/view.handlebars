@@ -1,0 +1,21 @@
+<h1 class="text-center">The Vassals in the Kingdom of {{ kingdomName }}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Registry number</th>
+      <th scope="col">Name of the Vassal</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each vassalIds }}
+    <tr>
+      <th scope="row">{{this}}</th>
+      <td>{{{ convertIdsToNames ../castlesTree this "name" }}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+
+{{>form name='vassal' bigName='Vassal' action='/kingdom/'+id paramName='name'}}

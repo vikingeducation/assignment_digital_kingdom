@@ -32,5 +32,12 @@
     "kingId": 0,
     "queenId": 0,
     "castleIds": []
+  },
+  "5": {
+    "id": 5,
+    "name": "Malaczi",
+    "kingId": 0,
+    "queenId": 0,
+    "castleIds": []
   }
 }

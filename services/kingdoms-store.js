@@ -6,8 +6,8 @@ let getJson = (jsonFile) => {
   return json;
 }
 
-let saveJson = (json) => {
-  fs.writeFileSync(`./data/kingdoms.json`, JSON.stringify(json, null, 2));
+let saveJson = (json, fileName) => {
+  fs.writeFileSync(`./data/${fileName}.json`, JSON.stringify(json, null, 2));
 }
 
 const getKingdoms = () => {
@@ -40,7 +40,6 @@ const addKingdoms = (name) => {
   keys.forEach( (el) => {
     if (json[el][name]) return;
   })
-  console.log('the name added is: ' + name);
   var newIdx = String( Object.keys(json).length + 1 );
   json[newIdx] = {};
   json[newIdx]['id'] = parseInt(newIdx);
@@ -51,6 +50,23 @@ const addKingdoms = (name) => {
   saveJson(json);
 }
 
+const addCastles = (name, kingdomId) => {
+  var json = getJson('castles.json');
+  const keys = Object.keys(json);
+  keys.forEach( (el) => {
+    if (json[el][name]) return;
+  })
+  var newIdx = String( Object.keys(json).length + 1 );
+  json[newIdx] = {};
+  json[newIdx]['id'] = parseInt(newIdx);
+  json[newIdx]['name'] = String(name);
+  json[newIdx]['liegeIds'] = [];
+  saveJson(json, 'castles');
+  var jsonKingdoms = getJson('kingdoms.json');
+  jsonKingdoms[kingdomId]['castleIds'].push(newIdx);
+  saveJson(json, 'kingdoms');
+}
+
 
 module.exports = {
   getKingdoms,
@@ -59,5 +75,6 @@ module.exports = {
   getCastles,
   getLieges,
   getVassals,
-  addKingdoms
+  addKingdoms,
+  addCastles
 };

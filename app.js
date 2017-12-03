@@ -5,11 +5,11 @@ const Handlebars = require('handlebars');
 const bodyParser = require('body-parser');
 const helpers = require('./helpers');
 
-// const hbs = exphbs.create({
-//   helpers: helpers,
-//   partialsDir: 'views/partials',
-//   defaultLayout: 'main'
-// });
+const hbs = exphbs.create({
+  helpers: helpers,
+  partialsDir: 'views/partials',
+  defaultLayout: 'main'
+});
 
 const app = express();
 
@@ -21,9 +21,16 @@ Handlebars.registerHelper('convertIdsToNames', function(json, id, name) {
   return json[id][name];
 });
 
+Handlebars.registerHelper('getLengthArray', function(json, id, name) {
+  if ( id == 0 ) return;
+  if ( json[id][name] == 0) {
+    return 0
+  };
+  return json[id][name].length;
+});
 
-app.engine('handlebars', exphbs({defaultLayout: 'main', helpers: helpers,
-  partialsDir: 'views/partials'}));
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: true }) );
