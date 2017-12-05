@@ -14,7 +14,7 @@
   {{#each kingdomsTree }}
     <tr>
       <th scope="row">{{@key}}</th>
-      <td><a href="/kingdom/{{ this.id }}">{{this.name}}</a></td>
+      <td><a href="/kingdom/{{ this.id }}/castles">{{this.name}}</a></td>
       <input type="text" name="{{ this.is }}" hidden >
       <td>{{{ convertIdsToNames ../kingsTree this.kingId "name" }}}</td>
       <td>{{ convertIdsToNames ../queensTree this.queenId "name" }}</td>

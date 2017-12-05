@@ -28,7 +28,24 @@
     "name": "Bowser's Castle",
     "liegeIds": [
       7,
-      8
+      8,
+      9,
+      10
     ]
+  },
+  "5": {
+    "id": 5,
+    "name": "Sets Castle",
+    "liegeIds": []
+  },
+  "6": {
+    "id": 6,
+    "name": "4th Day Castle",
+    "liegeIds": []
+  },
+  "7": {
+    "id": 7,
+    "name": "test",
+    "liegeIds": []
   }
 }

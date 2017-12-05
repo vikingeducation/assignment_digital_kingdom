@@ -1,10 +1,10 @@
-<h1 class="text-center">The Lieges in the Kingdom of {{ kingdomName }}</h1>
+<h1 class="text-center">The Lieges in the {{ castleName }}</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Registry number</th>
-      <th scope="col">Name of the liege</th>
+      <th scope="col">Name of the Liege</th>
       <th scope="col">Number of Vassals</th>
     </tr>
   </thead>
@@ -12,12 +12,15 @@
   {{#each liegeIds }}
     <tr>
       <th scope="row">{{this}}</th>
-      <td>{{{ convertIdsToNames ../castlesTree this "name" }}}</td>
-      <td>{{ getLengthArray ../castlesTree this "liegeIds"  }}</td>
+      <td>
+        <a href="/kingdom/{{ ../id }}/castle/{{ castleId }}/liege">
+          {{{ convertIdsToNames ../liegesTree this "name" }}}</td>
+        </a>
+      <td>{{ getLengthArray ../liegesTree this "vassalIds"  }}</td>
     </tr>
   {{/each}}
   </tbody>
 </table>
 
 
-{{>form name='liege' bigName='Liege' action='/kingdom/'+id paramName='name'}}
+{{>form name='liege' bigName='Liege' kingdomId=id castleId=castleId castlePrefix='/castle/' paramName='name'}}

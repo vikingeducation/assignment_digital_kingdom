@@ -63,8 +63,25 @@ const addCastles = (name, kingdomId) => {
   json[newIdx]['liegeIds'] = [];
   saveJson(json, 'castles');
   var jsonKingdoms = getJson('kingdoms.json');
-  jsonKingdoms[kingdomId]['castleIds'].push(newIdx);
-  saveJson(json, 'kingdoms');
+  jsonKingdoms[kingdomId]['castleIds'].push( parseInt(newIdx) );
+  saveJson(jsonKingdoms, 'kingdoms');
+}
+
+const addLieges = (name, castleId) => {
+  var json = getJson('lieges.json');
+  const keys = Object.keys(json);
+  keys.forEach( (el) => {
+    if (json[el][name]) return;
+  })
+  var newIdx = String( Object.keys(json).length + 1 );
+  json[newIdx] = {};
+  json[newIdx]['id'] = parseInt(newIdx);
+  json[newIdx]['name'] = String(name);
+  json[newIdx]['vassalIds'] = [];
+  saveJson(json, 'lieges');
+  var jsonCastles = getJson('castles.json');
+  jsonCastles[castleId]['liegeIds'].push( parseInt(newIdx) );
+  saveJson(jsonCastles, 'castles');
 }
 
 
@@ -76,5 +93,6 @@ module.exports = {
   getLieges,
   getVassals,
   addKingdoms,
-  addCastles
+  addCastles,
+  addLieges
 };

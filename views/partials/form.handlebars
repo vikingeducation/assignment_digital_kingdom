@@ -4,11 +4,11 @@
     </div>
     <div class="col-sm-8">
 
-      <form action={{ action }} method="POST">
+      <form action='/kingdom/{{kingdomId}}{{castlePrefix}}{{castleId}}' method="POST">
         <br><br>
         <h3 class="text-center">Create a new {{ name }}</h3>
         <div class="form-group">
-          <input type="text" id="{{ paramName }}" name="{{ paramName }}" class="form-control" placeholder=" {{ bigName }}'s name">
+          <input type="text" name="{{ paramName }}" class="form-control" placeholder=" {{ bigName }}'s name">
         </div>
 
         <div class="center">
