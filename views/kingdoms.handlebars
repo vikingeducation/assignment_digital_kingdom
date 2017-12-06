@@ -1,0 +1,27 @@
+<h1 class="text-center">Here are our Kingdoms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">King</th>
+      <th scope="col">Queen</th>
+      <th scope="col">Number of Castles</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each kingdomsTree }}
+    <tr>
+      <th scope="row">{{@key}}</th>
+      <td><a href="/kingdom/{{ this.id }}/castles">{{this.name}}</a></td>
+      <input type="text" name="{{ this.is }}" hidden >
+      <td>{{{ convertIdsToNames ../kingsTree this.kingId "name" }}}</td>
+      <td>{{ convertIdsToNames ../queensTree this.queenId "name" }}</td>
+      <td>{{ this.castleIds.length }}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{>form name='kingdom' bigName='Kingdom' kingdomId=id kingdomPrefix='/kingdoms/' paramName='name' kingName='kingName' queenName='queenName'}}

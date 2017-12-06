@@ -1,0 +1,26 @@
+<h1 class="text-center">The Lieges in the {{ castleName }}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Registry number</th>
+      <th scope="col">Name of the Liege</th>
+      <th scope="col">Number of Vassals</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each liegeIds }}
+    <tr>
+      <th scope="row">{{this}}</th>
+      <td>
+        <a href="/kingdom/{{ ../id }}/castle/{{ ../castleId }}/lieges/{{ this }}/vassals">
+          {{{ convertIdsToNames ../liegesTree this "name" }}}</td>
+        </a>
+      <td>{{ getLengthArray ../liegesTree this "vassalIds"  }}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+
+{{>form name='liege' bigName='Liege' kingdomPrefix='/kingdom/' kingdomId=id castleId=castleId castlePrefix='/castle/' liegePrefix='/lieges/' paramName='name'}}

@@ -1,0 +1,10 @@
+div.padder {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+div.center {
+  text-align: center;
+}

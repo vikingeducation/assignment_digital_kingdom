@@ -1,0 +1,28 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "cp ./seeds/* ./data",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Visiona/assignment_digital_kingdom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Visiona/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/Visiona/assignment_digital_kingdom#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "hbs": "^4.0.1",
+    "load-helpers": "^1.0.1"
+  }
+}
