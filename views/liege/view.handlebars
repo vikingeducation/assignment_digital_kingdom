@@ -1,4 +1,4 @@
-<h1 class="text-center">The Vassals in the Kingdom of {{ kingdomName }}</h1>
+<h1 class="text-center">The Vassals in the Kingdom of {{ kingdomName }}, the Liege {{ liegeName }}</h1>
 
 <table class="table">
   <thead>
@@ -11,11 +11,11 @@
   {{#each vassalIds }}
     <tr>
       <th scope="row">{{this}}</th>
-      <td>{{{ convertIdsToNames ../castlesTree this "name" }}}</td>
+      <td>{{{ convertIdsToNames ../vassalTree this "name" }}}</td>
     </tr>
   {{/each}}
   </tbody>
 </table>
 
 
-{{>form name='vassal' bigName='Vassal' action='/kingdom/'+id paramName='name'}}
+{{>form name='vassal' bigName='Vassal' kingdomPrefix='/kingdom/' kingdomId=id castleId=castleId castlePrefix='/castle/' liegeId= liegeId liegePrefix='/lieges/' vassalPrefix='/vassals/' paramName='name'}}

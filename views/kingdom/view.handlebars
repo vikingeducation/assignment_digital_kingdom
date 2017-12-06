@@ -13,7 +13,7 @@
     <tr>
       <th scope="row">{{this}}</th>
       <td>
-        <a href="/kingdom/{{ ../id }}/castle/{{ this }}">
+        <a href="/kingdom/{{ ../id }}/castle/{{ this }}/lieges">
           {{{ convertIdsToNames ../castlesTree this "name" }}}
         </a>
       </td>
@@ -24,4 +24,4 @@
 </table>
 
 
-{{>form name='castle' bigName='Castle' kingdomId=id castlePrefix='/castles' paramName='name'}}
+{{>form name='castle' bigName='Castle' kingdomPrefix='/kingdom/' kingdomId=id castlePrefix='/castles' paramName='name'}}

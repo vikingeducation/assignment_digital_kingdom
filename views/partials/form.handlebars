@@ -4,12 +4,22 @@
     </div>
     <div class="col-sm-8">
 
-      <form action='/kingdom/{{kingdomId}}{{castlePrefix}}{{castleId}}' method="POST">
+      <form action='{{kingdomPrefix}}{{kingdomId}}{{castlePrefix}}{{castleId}}{{ liegePrefix }}{{ liegeId }}{{ vassalPrefix }}' method="POST">
         <br><br>
         <h3 class="text-center">Create a new {{ name }}</h3>
         <div class="form-group">
           <input type="text" name="{{ paramName }}" class="form-control" placeholder=" {{ bigName }}'s name">
         </div>
+        {{#unless kingdomId }}
+          <!-- King -->
+          <div class="form-group">
+            <input type="text" name="{{ kingName }}" class="form-control" placeholder=" King's name">
+          </div>
+          <!-- Queen -->
+          <div class="form-group">
+            <input type="text" name="{{ queenName }}" class="form-control" placeholder=" Queen's name">
+          </div>
+        {{/unless}}
 
         <div class="center">
           <button type="submit" class="btn btn-primary" method="post">Create</button>

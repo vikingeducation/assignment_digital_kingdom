@@ -65,12 +65,9 @@
   },
   "9": {
     "id": 9,
-    "name": "asdasdd",
-    "vassalIds": []
-  },
-  "10": {
-    "id": 10,
-    "name": "Sarak",
-    "vassalIds": []
+    "name": "Boguslaw Knight",
+    "vassalIds": [
+      17
+    ]
   }
 }

@@ -7,24 +7,11 @@ const { getKingdoms,
         getVassals,
         addKingdoms,
         addCastles,
-        addLieges }  = require('../services/kingdoms-store');
+        addLieges,
+        addVassals }  = require('../services/kingdoms-store');
 const Handlebars = require('handlebars');
 
 const router = express.Router();
-
-// const kingdomsTree = getKingdoms();
-// const kingsTree = getKings();
-// const queensTree = getQueens();
-// const castlesTree = getCastles();
-// const liegesTree = getLieges();
-// const vassalsTree = getVassals();
-
-// const kingdoms = Object.keys(kingdomsTree);
-// const kings = Object.keys(kingsTree);
-// const queens = Object.keys(queensTree);
-// const castles = Object.keys(castlesTree);
-// const lieges = Object.keys(liegesTree);
-// const vassals = Object.keys(vassalsTree);
 
 
 router.get('/kingdoms', (req, res) => {
@@ -39,16 +26,15 @@ router.get('/kingdoms', (req, res) => {
 
 router.post('/kingdoms', (req, res) => {
   const name = req.body.name
-  addKingdoms(name);
+  const kingName = req.body.kingName
+  const queenName = req.body.queenName
+  addKingdoms(name, kingName, queenName);
   res.redirect('back');
 })
 
 router.get("/kingdom/:id/castles", (req, res) => {
   const id = req.params.id;
-  console.log('params are :')
-  console.log(req.params)
   const kingdomsTree = getKingdoms();
-  // console.log('kingdomsTree id is: ' + kingdomsTree[id])
   const kingdomName = kingdomsTree[id]['name'];
   const castleIds = kingdomsTree[id]['castleIds'];
   res.render('kingdom/view', {  id: req.params.id,
@@ -67,14 +53,11 @@ router.post('/kingdom/:id/castles', (req, res) => {
 
 router.get("/kingdom/:id/castle/:castleid/lieges", (req, res) => {
   const id = req.params.id;
-  // console.log('params are :')
-  // console.log(req.params)
   const castleId = req.params.castleid;
   const castlesTree = getCastles();
   const liegesTree = getLieges();
-  console.log(castlesTree)
   const castleName = castlesTree[castleId]['name'];
-  const liegeIds = castlesTree[id]['liegeIds'];
+  const liegeIds = castlesTree[castleId]['liegeIds'];
   res.render('castle/view', {  id,
                                 castleId,
                                 liegeIds,
@@ -92,25 +75,30 @@ router.post('/kingdom/:id/castle/:castleid/lieges', (req, res) => {
 })
 
 
-router.get("/kingdom/:id/castle/:castleid/lieges/:liegeid", (req, res) => {
+router.get("/kingdom/:id/castle/:castleid/lieges/:liegeid/vassals", (req, res) => {
   const id = req.params.id;
-  const castleid = req.params.castleid;
-  const liegeId = req.params.liegeid
+  const kingdomsTree = getKingdoms();
+  const kingdomName = kingdomsTree[id]['name'];
+  const castleId = req.params.castleid;
+  const liegeId = req.params.liegeid;
+  const liegesTree = getLieges();
   const vassalTree = getVassals();
-  const LiegeName = liegesTree[id]['name'];
-  const vassalIds = liegesTree[id]['castleIds'];
+  const liegeName = liegesTree[liegeId]['name'];
+  const vassalIds = liegesTree[liegeId]['vassalIds'];
   res.render('liege/view', {  id,
-                              castleid,
+                              kingdomName,
+                              castleId,
+                              liegeId,
                               vassalIds,
                               liegeName,
                               vassalTree
                           });
 });
 
-router.post('/kingdom/:id/castle/:castleid/lieges/:liegeid', (req, res) => {
-  const kingdomId = req.params.id;
+router.post('/kingdom/:id/castle/:castleid/lieges/:liegeid/vassals', (req, res) => {
+  const liegeId = req.params.liegeid;
   const name = req.body.name
-  addCastles(name, kingdomId);
+  addVassals(name, liegeId);
   res.redirect('back');
 })
 
