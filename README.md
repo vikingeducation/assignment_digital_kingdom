@@ -1,2 +1,11 @@
 # assignment_digital_kingdom
-Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!
+Practice building an express CRUD app with node 
+
+Gregory Alford
+
+### To run:
+```
+npm i && node index
+```
+then visit:
+http://localhost:3000/
