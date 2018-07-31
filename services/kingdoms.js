@@ -16,7 +16,7 @@ const getKingdom = () => {
   var finalObj = {}
   var kingdomInfo = []
 
-//loop though each kingdom
+  //loop though each kingdom
   for (let kingdom of kingdoms) {
     finalObj = {
       kingdomName: (json[kingdom].name),

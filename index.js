@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs')
 const bodyParser = require('body-parser')
 const kingdoms = require('./routes/kingdoms')
-const exphbs  = require('express-handlebars');
+const exphbs = require('express-handlebars');
 
 const app = express()
 
@@ -12,7 +12,9 @@ const hbs = exphbs.create({
 });
 
 //console.log(hbs)
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 //app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 //app.set('view engine', 'handlebars');
