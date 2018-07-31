@@ -1,0 +1,82 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Castlevania",
+        "liegeIds": [
+            1,
+            2
+        ]
+    },
+    "2": {
+        "id": 2,
+        "name": "Camelot",
+        "liegeIds": [
+            3,
+            4
+        ]
+    },
+    "3": {
+        "id": 3,
+        "name": "Princess Peach's Castle",
+        "liegeIds": [
+            5,
+            6
+        ]
+    },
+    "4": {
+        "id": 4,
+        "name": "Bowser's Castle",
+        "liegeIds": [
+            7,
+            8
+        ]
+    },
+    "5": {
+        "id": 5,
+        "name": "big",
+        "liegeIds": [
+            9,
+            10
+        ]
+    },
+    "6": {
+        "id": 6,
+        "name": "no",
+        "liegeIds": [
+            11,
+            12
+        ]
+    },
+    "7": {
+        "id": 7,
+        "name": "big",
+        "liegeIds": [
+            13,
+            14
+        ]
+    },
+    "8": {
+        "id": 8,
+        "name": "klhasdf",
+        "liegeIds": [
+            15,
+            16
+        ]
+    },
+    "9": {
+        "id": 9,
+        "name": "asdfsadf",
+        "liegeIds": [
+            17,
+            18
+        ]
+    },
+    "10": {
+        "id": 10,
+        "name": "sdfa",
+        "liegeIds": [
+            19,
+            20
+        ]
+    }
+}

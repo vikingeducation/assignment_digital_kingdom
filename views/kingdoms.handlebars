@@ -1,0 +1,28 @@
+<div class='box'>
+  <div class='box--title'>Kingdoms</div>
+  <div class='box--content'>
+    {{#each allKingdoms as |kingdom|}}
+      <div class="kingdom">
+        <a href="/kingdoms/{{kingdom.id}}">
+          <h4>Kingdom: {{kingdom.kingdomName}} </h4>
+        </a>
+        <h5>Queen: {{kingdom.queen}} </h5>
+        <h5>King: {{kingdom.king}} </h5>
+        <h5>Number of Castles: {{kingdom.numCastles.length}} </h5>
+      </div>
+    {{/each}}
+
+  </div>
+</div>
+
+
+<div class='box'>
+  <div class="box-title>"></div>
+  <div class="blox--content">
+    <form action='/kingdoms' method="POST">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="text" name="king" id="king" placeholder="King">
+      <input type="text" name="queen" id="queen" placeholder="Queen">
+      <input type="submit" value="Add New Kingdom" method="post">
+    </form>
+  </div>
