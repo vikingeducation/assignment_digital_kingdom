@@ -1,47 +1,42 @@
 const fs = require('fs')
 
+//this function gets the data/json from the various files
 const getKingdomData = (fileName) => {
   const dataFromFileName = fs.readFileSync(`./data/${fileName}.json`)
   var json = JSON.parse(dataFromFileName)
   return json
 }
 
+//gets king queen and kingdom data then creates a new obect from them.
 const getKingdom = () => {
   let queens = getKingdomData("queens")
   let kings = getKingdomData("kings")
   const json = getKingdomData("kingdoms")
   const kingdoms = Object.keys(json)
-  //console.log(kingdoms + "obj keys")
-  //  var kingdomName = []
-  //  var numCastles = []
   var finalObj = {}
   var kingdomInfo = []
 
+//loop though each kingdom
   for (let kingdom of kingdoms) {
     finalObj = {
       kingdomName: (json[kingdom].name),
       numCastles: (json[kingdom].castleIds),
       id: (json[kingdom].id)
     }
+    //each index of the arry will be an object this sets up the object and inserts data from kingdom file.
     kingdomInfo.push(finalObj)
   }
-
-  for (let kingdomSet of kingdomInfo) {
-    var key = kingdomSet.id
-    kingdomSet.queen = queens[key].name
-    kingdomSet.king = kings[key].name
+  // adds king and queen info to the object (they were from diffrent files)
+  for (let kingdom of kingdomInfo) {
+    var key = kingdom.id
+    kingdom.queen = queens[key].name
+    kingdom.king = kings[key].name
   }
   return kingdomInfo
 }
 
-const getCastlesNum = () => {
-  const json = getKingdomData(kingdoms)
-  const kingdoms = Object.keys(json)
-
-}
-
 const addKingdoms = (kingdomName) => {
-  //read from animal.json file
+  // line 40 and 41 are to know how many kingdoms we have so that we can assign the correct id number
   let kingdomNum = getKingdom()
   let numKingdoms = kingdomNum.length
   numKingdoms++
@@ -64,6 +59,31 @@ const addKingdoms = (kingdomName) => {
   }
   //save file
   fs.writeFileSync('./data/kingdoms.json', JSON.stringify(json, null, 4));
+}
+//well need to be able to get all the kings and queens seperatly so that we can assign ids later
+const getKings = () => {
+  const json = getKingdomData('kings')
+  const kings = Object.keys(json)
+  //console.log(kings)
+  var kingsNames = []
+  for (let king of kings) {
+    kingsNames.push(json[king].name)
+    //push entire object with id/name into arry
+    //kingsNames.push(json[king].id)
+  }
+  return kingsNames
+}
+
+const getQueens = () => {
+  const json = getKingdomData('queens')
+  const queens = Object.keys(json)
+  //console.log(queens)
+  var queensNames = []
+  for (let queen of queens) {
+    queensNames.push(json[queen].name)
+  }
+  //console.log(queensNames)
+  return queensNames
 }
 
 const addKings = (king) => {
@@ -148,7 +168,6 @@ const addCastles = (castleName, kingdomId) => {
   //this will associate the castle Ids to the appropriate kingdom.
   let kingdoms = getKingdomData("kingdoms")
   kingdoms[kingdomId].castleIds.push(numCastles)
-
 
 
   //save file
