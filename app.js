@@ -12,6 +12,9 @@ app.use(express.static(`${__dirname}/public`));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.get('/', (req, res) => {
+  res.redirect('/kingdoms');
+});
 app.use('/kingdoms', kingdoms);
 
 
