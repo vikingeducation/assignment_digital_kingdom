@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kingdom</title>
+  </head>
+  <body>
+
+    <div class='header'>
+      <h1>{{kingdomName}}</h1>
+    </div>
+
+    {{#each castles as |castle|}}
+      <div class='box'>
+        <h3><a href='/kingdoms/{{../kingdomIdx}}/castles/{{@index}}'>{{castle.name}}</a></h3>
+        <p># of lieges: {{castle.lieges.length}}</p>
+      </div>
+    {{/each}}
+
+    <div class='form'>
+      <h3>Add a new castle to the kingdom:</h3>
+      <form action='/kingdoms/{{kingdomIdx}}/edit' method='POST'>
+        <input type='text' placeholder='Enter a castle name' name='castleName' />
+        <button type='submit'>Add Castle</button>
+      </form>
+    </div>
+
+
+  </body>
+</html>
