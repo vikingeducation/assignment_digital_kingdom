@@ -2,10 +2,10 @@ const express = require('express');
 const {
   getKingdom,
   addKingdoms,
-  getCastles,
+  getCastle,
   addKings,
   addQueens,
-  addCastles
+  addCastle
 } = require('../services/kingdoms')
 const router = express.Router();
 
@@ -30,7 +30,7 @@ router.get("/:kingdomId", (req, res) => {
 
   const kingdomId = req.params.kingdomId;
   //  console.log(kingdomId)
-  const castles = getCastles(kingdomId);
+  const castles = getCastle(kingdomId);
   const kingdomName = castles[0].kingdomName
   //const kingdomId = castles[0].kingdomId
   res.render("kingdom", { castles, kingdomName, kingdomId });
@@ -38,11 +38,35 @@ router.get("/:kingdomId", (req, res) => {
 
 
 router.post("/:kingdomId", (req, res) => {
-
+  //const kingdomId = req.params.kingdomId;
+  //console.log(kingdomId)
   const kingdomId = req.body.kingdomId;
   const castleName = req.body.castleName;
-  addCastles(castleName,kingdomId);
+  //addCastles(castleName,kingdomId);
   res.redirect("back");
 });
+
+router.get("/:kingdomId/:lieges", (req, res) => {
+
+  const kingdomId = req.params.kingdomId;
+  //  console.log(kingdomId)
+  const xxx = req.params.lieges;
+  const castles = getCastle(kingdomId);
+  const kingdomName = castles[0].kingdomName
+  //const kingdomId = castles[0].kingdomId
+  res.render("kingdom", { castles, kingdomName, kingdomId });
+})
+
+
+router.post("/:kingdomId/:lieges", (req, res) => {
+  //const kingdomId = req.params.kingdomId;
+  //console.log(kingdomId)
+  const kingdomId = req.body.kingdomId;
+  const castleName = req.body.castleName;
+  const xxx = req.params.lieges;
+  //addCastles(castleName,kingdomId);
+  res.redirect("back");
+});
+
 
 module.exports = router

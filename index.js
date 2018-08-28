@@ -1,10 +1,10 @@
 const express = require('express');
-const fs = require('fs')
-const bodyParser = require('body-parser')
-const kingdoms = require('./routes/kingdoms')
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const kingdoms = require('./routes/kingdoms');
 const exphbs = require('express-handlebars');
 
-const app = express()
+const app = express();
 
 
 const hbs = exphbs.create({

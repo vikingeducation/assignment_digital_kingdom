@@ -13,25 +13,22 @@ const getKingdom = () => {
   let kings = getKingdomData("kings")
   const json = getKingdomData("kingdoms")
   const kingdoms = Object.keys(json)
-  var finalObj = {}
+  //var finalObj = {}
   var kingdomInfo = []
 
+  //object.values
   //loop though each kingdom
-  for (let kingdom of kingdoms) {
-    finalObj = {
-      kingdomName: (json[kingdom].name),
-      numCastles: (json[kingdom].castleIds),
-      id: (json[kingdom].id)
-    }
+  for (let kingdom of Object.values(json)) {
+    kingdomInfo.push( {
+      kingdomName: kingdom.name,
+      numCastles: kingdom.castleIds,
+      id: kingdom.id,
+      queen: queens[kingdom.queenId].name,
+      king: kings[kingdom.kingId].name
+    })
     //each index of the arry will be an object this sets up the object and inserts data from kingdom file.
-    kingdomInfo.push(finalObj)
   }
   // adds king and queen info to the object (they were from diffrent files)
-  for (let kingdom of kingdomInfo) {
-    var key = kingdom.id
-    kingdom.queen = queens[key].name
-    kingdom.king = kings[key].name
-  }
   return kingdomInfo
 }
 
@@ -40,7 +37,7 @@ const addKingdoms = (kingdomName) => {
   let kingdomNum = getKingdom()
   let numKingdoms = kingdomNum.length
   numKingdoms++
-  const json = getKingdomData(kingdoms)
+  const json = getKingdomData("kingdoms")
 
   //if (json[numKingdoms][name]) {
   //  return
@@ -90,7 +87,7 @@ const addKings = (king) => {
   let kingNum = getKings()
   let numKings = kingNum.length
   numKings++
-  const json = getKingdomData(kings)
+  const json = getKingdomData("kings")
 
   //if (json[numKingdoms][name]) {
   //  return
@@ -109,7 +106,7 @@ const addQueens = (queen) => {
   let queenNum = getQueens()
   let numQueens = queenNum.length
   numQueens++
-  const json = getKingdomData(queens)
+  const json = getKingdomData("queens")
 
   //if (json[numKingdoms][name]) {
   //  return
@@ -124,7 +121,7 @@ const addQueens = (queen) => {
   fs.writeFileSync('./data/queens.json', JSON.stringify(json, null, 4));
 }
 
-const getCastles = (kingdomId) => {
+const getCastle = (kingdomId) => {
   const kingdoms = getKingdomData("kingdoms")
   let castleIds = kingdoms[kingdomId].castleIds
 
@@ -146,11 +143,11 @@ const getCastles = (kingdomId) => {
   return castleNames
 }
 
-const addCastles = (castleName, kingdomId) => {
+const addCastle = (castleName, kingdomId) => {
   let castles = getKingdomData("castles")
-  let castleKeys = Object.keys(castles)
-  let numCastles = castleKeys.length
-  numCastles++
+  //let castleKeys =
+  let numCastles = Object.keys(castles).length + 1
+  //numCastles++
 
   //if (json[numKingdoms][name]) {
   //  return
@@ -171,15 +168,16 @@ const addCastles = (castleName, kingdomId) => {
 
 
   //save file
-  fs.writeFileSync('./data/castles.json', JSON.stringify(castles, null, 4));
-  fs.writeFileSync('./data/kingdoms.json', JSON.stringify(kingdoms, null, 4));
+  //change both to wr
+  fs.writeFile('./data/castles.json', JSON.stringify(castles, null, 4));
+  fs.writeFile('./data/kingdoms.json', JSON.stringify(kingdoms, null, 4));
 }
 
 module.exports = {
   getKingdom,
   addKingdoms,
-  getCastles,
+  getCastle,
   addKings,
   addQueens,
-  addCastles
+  addCastle
 }
