@@ -1,0 +1,23 @@
+<h1>{{formatName castle.name}}</h1>
+<hr>
+<div class="row">
+  <h3 class="pull-left">Leiges:</h3>
+  <div class="pull-right">
+    <form class="form-inline" action="{{newLeigePath}}" method="POST">
+      <label class="sr-only" for="newCastleName">Leige Name</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newCastleName" placeholder="Leige Name" name="name">
+      <input type="hidden" name="castle" value="{{castle.name}}">
+      <button type="submit" class="btn btn-primary">New Leige</button>
+    </form>
+  </div>
+</div>
+{{#if (anyLeiges castle)}}
+  {{#each castle.leiges}}
+    <div class="col-sm-4">
+      <a href="{{leigePath ../castleKeyName @key}}"><b>{{formatName @key}}</b></a>
+      <p>Vassals: {{vassalAmount this}}</p>
+    </div>
+  {{/each}}
+{{else}}
+  <p>There are no leiges in this castle yet.</p>
+{{/if}}

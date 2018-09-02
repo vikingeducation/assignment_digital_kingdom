@@ -1,0 +1,247 @@
+{
+  "kingdoms": {
+    "The-North": {
+      "king": "Rob Stark",
+      "queen": "Maggie Stark",
+      "castles": {
+        "Winterfell-Castle": {
+          "leiges": {
+            "Edward-Clark": {
+              "vassals": [
+                "Bob",
+                "Frank",
+                "Tom"
+              ]
+            },
+            "Henry": {
+              "vassals": [
+                "Jim",
+                "Dwight"
+              ]
+            }
+          }
+        },
+        "South-Brick": {
+          "leiges": {
+            "Marcos": {
+              "vassals": [
+                "Kevin",
+                "Smitty"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "The-Mountain-and-the-Vale": {
+      "king": "Frank Arryn",
+      "queen": "Emily Arryn",
+      "castles": {
+        "Skylark-Castle": {
+          "leiges": {
+            "Adrian": {
+              "vassals": [
+                "Ade",
+                "Alby",
+                "Sig"
+              ]
+            },
+            "Alexander": {
+              "vassals": [
+                "Bert",
+                "Allen",
+                "Vincent",
+                "Tom"
+              ]
+            }
+          }
+        },
+        "Valley-Overlook": {
+          "leiges": {
+            "Ambrose": {
+              "vassals": [
+                "Al",
+                "Lon"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "The-Isles-and-Rivers": {
+      "king": "Henry Hoare",
+      "queen": "Henrietta Hoare",
+      "castles": {
+        "Water-Defense": {
+          "leiges": {
+            "Alister": {
+              "vassals": [
+                "Ron",
+                "Harry",
+                "Neville",
+                "Seamus"
+              ]
+            },
+            "Bradford": {
+              "vassals": [
+                "Bran",
+                "Hodor",
+                "Bill"
+              ]
+            }
+          }
+        },
+        "Water-Palace": {
+          "leiges": {
+            "Corey": {
+              "vassals": [
+                "Conny",
+                "Craig"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "The-Rock": {
+      "king": "Jamie Lanister",
+      "queen": "His Sister (Ewwww)",
+      "castles": {
+        "Casterly-Rock": {
+          "leiges": {
+            "Curtis": {
+              "vassals": [
+                "Clive",
+                "Woody",
+                "Ernie",
+                "Sam",
+                "Irvine"
+              ]
+            },
+            "Ernesto": {
+              "vassals": [
+                "Emery",
+                "Frank",
+                "Gabe",
+                "Gerry"
+              ]
+            }
+          }
+        },
+        "Grand-Stage": {
+          "leiges": {
+            "Francis": {
+              "vassals": [
+                "Jerry",
+                "Gary"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "The-Stormlands": {
+      "king": "Daniel Durrandon",
+      "queen": "Daniella Durrandon",
+      "castles": {
+        "Dome-of-Durr": {
+          "leiges": {
+            "George": {
+              "vassals": [
+                "Bert",
+                "Gil",
+                "Tom",
+                "Steve"
+              ]
+            },
+            "Spartucus": {
+              "vassals": [
+                "Bill",
+                "Craig",
+                "Gio"
+              ]
+            }
+          }
+        },
+        "Durr-Palace": {
+          "leiges": {
+            "Marcus": {
+              "vassals": [
+                "Horace",
+                "Ace"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "The-Reach": {
+      "king": "Gary Gardener",
+      "queen": "Gina Gardener",
+      "castles": {
+        "Plantis-Castle": {
+          "leiges": {
+            "James": {
+              "vassals": [
+                "Jay",
+                "Ive",
+                "Jeff"
+              ]
+            },
+            "Jeffrey": {
+              "vassals": [
+                "Kelvin",
+                "Faran"
+              ]
+            }
+          }
+        },
+        "Grown-Palace": {
+          "leiges": {
+            "Lindon": {
+              "vassals": [
+                "Loyde",
+                "Lyn"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Dourne": {
+      "king": "Mark Martel",
+      "queen": "Mary Martel",
+      "castles": {
+        "Alcazar": {
+          "leiges": {
+            "Jaun": {
+              "vassals": [
+                "Jorge",
+                "Phil",
+                "Max",
+                "Milo"
+              ]
+            },
+            "Michael": {
+              "vassals": [
+                "Milton",
+                "Clark",
+                "Bruce"
+              ]
+            }
+          }
+        },
+        "Seville-Palace": {
+          "leiges": {
+            "Brutus": {
+              "vassals": [
+                "Peter",
+                "Will"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

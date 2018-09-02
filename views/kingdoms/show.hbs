@@ -1,0 +1,31 @@
+<h1>{{kingdom.name}}</h1>
+<section class="row">
+  <h4 class="col-sm-4">
+    <b>King:</b> {{kingdom.king}}
+  </h4>
+  <h4 class="col-sm-4">
+    <b>Queen:</b> {{kingdom.queen}}
+  </h4>
+</section>
+<hr>
+<div class="row">
+  <h3 class="pull-left">Castles:</h3>
+  <div class="pull-right">
+    <form class="form-inline" action="{{newCastlePath}}" method="POST">
+      <label class="sr-only" for="newCastleName">Castle Name</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newCastleName" placeholder="Castle Name" name="name">
+      <input type="hidden" name="kingdom" value="{{kingdom.name}}">
+      <button type="submit" class="btn btn-primary">New Castle</button>
+    </form>
+  </div>
+</div>
+{{#if (anyCastles kingdom)}}
+  {{#each kingdom.castles}}
+    <div class="col-sm-4">
+      <a href="{{castlePath @key}}"><b>{{formatName @key}}</b></a>
+      <p>Leiges: {{liegeAmount this}}</p>
+    </div>
+  {{/each}}
+{{else}}
+  <p>There are no castles in this kingdom yet.</p>
+{{/if}}

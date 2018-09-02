@@ -1,0 +1,24 @@
+<h1>{{formatName leige.name}}</h1>
+<hr>
+<div class="row">
+  <h3 class="pull-left">Vassals:</h3>
+  <div class="pull-right">
+    <form class="form-inline" action="{{newVassalPath}}" method="POST">
+      <label class="sr-only" for="newVassalName">Vassal Name</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newVassalName" placeholder="Vassal Name" name="name">
+      <input type="hidden" name="castle" value="{{castleName}}">
+      <input type="hidden" name="leige" value="{{leige.name}}">
+      <button type="submit" class="btn btn-primary">New Vassal</button>
+    </form>
+  </div>
+</div>
+{{#if (anyVassals leige)}}
+  {{#each leige.vassals}}
+    <div class="col-sm-4">
+      <p class="vassal-name">{{formatName this}}</p>
+      <a class="text-small" href="{{destroyVassalPath ../castleName ../leige.name this}}" onclick="return confirm('Are you sure you want to kill poor {{formatName this}}? Only the Red Witch can bring people back from the dead!');">Execute for insubordination!</a>
+    </div>
+  {{/each}}
+{{else}}
+  <p>{{formatName leige.name}} does not have any Vassals yet.</p>
+{{/if}}
