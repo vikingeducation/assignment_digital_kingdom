@@ -1,0 +1,30 @@
+{
+  "westeros": {
+    "king": "Jon Snow",
+    "queen": "Cersei",
+    "castles": [{
+      "name": "Red Keep",
+      "lieges": {
+        "vassals": ["im a vassel"]
+      }
+    }]
+  },
+  "essos": {
+    "king": "Hizdahr zo Loraq",
+    "queen": "daenerys",
+    "castles": [
+      {
+        "name": "pyramid",
+        "lieges": {
+          "vassals": ["Tyrion"]
+        }
+      },
+      {
+        "name": "dragonstone",
+        "lieges": {
+          "vassals": ["jon cottington"]
+        }
+      }
+    ]
+  }
+}
