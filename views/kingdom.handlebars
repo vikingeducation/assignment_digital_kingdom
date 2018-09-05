@@ -1,25 +1,20 @@
-<h2><a href="/kingdoms">All Kingdoms</a></h2>
+<main>
+  <header>
+    <h1>Castles of the {{kingdomName}} Kingdom</h1>
+  </header>
 
-<div class="box">
-  <div class="box--title">Castles of {{kingdomName}} Kingdom. Id number {{kingdomId}}</div>
-  <div class="box--content">
+  <section class='kingdom-display'>
     {{#each castles as |castle|}}
-      <div class="castle">
-        <a href="/kingdoms/:kingdomId/:lieges">{{castle.name}}</a>
-        <h5> Castle Name: {{castle.name}} </h5>
-        <h5> Number of Lieges: {{castle.liegeIds.length}} </h5>
-      </div>
+      <a href="/kingdoms/{{kingdomId}}/{{castle.id}}"><h3>{{castle.name}}</h3></a>
+      <p> Number of Lieges: {{castle.liegeIds.length}} </p>
     {{/each}}
-  </div>
-</div>
+  </section>
 
-<div class="box">
-  <div class="box--title">Add Castle</div>
-  <div class="box--content">
-    <form action="/kingdoms/:kingdomId" method="POST">
-      <input type="text" name="castleName" id="castleName" placeholder="Castle Name">
-      <input type="hidden" name="kingdomId" id="kingdomId" value= {{kingdomId}}>
-      <input type="submit" value="Add New Castle" method="post">
-    </form>
-  </div>
-</div>
+  <form action="/kingdoms/:kingdomId" method="POST">
+    <legend class="form-name">Add Castle</legend>
+        <input type="text" name="castleName" id="castleName" placeholder="Castle Name">
+        <input type="hidden" name="kingdomId" id="kingdomId" value= {{kingdomId}}>
+        <input type="submit" value="Add New Castle" method="post">
+      </form>
+  <a href="/kingdoms">Back to All Kingdoms</a>
+</main>

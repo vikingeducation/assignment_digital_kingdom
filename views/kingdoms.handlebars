@@ -1,28 +1,27 @@
-<div class='box'>
-  <div class='box--title'>Kingdoms</div>
-  <div class='box--content'>
-    {{#each allKingdoms as |kingdom|}}
-      <div class="kingdom">
-        <a href="/kingdoms/{{kingdom.id}}">
-          <h4>Kingdom: {{kingdom.kingdomName}} </h4>
-        </a>
-        <h5>Queen: {{kingdom.queen}} </h5>
-        <h5>King: {{kingdom.king}} </h5>
-        <h5>Number of Castles: {{kingdom.numCastles.length}}</h5>
-      </div>
-    {{/each}}
+<main>
+  <header>
+    <h1>{{title}} All Kingdoms</h1>
+  </header>
 
-  </div>
-</div>
+  <section class='kingdom-display'>
+      {{#each allKingdoms as |kingdom|}}
+          <a href="/kingdoms/{{kingdom.id}}">
+            <h3>Kingdom: {{kingdom.kingdomName}} </h3>
+          </a>
+          <p>Queen: {{kingdom.queen}}</p>
+          <p>King: {{kingdom.king}} </p>
+          <p>Number of Castles: {{kingdom.numCastles.length}}</p>
+      {{/each}}
+  </section>
 
+    <fieldset class='add-kingdom-form'>
+      <legend>Add Kingdoms, Kings, and Queens Here</legend>
+      <form action='/kingdoms' method="POST">
+        <input type="text" name="name" id="name" placeholder="Kingdom Name">
+        <input type="text" name="queen" id="queen" placeholder="Name of your Queen">
+        <input type="text" name="king" id="king" placeholder="Name of your King">
+        <input type="submit" value="Add New Kingdom" method="post">
+      </form>
+    </fieldset>
 
-<div class='box'>
-  <div class="box-title>"></div>
-  <div class="box-content">
-    <form action='/kingdoms' method="POST">
-      <input type="text" name="name" id="name" placeholder="Name">
-      <input type="text" name="king" id="king" placeholder="King">
-      <input type="text" name="queen" id="queen" placeholder="Queen">
-      <input type="submit" value="Add New Kingdom" method="post">
-    </form>
-  </div>
+</main>

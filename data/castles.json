@@ -86,5 +86,53 @@
             21,
             22
         ]
+    },
+    "12": {
+        "id": 12,
+        "name": "bad bad",
+        "liegeIds": [
+            23,
+            24
+        ]
+    },
+    "13": {
+        "id": 13,
+        "name": "who knows",
+        "liegeIds": [
+            25,
+            26
+        ]
+    },
+    "14": {
+        "id": 14,
+        "name": "tiger",
+        "liegeIds": [
+            27,
+            28
+        ]
+    },
+    "15": {
+        "id": 15,
+        "name": "magiccastes",
+        "liegeIds": [
+            29,
+            30
+        ]
+    },
+    "16": {
+        "id": 16,
+        "name": "alex's castle",
+        "liegeIds": [
+            31,
+            32
+        ]
+    },
+    "17": {
+        "id": 17,
+        "name": "alex's other castle",
+        "liegeIds": [
+            33,
+            34
+        ]
     }
 }
