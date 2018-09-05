@@ -1,0 +1,20 @@
+<main>
+  <header>
+    <h1>Castles of the {{kingdomName}} Kingdom</h1>
+  </header>
+
+  <section class='kingdom-display'>
+    {{#each castles as |castle|}}
+      <a href="/kingdoms/{{kingdomId}}/{{castle.id}}"><h3>{{castle.name}}</h3></a>
+      <p> Number of Lieges: {{castle.liegeIds.length}} </p>
+    {{/each}}
+  </section>
+
+  <form action="/kingdoms/:kingdomId" method="POST">
+    <legend class="form-name">Add Castle</legend>
+        <input type="text" name="castleName" id="castleName" placeholder="Castle Name">
+        <input type="hidden" name="kingdomId" id="kingdomId" value= {{kingdomId}}>
+        <input type="submit" value="Add New Castle" method="post">
+      </form>
+  <a href="/kingdoms">Back to All Kingdoms</a>
+</main>

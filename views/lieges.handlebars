@@ -1,0 +1,23 @@
+<main>
+  <header>
+    <h1>Lieges of {{castleName}} Castle</h1>
+  </header>
+
+  <section class='liege-display'>
+    {{#each allLieges as |liege|}}
+      <a href="/kingdoms/{{kingdom.id}}/{{castle.id}}/{{liege.id}}"><h3>{{liege.name}}</h3></a>
+      <p> Number of Vassals: {{liege.vassalIds.length}} </p>
+    {{/each}}
+  </section>
+
+  <fieldset class="add-vassal-form">
+    <legend class="form-name">Add Vassal</legend>
+    <form action="/kingdoms/:castleId" method="POST">
+      <input type="text" name="vassal-name" id="vassal-name" placeholder="vassal Name">
+      <input type="hidden" name="castleId" id="castleId" value= {{castleId}}>
+      <input type="submit" value="Add New Vassal" method="post">
+    </form>
+  </fieldset>
+
+  <a href="/kingdoms">Back to Kingdoms</a>
+</main>

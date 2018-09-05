@@ -1,0 +1,21 @@
+<main>
+  <header>
+    <h1>Vassals of {{liegeName}}</h1>
+  </header>
+
+  <section class='vassal-display'>
+    {{#each allVassals as |vassal|}}
+      <a href="/kingdoms"><h3>{{vassal.name}}</h3></a>
+      <!--<p> Number of Vassals: {{liege.vassalIds.length}} </p>-->
+    {{/each}}
+  </section>
+
+  <form action='/kingdoms' method="POST">
+    <legend>Add Vassals</legend>
+      <input type="text" name="name" id="name" placeholder="Vassal Name">
+      <input type="submit" value="Add New Kingdom" method="post">
+    </form>
+
+
+  <a href="/kingdoms">Back to Kingdoms</a>
+</main>

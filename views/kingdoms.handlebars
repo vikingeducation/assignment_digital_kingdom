@@ -1,0 +1,27 @@
+<main>
+  <header>
+    <h1>{{title}} All Kingdoms</h1>
+  </header>
+
+  <section class='kingdom-display'>
+      {{#each allKingdoms as |kingdom|}}
+          <a href="/kingdoms/{{kingdom.id}}">
+            <h3>Kingdom: {{kingdom.kingdomName}} </h3>
+          </a>
+          <p>Queen: {{kingdom.queen}}</p>
+          <p>King: {{kingdom.king}} </p>
+          <p>Number of Castles: {{kingdom.numCastles.length}}</p>
+      {{/each}}
+  </section>
+
+    <fieldset class='add-kingdom-form'>
+      <legend>Add Kingdoms, Kings, and Queens Here</legend>
+      <form action='/kingdoms' method="POST">
+        <input type="text" name="name" id="name" placeholder="Kingdom Name">
+        <input type="text" name="queen" id="queen" placeholder="Name of your Queen">
+        <input type="text" name="king" id="king" placeholder="Name of your King">
+        <input type="submit" value="Add New Kingdom" method="post">
+      </form>
+    </fieldset>
+
+</main>
