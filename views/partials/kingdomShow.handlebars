@@ -1,0 +1,15 @@
+kingdomShow.hbs
+<hr>
+<!-- create castle -->
+<!-- <form action="/kingdoms/{{castles.kingdomId}}" method="POST"> -->
+<form action="/kingdoms/{{castles.kingdomId}}" method="POST">
+  <input type="text" name="castleName" placeholder="Castle's Name">
+  <input type="submit" name="" value="Create">
+</form>
+<hr>
+
+{{#each castles.castlesAndLieges as |castle|}}
+  <h1>Name: {{castle.name}}</h1>
+  <h2># of Lieges: {{castle.liegeCount}}</h2>
+  <hr>
+{{/each}}
