@@ -1,0 +1,21 @@
+kingdomss.hbs
+
+<form class="" action="/" method="POST">
+  <input type="text"  name="kingdomName" placeholder="Kingdom's Name">
+  <input type="text"  name="kingName" placeholder="King's Name">
+  <input type="text"   name="queenName" placeholder="Queen's Name">
+  <!-- <input type="text"   name="castleCount" placeholder="# of castles"> -->
+
+  <input type="submit" name="" value="Create Kingdom">
+</form>
+
+{{#each kingdoms as |kingdom|}}
+  <h2>{{kingdom.kingdomName}}</h2>
+  <h3>King: {{kingdom.kingName}}</h3>
+  <h3>Queen: {{kingdom.queenName}}</h3>
+  <h3>Castles Owned: {{kingdom.castleCount}}</h3>
+  <h3>
+    <a href="/kingdoms/{{kingdom.id}}">View</a>
+  </h3>
+  <hr>
+{{/each}}

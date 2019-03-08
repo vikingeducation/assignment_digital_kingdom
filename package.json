@@ -1,0 +1,28 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "talk": "echo Hi there",
+    "seed": "cp ./seeds/* ./data"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotten1/assignment_digital_kingdom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kotten1/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/kotten1/assignment_digital_kingdom#readme"
+}
