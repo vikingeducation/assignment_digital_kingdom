@@ -1,0 +1,30 @@
+<div>
+  <h3>Kingdom: {{kingdom}}</h3>
+    <div>
+      <div>
+        <h4>Castle: {{castle}}</h4>
+        <div>
+          <h5>Liege: {{liege}}</h5>
+          <h5>Vassals:</h5>
+
+          {{#each allVassals as |vassal|}}
+            <div class="list-div small-margin">
+            {{vassal}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-div extra-space">
+  <h2>Add Vassal</h2>
+  <div class="form-div">
+    <form action="/kingdoms/{{kingdom}}/{{castle}}/{{liege}}" method="post">
+      <label>Vassal: </label>
+      <input type="text" name="vassalName" id="vassalName" placeholder="Name">
+
+      <input type="submit" value="Add New Vassal" method="post">
+    </form>
+  </div>
+</div>
