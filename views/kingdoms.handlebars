@@ -1,0 +1,36 @@
+<div class="container">
+
+  {{#each kingdoms as |kingdom|}}
+    <div class="card">
+      <form class="remove" action="/{{kingdom.name}}/remove" method="post">
+        <input type="submit" class="close-icon" value="" />
+      </form>
+      <img src={{kingdom.url}} alt="sigil">
+
+      <div class="details">
+        <h2><a href="/kingdoms/{{kingdom.name}}">{{kingdom.name}}</a></h2> 
+        <span>
+          <p><b>King:</b> {{kingdom.king}}</p>
+          <p><b>Queen:</b> {{kingdom.queen}}</p>
+          <p><b># of Castles:</b> {{kingdom.castles.length}}</p>
+        </span>
+      </div>
+    </div>      
+  {{/each}}
+
+  <div class="card">
+    <div class="box--title"><h2>Add Kingdom</h2></div>
+    <div>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <input class="form-control" type="text" name="name" id="name" placeholder="Kingdom" required />
+          <input class="form-control" type="text" name="king" id="king" placeholder="King" required /> 
+          <input class="form-control" type="text" name="queen" id="queen" placeholder="Queen" required />
+          <br>
+          <input type="submit" class="btn" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

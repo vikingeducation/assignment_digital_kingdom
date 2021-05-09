@@ -1,0 +1,34 @@
+<div class="container">
+	<a href="/"><-- back</a>
+	<h2 class="text-center">Castles of {{kingdom}}</h2>
+
+	{{#each castles as |castle|}}
+	  <div class="card">
+	  	<form class="remove" action="/kingdoms/{{../kingdom}}/castles/{{castle.name}}/remove" method="post">
+	      <input type="submit" class="close-icon" value="" />
+	    </form>
+	    <img src="../images/castle.png" alt="castle">
+
+	  	<div class="details">
+		    <h2><a href="/kingdoms/{{../kingdom}}/{{castle.name}}">{{castle.name}}</a></h2>
+		    <span>
+		    	<p><b># of Lieges:</b> {{castle.lieges.length}}</p>
+		    </span>
+		  </div>
+	  </div>
+	{{/each}}
+
+	<div class="card">
+    <div class="box--title"><h2>Add Castle</h2></div>
+    <div>
+			<form action="/kingdoms/{{kingdom}}" method="POST">
+			  <div class="form-group">
+			    <input class="form-control" type="text" name="castle" id="castle" placeholder="Castle Name" required />
+			    <br>
+			    <input type="submit" class="btn">
+			  </div>
+			</form>
+    </div>
+  </div>
+  
+</div>

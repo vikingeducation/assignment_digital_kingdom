@@ -1,0 +1,34 @@
+<div class="container">
+	<a href="/kingdoms/{{kingdom}}"><-- back</a>
+	<h2 class="text-center">Lieges of {{castle}} Castle</h2>
+
+	{{#each lieges as |liege|}}
+	  <div class="card">
+	  	<form class="remove" action="/kingdoms/{{../kingdom}}/castles/{{../castle}}/lieges/{{liege.name}}/remove" method="post">
+	      <input type="submit" class="close-icon" value="" />
+	    </form>
+	    <img src="../{{liege.url}}" alt="sigil">
+
+	  	<div class="details">
+		    <h2><a href="/kingdoms/{{../kingdom}}/{{../castle}}/{{liege.name}}">{{liege.name}}</a></h2>
+		    <span>
+		    	<p><b># of Vassals:</b> {{liege.vassals.length}}</p>
+		    </span>
+		  </div>
+	  </div>
+	{{/each}}
+
+	<div class="card">
+    	<div class="box--title"><h2>Add Liege</h2></div>
+    		<div>
+			<form action="/kingdoms/{{kingdom}}/{{castle}}" method="POST">
+			  <div class="form-group">
+			    <input class="form-control" type="text" name="liege" id="liege" placeholder="Liege Name" required />
+			    <br>
+			    <input type="submit" id='submit' class="btn" />
+			  </div>
+			</form>
+    </div>
+  </div>
+  
+</div>

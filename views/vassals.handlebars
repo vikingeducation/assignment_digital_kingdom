@@ -1,0 +1,25 @@
+<div class="container">
+	<a href="/kingdoms/{{kingdom}}/{{castle}}"><-- back</a>
+	<h2 class="text-center"> Vassals of {{liege}}</h2>
+	<div class="box" style="float: left; margin-top:10px">
+		{{#each vassals as |vassal|}}
+		  <div class="box--content">
+		    <h4>House {{vassal}}</a></h4>
+		  </div>
+		{{/each}}
+	</div>
+
+	<div class="card">
+    <div class="box--title"><h2>Add Vassal</h2></div>
+    <div>
+			<form action="/kingdoms/{{kingdom}}/{{castle}}/{{liege}}" method="POST">
+			  <div class="form-group">
+			    <input class="form-control" type="text" name="vassal" id="vassal" placeholder="Vassal Name">
+			    <br>
+			    <input type="submit" class="btn">
+			  </div>
+			</form>
+    </div>
+  </div>
+
+</div>
