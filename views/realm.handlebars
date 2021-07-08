@@ -1,0 +1,4 @@
+<h2 class="col-xs-12">Kingdoms</h2>
+{{>new type='Kingdom' path='/'}} {{#each entities as |entity|}}
+<h3 class="col-xs-12"><a href="{{entity.path}}">{{entity.name}}</a></h3>
+{{>entity entity=entity realm=true gcType=../gcType}} {{/each}}
